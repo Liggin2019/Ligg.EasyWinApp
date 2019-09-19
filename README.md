@@ -1,0 +1,2 @@
+# Ligg.EasyWinApp
+This project is a windows application framework and a winform UI library. By this project, for a winform developer, what you only need to do is to add XML files to config the whole UI, add separated outside DLLs/COMs to fullfill the bisiness functions. It supports multithread application, especially mutiple language application which will save you if you are working for a transnational company.
