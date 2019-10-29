@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F6D5915B-D0E7-4389-901F-2737A37A37E7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ligg.Winform</RootNamespace>
+    <AssemblyName>Ligg.Winform</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\Handlers\XmlHandler.cs" />
+    <Compile Include="Base\Helpers\AssemblyHelper.cs" />
+    <Compile Include="GcHandler.cs" />
+    <Compile Include="Base\DataModel\Annex.cs" />
+    <Compile Include="Base\DataModel\Enums\AnnexTextType.cs" />
+    <Compile Include="Base\DataModel\Enums\FilePathComposition.cs" />
+    <Compile Include="Base\DataModel\Enums\FileSizeFormat.cs" />
+    <Compile Include="Base\DataModel\Enums\TaskStatus.cs" />
+    <Compile Include="Base\DataModel\Enums\UniversalStatus.cs" />
+    <Compile Include="Base\DataModel\IdName.cs" />
+    <Compile Include="Base\DataModel\IdValueText.cs" />
+    <Compile Include="Base\DataModel\UniversalResult.cs" />
+    <Compile Include="Base\DataModel\ValueText.cs" />
+    <Compile Include="Base\Extension\DateTimeExtension.cs" />
+    <Compile Include="Base\Extension\StringExtension.cs" />
+    <Compile Include="Base\Helpers\AnnexHelper.cs" />
+    <Compile Include="Base\Helpers\CultureHelper.cs" />
+    <Compile Include="Base\Helpers\DirectoryHelper.cs" />
+    <Compile Include="Base\Helpers\EncryptionHelper.cs" />
+    <Compile Include="Base\Helpers\EnumHelper.cs" />
+    <Compile Include="Base\Helpers\FileHelper.cs" />
+    <Compile Include="Base\Helpers\ListHelper.cs" />
+    <Compile Include="Base\Helpers\LocalEmailHelper.cs" />
+    <Compile Include="Base\Helpers\ObjectHelper.cs" />
+    <Compile Include="Base\Helpers\ProcessHelper.cs" />
+    <Compile Include="Base\Helpers\SystemTimeHelper.cs" />
+    <Compile Include="Base\Helpers\XmlHelper.cs" />
+    <Compile Include="Controls\CheckBoxComboBox\CheckBoxComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CheckBoxComboBox\DropDownComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CheckBoxComboBox\GripBounds.cs" />
+    <Compile Include="Controls\CheckBoxComboBox\PopupStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CheckBoxComboBox\SelectionWrapper.cs" />
+    <Compile Include="Controls\ComboBoxEx.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ComboBoxEx.Designer.cs">
+      <DependentUpon>ComboBoxEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ContainerPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ContextMenuStripEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CommandLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TimerExRecurringRun.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TimerExRecurringRun.designer.cs">
+      <DependentUpon>TimerExRecurringRun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TimerExTimingRun.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TimerExTimingRun.designer.cs">
+      <DependentUpon>TimerExTimingRun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\FunctionStartParamSet.cs" />
+    <Compile Include="DataModel\ApplicationStartParamSet.cs" />
+    <Compile Include="Dialogs\DateTimeInputDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\DateTimeInputDialog.designer.cs">
+      <DependentUpon>DateTimeInputDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DebugForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DebugForm.Designer.cs">
+      <DependentUpon>DebugForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReleaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReleaseForm.Designer.cs">
+      <DependentUpon>ReleaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ControlHelper.cs" />
+    <Compile Include="Controls\ToolStripSplitButtonEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ImageTextButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\StatusLight.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\StatusLight.Designer.cs">
+      <DependentUpon>StatusLight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PopupContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PopupContainer.Designer.cs">
+      <DependentUpon>PopupContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ProgressCircle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SelectionBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SelectionBox.Designer.cs">
+      <DependentUpon>SelectionBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ShadowPanel\ShadowPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SplitRectangle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SplitRectangle.Designer.cs">
+      <DependentUpon>SplitRectangle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TextButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TitleLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataModel\BackgroundTaskPool.cs" />
+    <Compile Include="DataModel\Enums\ControlBoxStyle.cs" />
+    <Compile Include="DataModel\Enums\ControlState.cs" />
+    <Compile Include="DataModel\Enums\MouseAction.cs" />
+    <Compile Include="DataModel\Enums\RoundStyle.cs" />
+    <Compile Include="DataModel\Enums\TextVerificationType.cs" />
+    <Compile Include="Dialogs\RunningErrorViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\RunningErrorViewer.Designer.cs">
+      <DependentUpon>RunningErrorViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\TextInputDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\TextInputDialog.designer.cs">
+      <DependentUpon>TextInputDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseForm.designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DilalogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DilalogForm.designer.cs">
+      <DependentUpon>DilalogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\RichTextEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\RichTextEditor.designer.cs">
+      <DependentUpon>RichTextEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\FunctionHelper.cs" />
+    <Compile Include="Helpers\LayoutHelper.cs" />
+    <Compile Include="Forms\FunctionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FunctionForm.designer.cs">
+      <DependentUpon>FunctionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GroundForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GroundForm.designer.cs">
+      <DependentUpon>GroundForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InvisibleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InvisibleForm.designer.cs">
+      <DependentUpon>InvisibleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrameForm.designer.cs">
+      <DependentUpon>FrameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\RichTextViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\RichTextViewer.designer.cs">
+      <DependentUpon>RichTextViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\SystemInfoHelper.cs" />
+    <Compile Include="Helpers\TextValidationHelper.cs" />
+    <Compile Include="Helpers\TextVerificationHelper.cs" />
+    <Compile Include="PopupMessage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ValidationRes.Designer.cs">
+      <DependentUpon>ValidationRes.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\WinformRes.Designer.cs">
+      <DependentUpon>WinformRes.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\WinformRes.zh-CN.Designer.cs">
+      <DependentUpon>WinformRes.zh-CN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\ValidationRes.zh-CN.Designer.cs">
+      <DependentUpon>ValidationRes.zh-CN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Skin\EventHandlerWrapper.cs" />
+    <Compile Include="Skin\FormPainter.cs" />
+    <Compile Include="Skin\FormRenderer.cs" />
+    <Compile Include="Skin\Graphics.cs" />
+    <Compile Include="Skin\GraphicsHelper.cs" />
+    <Compile Include="Skin\MmcControlBoxManager.cs" />
+    <Compile Include="Skin\NativeMethods.cs" />
+    <Compile Include="Skin\RenderHelper.cs" />
+    <Compile Include="Skin\SkinForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Skin\ToolStripRender.cs" />
+    <Compile Include="StyleSet.cs" />
+    <Compile Include="DataModel\UiDefinitionWrap.cs" />
+    <Compile Include="DataModel\Enums\UiEnumWrap.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\ComboBoxEx.resx">
+      <DependentUpon>ComboBoxEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\StatusLight.resx">
+      <DependentUpon>StatusLight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PopupContainer.resx">
+      <DependentUpon>PopupContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SelectionBox.resx">
+      <DependentUpon>SelectionBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SplitRectangle.resx">
+      <DependentUpon>SplitRectangle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TimerExRecurringRun.resx">
+      <DependentUpon>TimerExRecurringRun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TimerExTimingRun.resx">
+      <DependentUpon>TimerExTimingRun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\RunningErrorViewer.resx">
+      <DependentUpon>RunningErrorViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DateTimeInputDialog.resx">
+      <DependentUpon>DateTimeInputDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TextInputDialog.resx">
+      <DependentUpon>TextInputDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FunctionForm.resx">
+      <DependentUpon>FunctionForm.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FunctionForm1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DilalogForm.resx">
+      <DependentUpon>DilalogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\RichTextEditor.resx">
+      <DependentUpon>RichTextEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GroundForm.resx">
+      <DependentUpon>GroundForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrameForm.resx">
+      <DependentUpon>FrameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\RichTextViewer.resx">
+      <DependentUpon>RichTextViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ValidationRes.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ValidationRes.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WinformRes.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WinformRes.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WinformRes.zh-CN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WinformRes.zh-CN.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ValidationRes.zh-CN.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ValidationRes.zh-CN.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\ShadowPanel\Images\shadowdown.png" />
+    <EmbeddedResource Include="Controls\ShadowPanel\Images\shadowdownleft.png" />
+    <EmbeddedResource Include="Controls\ShadowPanel\Images\shadowdownright.png" />
+    <EmbeddedResource Include="Controls\ShadowPanel\Images\shadowright.png" />
+    <EmbeddedResource Include="Controls\ShadowPanel\Images\shadowtopright.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChooseLanguagePng.png" />
+    <None Include="Resources\start.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ligg.EasyWinApp.ImplInterface\Ligg.EasyWinApp.ImplInterface.csproj">
+      <Project>{46727cbd-db04-4733-88d0-4c1d7d2792fb}</Project>
+      <Name>Ligg.EasyWinApp.ImplInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ligg.EasyWinApp.Impl\ItSaom\Ligg.EasyWinApp.Impl.ItSaom.csproj">
+      <Project>{099393b8-5d3e-4ac4-801d-cd14484d0c42}</Project>
+      <Name>Ligg.EasyWinApp.Impl.ItSaom</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

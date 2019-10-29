@@ -1,0 +1,369 @@
+<ArrayOfAnnex>
+	
+	
+		<Annex>
+			
+			
+			
+			<AnnexId>1</AnnexId><MasterId>-1</MasterId><MasterName>System Message</MasterName>
+			<DisplayName>系统消息</DisplayName>
+			
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			
+			
+			
+			<AnnexId>1</AnnexId><MasterId>-1</MasterId><MasterName>You have no authorization</MasterName>
+			<DisplayName>你没有相应权限</DisplayName>
+			
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			
+			
+			
+			<AnnexId>1</AnnexId><MasterId>-1</MasterId><MasterName>This function is under developing...</MasterName>
+			<DisplayName>本功能正在开发当中...</DisplayName>
+			
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<AnnexId>10</AnnexId>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Show Detail</MasterName>
+			<DisplayName>查看详细</DisplayName><LanguageCode>szh</LanguageCode>
+			
+			
+			
+			
+			
+		</Annex><Annex>
+			
+			
+			
+			<AnnexId>100</AnnexId><MasterId>-1</MasterId><MasterName>Computer and System Info.</MasterName>
+			<DisplayName>电脑及系统信息</DisplayName>
+			
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<AnnexId>200</AnnexId>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Recmd. Tools</MasterName>
+			<DisplayName>推荐工具</DisplayName>
+			
+			
+			<Remark/><LanguageCode>szh</LanguageCode>
+			
+			
+		</Annex><Annex>
+			<AnnexId>20010</AnnexId>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Easy NetGate</MasterName>
+			<DisplayName>快捷网关</DisplayName>
+			
+			
+			<Remark/><LanguageCode>szh</LanguageCode>
+			
+			
+		</Annex><Annex>
+			<AnnexId>20010</AnnexId>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Hyper NetGate</MasterName>
+			<DisplayName>超级网关</DisplayName>
+			
+			
+			<Remark/><LanguageCode>szh</LanguageCode>
+			
+			
+		</Annex><Annex>
+			<AnnexId>20010</AnnexId>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Hyper Remote</MasterName>
+			<DisplayName>超级远程</DisplayName>
+			
+			
+			<Remark/><LanguageCode>szh</LanguageCode>
+			
+			
+		</Annex><Annex>
+			<AnnexId>20010</AnnexId>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Computer Toolkit</MasterName>
+			<DisplayName>电脑工具箱</DisplayName>
+			
+			
+			<Remark/><LanguageCode>szh</LanguageCode>
+			
+			
+		</Annex><Annex>
+			<AnnexId>20010</AnnexId>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Enterprise NetDisk</MasterName>
+			<DisplayName>企业网盘</DisplayName>
+			
+			
+			<Remark/><LanguageCode>szh</LanguageCode>
+			
+			
+		</Annex><Annex>
+			<AnnexId>20010</AnnexId>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Disk Cleaner</MasterName>
+			<DisplayName>磁盘清理</DisplayName>
+			
+			
+			<Remark/><LanguageCode>szh</LanguageCode>
+			
+			
+		</Annex><Annex>
+			<AnnexId>20010</AnnexId>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Auto Installer</MasterName>
+			<DisplayName>自动装机</DisplayName>
+			
+			
+			<Remark/><LanguageCode>szh</LanguageCode>
+			
+			
+		</Annex><Annex>
+			<AnnexId>20010</AnnexId>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Windows Updator</MasterName>
+			<DisplayName>更新Windows</DisplayName>
+			
+			
+			<Remark/><LanguageCode>szh</LanguageCode>
+			
+			
+		</Annex><Annex>
+			<AnnexId>20010</AnnexId>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Daily Backup</MasterName>
+			<DisplayName>每日必备</DisplayName>
+			
+			
+			<Remark/><LanguageCode>szh</LanguageCode>
+			
+			
+		</Annex><Annex>
+			<AnnexId>20010</AnnexId>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>System Admin Toolkit</MasterName>
+			<DisplayName>系统管理工具</DisplayName>
+			
+			
+			<Remark/><LanguageCode>szh</LanguageCode>
+			
+			
+		</Annex><Annex>
+			<AnnexId>300</AnnexId>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Admin zones Labels</MasterName>
+			<DisplayName/>
+			
+			
+			<Remark/><LanguageCode>szh</LanguageCode>
+			
+			
+		</Annex><Annex>
+			<AnnexId>30010</AnnexId>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>System Tools</MasterName>
+			<DisplayName>系统工具</DisplayName>
+			
+			
+			<Remark/><LanguageCode>szh</LanguageCode>
+			
+			
+		</Annex><Annex>
+			
+			
+			
+			<AnnexId>30010</AnnexId><MasterId>-1</MasterId><MasterName>Network Tools</MasterName>
+			<DisplayName>网络工具</DisplayName>
+			
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			
+			
+			
+			<AnnexId>30010</AnnexId><MasterId>-1</MasterId><MasterName>Application Tools</MasterName>
+			<DisplayName>应用工具</DisplayName>
+			
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			
+			
+			
+			<AnnexId>30010</AnnexId><MasterId>-1</MasterId><MasterName>Remote Tools</MasterName>
+			<DisplayName>远程工具</DisplayName>
+			
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			
+			
+			
+			<AnnexId>30010</AnnexId><MasterId>-1</MasterId><MasterName>Team Viewer</MasterName>
+			<DisplayName>Team Viewer</DisplayName>
+			
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			
+			
+			
+			<AnnexId>30010</AnnexId><MasterId>-1</MasterId><MasterName>AnyDesk</MasterName>
+			<DisplayName>AnyDesk</DisplayName>
+			
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			
+			
+			
+			<AnnexId>30010</AnnexId><MasterId>-1</MasterId><MasterName>Ammyy Admin</MasterName>
+			<DisplayName>Ammyy Admin</DisplayName>
+			
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			
+			
+			
+			<AnnexId>30010</AnnexId><MasterId>-1</MasterId><MasterName>System Setting</MasterName>
+			<DisplayName>系统设置</DisplayName>
+			
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			
+			
+			
+			<AnnexId>30010</AnnexId><MasterId>-1</MasterId><MasterName>Run As Administrator</MasterName>
+			<DisplayName>管理员运行</DisplayName>
+			
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			
+			
+			
+			<AnnexId>30010</AnnexId><MasterId>-1</MasterId><MasterName>Run As Admin</MasterName>
+			<DisplayName>超级运行</DisplayName>
+			
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			
+			
+			
+			<AnnexId>30010</AnnexId><MasterId>-1</MasterId><MasterName>Windows Remote Setting</MasterName>
+			<DisplayName>Windows远程设置</DisplayName>
+			
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<AnnexId>400</AnnexId>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Config zones Labels</MasterName>
+			<DisplayName/>
+			
+			
+			<Remark/><LanguageCode>szh</LanguageCode>
+			
+			
+		</Annex><Annex>
+			<AnnexId>40010</AnnexId>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Conventional Configuration</MasterName>
+			<DisplayName>常规配置</DisplayName>
+			
+			
+			<Remark/><LanguageCode>szh</LanguageCode>
+			
+			
+		</Annex><Annex>
+			<AnnexId>40020</AnnexId>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Temporary Configuration</MasterName>
+			<DisplayName>临时配置</DisplayName>
+			
+			
+			<Remark/><LanguageCode>szh</LanguageCode>
+			
+			
+		</Annex><Annex>
+			<AnnexId>500</AnnexId>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Insp. zones Label</MasterName>
+			<DisplayName/>
+			
+			
+			<Remark/><LanguageCode>szh</LanguageCode>
+			
+			
+		</Annex><Annex>
+			
+			
+			
+			<AnnexId>50010</AnnexId><MasterId>-1</MasterId><MasterName>Daily Server Inspection</MasterName>
+			<DisplayName>服务器日检</DisplayName>
+			
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex>
+		
+</ArrayOfAnnex>

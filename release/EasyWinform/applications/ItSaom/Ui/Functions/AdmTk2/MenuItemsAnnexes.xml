@@ -1,0 +1,617 @@
+<ArrayOfAnnex>
+	<Annex>
+			<AnnexId>-1</AnnexId>
+			
+			
+			<MasterName>Logon</MasterName>
+			<DisplayName>Logon</DisplayName>
+			
+			<Description/>
+			<Remark>用户登录</Remark>
+			
+			<LanguageCode>szh</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>-1</AnnexId>
+			
+			
+			<MasterName>Logon</MasterName>
+			<DisplayName>Logon</DisplayName>
+			
+			<Description/>
+			<Remark>User Logon</Remark>
+			
+			<LanguageCode>eng</LanguageCode>
+	</Annex>
+	<Annex>
+			<AnnexId>-1</AnnexId>
+			
+			
+			<MasterName>Logon</MasterName>
+			<DisplayName>用户登录</DisplayName>
+			
+			<Description/>
+			<Remark>Anmeldung des Benutzers</Remark>
+			
+			<LanguageCode>de</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>-1</AnnexId>
+			
+			
+			<MasterName>Help</MasterName>
+			<DisplayName>帮助</DisplayName>
+			
+			<Description/>
+			<Remark>帮助中心</Remark>
+			
+			<LanguageCode>szh</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>-1</AnnexId>
+			
+			
+			<MasterName>Help</MasterName>
+			<DisplayName>Help</DisplayName>
+			
+			<Description/>
+			<Remark>Help Center</Remark>
+			
+			<LanguageCode>eng</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>-1</AnnexId>
+			
+			
+			<MasterName>Help</MasterName>
+			<DisplayName>Hilfe</DisplayName>
+			
+			<Description/>
+			<Remark>Hilfe Center</Remark>
+			
+			<LanguageCode>de</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>-1</AnnexId>
+			
+			
+			<MasterName>Goto</MasterName>
+			<DisplayName>转至</DisplayName>
+			
+			<Description/>
+			<Remark>转至</Remark>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<AnnexId>-1</AnnexId>
+			
+			
+			<MasterName>Goto</MasterName>
+			<DisplayName>Go to</DisplayName>
+			
+			<Description/>
+			<Remark>Go to</Remark>
+			
+			<LanguageCode>eng</LanguageCode>
+		</Annex><Annex>
+			<AnnexId>-1</AnnexId>
+			
+			
+			<MasterName>Goto</MasterName>
+			<DisplayName>gehen</DisplayName>
+			
+			<Description/>
+			<Remark>gehen</Remark>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex>
+	
+	
+	<Annex>
+			<AnnexId>-1</AnnexId>
+			
+			
+			<MasterName>UserSetting</MasterName>
+			<DisplayName>个人设置</DisplayName>
+			
+			<Description/>
+			<Remark>个人设置</Remark>
+			
+			<LanguageCode>szh</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>-1</AnnexId>
+			
+			
+			<MasterName>UserSetting</MasterName>
+			<DisplayName>User Setting</DisplayName>
+			
+			<Description/>
+			<Remark>User Setting</Remark>
+			
+			<LanguageCode>eng</LanguageCode>
+	</Annex>
+	<Annex>
+			<AnnexId>-1</AnnexId>
+			
+			
+			<MasterName>UserSetting</MasterName>
+			<DisplayName>benutzer, die </DisplayName>
+			
+			<Description/>
+			<Remark>benutzer, die </Remark>
+			
+			<LanguageCode>de</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>-1</AnnexId>
+			
+			
+			<MasterName>CopyWindow</MasterName>
+			<DisplayName>复制窗口</DisplayName>
+			
+			<Description/>
+			<Remark>复制窗口</Remark>
+			
+			<LanguageCode>szh</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>-1</AnnexId>
+			
+			
+			<MasterName>CopyWindow</MasterName>
+			<DisplayName>Copy Window</DisplayName>
+			
+			<Description/>
+			<Remark>Copy Window</Remark>
+			
+			<LanguageCode>eng</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>-1</AnnexId>
+			
+			
+			<MasterName>CopyWindow</MasterName>
+			<DisplayName>Fenster kopieren</DisplayName>
+			
+			<Description/>
+			<Remark>Fenster kopieren</Remark>
+			
+			<LanguageCode>de</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>-1</AnnexId>
+			
+			
+			<MasterName>RefreshWindow</MasterName>
+			<DisplayName>刷新窗口</DisplayName>
+			
+			<Description/>
+			<Remark>刷新窗口</Remark>
+			
+			<LanguageCode>szh</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>-1</AnnexId>
+			
+			
+			<MasterName>RefreshWindow</MasterName>
+			<DisplayName>Refresh Window</DisplayName>
+			
+			<Description/>
+			<Remark>Refresh Window</Remark>
+			
+			<LanguageCode>eng</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>-1</AnnexId>
+			
+			
+			<MasterName>RefreshWindow</MasterName>
+			<DisplayName>Fenster aktualisieren</DisplayName>
+			
+			<Description/>
+			<Remark>Fenster aktualisieren</Remark>
+			
+			<LanguageCode>de</LanguageCode>
+	</Annex>
+	<Annex>
+			<AnnexId>11000</AnnexId>
+			
+			
+			<MasterName>Admin</MasterName>
+			<DisplayName>管理工具</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+	</Annex>
+	<Annex>
+			<AnnexId>11000</AnnexId>
+			
+			
+			<MasterName>Admin</MasterName>
+			<DisplayName>verwaltung</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>11000</AnnexId>
+			
+			
+			<MasterName>SystemTool</MasterName>
+			<DisplayName>系统工具</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>11000</AnnexId>
+			
+			
+			<MasterName>SystemTool</MasterName>
+			<DisplayName>System Tool</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>11000</AnnexId>
+			
+			
+			<MasterName>SystemTool</MasterName>
+			<DisplayName>System Tool</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>11000</AnnexId>
+			
+			
+			<MasterName>NetworkTool</MasterName>
+			<DisplayName>网络工具</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>11000</AnnexId>
+			
+			
+			<MasterName>NetworkTool</MasterName>
+			<DisplayName>Network Tool</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>11000</AnnexId>
+			
+			
+			<MasterName>NetworkTool</MasterName>
+			<DisplayName>Network Tool</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>11000</AnnexId>
+			
+			
+			<MasterName>SystemSetting</MasterName>
+			<DisplayName>系统设置</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>11000</AnnexId>
+			
+			
+			<MasterName>SystemSetting</MasterName>
+			<DisplayName>System Setting</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>11000</AnnexId>
+			
+			
+			<MasterName>SystemSetting</MasterName>
+			<DisplayName>System Setting</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>11000</AnnexId>
+			
+			
+			<MasterName>AppTool</MasterName>
+			<DisplayName>应用工具</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>11000</AnnexId>
+			
+			
+			<MasterName>AppTool</MasterName>
+			<DisplayName>Applications</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>11000</AnnexId>
+			
+			
+			<MasterName>AppTool</MasterName>
+			<DisplayName>Applications</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>11000</AnnexId>
+			
+			
+			<MasterName>RemoteTool</MasterName>
+			<DisplayName>远程工具</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>11000</AnnexId>
+			
+			
+			<MasterName>RemoteTool</MasterName>
+			<DisplayName>Remote Tool</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>11000</AnnexId>
+			
+			
+			<MasterName>RemoteTool</MasterName>
+			<DisplayName>Remote Tool</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>11000</AnnexId>
+			
+			
+			<MasterName>RunAsAdmin</MasterName>
+			<DisplayName>超级运行</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>11000</AnnexId>
+			
+			
+			<MasterName>RunAsAdmin</MasterName>
+			<DisplayName>Run As Admin</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+	</Annex><Annex>
+			<AnnexId>11000</AnnexId>
+			
+			
+			<MasterName>RunAsAdmin</MasterName>
+			<DisplayName>Run As Administrator</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+	</Annex>
+	<Annex>
+			<AnnexId>12000</AnnexId>
+			
+			
+			<MasterName>Config</MasterName>
+			<DisplayName>配置工具</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<AnnexId>12000</AnnexId>
+			
+			
+			<MasterName>Config</MasterName>
+			<DisplayName>konfiguration</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex><Annex>
+			<AnnexId>12000</AnnexId>
+			
+			
+			<MasterName>Conventional</MasterName>
+			<DisplayName>常规配置</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<AnnexId>12000</AnnexId>
+			
+			
+			<MasterName>Conventional</MasterName>
+			<DisplayName>Konventionelle</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex><Annex>
+			<AnnexId>12000</AnnexId>
+			
+			
+			<MasterName>Temporary</MasterName>
+			<DisplayName>临时配置</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<AnnexId>12000</AnnexId>
+			
+			
+			<MasterName>Temporary</MasterName>
+			<DisplayName>Vorübergehend</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex><Annex>
+			<AnnexId>13000</AnnexId>
+			
+			
+			<MasterName>RoutingInsp</MasterName>
+			<DisplayName>巡检工具</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<AnnexId>13000</AnnexId>
+			
+			
+			<MasterName>RoutingInsp</MasterName>
+			<DisplayName>- inspektion</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex><Annex>
+			<AnnexId>13000</AnnexId>
+			
+			
+			<MasterName>Daily</MasterName>
+			<DisplayName>日检</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<AnnexId>1300000</AnnexId>
+			
+			
+			<MasterName>ServerRoom</MasterName>
+			<DisplayName>机房</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<AnnexId>1300000</AnnexId>
+			
+			
+			<MasterName>Network</MasterName>
+			<DisplayName>网络</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<AnnexId>1300000</AnnexId>
+			
+			
+			<MasterName>Server</MasterName>
+			<DisplayName>服务器</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<AnnexId>1300000</AnnexId>
+			
+			
+			<MasterName>Application</MasterName>
+			<DisplayName>应用</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<AnnexId>13000</AnnexId><MasterName>Weekly</MasterName>
+			
+			
+			
+			<DisplayName>周检</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<AnnexId>13000</AnnexId><MasterName>Monthly</MasterName>
+			
+			
+			
+			<DisplayName>月检</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<AnnexId>13000</AnnexId><MasterName>Quarterly</MasterName>
+			
+			
+			
+			<DisplayName>季检</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<AnnexId>13000</AnnexId>
+			
+			
+			<MasterName>Yearly</MasterName>
+			<DisplayName>年检</DisplayName>
+			
+			<Description/>
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex>
+		
+</ArrayOfAnnex>

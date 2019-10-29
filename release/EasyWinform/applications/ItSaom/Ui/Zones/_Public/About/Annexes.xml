@@ -1,0 +1,82 @@
+
+<ArrayOfAnnex>
+		<Annex>
+			<Id>-1</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>ProductL</MasterName>
+			<DisplayName>产品</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>-1</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>ModuleL</MasterName>
+			<DisplayName>模块</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>-1</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Module</MasterName>
+			<DisplayName>服务中心</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>-1</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>FunctionL</MasterName>
+			<DisplayName>功能</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>-1</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>VersionL</MasterName>
+			<DisplayName>版本</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>-1</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>CopyRight</MasterName>
+			<DisplayName>版权所有</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>-1</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>ContactUs</MasterName>
+			<DisplayName>联系我们</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex>
+		
+</ArrayOfAnnex>

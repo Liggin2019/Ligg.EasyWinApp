@@ -1,0 +1,17 @@
+<ZoneFeature>
+	<Width>600</Width>
+	<Height>455</Height>
+	
+	<HasNoControlBox>false</HasNoControlBox>
+	<TreatCloseBoxAsMinimizeBox>true</TreatCloseBoxAsMinimizeBox>
+	<DrawIcon>true</DrawIcon>
+	<IconUrl>\Icon.ico</IconUrl>
+	<HasTray>true</HasTray>
+	<TrayIconUrl>\Icon.ico</TrayIconUrl>
+	<TrayDataSource>\TrayMenuItems</TrayDataSource>
+	
+	<ArrangementType>0</ArrangementType>
+	<StyleText/>
+	<OnlyForSingleView>true</OnlyForSingleView>
+	
+</ZoneFeature>

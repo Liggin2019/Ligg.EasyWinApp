@@ -1,0 +1,11 @@
+<ArrayOfVariableItem>
+		<VariableItem>
+			<Id>10</Id>
+			<TypeName>SetSelf</TypeName><GroupId>0</GroupId><Name>CurPlant</Name><Formula>=RunningParam;CurrentNetworkLocation;ShortName</Formula>
+			<Value/><Condition/>
+		</VariableItem><VariableItem>
+			<Id>20</Id>
+			<TypeName>SetSelf</TypeName><GroupId>0</GroupId><Name>MonitoredServers</Name>
+			<Formula>=RunningParam;ChosenNetworkLocation;MonitoredServers</Formula><Value/><Condition/>
+		</VariableItem>
+</ArrayOfVariableItem>

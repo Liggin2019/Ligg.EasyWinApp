@@ -1,0 +1,49 @@
+
+<ArrayOfAnnex>
+		<Annex>
+			<Id>-1</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>CurrentJobL</MasterName>
+			<DisplayName>当前作业:</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>-1</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>TaskListL</MasterName>
+			<DisplayName>任务列表</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>-1</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>RunNow</MasterName>
+			<DisplayName>运行</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>-1</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>ExitApp</MasterName>
+			<DisplayName>退出应用</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex>
+		
+</ArrayOfAnnex>

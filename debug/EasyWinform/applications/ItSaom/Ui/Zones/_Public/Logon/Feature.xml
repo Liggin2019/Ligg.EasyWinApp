@@ -1,0 +1,11 @@
+<ZoneFeature>
+	<Width>498</Width>
+	<Height>311</Height>
+	
+	<DrawIcon>true</DrawIcon>
+	<IconUrl>\Icon.ico</IconUrl>
+	
+	<ArrangementType>0</ArrangementType>
+	<StyleText>backcolor:48, 145, 242</StyleText>
+	<HasNoControlBox>true</HasNoControlBox>
+</ZoneFeature>

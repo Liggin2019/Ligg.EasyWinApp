@@ -1,0 +1,19 @@
+<ArrayOfVariableItem>
+		<VariableItem>
+			<Id>1030</Id>
+			<TypeName>SetSelf</TypeName><GroupId>0</GroupId><Name>RunBatOption</Name><Formula/>
+			<Value>/c</Value><Condition/>
+		</VariableItem><VariableItem>
+			<Id>1020</Id>
+			<TypeName>SetSelf</TypeName><GroupId>0</GroupId><Name>BatFilePath</Name>
+			<Formula>=ChooseFile;;.Bat Files|*.Bat</Formula><Value>0</Value><Condition/>
+		</VariableItem><VariableItem>
+			<Id>2020</Id>
+			<TypeName>SetSelf</TypeName><GroupId>0</GroupId><Name>FilePath</Name>
+			<Formula>=ChooseFile;;All Files|*.*</Formula><Value>0</Value><Condition/>
+		</VariableItem><VariableItem>
+			<Id>2030</Id>
+			<TypeName>SetSelf</TypeName><GroupId>0</GroupId><Name>EncryptedScript</Name>
+			<Formula/><Value/><Condition/>
+		</VariableItem>
+</ArrayOfVariableItem>

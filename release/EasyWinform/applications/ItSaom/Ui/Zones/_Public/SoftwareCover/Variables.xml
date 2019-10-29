@@ -1,0 +1,12 @@
+<ArrayOfVariableItem>
+		<VariableItem>
+			<Id>10</Id>
+			<TypeName>SetSelf</TypeName><GroupId>0</GroupId><Name>FuncCode</Name><Formula>#0#</Formula>
+			<Value/><Condition/>
+		</VariableItem>
+	<VariableItem>
+		<Id>20</Id>
+		<TypeName>SetSelf</TypeName><GroupId>0</GroupId><Name>FuncCode1</Name><Formula></Formula>
+		<Value>qqq</Value><Condition/>
+	</VariableItem>
+</ArrayOfVariableItem>

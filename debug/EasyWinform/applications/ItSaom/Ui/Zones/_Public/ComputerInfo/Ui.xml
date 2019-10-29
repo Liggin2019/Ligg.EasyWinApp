@@ -1,0 +1,118 @@
+<ArrayOfZoneItem>
+
+		<ZoneItem>
+			<Id>10</Id>
+			<TypeName>VirtualItem</TypeName><Name>Row100</Name>
+			<RowId>-1</RowId>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<Popup>false</Popup><DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<ValidFlag/><VisibleFlag/><EnabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>4</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>40</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>1010</Id>
+			<TypeName>DisplayOnlyItem</TypeName><Name>ComputerNameL</Name>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName>Label</ControlTypeName><StyleClass>FieldName</StyleClass><StyleText/>
+			
+			<Popup>false</Popup><DisplayName>Computer Name</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<ValidFlag/><VisibleFlag/><EnabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>1</OffsetOrPositionY>			<Width>110</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>1011</Id>
+			<TypeName>DisplayOnlyItem</TypeName><Name>ComputerName</Name>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName>TextBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<Popup>false</Popup><DisplayName/><DataSource/>			
+			<DefaultValue>=CommonService;MachineInfo;MachineName</DefaultValue><ValidationRules/><Action/>
+			
+			<ValidFlag/><VisibleFlag/><EnabledFlag>false</EnabledFlag>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>100</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>1020</Id>
+			<TypeName>DisplayOnlyItem</TypeName><Name>OsL</Name>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName>Label</ControlTypeName><StyleClass>FieldName</StyleClass><StyleText/>
+			
+			<Popup>false</Popup><DisplayName>Os</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<ValidFlag/><VisibleFlag/><EnabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>1</OffsetOrPositionY>			<Width>80</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>1021</Id>
+			<TypeName>DisplayOnlyItem</TypeName><Name>Os</Name>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName>TextBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<Popup>false</Popup><DisplayName/><DataSource/>			
+			<DefaultValue>#OsFullInfo.v#</DefaultValue><ValidationRules/><Action/>
+			
+			<ValidFlag/><VisibleFlag/><EnabledFlag>false</EnabledFlag>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>280</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>1030</Id>
+			<TypeName>DisplayOnlyItem</TypeName><Name>IpsL</Name>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName>Label</ControlTypeName><StyleClass>FieldName</StyleClass><StyleText/>
+			
+			<Popup>false</Popup><DisplayName>IP</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<ValidFlag/><VisibleFlag/><EnabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>1</OffsetOrPositionY>			<Width>60</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>1031</Id>
+			<TypeName>DisplayOnlyItem</TypeName><Name>Ips</Name>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName>TextBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<Popup>false</Popup><DisplayName/><DataSource/>			
+			<DefaultValue>=CommonService;MachineInfo;Ips</DefaultValue><ValidationRules/><Action/>
+			
+			<ValidFlag/><VisibleFlag/><EnabledFlag>false</EnabledFlag>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>300</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem>
+		
+		
+		
+		
+				
+		
+		
+		
+</ArrayOfZoneItem>

@@ -1,0 +1,15 @@
+<FunctionStartParamSet>
+	<ShowSoftwareCover>false</ShowSoftwareCover>
+	<SoftwareCoverLocation>\_public\SoftwareCover</SoftwareCoverLocation>
+	<SoftwareCoverActionsAtStart>FadeIn;1000^Sleep;2000^FadeOut;100</SoftwareCoverActionsAtStart>
+	<VerifyPasswordAtStart>false</VerifyPasswordAtStart>
+	<PasswordVerification>AccessType:Manual;VerificationRule:ClearText;VerificationParams:1234</PasswordVerification>
+	<LogonAtStart>false</LogonAtStart>
+	
+	<LogonZoneLocation>\_public\Logon</LogonZoneLocation>
+	
+	<CheckLicenseAvailability>false</CheckLicenseAvailability>
+	<CheckPublishmentValidity>false</CheckPublishmentValidity>
+	<CheckSoftwareVersion>false</CheckSoftwareVersion>
+	<CheckHostingLocation>false</CheckHostingLocation>
+</FunctionStartParamSet>

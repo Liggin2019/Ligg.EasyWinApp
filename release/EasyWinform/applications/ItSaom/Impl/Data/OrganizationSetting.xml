@@ -1,0 +1,16 @@
+<OrganizationSetting>
+    <MachineIpToCheckIfInLan>192.168.10.99</MachineIpToCheckIfInLan>
+    <MachineNameToCheckIfInLan>DevDesktop</MachineNameToCheckIfInLan>
+    <FullDomainName>ligg.com</FullDomainName>
+    <ShortDomainName>ligg</ShortDomainName>
+    <CentralLanIpPrefixes>192.168.10,192.168.18</CentralLanIpPrefixes>
+    <CloseLanIpPrefixes>192.168.20,192.168.30</CloseLanIpPrefixes>
+    <DcNames>lgcnad;lgusaad;lgdead</DcNames>
+    <RunAsAdminDomainAccount>lg.admin</RunAsAdminDomainAccount>
+    <RunAsAdminDomainAccountPassword>Pas$w0rd</RunAsAdminDomainAccountPassword>
+    <RunAsAdminLocalAccount>lgcn</RunAsAdminLocalAccount>
+    <RunAsAdminLocalAccountPassword>Pas$w0rd</RunAsAdminLocalAccountPassword>
+    
+    
+    
+</OrganizationSetting>

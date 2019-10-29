@@ -1,0 +1,15 @@
+<ArrayOfVariableItem>
+		<VariableItem>
+			<Id>1</Id>
+			<TypeName>Act</TypeName><GroupId>0</GroupId><Name>InitNetworkLocation</Name><Formula>UpdateRunningParam;InitCurrentNetworkLocation</Formula>
+			<Value/><Condition/>
+		</VariableItem><VariableItem>
+			<Id>10</Id>
+			<TypeName>SetSelf</TypeName><GroupId>0</GroupId><Name>MonitoredNetworkAddresses</Name><Formula>=RunningParam;ChosenNetworkLocation;MonitoredNetworkAddresses</Formula>
+			<Value/><Condition/>
+		</VariableItem><VariableItem>
+			<Id>20</Id>
+			<TypeName>SetSelf</TypeName><GroupId>0</GroupId><Name>MonitoredServers</Name>
+			<Formula>=RunningParam;ChosenNetworkLocation;MonitoredServers</Formula><Value/><Condition/>
+		</VariableItem>
+</ArrayOfVariableItem>

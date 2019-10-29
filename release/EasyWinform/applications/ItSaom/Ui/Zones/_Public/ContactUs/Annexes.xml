@@ -1,0 +1,126 @@
+
+<ArrayOfAnnex>
+		<Annex>
+			<Id>-1</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>EmailL</MasterName>
+			<DisplayName>邮件</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>-1</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Email1</MasterName>
+			<DisplayName/>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>-1</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Email2</MasterName>
+			<DisplayName/>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>-1</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>SnsL</MasterName>
+			<DisplayName>社交网络</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>-1</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Sns</MasterName>
+			<DisplayName>微博 liggin2019</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>-1</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Sns1</MasterName>
+			<DisplayName>微信 liggin2019</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>-1</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Sns2</MasterName>
+			<DisplayName>推特 liggin2019</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>-1</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>WebSiteL</MasterName>
+			<DisplayName>网站</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>-1</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>WebSite1L</MasterName>
+			<DisplayName>网站</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>-1</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>CopyRight</MasterName>
+			<DisplayName>版权所有</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>-1</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>ContactUs</MasterName>
+			<DisplayName>联系我们</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex>
+		
+</ArrayOfAnnex>

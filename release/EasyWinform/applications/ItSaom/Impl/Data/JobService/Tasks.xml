@@ -1,0 +1,165 @@
+<ArrayOfTask>
+	<Task>
+		
+		<Id>0</Id><ParentId>0</ParentId><Name>Task01</Name>
+		<DisplayName>Install Office 2013 Standard</DisplayName><Action>Sleep;1000</Action><ActOrder>3</ActOrder>
+		
+	</Task>
+	<Task>
+
+		
+		<Id>1</Id><ParentId>0</ParentId><Name>Task01</Name>
+    <DisplayName>Install Winrar 2017 Standard</DisplayName><Action>Sleep;1000</Action><ActOrder>1</ActOrder>
+		
+	</Task><Task>
+
+		
+		<Id>2</Id><ParentId>0</ParentId><Name>Task01</Name>
+    <DisplayName>Install FireFox 67.0.3</DisplayName><Action>Sleep;1000</Action><ActOrder>2</ActOrder>
+		
+	</Task><Task>
+
+		
+		<Id>3</Id><ParentId>0</ParentId><Name>Task01</Name>
+    <DisplayName>Install AutoCad 2013 Standard</DisplayName><Action>Sleep;1000</Action><ActOrder>5</ActOrder>
+		
+	</Task><Task>
+
+		
+		<Id>4</Id><ParentId>0</ParentId><Name>Task01</Name>
+    <DisplayName>Install Ligg ITSaom Windows Application Suit 3.1.1</DisplayName><Action>Sleep;1000</Action><ActOrder>99</ActOrder>
+		
+	</Task><Task>
+
+		
+		<Id>5</Id><ParentId>0</ParentId><Name>Task01</Name>
+    <DisplayName>Install Google Chrome 68.0.3440.106</DisplayName><Action>Sleep;1000</Action><ActOrder>6</ActOrder>
+		
+	</Task><Task>
+
+		
+		<Id>6</Id><ParentId>0</ParentId><Name>Task01</Name>
+    <DisplayName>Install Microsoft Visual Studio Enterprise 2017 15.8.9</DisplayName><Action>Sleep;1000</Action><ActOrder>7</ActOrder>
+		
+	</Task><Task>
+
+		
+		<Id>7</Id><ParentId>0</ParentId><Name>Task01</Name>
+    <DisplayName>Install ASP.NET and Web Tools 2017   15.8.05085.0</DisplayName><Action>Sleep;1000</Action><ActOrder>8</ActOrder>
+		
+	</Task><Task>
+
+		
+		<Id>8</Id><ParentId>0</ParentId><Name>Task01</Name>
+    <DisplayName>Install ASP.NET Core Razor Language Services   15.8.31590</DisplayName><Action>Sleep;1000</Action><ActOrder>9</ActOrder>
+		
+	</Task><Task>
+
+		
+		<Id>9</Id><ParentId>0</ParentId><Name>Task01</Name>
+    <DisplayName>Install Azure App Service Tools v3.0.0   15.8.05023.0</DisplayName><Action>Sleep;1000</Action><ActOrder>91</ActOrder>
+		
+	</Task><Task>
+
+		
+		<Id>10</Id><ParentId>0</ParentId><Name>Task01</Name>
+    <DisplayName>Install JetBrains ReSharper Ultimate 2018.2.3   Build 182.0.20180912.70621</DisplayName><Action>Sleep;1000</Action><ActOrder>91</ActOrder>
+		
+	</Task><Task>
+
+		
+		<Id>11</Id><ParentId>0</ParentId><Name>Task01</Name>
+    <DisplayName>Install Microsoft Azure Tools for Microsoft Visual Studio 2017 - v2.9.10730.2</DisplayName><Action>Sleep;1000</Action><ActOrder>91</ActOrder>
+		
+	</Task><Task>
+
+		
+		<Id>12</Id><ParentId>0</ParentId><Name>Task01</Name>
+    <DisplayName>Install Microsoft Visual C++ Wizards   1.0</DisplayName><Action>Sleep;1000</Action><ActOrder>91</ActOrder>
+		
+	</Task><Task>
+
+		
+		<Id>13</Id><ParentId>0</ParentId><Name>Task01</Name>
+    <DisplayName>Install NuGet Package Manager   4.6.0</DisplayName><Action>Sleep;1000</Action><ActOrder>91</ActOrder>
+		
+	</Task><Task>
+
+		
+		<Id>14</Id><ParentId>0</ParentId><Name>Task01</Name>
+    <DisplayName>Install SQL Server Data Tools   15.1.61808.07020</DisplayName><Action>Sleep;1000</Action><ActOrder>91</ActOrder>
+		
+	</Task><Task>
+
+		
+		<Id>15</Id><ParentId>0</ParentId><Name>Task01</Name>
+    <DisplayName>Install Visual Studio Tools for Universal Windows Apps   15.0.28010.2046</DisplayName><Action>Sleep;1000</Action><ActOrder>91</ActOrder>
+		
+	</Task><Task>
+
+		
+		<Id>16</Id><ParentId>1</ParentId><Name>Task11</Name>
+    <DisplayName>Install KB4132216</DisplayName><Action>Sleep;2000</Action><ActOrder>16</ActOrder>
+		
+	</Task><Task>
+
+		
+		<Id>17</Id><ParentId>1</ParentId><Name>Task11</Name>
+    <DisplayName>Install KB4074590</DisplayName><Action>Sleep;2000</Action><ActOrder>17</ActOrder>
+		
+	</Task><Task>
+
+		
+		<Id>18</Id><ParentId>1</ParentId><Name>Task11</Name>
+    <DisplayName>Install KB4049065</DisplayName><Action>Sleep;2000</Action><ActOrder>18</ActOrder>
+		
+	</Task><Task>
+
+		
+		<Id>19</Id><ParentId>1</ParentId><Name>Task11</Name>
+    <DisplayName>Install Security Update for Adobe Flash Player</DisplayName><Action>Sleep;2000</Action><ActOrder>19</ActOrder>
+		
+	</Task><Task>
+
+		
+		<Id>20</Id><ParentId>2</ParentId><Name>Task21</Name>
+    <DisplayName>Backup and zip email folder</DisplayName><Action>Sleep;2000</Action><ActOrder>20</ActOrder>
+		
+	</Task><Task>
+
+		
+		<Id>21</Id><ParentId>2</ParentId><Name>Task22</Name>
+    <DisplayName>Backup and zip OA temporary file folder</DisplayName><Action>Sleep;2000</Action><ActOrder>21</ActOrder>
+		
+	</Task><Task>
+
+		
+		<Id>22</Id><ParentId>2</ParentId><Name>Task23</Name>
+    <DisplayName>Backup and zip ERP personal working area folder</DisplayName><Action>Sleep;2000</Action><ActOrder>22</ActOrder>
+		
+	</Task><Task>
+
+		
+		<Id>23</Id><ParentId>2</ParentId><Name>Task24</Name>
+    <DisplayName>Backup and zip PDM drawing lib temporary file folder</DisplayName><Action>Sleep;2000</Action><ActOrder>23</ActOrder>
+		
+	</Task><Task>
+		
+		<Id>9991</Id><ParentId>999</ParentId><Name>Task9991</Name>
+		<DisplayName>Read and copy files</DisplayName><Action>Sleep;2000</Action><ActOrder>1</ActOrder>
+		
+	</Task><Task>
+
+		
+		<Id>9992</Id><ParentId>999</ParentId><Name>Task9992</Name>
+    <DisplayName>Update system</DisplayName><Action>Sleep;2000</Action><ActOrder>2</ActOrder>
+		
+	</Task><Task>
+
+		
+		<Id>9993</Id><ParentId>999</ParentId><Name>Task9993</Name>
+    <DisplayName>Start new appliction</DisplayName><Action>Sleep;2000</Action><ActOrder>3</ActOrder>
+		
+	</Task>
+	
+</ArrayOfTask>

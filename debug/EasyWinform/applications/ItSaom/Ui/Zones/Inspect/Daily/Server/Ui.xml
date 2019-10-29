@@ -1,0 +1,553 @@
+<ArrayOfZoneItem>
+	<ZoneItem>
+			<Id>10</Id>
+			<TypeName>VirtualItem</TypeName><Name/>
+			<RowId>-1</RowId>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<DisabledFlag/><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>20</Width>
+			<Height>30</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>1010</Id>
+			<TypeName>DisplayOnlyItem</TypeName><Name>RemoteServers</Name>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName>TitleLabel</ControlTypeName><StyleClass>Level2</StyleClass><StyleText/>
+			
+			<DisplayName>Remote Servers</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<DisabledFlag/><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>525</Width>
+			<Height>26</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>20</Id>
+			<TypeName>VirtualItem</TypeName><Name/>
+			<RowId>-1</RowId>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<DisabledFlag/><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>20</Width>
+			<Height>30</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>2010</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>AliCloudApplicationServer</Name>
+			<RowId>20</RowId>
+			
+			
+			<ControlTypeName>CommandLabel</ControlTypeName><StyleClass>CmdLabel</StyleClass><StyleText/>
+			
+			<DisplayName>Ali Cloud Application Server</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</Action>
+			
+			<DisabledFlag/><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>160</Width>
+			<Height>26</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>2020</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>TencentCloudApplicationServer</Name>
+			<RowId>20</RowId>
+			
+			
+			<ControlTypeName>CommandLabel</ControlTypeName><StyleClass>CmdLabel</StyleClass><StyleText/>
+			
+			<DisplayName>Tencent Cloud Application Server</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</Action>
+			
+			<DisabledFlag/><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>180</Width>
+			<Height>26</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>2040</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>SAPDisasterRecoveryServer</Name>
+			<RowId>20</RowId>
+			
+			
+			<ControlTypeName>CommandLabel</ControlTypeName><StyleClass>CmdLabel</StyleClass><StyleText/>
+			
+			<DisplayName>SAP Disaster Recovery Server</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</Action>
+			
+			<DisabledFlag/><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>170</Width>
+			<Height>26</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>30</Id>
+			<TypeName>VirtualItem</TypeName><Name/>
+			<RowId>-1</RowId>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<DisabledFlag/><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>20</Width>
+			<Height>30</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>3010</Id>
+			<TypeName>DisplayOnlyItem</TypeName><Name>LgcnServers</Name>
+			<RowId>30</RowId>
+			
+			
+			<ControlTypeName>TitleLabel</ControlTypeName><StyleClass>Level2</StyleClass><StyleText/>
+			
+			<DisplayName>Lgcn Servers</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<DisabledFlag>=IfElse~#CurPlant.v#,Equal,lgcn~false~true</DisabledFlag><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>820</Width>
+			<Height>26</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>40</Id>
+			<TypeName>VirtualItem</TypeName><Name/>
+			<RowId>-1</RowId>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<DisabledFlag/><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>20</Width>
+			<Height>30</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>4010</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>DomainController</Name>
+			<RowId>40</RowId>
+			
+			
+			<ControlTypeName>CommandLabel</ControlTypeName><StyleClass>CmdLabel</StyleClass><StyleText/>
+			
+			<DisplayName>Domain Controller</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</Action>
+			
+			<DisabledFlag>=IfElse~#CurPlant.v#,Equal,lgcn~false~true</DisabledFlag><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width>
+			<Height>26</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>4020</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>BakDomainController</Name>
+			<RowId>40</RowId>
+			
+			
+			<ControlTypeName>CommandLabel</ControlTypeName><StyleClass>CmdLabel</StyleClass><StyleText/>
+			
+			<DisplayName>Bak Domain Controller</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</Action>
+			
+			<DisabledFlag>=IfElse~#CurPlant.v#,Equal,lgcn~false~true</DisabledFlag><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>130</Width>
+			<Height>26</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>4030</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>AVSServer</Name>
+			<RowId>40</RowId>
+			
+			
+			<ControlTypeName>CommandLabel</ControlTypeName><StyleClass>CmdLabel</StyleClass><StyleText/>
+			
+			<DisplayName>AVS Server</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</Action>
+			
+			<DisabledFlag>=IfElse~#CurPlant.v#,Equal,lgcn~false~true</DisabledFlag><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>70</Width>
+			<Height>26</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>4040</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>SAPServer</Name>
+			<RowId>40</RowId>
+			
+			
+			<ControlTypeName>CommandLabel</ControlTypeName><StyleClass>CmdLabel</StyleClass><StyleText/>
+			
+			<DisplayName>SAP Server</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</Action>
+			
+			<DisabledFlag>=IfElse~#CurPlant.v#,Equal,lgcn~false~true</DisabledFlag><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>70</Width>
+			<Height>26</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>4050</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>CRMServer</Name>
+			<RowId>40</RowId>
+			
+			
+			<ControlTypeName>CommandLabel</ControlTypeName><StyleClass>CmdLabel</StyleClass><StyleText/>
+			
+			<DisplayName>CRM Server</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</Action>
+			
+			<DisabledFlag>=IfElse~#CurPlant.v#,Equal,lgcn~false~true</DisabledFlag><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>70</Width>
+			<Height>26</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>4060</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>OldERPsServer</Name>
+			<RowId>40</RowId>
+			
+			
+			<ControlTypeName>CommandLabel</ControlTypeName><StyleClass>CmdLabel</StyleClass><StyleText/>
+			
+			<DisplayName>Old ERPs Server</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</Action>
+			
+			<DisabledFlag>=IfElse~#CurPlant.v#,Equal,lgcn~false~true</DisabledFlag><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>95</Width>
+			<Height>26</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>4070</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>HCMServer</Name>
+			<RowId>40</RowId>
+			
+			
+			<ControlTypeName>CommandLabel</ControlTypeName><StyleClass>CmdLabel</StyleClass><StyleText/>
+			
+			<DisplayName>HCM Server</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</Action>
+			
+			<DisabledFlag>=IfElse~#CurPlant.v#,Equal,lgcn~false~true</DisabledFlag><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>70</Width>
+			<Height>26</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>4080</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>WebServer</Name>
+			<RowId>40</RowId>
+			
+			
+			<ControlTypeName>CommandLabel</ControlTypeName><StyleClass>CmdLabel</StyleClass><StyleText/>
+			
+			<DisplayName>Web Server</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</Action>
+			
+			<DisabledFlag>=IfElse~#CurPlant.v#,Equal,lgcn~false~true</DisabledFlag><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>70</Width>
+			<Height>26</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>4090</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>EsxiServer</Name>
+			<RowId>40</RowId>
+			
+			
+			<ControlTypeName>CommandLabel</ControlTypeName><StyleClass>CmdLabel</StyleClass><StyleText/>
+			
+			<DisplayName>Esxi Server</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</Action>
+			
+			<DisabledFlag>=IfElse~#CurPlant.v#,Equal,lgcn~false~true</DisabledFlag><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>70</Width>
+			<Height>26</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>50</Id>
+			<TypeName>VirtualItem</TypeName><Name/>
+			<RowId>-1</RowId>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<DisabledFlag/><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>20</Width>
+			<Height>30</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>5010</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>SanEmcClarionCx3</Name>
+			<RowId>50</RowId>
+			
+			
+			<ControlTypeName>CommandLabel</ControlTypeName><StyleClass>CmdLabel</StyleClass><StyleText/>
+			
+			<DisplayName>San-Emc Clarion Cx3</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</Action>
+			
+			<DisabledFlag>=IfElse~#CurPlant.v#,Equal,lgcn~false~true</DisabledFlag><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>125</Width>
+			<Height>26</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>5030</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>NasSynologyNASRs814rs</Name>
+			<RowId>50</RowId>
+			
+			
+			<ControlTypeName>CommandLabel</ControlTypeName><StyleClass>CmdLabel</StyleClass><StyleText/>
+			
+			<DisplayName>Nas-Synology Rs814rs</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</Action>
+			
+			<DisabledFlag>=IfElse~#CurPlant.v#,Equal,lgcn~false~true</DisabledFlag><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>130</Width>
+			<Height>26</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>5040</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>TapeLoaderHPDAT24I</Name>
+			<RowId>50</RowId>
+			
+			
+			<ControlTypeName>CommandLabel</ControlTypeName><StyleClass>CmdLabel</StyleClass><StyleText/>
+			
+			<DisplayName>Tape Loader-HP DAT 24I</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</Action>
+			
+			<DisabledFlag>=IfElse~#CurPlant.v#,Equal,lgcn~false~true</DisabledFlag><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>140</Width>
+			<Height>26</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>60</Id>
+			<TypeName>VirtualItem</TypeName><Name/>
+			<RowId>-1</RowId>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<DisabledFlag/><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>20</Width>
+			<Height>30</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>6010</Id>
+			<TypeName>DisplayOnlyItem</TypeName><Name>LgusServers</Name>
+			<RowId>60</RowId>
+			
+			
+			<ControlTypeName>TitleLabel</ControlTypeName><StyleClass>Level2</StyleClass><StyleText/>
+			
+			<DisplayName>Lgus Servers</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<DisabledFlag>=IfElse~#CurPlant.v#,Equal,lgus~false~true</DisabledFlag><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>400</Width>
+			<Height>26</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>70</Id>
+			<TypeName>VirtualItem</TypeName><Name/>
+			<RowId>-1</RowId>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<DisabledFlag/><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>20</Width>
+			<Height>30</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>7010</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>DomainController70</Name>
+			<RowId>70</RowId>
+			
+			
+			<ControlTypeName>CommandLabel</ControlTypeName><StyleClass>CmdLabel</StyleClass><StyleText/>
+			
+			<DisplayName>Domain Controller</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</Action>
+			
+			<DisabledFlag>=IfElse~#CurPlant.v#,Equal,lgus~false~true</DisabledFlag><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width>
+			<Height>26</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>7020</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>BakDomainController70</Name>
+			<RowId>70</RowId>
+			
+			
+			<ControlTypeName>CommandLabel</ControlTypeName><StyleClass>CmdLabel</StyleClass><StyleText/>
+			
+			<DisplayName>Bak Domain Controller</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>PopupMsg~=GetPhraseAnnexText;System Message~#CurPlant.v#</Action>
+			
+			<DisabledFlag>=IfElse~#CurPlant.v#,Equal,lgus~false~true</DisabledFlag><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>130</Width>
+			<Height>26</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>7030</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>AVSServer70</Name>
+			<RowId>70</RowId>
+			
+			
+			<ControlTypeName>CommandLabel</ControlTypeName><StyleClass>CmdLabel</StyleClass><StyleText/>
+			
+			<DisplayName>AVS Server</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</Action>
+			
+			<DisabledFlag>=IfElse~#CurPlant.v#,Equal,lgus~false~true</DisabledFlag><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>70</Width>
+			<Height>26</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>7040</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>FileServer70</Name>
+			<RowId>70</RowId>
+			
+			
+			<ControlTypeName>CommandLabel</ControlTypeName><StyleClass>CmdLabel</StyleClass><StyleText/>
+			
+			<DisplayName>File Server</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</Action>
+			
+			<DisabledFlag>=IfElse~#CurPlant.v#,Equal,lgus~false~true</DisabledFlag><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>70</Width>
+			<Height>26</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>80</Id>
+			<TypeName>VirtualItem</TypeName><Name/>
+			<RowId>-1</RowId>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<DisabledFlag/><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>20</Width>
+			<Height>30</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>8010</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>LgdeServers</Name>
+			<RowId>80</RowId>
+			
+			
+			<ControlTypeName>TitleLabel</ControlTypeName><StyleClass>Level2</StyleClass><StyleText/>
+			
+			<DisplayName>Lgde Servers</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</Action>
+			
+			<DisabledFlag>=IfElse~#CurPlant.v#,Equal,lgde~false~true</DisabledFlag><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>430</Width>
+			<Height>26</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>90</Id>
+			<TypeName>VirtualItem</TypeName><Name/>
+			<RowId>-1</RowId>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<DisabledFlag/><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>20</Width>
+			<Height>30</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>9010</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>DomainController90</Name>
+			<RowId>90</RowId>
+			
+			
+			<ControlTypeName>CommandLabel</ControlTypeName><StyleClass>CmdLabel</StyleClass><StyleText/>
+			
+			<DisplayName>Domain Controller</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</Action>
+			
+			<DisabledFlag>=IfElse~#CurPlant.v#,Equal,lgde~false~true</DisabledFlag><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width>
+			<Height>26</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>9020</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>BakDomainController90</Name>
+			<RowId>90</RowId>
+			
+			
+			<ControlTypeName>CommandLabel</ControlTypeName><StyleClass>CmdLabel</StyleClass><StyleText/>
+			
+			<DisplayName>Bak Domain Controller</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</Action>
+			
+			<DisabledFlag>=IfElse~#CurPlant.v#,Equal,lgde~false~true</DisabledFlag><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>130</Width>
+			<Height>26</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>9030</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>AVSServer90</Name>
+			<RowId>90</RowId>
+			
+			
+			<ControlTypeName>CommandLabel</ControlTypeName><StyleClass>CmdLabel</StyleClass><StyleText/>
+			
+			<DisplayName>AVS Server</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</Action>
+			
+			<DisabledFlag>=IfElse~#CurPlant.v#,Equal,lgde~false~true</DisabledFlag><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>70</Width>
+			<Height>26</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>9040</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>DasIBMDS4300</Name>
+			<RowId>90</RowId>
+			
+			
+			<ControlTypeName>CommandLabel</ControlTypeName><StyleClass>CmdLabel</StyleClass><StyleText/>
+			
+			<DisplayName>Das-IBM DS4300</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</Action>
+			
+			<DisabledFlag>=IfElse~#CurPlant.v#,Equal,lgde~false~true</DisabledFlag><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>100</Width>
+			<Height>26</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem>
+	
+</ArrayOfZoneItem>

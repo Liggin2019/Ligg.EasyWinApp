@@ -1,0 +1,7 @@
+<ArrayOfVariableItem>
+		<VariableItem>
+			<Id>10</Id>
+			<Type>SetSelf</Type><GroupId>0</GroupId><Name>IsOk</Name><Formula>=#3#</Formula>
+			<Value>-1</Value><Condition/>
+		</VariableItem>
+</ArrayOfVariableItem>

@@ -1,0 +1,15 @@
+<ArrayOfVariableItem>
+		<VariableItem>
+			<Id>10</Id>
+			<TypeName>SetSelf</TypeName><GroupId>0</GroupId><Name>ValidationResult</Name><Formula></Formula>
+			<Value/><Condition/>
+		</VariableItem><VariableItem>
+			<Id>11</Id>
+			<TypeName>SetSelf</TypeName><GroupId>0</GroupId><Name>LogonResult</Name><Formula></Formula>
+			<Value/><Condition/>
+		</VariableItem><VariableItem>
+			<Id>20</Id>
+			<TypeName>SetSelf</TypeName><GroupId>0</GroupId><Name>IsModal</Name><Formula>=GetBool;IsFormModal</Formula>
+			<Value/><Condition/>
+		</VariableItem>
+</ArrayOfVariableItem>

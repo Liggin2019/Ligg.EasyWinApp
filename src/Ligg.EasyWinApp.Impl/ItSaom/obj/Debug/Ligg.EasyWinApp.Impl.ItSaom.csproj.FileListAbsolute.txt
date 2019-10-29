@@ -1,0 +1,7 @@
+E:\Doing\coding\ligg\Git-Ligg.EasyWinApp\debug\EasyWinform\applications\ItSaom\Impl\ItSaomAdapter.dll
+E:\Doing\coding\ligg\Git-Ligg.EasyWinApp\debug\EasyWinform\applications\ItSaom\Impl\ItSaomAdapter.pdb
+E:\Doing\coding\ligg\Git-Ligg.EasyWinApp\src\Ligg.EasyWinApp.Impl\ItSaom\obj\Debug\Ligg.EasyWinApp.Impl.ItSaom.csprojAssemblyReference.cache
+E:\Doing\coding\ligg\Git-Ligg.EasyWinApp\src\Ligg.EasyWinApp.Impl\ItSaom\obj\Debug\Ligg.EasyWinApp.Impl.ItSaom.csproj.CoreCompileInputs.cache
+E:\Doing\coding\ligg\Git-Ligg.EasyWinApp\src\Ligg.EasyWinApp.Impl\ItSaom\obj\Debug\Ligg.EasyWinApp.Impl.ItSaom.csproj.CopyComplete
+E:\Doing\coding\ligg\Git-Ligg.EasyWinApp\src\Ligg.EasyWinApp.Impl\ItSaom\obj\Debug\ItSaomAdapter.dll
+E:\Doing\coding\ligg\Git-Ligg.EasyWinApp\src\Ligg.EasyWinApp.Impl\ItSaom\obj\Debug\ItSaomAdapter.pdb

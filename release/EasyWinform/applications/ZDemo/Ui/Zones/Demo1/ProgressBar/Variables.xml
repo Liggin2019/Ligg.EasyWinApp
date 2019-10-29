@@ -1,0 +1,27 @@
+<ArrayOfVariableItem>
+		<VariableItem>
+			<Id>10</Id>
+			<TypeName>SetSelf</TypeName><GroupId>0</GroupId><Name>IsUserMode</Name><Formula>#0#</Formula>
+			<Value/><Condition/>
+		</VariableItem><VariableItem>
+			<Id>20</Id>
+			<TypeName>SetSelf</TypeName><GroupId>1</GroupId><Name>CurrentTaskNo</Name><Formula>=Calc;Add;#CurrentTaskNo.v#;1</Formula>
+			<Value>0</Value><Condition/>
+		</VariableItem><VariableItem>
+			<Id>21</Id>
+			<TypeName>SetSelf</TypeName><GroupId>1</GroupId><Name>ActionDesName</Name><Formula>=Combine;ProgressBarActionDes,#CurrentTaskNo.v#</Formula>
+			<Value></Value><Condition/>
+		</VariableItem><VariableItem>
+			<Id>22</Id>
+			<TypeName>SetSelf</TypeName><GroupId>1</GroupId><Name>ProgressValueTmp</Name><Formula>=Calc;Div;#CurrentTaskNo.v#;3</Formula>
+			<Value/><Condition/>
+		</VariableItem><VariableItem>
+			<Id>23</Id>
+			<TypeName>SetSelf</TypeName><GroupId>1</GroupId><Name>ProgressValueTmp1</Name><Formula>=Calc;Mtp;#ProgressValueTmp.v#;100</Formula>
+			<Value/><Condition/>
+		</VariableItem><VariableItem>
+			<Id>24</Id>
+			<TypeName>SetSelf</TypeName><GroupId>1</GroupId><Name>ProgressValue</Name><Formula>=Calc;Rnd;#ProgressValueTmp1.v#</Formula>
+			<Value/><Condition/>
+		</VariableItem>
+</ArrayOfVariableItem>

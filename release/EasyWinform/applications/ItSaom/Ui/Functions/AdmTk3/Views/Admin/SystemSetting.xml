@@ -1,0 +1,55 @@
+<ArrayOfLayoutElement>
+		<LayoutElement>
+			
+			
+			
+			
+			<Id>10</Id><Name>SystemSettingArea</Name><Container>MainSectionMainDivisionMidRegion</Container><TypeName>ContentArea</TypeName>
+			<Location/><InputVariables/><StyleClass/><StyleText>Padding:2</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			
+			
+			
+			
+			<DockTypeName>Fill</DockTypeName><InvalidFlag/><DockOrder>10</DockOrder><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>1010</Id><Name>SystemSettingLabel</Name><Container>SystemSettingArea</Container><TypeName>Zone</TypeName>
+			<Location>\_common\TitleLabel</Location><InputVariables>System Setting^Level1^</InputVariables><StyleClass/><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><InvalidFlag/><DockOrder>1010</DockOrder><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>40</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>1020</Id><Name>SystemSetting</Name><Container>SystemSettingArea</Container><TypeName>Zone</TypeName>
+			<Location>\Admin\SystemSetting</Location><StyleClass/><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><InvalidFlag/><DockOrder>1020</DockOrder><OffsetOrPositionX>100</OffsetOrPositionX><OffsetOrPositionY>45</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement>
+
+	</ArrayOfLayoutElement>

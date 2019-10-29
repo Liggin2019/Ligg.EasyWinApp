@@ -1,0 +1,488 @@
+<ArrayOfZoneItem>
+	<ZoneItem>
+			<Id>10</Id>
+			<TypeName>VirtualItem</TypeName><Name/>
+			<RowId>-1</RowId>
+			
+			
+			<ControlTypeName>Row</ControlTypeName>
+			
+			<StyleClass/><DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>28</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>1010</Id>
+			<TypeName>DisplayOnlyItem</TypeName><Name>RunBatL</Name>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName>Label</ControlTypeName>
+			
+			<StyleClass>FieldName</StyleClass><DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>100</Width>
+			<Height>-1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>1020</Id>
+			<TypeName>DisplayOnlyItem</TypeName><Name>IsAsAdminForRunBat</Name>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName>CheckBox</ControlTypeName>
+			
+			<StyleClass/><DisplayName>As Admin</DisplayName><DataSource/>			
+			<DefaultValue>true</DefaultValue><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>100</Width>
+			<Height>-1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>1030</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>PopupOutputForRunBat</Name>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName>CheckBox</ControlTypeName>
+			
+			<StyleClass/><DisplayName>Popup Dos Window</DisplayName><DataSource/>			
+			<DefaultValue>false</DefaultValue><ValidationRules/><Action>SetVariableValue~#RunBatOption#~=IfElse;$PopupOutputForRunBat.v$,Equal,true;/k;/c</Action>
+			
+			<InvalidFlag/><InvisibleFlag>true</InvisibleFlag><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>120</Width>
+			<Height>-1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>1040</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>ClearBatFilePath</Name>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName>
+			
+			<DisplayName>Clear</DisplayName><DataSource>\Images\clear.png</DataSource>			
+			<DefaultValue/><ValidationRules/><Action>SetControlValue;$BatFilePath$; </Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>380</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>19</Width><Height>19</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>1050</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>AddBatFile</Name>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName>
+			
+			<DisplayName>Add Bat File</DisplayName><DataSource>\Images\file-add.png</DataSource>			
+			<DefaultValue/><ValidationRules/><Action>Xrun;$AddBatFile-Xrun1$,$AddBatFile-Xrun2$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>19</Width><Height>19</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>1051</Id>
+			<TypeName>TransactionOnlyItem</TypeName><Name>AddBatFile-Xrun1</Name>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>RefreshVariables;#BatFilePath#</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>19</Width><Height>19</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>1052</Id>
+			<TypeName>TransactionOnlyItem</TypeName><Name>AddBatFile-Xrun2</Name>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>SetControlValue;$BatFilePath$;#BatFilePath.v#</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>19</Width><Height>19</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>1060</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>RunBat-Crun</Name>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName>
+			
+			<DisplayName>Run</DisplayName><DataSource>\Images\run.png</DataSource>			
+			<DefaultValue/><ValidationRules/><Action>Crun~=IfElse;$BatFilePath.v$,IsNull;true;false~$PopupMsg-SelectAFile$~$RunBat-Crun-Crun$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>15</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>19</Width><Height>19</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>106010</Id>
+			<TypeName>TransactionOnlyItem</TypeName><Name>PopupMsg-SelectAFile</Name>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName/>
+			
+			<DisplayName>Run Bat</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>PopupMsg;;Pls select a Bat file！</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>15</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>19</Width><Height>19</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>106020</Id>
+			<TypeName>TransactionOnlyItem</TypeName><Name>RunBat-Crun-Crun</Name>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName/>
+			
+			<DisplayName>Run Bat</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>Crun;$IsAsAdminForRunBat.v$;$RunBatAsAdmin$;$RunBatNotAsAdmin$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>15</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>19</Width><Height>19</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>10602010</Id>
+			<TypeName>TransactionOnlyItem</TypeName><Name>RunBatAsAdmin</Name>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>RunCmdAsAdmin;\Tools\LgBcmdCppA.exe;/k $BatFilePath.v$;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>19</Width><Height>19</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>10602020</Id>
+			<TypeName>TransactionOnlyItem</TypeName><Name>RunBatNotAsAdmin</Name>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>RunCmd;\Tools\LgBcmdCpp.exe;/k $BatFilePath.v$;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>19</Width><Height>19</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>20</Id>
+			<TypeName>VirtualItem</TypeName><Name/>
+			<RowId>-1</RowId>
+			
+			
+			<ControlTypeName>Row</ControlTypeName>
+			
+			<StyleClass/><DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>28</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>2010</Id>
+			<TypeName>DisplayOnlyItem</TypeName><Name>BatFilePath</Name>
+			<RowId>20</RowId>
+			
+			
+			<ControlTypeName>TextBox</ControlTypeName>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag>true</DisabledFlag>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>128</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>710</Width><Height>300</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>29</Id>
+			<TypeName>VirtualItem</TypeName><Name/>
+			<RowId>-1</RowId>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>26</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>2910</Id>
+			<TypeName>DisplayOnlyItem</TypeName><Name>splitter2910</Name>
+			<RowId>29</RowId>
+			
+			
+			<ControlTypeName>SplitRectangle</ControlTypeName><StyleClass>Level2</StyleClass><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>40</OffsetOrPositionX>
+			<OffsetOrPositionY>12</OffsetOrPositionY>			<Width>800</Width>
+			<Height>1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>30</Id>
+			<TypeName>VirtualItem</TypeName><Name/>
+			<RowId>-1</RowId>
+			
+			
+			<ControlTypeName>Row</ControlTypeName>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>25</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>3010</Id>
+			<TypeName>DisplayOnlyItem</TypeName><Name>RunScriptL</Name>
+			<RowId>30</RowId>
+			
+			
+			<ControlTypeName>Label</ControlTypeName>
+			
+			<StyleClass>FieldName</StyleClass><StyleText/><DisplayName>Script</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>100</Width>
+			<Height>-1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>3020</Id>
+			<TypeName>DisplayOnlyItem</TypeName><Name>IsAsAdminForRunScript</Name>
+			<RowId>30</RowId>
+			
+			
+			<ControlTypeName>CheckBox</ControlTypeName>
+			
+			<DisplayName>As Admin</DisplayName><DataSource/>			
+			<DefaultValue>true</DefaultValue><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>100</Width>
+			<Height>-1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>3030</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>PopupOutputForRunScript</Name>
+			<RowId>30</RowId>
+			
+			
+			<ControlTypeName>CheckBox</ControlTypeName>
+			
+			<StyleClass/><DisplayName>Popup Dos Window</DisplayName><DataSource/>			
+			<DefaultValue>false</DefaultValue><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag>true</InvisibleFlag><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>120</Width>
+			<Height>-1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>3040</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>ClearScript</Name>
+			<RowId>30</RowId>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName>
+			
+			<DisplayName>Clear</DisplayName><DataSource>\Images\clear.png</DataSource>			
+			<DefaultValue/><ValidationRules/><Action>SetControlValue;$Script$; </Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>380</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>19</Width><Height>19</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>3050</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>AddFileToScript</Name>
+			<RowId>30</RowId>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName>
+			
+			<DisplayName>Add File To Script</DisplayName><DataSource>\Images\file-add.png</DataSource>			
+			<DefaultValue/><ValidationRules/><Action>Xrun;$GetFilePath$,$AddFileNameToScript$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>19</Width><Height>19</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>3051</Id>
+			<TypeName>TransactionOnlyItem</TypeName><Name>GetFilePath</Name>
+			<RowId>30</RowId>
+			
+			
+			<ControlTypeName/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>RefreshVariables;#FilePath#</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>19</Width><Height>19</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>3052</Id>
+			<TypeName>TransactionOnlyItem</TypeName><Name>AddFileNameToScript</Name>
+			<RowId>30</RowId>
+			
+			
+			<ControlTypeName/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>SetControlValue;$Script$;$Script.v$#FilePath.v#</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>19</Width><Height>19</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>3060</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>RunScript</Name>
+			<RowId>30</RowId>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName>
+			
+			<DisplayName>Run</DisplayName><DataSource>\Images\run.png</DataSource>			
+			<DefaultValue/><ValidationRules/><Action>Xrun;$EncryptScript$,$RunScript-Crun$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>15</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>19</Width><Height>19</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>3061</Id>
+			<TypeName>TransactionOnlyItem</TypeName><Name>EncryptScript</Name>
+			<RowId>30</RowId>
+			
+			
+			<ControlTypeName/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>SetVariableValue~#EncryptedScript#~=GetEncryptedText;Symmetric;$Script.v$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>19</Width><Height>19</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>3063</Id>
+			<TypeName>TransactionOnlyItem</TypeName><Name>RunScript-Crun</Name>
+			<RowId>30</RowId>
+			
+			
+			<ControlTypeName/>
+			
+			<DisplayName>Run Script</DisplayName><DataSource>\Images\run.png</DataSource>			
+			<DefaultValue/><ValidationRules/><Action>Crun;$IsAsAdminForRunScript.v$;$RunScriptAsAdmin$;$RunScriptNotAsAdmin$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>19</Width><Height>19</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>306412</Id>
+			<TypeName>TransactionOnlyItem</TypeName><Name>RunScriptAsAdmin</Name>
+			<RowId>30</RowId>
+			
+			
+			<ControlTypeName/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>ExecCmdAsAdmin;%zonesdir%\admin\runasadmin\Tools\LgXcmdA.exe #EncryptedScript.v# $PopupOutputForRunScript.v$;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>19</Width><Height>19</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>3065</Id>
+			<TypeName>TransactionOnlyItem</TypeName><Name>RunScriptNotAsAdmin</Name>
+			<RowId>30</RowId>
+			
+			
+			<ControlTypeName/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>ExecCmd;%zonedir%\admin\runasadmin\Tools\LgXcmd.exe #EncryptedScript.v# $PopupOutputForRunScript.v$;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>19</Width><Height>19</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>40</Id>
+			<TypeName>VirtualItem</TypeName><Name/>
+			<RowId>-1</RowId>
+			
+			
+			<ControlTypeName>Row</ControlTypeName>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>300</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>4010</Id>
+			<TypeName>DisplayOnlyItem</TypeName><Name>Script</Name>
+			<RowId>40</RowId>
+			
+			
+			<ControlTypeName>RichTextBox</ControlTypeName>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>128</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>710</Width><Height>300</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem>
+</ArrayOfZoneItem>

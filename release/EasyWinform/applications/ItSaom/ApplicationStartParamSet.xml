@@ -1,0 +1,7 @@
+<ApplicationStartParamSet>
+	<ApplicationVersion>3.0.1</ApplicationVersion>
+	<HelpdeskEmail>LiggHelpdesk@outlook.com</HelpdeskEmail>
+	<ImplementationDllPath>\applications\ItSaom\Impl\ItSaomAdapter.dll</ImplementationDllPath>
+	<AdapterFullClassName>Ligg.EasyWinApp.Implementation.Adapter</AdapterFullClassName>
+	<SupportMutiCultures>true</SupportMutiCultures>
+</ApplicationStartParamSet>

@@ -1,0 +1,660 @@
+<ArrayOfLayoutElement>
+		<LayoutElement>
+			
+			
+			
+			
+			<Id>100</Id><Name>TopMenuArea</Name><TypeName>ViewMenuArea</TypeName><Container>ToolBarSectionCenterRegion</Container><ParentViewMenuId>0</ParentViewMenuId><DefaultViewMenuIdFlag>110</DefaultViewMenuIdFlag>
+			<ControlTypeName>ToolStrip</ControlTypeName><View/><DataSource/><StyleClass/><StyleText>AutoSize:false;</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			
+			
+			
+			
+			
+			
+			<InvisibleFlag/><DockTypeName>Fill</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>32</ImageWidth><ImageHeight>32</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>110</Id><Name>Admin</Name><TypeName>ViewMenuItem</TypeName><Container>TopMenuArea</Container><ParentViewMenuId>-1</ParentViewMenuId>
+			<ControlTypeName>ImageTextToolButtonV</ControlTypeName><View/><DataSource/><StyleClass/><StyleText/>
+			
+			<DisplayName>Administration</DisplayName><Remark/>
+			
+			
+			
+			
+			
+			
+			
+			<InvisibleFlag/><DockTypeName>Right</DockTypeName><DockOrder>9</DockOrder><OffsetOrPositionX>6</OffsetOrPositionX><OffsetOrPositionY>8</OffsetOrPositionY><Width>86</Width><Height>54</Height><ImageUrl>\images\TopMenu\Administration.png</ImageUrl><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>11000</Id><Name>AdminArea</Name><TypeName>ViewMenuArea</TypeName><Container>MainSectionRightNavDivisionUpRegion</Container><ParentViewMenuId>110</ParentViewMenuId><DefaultViewMenuIdFlag>11010</DefaultViewMenuIdFlag>
+			<ControlTypeName>Panel</ControlTypeName><View/><DataSource/><StyleClass/><StyleText/>
+			
+			<DisplayName/><Remark/>
+			<Action/>
+			
+			
+
+
+
+			
+
+
+
+			
+			
+			
+			
+			
+			
+			
+
+			
+			<InvisibleFlag/><DockTypeName>Fill</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+			
+
+
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>11010</Id><Name>SystemTool</Name><TypeName>ViewMenuItem</TypeName><Container>AdminArea</Container><ParentViewMenuId>-1</ParentViewMenuId><DefaultViewMenuIdFlag/>
+			<ControlTypeName>TextButton</ControlTypeName><View>SystemTool</View><DataSource>\Admin\SystemTool.xml</DataSource><StyleClass/><StyleText>TextAlign:MiddleLeft</StyleText>
+			
+			<DisplayName>System Tool</DisplayName><Remark/>			
+			
+			
+			
+			
+						
+			<InvisibleFlag/><DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>24</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>11020</Id><Name>NetworkTool</Name><TypeName>ViewMenuItem</TypeName><Container>AdminArea</Container><ParentViewMenuId>-1</ParentViewMenuId><DefaultViewMenuIdFlag/>
+			<ControlTypeName>TextButton</ControlTypeName><View>NetworkTool</View><DataSource>\Admin\NetworkTool.xml</DataSource><StyleClass/><StyleText>TextAlign:MiddleLeft</StyleText>
+			
+			<DisplayName>Network Tool</DisplayName><Remark/>			
+			
+			
+			
+			
+						
+			<InvisibleFlag/><DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>24</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>11030</Id><Name>RemoteTool</Name><TypeName>ViewMenuItem</TypeName><Container>AdminArea</Container><ParentViewMenuId>-1</ParentViewMenuId><DefaultViewMenuIdFlag/>
+			<ControlTypeName>TextButton</ControlTypeName><View>RemoteTool</View><DataSource>\Admin\RemoteTool.xml</DataSource><StyleClass/><StyleText>TextAlign:MiddleLeft</StyleText>
+			
+			<DisplayName>Remote Tool</DisplayName><Remark/>			
+			
+			
+			
+			
+						
+			<InvisibleFlag/><DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>24</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>11040</Id><Name>AppTool</Name><TypeName>ViewMenuItem</TypeName><Container>AdminArea</Container><ParentViewMenuId>-1</ParentViewMenuId><DefaultViewMenuIdFlag/>
+			<ControlTypeName>TextButton</ControlTypeName><View>AppTool</View><DataSource>\Admin\AppTool.xml</DataSource><StyleClass/><StyleText>TextAlign:MiddleLeft</StyleText>
+			
+			<DisplayName>Applications</DisplayName><Remark/>			
+			
+			
+			
+			
+						
+			<InvisibleFlag/><DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>24</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>11050</Id><Name>SystemSetting</Name><TypeName>ViewMenuItem</TypeName><Container>AdminArea</Container><ParentViewMenuId>-1</ParentViewMenuId><DefaultViewMenuIdFlag/>
+			<ControlTypeName>TextButton</ControlTypeName><View>SystemSetting</View><DataSource>\Admin\SystemSetting.xml</DataSource><StyleClass/><StyleText>TextAlign:MiddleLeft</StyleText>
+			
+			<DisplayName>System Setting</DisplayName><Remark/>			
+			
+			
+			
+			
+						
+			<InvisibleFlag/><DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>24</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>11060</Id><Name>RunAsAdmin</Name><TypeName>ViewMenuItem</TypeName><Container>AdminArea</Container><ParentViewMenuId>-1</ParentViewMenuId><DefaultViewMenuIdFlag/>
+			<ControlTypeName>TextButton</ControlTypeName><View>RunAsAdmin</View><DataSource>\Admin\RunAsAdmin.xml</DataSource><StyleClass/><StyleText>TextAlign:MiddleLeft</StyleText>
+			
+			<DisplayName>Run As Admin</DisplayName><Remark/>			
+			
+			
+			
+			
+						
+			<InvisibleFlag/><DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>24</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>120</Id><Name>Config</Name><TypeName>ViewMenuItem</TypeName><Container>TopMenuArea</Container><ParentViewMenuId>-1</ParentViewMenuId>
+			<ControlTypeName>ImageTextToolButtonV</ControlTypeName><View/><DataSource/><StyleClass/><StyleText/>
+			
+			<DisplayName>Configuration</DisplayName><Remark/>
+			
+			
+			
+			<Action/><InvisibleFlag/><DockTypeName>Right</DockTypeName>
+			
+			
+			
+			<DockOrder>8</DockOrder><OffsetOrPositionX>6</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>80</Width><Height>54</Height><ImageUrl>\images\TopMenu\Configuration.png</ImageUrl><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>12000</Id><Name>ConfigArea</Name><TypeName>ViewMenuArea</TypeName><Container>MainSectionRightNavDivisionUpRegion</Container><ParentViewMenuId>120</ParentViewMenuId><DefaultViewMenuIdFlag>12010</DefaultViewMenuIdFlag>
+			<ControlTypeName>Panel</ControlTypeName><View/><DataSource/><StyleClass/><StyleText/>
+			
+			<DisplayName/><Remark/>
+			<Action/>
+			
+			
+
+
+
+			
+
+
+
+			
+			
+			
+			
+			
+			
+			
+
+			
+			<InvisibleFlag/><DockTypeName>Fill</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+			
+
+
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>12010</Id><Name>Conventional</Name><TypeName>ViewMenuItem</TypeName><Container>ConfigArea</Container><ParentViewMenuId>-1</ParentViewMenuId><DefaultViewMenuIdFlag/>
+			<ControlTypeName>TextButton</ControlTypeName><View>ConventionalConfig</View><DataSource>\Config\Conventional.xml</DataSource><StyleClass/><StyleText>TextAlign:MiddleLeft</StyleText>
+			
+			<DisplayName>Conventional</DisplayName><Remark/>			
+			
+			
+			
+			
+						
+			<InvisibleFlag/><DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>24</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>12020</Id><Name>Temporary</Name><TypeName>ViewMenuItem</TypeName><Container>ConfigArea</Container><ParentViewMenuId>-1</ParentViewMenuId><DefaultViewMenuIdFlag/>
+			<ControlTypeName>TextButton</ControlTypeName><View>TemporaryConfig</View><DataSource>\Config\Temporary.xml</DataSource><StyleClass/><StyleText>TextAlign:MiddleLeft</StyleText>
+			
+			<DisplayName>Temporary</DisplayName><Remark/>			
+			
+			
+			
+			
+						
+			<InvisibleFlag/><DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>24</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>130</Id><Name>RoutingInsp</Name><TypeName>ViewMenuItem</TypeName><Container>TopMenuArea</Container><ParentViewMenuId>-1</ParentViewMenuId>
+			<ControlTypeName>ImageTextToolButtonV</ControlTypeName><View/><DataSource/><StyleClass/><StyleText/>
+			
+			<DisplayName>Routing Insp.</DisplayName><Remark/>
+			
+			
+			
+			<Action>PopupMsg;dfds;dsddssd;RichTextViewer</Action><InvisibleFlag/><DockTypeName>Right</DockTypeName>
+			
+			
+			
+			<DockOrder>7</DockOrder><OffsetOrPositionX>6</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>80</Width><Height>54</Height><ImageUrl>\images\TopMenu\RoutingInsp.png</ImageUrl><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>13000</Id><Name>RoutingInspArea</Name><TypeName>ViewMenuArea</TypeName><Container>MainSectionRightNavDivisionDownRegion</Container><ParentViewMenuId>130</ParentViewMenuId><DefaultViewMenuIdFlag>13010</DefaultViewMenuIdFlag>
+			<ControlTypeName>Panel</ControlTypeName><View/><DataSource/><StyleClass/><StyleText/>
+			
+			<DisplayName/><Remark/>
+			<Action/>
+			
+			
+
+
+
+			
+
+
+
+			
+			
+			
+			
+			
+			
+			
+
+			
+			<InvisibleFlag/><DockTypeName>Fill</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+			
+
+
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>13010</Id><Name>Daily</Name><TypeName>ViewMenuItem</TypeName><Container>RoutingInspArea</Container><ParentViewMenuId>-1</ParentViewMenuId><DefaultViewMenuIdFlag/>
+			<ControlTypeName>TextButton</ControlTypeName><View>DailyInsp</View><DataSource/><StyleClass/><StyleText>TextAlign:MiddleLeft</StyleText>
+			
+			<DisplayName>Daily</DisplayName><Remark/>			
+			
+			
+			
+			
+						
+			<InvisibleFlag/><DockTypeName>Bottom</DockTypeName><DockOrder>13050</DockOrder><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>24</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>1301000</Id><Name>DailyInspArea</Name><TypeName>ViewMenuArea</TypeName><Container>MainSectionRightNavDivisionUpRegion</Container><ParentViewMenuId>13010</ParentViewMenuId><DefaultViewMenuIdFlag>1301010</DefaultViewMenuIdFlag>
+			<ControlTypeName>Panel</ControlTypeName><View/><DataSource/><StyleClass/><StyleText>Padding:0,0,0,3</StyleText>
+			
+			<DisplayName/><Remark/>
+			<Action/>
+			
+			
+
+
+
+			
+
+
+
+			
+			
+			
+			
+			
+			
+			
+
+			
+			<InvisibleFlag/><DockTypeName>Fill</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+			
+
+
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>1301010</Id><Name>Server</Name><TypeName>ViewMenuItem</TypeName><Container>DailyInspArea</Container><ParentViewMenuId>-1</ParentViewMenuId><DefaultViewMenuIdFlag/>
+			<ControlTypeName>TextButton</ControlTypeName><View>DailyServerInsp</View><DataSource>\RoutingInsp\Daily\Server.xml</DataSource><StyleClass/><StyleText>TextAlign:MiddleLeft</StyleText>
+			
+			<DisplayName>Server</DisplayName><Remark/>			
+			
+			
+			
+			
+						
+			<InvisibleFlag/><DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>24</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>1301020</Id><Name>Network</Name><TypeName>ViewMenuItem</TypeName><Container>DailyInspArea</Container><ParentViewMenuId>-1</ParentViewMenuId><DefaultViewMenuIdFlag/>
+			<ControlTypeName>TextButton</ControlTypeName><View>DailyNetworkInsp</View><DataSource>\HaveNoAuth.xml</DataSource><StyleClass/><StyleText>TextAlign:MiddleLeft</StyleText>
+			
+			<DisplayName>Network</DisplayName><Remark/>			
+			
+			
+			
+			
+						
+			<InvisibleFlag/><DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>24</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>1301030</Id><Name>Application</Name><TypeName>ViewMenuItem</TypeName><Container>DailyInspArea</Container><ParentViewMenuId>-1</ParentViewMenuId><DefaultViewMenuIdFlag/>
+			<ControlTypeName>TextButton</ControlTypeName><View>DailyApplicationInsp</View><DataSource>\HaveNoAuth.xml</DataSource><StyleClass/><StyleText>TextAlign:MiddleLeft</StyleText>
+			
+			<DisplayName>Application</DisplayName><Remark/>			
+			
+			
+			
+			
+						
+			<InvisibleFlag/><DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>24</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>1301040</Id><Name>ServerRoom</Name><TypeName>ViewMenuItem</TypeName><Container>DailyInspArea</Container><ParentViewMenuId>-1</ParentViewMenuId><DefaultViewMenuIdFlag/>
+			<ControlTypeName>TextButton</ControlTypeName><View>DailyServerRoomInsp</View><DataSource>\HaveNoAuth.xml</DataSource><StyleClass/><StyleText>TextAlign:MiddleLeft</StyleText>
+			
+			<DisplayName>Server Room</DisplayName><Remark/>			
+			
+			
+			
+			
+						
+			<InvisibleFlag/><DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>24</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>13020</Id><Name>Weekly</Name><TypeName>ViewMenuItem</TypeName><Container>RoutingInspArea</Container><ParentViewMenuId>-1</ParentViewMenuId><DefaultViewMenuIdFlag/>
+			<ControlTypeName>TextButton</ControlTypeName><View>WeeklyInsp</View><DataSource>\HaveNoAuth.xml</DataSource><StyleClass/><StyleText>TextAlign:MiddleLeft</StyleText>
+			
+			<DisplayName>Weekly</DisplayName><Remark/>			
+			
+			
+			
+			
+						
+			<InvisibleFlag/><DockTypeName>Bottom</DockTypeName><DockOrder>13040</DockOrder><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>24</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>13030</Id><Name>Monthly</Name><TypeName>ViewMenuItem</TypeName><Container>RoutingInspArea</Container><ParentViewMenuId>-1</ParentViewMenuId><DefaultViewMenuIdFlag/>
+			<ControlTypeName>TextButton</ControlTypeName><View>MonthlyInsp</View><DataSource>\HaveNoAuth.xml</DataSource><StyleClass/><StyleText>TextAlign:MiddleLeft</StyleText>
+			
+			<DisplayName>Monthly</DisplayName><Remark/>			
+			
+			
+			
+			
+						
+			<InvisibleFlag/><DockTypeName>Bottom</DockTypeName><DockOrder>13030</DockOrder><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>24</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>13040</Id><Name>Quarterly</Name><TypeName>ViewMenuItem</TypeName><Container>RoutingInspArea</Container><ParentViewMenuId>-1</ParentViewMenuId><DefaultViewMenuIdFlag/>
+			<ControlTypeName>TextButton</ControlTypeName><View>QuarterlyInsp</View><DataSource>\HaveNoAuth.xml</DataSource><StyleClass/><StyleText>TextAlign:MiddleLeft</StyleText>
+			
+			<DisplayName>Quarterly</DisplayName><Remark/>			
+			
+			
+			
+			
+						
+			<InvisibleFlag/><DockTypeName>Bottom</DockTypeName><DockOrder>13020</DockOrder><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>24</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>13050</Id><Name>Yearly</Name><TypeName>ViewMenuItem</TypeName><Container>RoutingInspArea</Container><ParentViewMenuId>-1</ParentViewMenuId><DefaultViewMenuIdFlag/>
+			<ControlTypeName>TextButton</ControlTypeName><View>YearlyInsp</View><DataSource>\HaveNoAuth.xml</DataSource><StyleClass/><StyleText>TextAlign:MiddleLeft</StyleText>
+			
+			<DisplayName>Yearly</DisplayName><Remark/>			
+			
+			
+			
+			
+						
+			<InvisibleFlag/><DockTypeName>Bottom</DockTypeName><DockOrder>13010</DockOrder><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>24</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>200</Id><Name>ToolMenuArea</Name><TypeName>ToolMenuArea</TypeName><Container>ToolBarSectionRightRegion</Container><ParentViewMenuId>0</ParentViewMenuId><DefaultViewMenuIdFlag/>
+			<ControlTypeName>ToolStrip</ControlTypeName><View/><DataSource/><StyleClass/><StyleText>AutoSize:false;</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			
+			
+			
+			
+			
+			
+			<InvisibleFlag/><DockTypeName>Fill</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>500</Width><Height>54</Height><ImageUrl/><ImageWidth>32</ImageWidth><ImageHeight>32</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>210</Id><Name>Goto</Name><TypeName>DisplayAndTransactionItem</TypeName><Container>ToolMenuArea</Container><ParentViewMenuId>-1</ParentViewMenuId>
+			<ControlTypeName>ImageTextToolSplitButtonV</ControlTypeName><View/><DataSource>\SubCtrls\GotoToolSplitButtonMenu</DataSource><StyleClass/><StyleText/>
+			
+			<DisplayName>Go To</DisplayName><Remark/>
+			
+			
+			
+			<Action/><InvisibleFlag/><DockTypeName>Left</DockTypeName>
+			
+			
+			
+			<DockOrder/><OffsetOrPositionX>1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>80</Width><Height>54</Height><ImageUrl>\images\TopMenu\Goto.png</ImageUrl><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>220</Id><Name>Help</Name><TypeName>DisplayAndTransactionItem</TypeName><Container>ToolMenuArea</Container>
+			<ParentViewMenuId>-1</ParentViewMenuId><ControlTypeName>ImageToolSplitButton</ControlTypeName><View/><DataSource>\SubCtrls\HelpToolSplitButtonMenu</DataSource><StyleClass/><StyleText/>
+			
+			<DisplayName/><Remark>Help</Remark>
+			
+			
+			
+			<Action/>
+			
+			
+			
+			<InvisibleFlag/><DockTypeName>Right</DockTypeName><DockOrder/><OffsetOrPositionX>2</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>45</Width><Height>54</Height><ImageUrl>\images\TopMenu\help.png</ImageUrl><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>230</Id><Name>UserInfo</Name><TypeName>DisplayAndTransactionItem</TypeName><Container>ToolMenuArea</Container>
+			<ParentViewMenuId>-1</ParentViewMenuId><ControlTypeName>ToolLabel</ControlTypeName><View/><DataSource/><StyleClass/><StyleText/>
+			
+			<DisplayName>#UserCode.v#
+Welcome You</DisplayName><Remark/>
+			
+			
+			
+			<Action/>
+			
+			
+			
+			<InvisibleFlag>=GetBool;JudgeStringIsNull;#UserCode.v#</InvisibleFlag><DockTypeName>Right</DockTypeName><DockOrder/><OffsetOrPositionX>2</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>100</Width><Height>54</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>240</Id><Name>UserSetting</Name><TypeName>DisplayAndTransactionItem</TypeName><Container>ToolMenuArea</Container>
+			<ParentViewMenuId>-1</ParentViewMenuId><ControlTypeName>ImageToolSplitButton</ControlTypeName><View/><DataSource>\SubCtrls\UserSettingToolSplitButtonMenu</DataSource><StyleClass/><StyleText/>
+			
+			<DisplayName/><Remark>UserSetting</Remark>
+			
+			
+			
+			<Action/>
+			
+			
+			
+			<InvisibleFlag>=GetBool;JudgeStringIsNull;#UserCode.v#</InvisibleFlag><DockTypeName>Right</DockTypeName><DockOrder/><OffsetOrPositionX>2</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>45</Width><Height>54</Height><ImageUrl>\images\TopMenu\User.png</ImageUrl><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>250</Id><Name>Logon</Name><TypeName>DisplayAndTransactionItem</TypeName><Container>ToolMenuArea</Container>
+			<ParentViewMenuId>-1</ParentViewMenuId><ControlTypeName>ImageToolButton</ControlTypeName><View/><DataSource/><StyleClass/><StyleText/>
+			
+			<DisplayName/><Remark>Logon</Remark>
+			
+			
+			
+			<Action>Xrun;Logon-Xrun1,Logon-Xrun2,Logon-Xrun3</Action>
+			
+			
+			
+			<InvisibleFlag/><DockTypeName>Right</DockTypeName><DockOrder/><OffsetOrPositionX>2</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>45</Width><Height>54</Height><ImageUrl>\images\TopMenu\logon.png</ImageUrl><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>2501</Id><Name>Logon-Xrun1</Name><TypeName>TransactionOnlyItem</TypeName><Container/>
+			<ParentViewMenuId>-1</ParentViewMenuId><ControlTypeName/><View/><DataSource/><StyleClass/><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			
+			
+			<Action>PopupZoneDialog;\_public\Logon@@@@@User Logon</Action>
+			
+			
+			
+			<InvisibleFlag/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>2502</Id><Name>Logon-Xrun2</Name><TypeName>TransactionOnlyItem</TypeName><Container/>
+			<ParentViewMenuId>-1</ParentViewMenuId><ControlTypeName/><View/><DataSource/><StyleClass/><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			
+			
+			<Action>RefreshVariables;#UserCode#</Action>
+			
+			
+			
+			<InvisibleFlag/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>2503</Id><Name>Logon-Xrun3</Name><TypeName>TransactionOnlyItem</TypeName><Container/>
+			<ParentViewMenuId>-1</ParentViewMenuId><ControlTypeName/><View/><DataSource/><StyleClass/><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			
+			
+			<Action>Crun~=IfElse;#UserCode.v#,NotEqual,#LastUserCode.v#;true;false~RefreshUi</Action>
+			
+			
+			
+			<InvisibleFlag/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>260</Id><Name>RefreshUi</Name><TypeName>TransactionOnlyItem</TypeName><Container>ToolMenuArea</Container>
+			<ParentViewMenuId>-1</ParentViewMenuId><ControlTypeName/><View/><DataSource/><StyleClass/><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			
+			
+			<Action>RefreshUi</Action>
+			
+			
+			
+			<InvisibleFlag/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>270</Id><Name>CopyWindow</Name><TypeName>DisplayAndTransactionItem</TypeName><Container>ToolMenuArea</Container>
+			<ParentViewMenuId>-1</ParentViewMenuId><ControlTypeName>ImageToolButton</ControlTypeName><View/><DataSource/><StyleClass/><StyleText/>
+			
+			<DisplayName/><Remark>Copy Window</Remark>
+			
+			
+			
+			<Action>NewApp</Action>
+			
+			
+			
+			<InvisibleFlag/><DockTypeName>Right</DockTypeName><DockOrder/><OffsetOrPositionX>2</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>45</Width><Height>54</Height><ImageUrl>\images\TopMenu\SelfRedirect.png</ImageUrl><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>280</Id><Name>RefreshWindow</Name><TypeName>DisplayAndTransactionItem</TypeName><Container>ToolMenuArea</Container>
+			<ParentViewMenuId>-1</ParentViewMenuId><ControlTypeName>ImageToolButton</ControlTypeName><View/><DataSource/><StyleClass/><StyleText/>
+			
+			<DisplayName/><Remark>Refresh Window</Remark>
+			
+			
+			
+			<Action>RefreshUi</Action>
+			
+			
+			
+			<InvisibleFlag/><DockTypeName>Right</DockTypeName><DockOrder/><OffsetOrPositionX>2</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>45</Width><Height>54</Height><ImageUrl>\images\TopMenu\Refresh.png</ImageUrl><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement>
+
+</ArrayOfLayoutElement>

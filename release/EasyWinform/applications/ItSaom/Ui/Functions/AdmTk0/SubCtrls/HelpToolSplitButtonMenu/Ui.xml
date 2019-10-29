@@ -1,0 +1,24 @@
+<ArrayOfContextMenuItem>
+		<ContextMenuItem>
+			<Id>10</Id><Type>-1</Type><ParentId>-1</ParentId><Name>About</Name>
+						
+			<DisplayName/><Description/>
+			<VisibleFlag>true</VisibleFlag>
+			<Action>PopupZoneDialog;\_Public\About</Action>
+			<ImageUrl>\images\about.png</ImageUrl>
+		</ContextMenuItem><ContextMenuItem>
+			<Id>20</Id><Type>-1</Type><ParentId>-1</ParentId><Name>ContactUs</Name>
+						
+			<DisplayName/><Description/>
+			<VisibleFlag>true</VisibleFlag>
+			<Action>PopupZoneDialog;\_Public\ContactUs</Action>
+			<ImageUrl>\images\email.gif</ImageUrl>
+		</ContextMenuItem><ContextMenuItem>
+			<Id>30</Id><Type>-1</Type><ParentId>-1</ParentId><Name>HelpCenter</Name>
+						
+			<DisplayName/><Description/>
+			<VisibleFlag>true</VisibleFlag>
+			<Action/>
+			<ImageUrl>\images\help.png</ImageUrl>
+		</ContextMenuItem>
+</ArrayOfContextMenuItem>

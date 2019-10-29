@@ -1,0 +1,7 @@
+<ApplicationStartParamSet>
+	<ApplicationVersion>3.0.1</ApplicationVersion>
+	<HelpdeskEmail>LiggHelpdesk@outlook.com</HelpdeskEmail>
+	<ImplementationDllPath></ImplementationDllPath>
+	<AdapterFullClassName></AdapterFullClassName>
+	<SupportMutiCultures>true</SupportMutiCultures>
+</ApplicationStartParamSet>
