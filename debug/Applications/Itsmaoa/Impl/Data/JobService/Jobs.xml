@@ -1,0 +1,28 @@
+<ArrayOfJob>
+	<Job>
+		
+		<Id>0</Id><Name>InstallSoftwares</Name>
+		<DisplayName>Install Softwares</DisplayName><ExecType>0</ExecType><ExecParams/><PolicyByMachine/><PolicyByUser/><PolicyByWindowsAccount/>
+		
+	</Job>
+	<Job>
+
+		
+		<Id>1</Id><Name>UpdateWindows</Name>
+    <DisplayName>Update Windows</DisplayName><ExecType>1</ExecType><ExecParams>2029-07-29 01:55:00,5H</ExecParams><PolicyByMachine/><PolicyByUser/><PolicyByWindowsAccount/>
+		
+	</Job><Job>
+
+		
+		<Id>2</Id><Name>DailyBackup</Name>
+    <DisplayName>Daily Backup</DisplayName><ExecType>2</ExecType><ExecParams>2019-09-02 12:31:12,1d,5H</ExecParams><PolicyByMachine/><PolicyByUser/><PolicyByWindowsAccount/>
+		
+	</Job><Job>
+
+		
+		<Id>999</Id><Name>InstallSoftware</Name>
+    <DisplayName>Install Software</DisplayName><ExecType>0</ExecType><ExecParams/><PolicyByMachine/><PolicyByUser/><PolicyByWindowsAccount/>
+		
+	</Job>
+	
+</ArrayOfJob>

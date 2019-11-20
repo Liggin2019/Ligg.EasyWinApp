@@ -1,7 +1,0 @@
-E:\Doing\coding\ligg\Git-Ligg.EasyWinApp\src\Ligg.EasyWinservice\bin\Debug\Ligg.EasyWinService.exe.config
-E:\Doing\coding\ligg\Git-Ligg.EasyWinApp\src\Ligg.EasyWinservice\bin\Debug\Ligg.EasyWinService.exe
-E:\Doing\coding\ligg\Git-Ligg.EasyWinApp\src\Ligg.EasyWinservice\bin\Debug\Ligg.EasyWinService.pdb
-E:\Doing\coding\ligg\Git-Ligg.EasyWinApp\src\Ligg.EasyWinservice\obj\Debug\Ligg.EasyWinservice.csprojAssemblyReference.cache
-E:\Doing\coding\ligg\Git-Ligg.EasyWinApp\src\Ligg.EasyWinservice\obj\Debug\Ligg.EasyWinservice.csproj.CoreCompileInputs.cache
-E:\Doing\coding\ligg\Git-Ligg.EasyWinApp\src\Ligg.EasyWinservice\obj\Debug\Ligg.EasyWinService.exe
-E:\Doing\coding\ligg\Git-Ligg.EasyWinApp\src\Ligg.EasyWinservice\obj\Debug\Ligg.EasyWinService.pdb

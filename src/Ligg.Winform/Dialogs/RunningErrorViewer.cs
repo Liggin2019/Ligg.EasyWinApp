@@ -63,7 +63,7 @@ namespace Ligg.Winform.Dialogs
         {
             
             var helpdeskMail = AdditionalInfo.SplitByTwoDifferentStrings("HelpdeskEmail:", ";", true)[0];
-            var currentUserName = AdditionalInfo.SplitByTwoDifferentStrings("CurrentUserName:", ";", true)[0];
+            var userCode = AdditionalInfo.SplitByTwoDifferentStrings("UserCode:", ";", true)[0];
             var appVersion = AdditionalInfo.SplitByTwoDifferentStrings("ApplicationVersion:", ";", true)[0];
             var valueText = new ValueText { Value = ".NET Framework", Text = "" };
             var listValueText = new List<ValueText>();
@@ -88,7 +88,7 @@ namespace Ligg.Winform.Dialogs
             var body = "Dear Developer%0D%0A"
                        + "%0D%0A"
                        + "Following is system running error infomation for you:"
-                       + (currentUserName.IsNullOrEmpty() ? "" : " (send by " + currentUserName + ")") + "%0D%0A"
+                       + (userCode.IsNullOrEmpty() ? "" : " (send by " + userCode + ")") + "%0D%0A"
                         + "Application Version : " + appVersion + "%0D%0A"
                         + "Assembly Bits : " + IntPtr.Size * 8 + "%0D%0A"
                        + "OS : " + SystemInfoHelper.GetSystemInfo("osinfo") + " " + SystemInfoHelper.GetSystemInfo("osbit") + " bits" + "%0D%0A"

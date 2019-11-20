@@ -41,15 +41,15 @@ namespace Ligg.Winform.Helpers
             }
         }
 
-        public static void SetVariableType(VariableItem variableItem)
+        public static void SetProcedureType(ProcedureItem variableItem)
         {
             try
             {
-                variableItem.Type = EnumHelper.GetIdByName<VariableItemType>(variableItem.TypeName);
+                variableItem.Type = EnumHelper.GetIdByName<ProcedureItemType>(variableItem.TypeName);
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("\n>> " + TypeName + ".SetVariableType Error: " + ex.Message);
+                throw new ArgumentException("\n>> " + TypeName + ".SetProcedureType Error: " + ex.Message);
             }
         }
 
@@ -180,7 +180,7 @@ namespace Ligg.Winform.Helpers
             }
         }
 
-        public static void CheckZoneVariables(string zoneName, List<VariableItem> varItems)
+        public static void CheckZoneProcedures(string zoneName, List<ProcedureItem> varItems)
         {
             try
             {
@@ -214,7 +214,7 @@ namespace Ligg.Winform.Helpers
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("\n>> " + TypeName + ".CheckZoneVariables Error: " + ex.Message);
+                throw new ArgumentException("\n>> " + TypeName + ".CheckZoneProcedures Error: " + ex.Message);
             }
         }
 
@@ -247,8 +247,8 @@ namespace Ligg.Winform.Helpers
             {
                 if (defDisplayName.IsNullOrEmpty())
                 {
-                    if (!ctrlName.Contains("_")) defDisplayName = ctrlName;
-                    else defDisplayName = ctrlName.GetLastSeparatedString('_');
+                    //if (!ctrlName.Contains("_")) defDisplayName = ctrlName;
+                    //else defDisplayName = ctrlName.GetLastSeparatedString('_');
                 }
 
                 if (supportMutiLangs)
@@ -275,8 +275,8 @@ namespace Ligg.Winform.Helpers
             {
                 if (defRemark.IsNullOrEmpty())
                 {
-                    if (!ctrlName.Contains("_")) defRemark = ctrlName;
-                    else defRemark = ctrlName.GetLastSeparatedString('_');
+                    //if (!ctrlName.Contains("_")) defRemark = ctrlName;
+                    //else defRemark = ctrlName.GetLastSeparatedString('_');
                 }
 
                 if (supportMutiLangs)

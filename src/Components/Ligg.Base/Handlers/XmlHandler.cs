@@ -44,6 +44,7 @@ namespace Ligg.Base.Handlers
         }
 
 
+        //Method
         //#load
         private void LoadFromFile(string filePath)
         {
@@ -69,7 +70,7 @@ namespace Ligg.Base.Handlers
                 {
                     using (var sr = new StreamReader(filePath))
                     {
-                        string str = sr.ReadToEnd();
+                        //string str = sr.ReadToEnd();
                         //string deStr = EncryptionHelper.SmDecrypt(str);
                         //_document.LoadXml(deStr);
                     }
@@ -82,6 +83,35 @@ namespace Ligg.Base.Handlers
         }
 
 
+
+
+        //#get
+        public string GetOutXml()
+        {
+            return this._document.OuterXml;
+        }
+
+        public int GetCountOfChildNode(string nodeName)
+        {
+            try
+            {
+                int count = 0;
+                var nodeList = this._document.GetElementsByTagName(nodeName);
+                if (nodeList.Count > 0)
+                {
+                    for (int i = 0; i < nodeList.Count; i++)
+                    {
+                        count += nodeList.Item(i).ChildNodes.Count;
+                    }
+
+                }
+                return count;
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("\n>>" + GetType().FullName + ".GetCountOfChildNode Error: " + ex.Message);
+            }
+        }
 
         //#Convert
         public T ConvertToObject<T>()
@@ -97,16 +127,6 @@ namespace Ligg.Base.Handlers
 
 
         }
-
-
-
-        //#get
-        public string GetOutXml()
-        {
-            return this._document.OuterXml;
-        }
-
-
 
 
 

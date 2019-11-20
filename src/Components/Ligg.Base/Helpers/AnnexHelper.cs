@@ -177,7 +177,7 @@ namespace Ligg.Base.Helpers
             }
         }
 
-        //##GetTextByAnnex
+
         private static string GetTextByAnnex(Annex annex, AnnexTextType textType)
         {
             try

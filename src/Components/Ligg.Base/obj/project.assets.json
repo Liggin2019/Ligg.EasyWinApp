@@ -224,11 +224,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Doing\\coding\\ligg\\Git-Ligg.EasyWinApp\\src\\Components\\Ligg.Base\\Ligg.Base.csproj",
+      "projectUniqueName": "E:\\doing\\coding\\ligg\\Git-Ligg.EasyWinApp\\src\\Components\\Ligg.Base\\Ligg.Base.csproj",
       "projectName": "Ligg.Base",
-      "projectPath": "E:\\Doing\\coding\\ligg\\Git-Ligg.EasyWinApp\\src\\Components\\Ligg.Base\\Ligg.Base.csproj",
+      "projectPath": "E:\\doing\\coding\\ligg\\Git-Ligg.EasyWinApp\\src\\Components\\Ligg.Base\\Ligg.Base.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "E:\\Doing\\coding\\ligg\\Git-Ligg.EasyWinApp\\src\\Components\\Ligg.Base\\obj\\",
+      "outputPath": "E:\\doing\\coding\\ligg\\Git-Ligg.EasyWinApp\\src\\Components\\Ligg.Base\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

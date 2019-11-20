@@ -24,7 +24,10 @@ namespace Ligg.Base.Helpers
             return dir;
         }
 
+
+
         //#get
+
         public static int GetRecursiveSubFileNo(string dir)
         {
             if (!Directory.Exists(dir))
@@ -41,6 +44,8 @@ namespace Ligg.Base.Helpers
         }
 
 
+
+
         //#check
         public static bool HasRecursiveSubFile(string dir)
         {
@@ -54,7 +59,6 @@ namespace Ligg.Base.Helpers
             }
             return false;
         }
-
 
     }
 }

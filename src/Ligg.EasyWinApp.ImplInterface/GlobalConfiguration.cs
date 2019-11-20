@@ -5,15 +5,11 @@ namespace Ligg.EasyWinApp.ImplInterface
     public static class GlobalConfiguration
     {
         private static readonly string TypeName = System.Reflection.MethodBase.GetCurrentMethod().ReflectedType.FullName;
-        //#set from init() 
+        //#set from ReadParams() 
         public static string AssemblyCode = "";
-
         public static string OrganizationCode = "";
-        public static string UserCode = "";
-        public static string UserToken = "";
         public static string GlobalKey1 = "";
         public static string GlobalKey2 = "";
-        public static string LicensedAppCodes = "";
 
         //#set from front end
         public static string AppCode = "";
@@ -23,8 +19,11 @@ namespace Ligg.EasyWinApp.ImplInterface
         public static string CurrentLanguageCode = "";
         public static string[] StartParams;
 
+        public static string UserCode = "";
+        public static string UserToken = "";
+        public static string LicensedAppCodes = "";
 
-        public static void init()
+        public static void ReadParams()
         {
             try
             {
@@ -40,40 +39,23 @@ namespace Ligg.EasyWinApp.ImplInterface
             }
         }
 
-        public static void SetStartParams(string startParams)
+        public static bool VerifyUserToken(string userCode, string userToken)
         {
             try
             {
-                StartParams = startParams.Split(GetParamStringSeparator(startParams));
+                UserCode = userCode;
+                UserToken = userToken;
+                return true;
+
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("\n>> " + TypeName + ".SetStartParams Error: " + ex.Message);
+                throw new ArgumentException("\n>> " + TypeName + ".VerifyUserToken Error: " + ex.Message);
             }
 
 
         }
 
-        public static char GetParamStringSeparator(string text)
-        {
-            var separator = ';';
-            if (text.Contains("^")) separator = '^';
-            else if (text.Contains("~")) separator = '~';
-            return separator;
-        }
-        public static char GetSubParamSeparator(string text)
-        {
-            try
-            {
-                var separator = ',';
-                if (text.Contains("`")) separator = '`';
-                return separator;
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("\n>> " + TypeName + ".GetSubParamSeparator Error: " + ex.Message);
-            }
-        }
+
     }
-
 }

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ligg.EasyWinApp.ImplInterface\Ligg.EasyWinApp.ImplInterface.csproj" />
+    <ProjectReference Include="..\Ligg.EasyWinApp.Impl\Itsmaoa\Ligg.EasyWinApp.Impl.ItsmaoaCblp.csproj" />
+  </ItemGroup>
+
+</Project>

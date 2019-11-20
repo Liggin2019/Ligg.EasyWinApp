@@ -1,39 +1,49 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
+using Ligg.Base.DataModel.Enums;
 using Ligg.Base.Extension;
 using Ligg.Base.Helpers;
-using Ligg.EasyWinform.Resources;
+using Ligg.EasyWinApp.Common;
+using Ligg.EasyWinApp.ImplInterface;
+using Ligg.EasyWinForm.Resources;
 using Ligg.Winform;
 using Ligg.Winform.DataModel;
 using Ligg.Winform.DataModel.Enums;
 using Ligg.Winform.Forms;
 
-namespace Ligg.EasyWinform
+namespace Ligg.EasyWinForm
 {
     static class Program
     {
         [STAThread]
         static void Main(string[] args)
         {
-            if (args.Length < 1)
+            var debugIniPath = Directory.GetCurrentDirectory() + "\\Debug.ini";
+            var debug = false;
+            var argsStr = "";
+            if (File.Exists(debugIniPath))
             {
-                if (File.Exists("Ui.ini"))
-                {
-                    var txt = File.ReadAllText("Ui.ini");
-                    args = txt.Split(' ');
-                }
-                else goto End;
+                var debugStr = StartHelper.ReadIniString(debugIniPath, "setting", "debug", "");
+                if (debugStr.ToLower() == "true") debug = true;
+                argsStr = StartHelper.ReadIniString(debugIniPath, "setting", "args", "");
             }
 
+            if (args.Length == 0)
+            {
+                args = argsStr.Split(' ');
+            }
+
+            if (args.Length == 0) goto End;
             var passedArg0 = args[0];
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
             try
             {
-                StartHelper.InitGlobalConfiguration();
+                var bootStrap = new BootStrap();
+
                 //+1
                 //passedArg0 = EncryptionHelper.SmDecrypt(args[0],EncryptionHelper.GlobalKey1,EncryptionHelper.GlobalKey2);
                 var passedArg0Arry = passedArg0.Split('@');
@@ -70,39 +80,38 @@ namespace Ligg.EasyWinform
 
 
                 //#subsequent action by passedArg0
-                FunctionFormType formType = (formTypeStr == "0" | formTypeStr.IsNullOrEmpty()) ? FunctionFormType.MutiView : FunctionFormType.SingleView;
-                StartHelper.SetPaths(formType, startAppStr, startFuncOrZoneLocStr);
+                FunctionFormType formType = FunctionFormType.MutiView;
+                if (formTypeStr == "1") formType = FunctionFormType.SingleView;
+                else if (formTypeStr == "2") formType = FunctionFormType.Dialogue;
 
-                StartHelper.SetApplicationStartParamSet(formType);
-                var appInitParamSet = StartHelper.ApplicationStartParamSet;
+                bootStrap.SetPaths(formType, startAppStr, startFuncOrZoneLocStr);
+                bootStrap.SetApplicationStartParamSet(formType);
+                var appInitParamSet = BootStrap.ApplicationStartParamSet;
 
                 if (appInitParamSet.SupportMutiCultures)
                 {
                     var passedCultureName = "";
                     if (args.Length > 1) passedCultureName = args[1];
-                    StartHelper.SetCultures();
-                    var cultureName = StartHelper.DefaultCultureName;
-                    if (!passedCultureName.IsNullOrEmpty() && CultureHelper.IsCultureNameValid(passedCultureName))
-                    {
-                        cultureName = passedCultureName;
-                    }
-                    CultureHelper.SetCurrentCulture(cultureName);
+                    bootStrap.SetCultures(passedCultureName);
                 }
 
-                //#verify
-                if (!StartHelper.Startup(appInitParamSet, null)) goto End; ;
+                //##CheckApplicationUsability
+                if (!bootStrap.CheckApplicationUsability(appInitParamSet)) goto End;
+
+                //##VerifyStartPassword
                 if (appInitParamSet.VerifyPasswordAtStart)
                 {
-                    if (!StartHelper.VerifyPassword(appInitParamSet.PasswordVerification, startPassword))
+                    if (!bootStrap.VerifyStartPassword(appInitParamSet.PasswordVerificationRule, startPassword))
                     {
                         goto End;
                     }
                 }
 
-                //#set funcInitParamSet
+                //##set funcInitParamSet
                 var funcInitParamSet = new FunctionInitParamSet();
                 funcInitParamSet.IsFormInvisible = invisibleStr.ToLower() == "true" ? true : false;
                 funcInitParamSet.FormType = formType;
+                funcInitParamSet.AssemblyCode = GlobalConfiguration.AssemblyCode;
                 funcInitParamSet.ApplicationCode = startAppStr;
                 if (formType == FunctionFormType.MutiView)
                 {
@@ -112,7 +121,7 @@ namespace Ligg.EasyWinform
                 {
                     var temArry1 = startFuncOrZoneLocStr.SplitByLastSeparator('\\');
                     funcInitParamSet.FunctionCode = temArry1.Length == 0 ? temArry1[0] : temArry1[1];
-                    funcInitParamSet.ZoneLocationForNonMutiViewForm = StartHelper.StartZoneLocation;
+                    funcInitParamSet.ZoneLocationForNonMutiViewForm = bootStrap.StartZoneLocation;
                 }
 
                 if (!startViewMenuIdOrinputZoneVarsStr.IsNullOrEmpty())
@@ -121,41 +130,49 @@ namespace Ligg.EasyWinform
                         funcInitParamSet.StartViewMenuId = Convert.ToInt32(startViewMenuIdOrinputZoneVarsStr);
                     else funcInitParamSet.InputZoneVariablesForNonMutiViewForm = startViewMenuIdOrinputZoneVarsStr;
                 }
-
                 funcInitParamSet.StartParams = startParams;
                 funcInitParamSet.StartActions = startActionsStr;
                 funcInitParamSet.StartPassword = startPassword;
                 funcInitParamSet.FormTitle = formTitle;
                 funcInitParamSet.HelpdeskEmail = appInitParamSet.HelpdeskEmail;
                 funcInitParamSet.ApplicationVersion = appInitParamSet.ApplicationVersion;
-                funcInitParamSet.ImplementationDllPath = appInitParamSet.ImplementationDllPath;
-                funcInitParamSet.AdapterFullClassName = appInitParamSet.AdapterFullClassName;
                 funcInitParamSet.SupportMutiCultures = appInitParamSet.SupportMutiCultures;
 
-                //#ShowSoftwareCover
-                if (appInitParamSet.ShowSoftwareCover)
+
+                var cblpDllPath = FileHelper.GetFilePath(appInitParamSet.ImplementationDllPath, DirectoryHelper.DeleteLastSlashes(Directory.GetCurrentDirectory()));
+                var cblpDllDir = cblpDllPath.IsNullOrEmpty() ? "" : FileHelper.GetFileDetailByOption(cblpDllPath, FilePathComposition.Directory);
+                funcInitParamSet.ImplementationDir = cblpDllDir;
+
+                bootStrap.InitGlobalConfiguration(startAppStr, funcInitParamSet.SupportMutiCultures, CultureHelper.DefaultLanguageCode, CultureHelper.CurrentLanguageCode, startParams, cblpDllDir);
+                if (!cblpDllPath.IsNullOrEmpty())
+                    CblpDllAdapter.Init(debug, cblpDllPath, appInitParamSet.AdapterFullClassName);
+
+                //##ShowSoftwareCover
+                if (appInitParamSet.ShowSoftwareCoverAtStart)
                 {
-                    StartHelper.ShowSoftwareCover(funcInitParamSet);
+                    bootStrap.ShowSoftwareCover(funcInitParamSet);
                 }
 
-                //#Logon
-                if (!(usrCode.IsNullOrEmpty())) appInitParamSet.LogonAtStart = false;
+                //##VerifyUserToken
+                if (!(usrToken.IsNullOrEmpty()))
+                {
+                    if (bootStrap.VerifyUserToken(usrCode, usrToken))
+                        appInitParamSet.LogonAtStart = false;
+                }
+
+                //##Logon
                 if (appInitParamSet.LogonAtStart)
                 {
-                    if (!StartHelper.Logon(funcInitParamSet)) goto End;
+                    if (!bootStrap.Logon(funcInitParamSet)) goto End;
                 }
 
-                //rd-1
-                var form = new DebugForm(funcInitParamSet);
-                //rd+1
-                //var form = new ReleaseForm(funcInitParamSet);
+                var form = new StartForm(funcInitParamSet);
                 Application.Run(form);
 
             }
             catch (Exception ex)
             {
                 PopupMessage.PopupError(EasyWinAppRes.ApplicationStartError, EasyWinAppRes.ApplicationStartError + ": " + ex.Message);
-                goto End;
             }
         End:;
         }

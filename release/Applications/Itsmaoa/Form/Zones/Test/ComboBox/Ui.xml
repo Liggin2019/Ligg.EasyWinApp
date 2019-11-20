@@ -1,0 +1,156 @@
+<ArrayOfZoneItem>
+	<ZoneItem>
+			<Id>1</Id>
+			<Name>InitTest</Name>
+			<TypeName>ZoneBeforeRenderHandler</TypeName><RowId>-1</RowId>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action>NetworkLocationService;InitData</Action>
+			
+			<ValidFlag/><VisibleFlag/><EnabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>4</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>40</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>10</Id>
+			<Name/><TypeName>VirtualItem</TypeName>
+			<RowId>-1</RowId>
+			
+			
+			<ControlTypeName>Row</ControlTypeName>
+			
+			<StyleClass/><DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>28</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>1010</Id>
+			<Name>Test1L</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName>Label</ControlTypeName>
+			
+			<StyleClass/><DisplayName>Test1</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>50</Width>
+			<Height>-1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>1011</Id>
+			<Name>Test1</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName>ComboBox</ControlTypeName>
+			
+			<StyleClass/><StyleText>Style:DropDown</StyleText><DisplayName/><DataSource>=NetworkLocationService;NetworkLocations</DataSource>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>100</Width>
+			<Height>-1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>1020</Id>
+			<Name>Test2L</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName>Label</ControlTypeName>
+			
+			<StyleClass/><DisplayName>Test2</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>50</Width>
+			<Height>-1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>1021</Id>
+			<Name>Test2</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName>ComboBox</ControlTypeName>
+			
+			<StyleClass/><StyleText>Style:DropDown</StyleText><DisplayName/><DataSource>=GetJson;FromListXml;%zonesdir%\Test\ComboBox\Data\NetworkPorts</DataSource>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>100</Width>
+			<Height>-1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>20</Id>
+			<Name/><TypeName>VirtualItem</TypeName>
+			<RowId>-1</RowId>
+			
+			
+			<ControlTypeName>Row</ControlTypeName>
+			
+			<StyleClass/><DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>50</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>2010</Id>
+			<Name>Run1</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowId>20</RowId>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName>
+			
+			<StyleClass>Button</StyleClass><DisplayName>Set</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>TestService;Test1;$Test1.v$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>10</OffsetOrPositionY>			<Width>80</Width><Height>30</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>2020</Id>
+			<Name>Run2</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowId>20</RowId>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName>
+			
+			<StyleClass>Button</StyleClass><DisplayName>Show</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>PopupMsg~Test1~=TestService;Test1</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>10</OffsetOrPositionY>			<Width>80</Width><Height>30</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>2030</Id>
+			<Name>Run3</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowId>20</RowId>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName>
+			
+			<StyleClass>Button</StyleClass><DisplayName>PopupDialog</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>PopupZoneDialog;\Test\Test1</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<ContainerName/><DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>10</OffsetOrPositionY>			<Width>80</Width><Height>30</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem>
+</ArrayOfZoneItem>

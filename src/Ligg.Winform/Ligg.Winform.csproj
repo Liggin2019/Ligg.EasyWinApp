@@ -36,7 +36,7 @@
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\..\z_asset\packages\Newtonsoft.Json\12.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
@@ -49,9 +49,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\Extension\GuidExtension.cs" />
     <Compile Include="Base\Handlers\XmlHandler.cs" />
-    <Compile Include="Base\Helpers\AssemblyHelper.cs" />
-    <Compile Include="GcHandler.cs" />
+    <Compile Include="Base\Helpers\DataTableHelper.cs" />
+    <Compile Include="Base\Helpers\JsonHelper.cs" />
+    <Compile Include="DataModel\Enums\ProcedureItemType.cs" />
+    <Compile Include="DataModel\ProcedureItem.cs" />
+    <Compile Include="DataModel\ContextMenuItem.cs" />
+    <Compile Include="DataModel\ControlAction.cs" />
+    <Compile Include="DataModel\ZoneItem.cs" />
+    <Compile Include="DataModel\ZoneFeature.cs" />
+    <Compile Include="DataModel\RenderedViewStatus.cs" />
+    <Compile Include="DataModel\LayoutElement.cs" />
+    <Compile Include="DataModel\FunctionFormStyle.cs" />
+    <Compile Include="DataModel\FunctionInitParamSet.cs" />
     <Compile Include="Base\DataModel\Annex.cs" />
     <Compile Include="Base\DataModel\Enums\AnnexTextType.cs" />
     <Compile Include="Base\DataModel\Enums\FilePathComposition.cs" />
@@ -60,8 +71,11 @@
     <Compile Include="Base\DataModel\Enums\UniversalStatus.cs" />
     <Compile Include="Base\DataModel\IdName.cs" />
     <Compile Include="Base\DataModel\IdValueText.cs" />
+    <Compile Include="Base\DataModel\IPagedList.cs" />
+    <Compile Include="Base\DataModel\PagedList.cs" />
     <Compile Include="Base\DataModel\UniversalResult.cs" />
     <Compile Include="Base\DataModel\ValueText.cs" />
+    <Compile Include="Base\DataModel\ValueTextBool.cs" />
     <Compile Include="Base\Extension\DateTimeExtension.cs" />
     <Compile Include="Base\Extension\StringExtension.cs" />
     <Compile Include="Base\Helpers\AnnexHelper.cs" />
@@ -121,18 +135,6 @@
     </Compile>
     <Compile Include="Dialogs\DateTimeInputDialog.designer.cs">
       <DependentUpon>DateTimeInputDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\DebugForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\DebugForm.Designer.cs">
-      <DependentUpon>DebugForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ReleaseForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ReleaseForm.Designer.cs">
-      <DependentUpon>ReleaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ControlHelper.cs" />
     <Compile Include="Controls\ToolStripSplitButtonEx.cs">
@@ -288,7 +290,6 @@
     </Compile>
     <Compile Include="Skin\ToolStripRender.cs" />
     <Compile Include="StyleSet.cs" />
-    <Compile Include="DataModel\UiDefinitionWrap.cs" />
     <Compile Include="DataModel\Enums\UiEnumWrap.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -349,6 +350,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\ValidationRes.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -383,16 +385,6 @@
     <None Include="Resources\start.bat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Ligg.EasyWinApp.ImplInterface\Ligg.EasyWinApp.ImplInterface.csproj">
-      <Project>{46727cbd-db04-4733-88d0-4c1d7d2792fb}</Project>
-      <Name>Ligg.EasyWinApp.ImplInterface</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Ligg.EasyWinApp.Impl\ItSaom\Ligg.EasyWinApp.Impl.ItSaom.csproj">
-      <Project>{099393b8-5d3e-4ac4-801d-cd14484d0c42}</Project>
-      <Name>Ligg.EasyWinApp.Impl.ItSaom</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

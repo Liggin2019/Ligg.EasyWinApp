@@ -1,0 +1,11 @@
+<ArrayOfProcedureItem>
+		<ProcedureItem>
+			<Id>10</Id>
+			<TypeName>Variable</TypeName><GroupId>0</GroupId><Name>TotalTimes</Name><Formula>#0#</Formula>
+			<Value/><Condition/>
+		</ProcedureItem><ProcedureItem>
+			<Id>20</Id>
+			<TypeName>Variable</TypeName><GroupId>1</GroupId><Name>CurrentTimes</Name><Formula>=Calc;Add;#CurrentTimes.v#;1</Formula>
+			<Value>0</Value><Condition/>
+		</ProcedureItem>
+</ArrayOfProcedureItem>

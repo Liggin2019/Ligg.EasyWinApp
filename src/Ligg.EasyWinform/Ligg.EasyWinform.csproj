@@ -8,8 +8,8 @@
     <ProjectGuid>{E5ACC801-7B6D-4D3A-81A2-CD80A0A154B5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ligg.EasyWinform</RootNamespace>
-    <AssemblyName>UI</AssemblyName>
+    <RootNamespace>Ligg.EasyWinForm</RootNamespace>
+    <AssemblyName>Run</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\debug\EasyWinform\</OutputPath>
+    <OutputPath>..\..\debug\Form\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -27,7 +27,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\release\EasyWinform\</OutputPath>
+    <OutputPath>..\..\release\Form\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="StartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartForm.Designer.cs">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -70,7 +76,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="StartHelper.cs" />
+    <Compile Include="BootStrap.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -92,6 +98,14 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Ligg.EasyWinApp.Common\Ligg.EasyWinApp.Common.csproj">
+      <Project>{7456054f-da0c-433a-a145-ba39f3225573}</Project>
+      <Name>Ligg.EasyWinApp.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ligg.EasyWinApp.ImplInterface\Ligg.EasyWinApp.ImplInterface.csproj">
+      <Project>{46727cbd-db04-4733-88d0-4c1d7d2792fb}</Project>
+      <Name>Ligg.EasyWinApp.ImplInterface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ligg.Winform\Ligg.Winform.csproj">
       <Project>{f6d5915b-d0e7-4389-901f-2737a37a37e7}</Project>
       <Name>Ligg.Winform</Name>

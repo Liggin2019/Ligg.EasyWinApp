@@ -1,0 +1,334 @@
+<ArrayOfZoneItem>
+		<ZoneItem>
+			<Id>10</Id><TypeName>DisplayOnlyItem</TypeName>
+			<Name>AccountOptionL</Name><ControlTypeName>Label</ControlTypeName>
+			
+			
+			
+			<ContainerName/><StyleClass/><StyleText>BackColor:255,255,255;ForeColor:0,0,0</StyleText>
+			
+			<DisplayName>Account Option</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<DisabledFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>50</OffsetOrPositionX><OffsetOrPositionY>30</OffsetOrPositionY><Width>95</Width><Height>40</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>11</Id><TypeName>DisplayOnlyItem</TypeName>
+			<Name>AccountOptionContainer</Name><ControlTypeName>Panel</ControlTypeName>
+			
+			
+			
+			<ContainerName/><StyleClass/><StyleText>BackColor:255,255,255</StyleText>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<DisabledFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>165</OffsetOrPositionX><OffsetOrPositionY>30</OffsetOrPositionY><Width>260</Width><Height>40</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>12</Id><TypeName>DisplayOnlyItem</TypeName>
+			<Name>DomainAccount</Name><ControlTypeName>RadioButton</ControlTypeName>
+			
+			
+			
+			<ContainerName>AccountOptionContainer</ContainerName><StyleClass/><StyleText>BackColor:255,255,255</StyleText>
+			
+			<DisplayName>Domain Account</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<DisabledFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>10</OffsetOrPositionX><OffsetOrPositionY>8</OffsetOrPositionY><Width>119</Width><Height>30</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>13</Id><TypeName>DisplayOnlyItem</TypeName>
+			<Name>SystemAccount</Name><ControlTypeName>RadioButton</ControlTypeName>
+			
+			
+			
+			<ContainerName>AccountOptionContainer</ContainerName><StyleClass/><StyleText>BackColor:255,255,255</StyleText>
+			
+			<DisplayName>System Account</DisplayName><DataSource/>			
+			<DefaultValue>true</DefaultValue><ValidationRules/><Action/>
+			
+			<DisabledFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>140</OffsetOrPositionX><OffsetOrPositionY>8</OffsetOrPositionY><Width>119</Width><Height>30</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>20</Id><TypeName>DisplayOnlyItem</TypeName>
+			<Name>AccountL</Name><ControlTypeName>Label</ControlTypeName>
+			
+			
+			
+			<ContainerName/><StyleClass/><StyleText>BackColor:255,255,255</StyleText>
+			
+			<DisplayName>Account</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<DisabledFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>50</OffsetOrPositionX><OffsetOrPositionY>80</OffsetOrPositionY><Width>95</Width><Height>21</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>21</Id><TypeName>DisplayOnlyItem</TypeName>
+			<Name>Account</Name><ControlTypeName>TextBox</ControlTypeName>
+			
+			
+			
+			<ContainerName/><StyleClass/><StyleText>BackColor:255,255,255</StyleText>
+			
+			<DisplayName>Account</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules>MandatoryField</ValidationRules><Action/>
+			
+			<DisabledFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>165</OffsetOrPositionX><OffsetOrPositionY>80</OffsetOrPositionY><Width>260</Width><Height>21</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>30</Id><TypeName>DisplayOnlyItem</TypeName>
+			<Name>PasswordL</Name><ControlTypeName>Label</ControlTypeName>
+			
+			
+			
+			<ContainerName/><StyleClass/><StyleText>BackColor:255,255,255</StyleText>
+			
+			<DisplayName>Password</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<DisabledFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>50</OffsetOrPositionX><OffsetOrPositionY>130</OffsetOrPositionY><Width>95</Width><Height>21</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>31</Id><TypeName>DisplayOnlyItem</TypeName>
+			<Name>Password</Name><ControlTypeName>TextBox</ControlTypeName>
+			
+			
+			
+			<ContainerName/><StyleClass/><StyleText>BackColor:255,255,255</StyleText>
+			
+			<DisplayName>Password</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules>MandatoryField;StringMinLength,7;PasswordFormat2</ValidationRules><Action/>
+			
+			<DisabledFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>165</OffsetOrPositionX><OffsetOrPositionY>130</OffsetOrPositionY><Width>260</Width><Height>21</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>40</Id><TypeName>DisplayAndTransactionItem</TypeName>
+			<Name>Logon</Name><ControlTypeName>TextButton</ControlTypeName>
+			
+			
+			
+			<ContainerName/><StyleClass/><StyleText>BackColor:48, 145, 242</StyleText>
+			
+			<DisplayName>Logon</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>Xrun;$GetValidationResult$,$JudgeValidationResult$</Action>
+			
+			<DisabledFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>130</OffsetOrPositionX><OffsetOrPositionY>180</OffsetOrPositionY><Width>186</Width><Height>35</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>41</Id><TypeName>TransactionOnlyItem</TypeName>
+			<Name>GetValidationResult</Name><ControlTypeName/>
+			
+			
+			
+			<ContainerName/><StyleClass/><StyleText>BackColor:48, 145, 242</StyleText>
+			
+			<DisplayName>Get Validation Result</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>SetProcedureVariableValue~#ValidationResult#~=GetControlsValidationResult;$Account$,$Password$;CAT</Action>
+			
+			<DisabledFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>50</OffsetOrPositionX><OffsetOrPositionY>190</OffsetOrPositionY><Width>375</Width><Height>35</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>42</Id><TypeName>TransactionOnlyItem</TypeName>
+			<Name>JudgeValidationResult</Name><ControlTypeName/>
+			
+			
+			
+			<ContainerName/><StyleClass/><StyleText>BackColor:48, 145, 242</StyleText>
+			
+			<DisplayName>Judge Validation Result</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>Crun;#ValidationResult.v#;$GetLogonResult$;$ShowValidationResult$</Action>
+			
+			<DisabledFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>50</OffsetOrPositionX><OffsetOrPositionY>190</OffsetOrPositionY><Width>375</Width><Height>35</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>4210</Id><TypeName>TransactionOnlyItem</TypeName>
+			<Name>GetLogonResult</Name><ControlTypeName/>
+			
+			
+			
+			<ContainerName/><StyleClass/><StyleText>BackColor:48, 145, 242</StyleText>
+			
+			<DisplayName>Get Logon Result</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>Xrun;$WriteLogonResult$,$JudgeLogonResult$</Action>
+			
+			<DisabledFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>50</OffsetOrPositionX><OffsetOrPositionY>190</OffsetOrPositionY><Width>375</Width><Height>35</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>4211</Id><TypeName>TransactionOnlyItem</TypeName>
+			<Name>WriteLogonResult</Name><ControlTypeName/>
+			
+			
+			
+			<ContainerName/><StyleClass/><StyleText>BackColor:48, 145, 242</StyleText>
+			
+			<DisplayName>Write Logon Result</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>SetProcedureVariableValue~#LogonResult#~=UserService;Logon;$Account.v$,$Password.v$</Action>
+			
+			<DisabledFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>50</OffsetOrPositionX><OffsetOrPositionY>190</OffsetOrPositionY><Width>375</Width><Height>35</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>4212</Id><TypeName>TransactionOnlyItem</TypeName>
+			<Name>JudgeLogonResult</Name><ControlTypeName/>
+			
+			
+			
+			<ContainerName/><StyleClass/><StyleText>BackColor:48, 145, 242</StyleText>
+			
+			<DisplayName>Judge Logon Result</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>Crun;#LogonResult.v#;$Close$;$ShowLogonResult$</Action>
+			
+			<DisabledFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>50</OffsetOrPositionX><OffsetOrPositionY>190</OffsetOrPositionY><Width>375</Width><Height>35</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>421210</Id><TypeName>TransactionOnlyItem</TypeName>
+			<Name>Close</Name><ControlTypeName/>
+			
+			
+			
+			<ContainerName/><StyleClass/><StyleText>BackColor:48, 145, 242</StyleText>
+			
+			<DisplayName>Close</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>CloseForm</Action>
+			
+			<DisabledFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>50</OffsetOrPositionX><OffsetOrPositionY>190</OffsetOrPositionY><Width>375</Width><Height>35</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>421220</Id><TypeName>TransactionOnlyItem</TypeName>
+			<Name>ShowLogonResult</Name><ControlTypeName/>
+			
+			
+			
+			<ContainerName/><StyleClass/><StyleText>BackColor:48, 145, 242</StyleText>
+			
+			<DisplayName>Show Logon Result</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>SetControlValue;$Error$;#LogonResult.v#</Action>
+			
+			<DisabledFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>50</OffsetOrPositionX><OffsetOrPositionY>190</OffsetOrPositionY><Width>375</Width><Height>35</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>4220</Id><TypeName>TransactionOnlyItem</TypeName>
+			<Name>ShowValidationResult</Name><ControlTypeName/>
+			
+			
+			
+			<ContainerName/><StyleClass/><StyleText>BackColor:48, 145, 242</StyleText>
+			
+			<DisplayName>Show Validation Result</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>SetControlValue;$Error$;#ValidationResult.v#</Action>
+			
+			<DisabledFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>50</OffsetOrPositionX><OffsetOrPositionY>190</OffsetOrPositionY><Width>375</Width><Height>35</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>50</Id><TypeName>DisplayAndTransactionItem</TypeName>
+			<Name>Cancel</Name><ControlTypeName>TextButton</ControlTypeName>
+			
+			
+			
+			<ContainerName/><StyleClass/><StyleText>BackColor:48, 145, 242</StyleText>
+			
+			<DisplayName>Cancel</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>Xrun;$CloseByClickCancel$</Action>
+			
+			<DisabledFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>350</OffsetOrPositionX><OffsetOrPositionY>180</OffsetOrPositionY><Width>86</Width><Height>35</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>5010</Id><TypeName>TransactionOnlyItem</TypeName>
+			<Name>CloseByClickCancel</Name><ControlTypeName/>
+			
+			
+			
+			<ContainerName/><StyleClass/><StyleText>BackColor:48, 145, 242</StyleText>
+			
+			<DisplayName>Exit Or Close</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>Crun;#IsModal.v#;$Close$;$ReturnFalseAndClose$</Action>
+			
+			<DisabledFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>50</OffsetOrPositionX><OffsetOrPositionY>190</OffsetOrPositionY><Width>375</Width><Height>35</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>5020</Id><TypeName>TransactionOnlyItem</TypeName>
+			<Name>ReturnFalseAndClose</Name><ControlTypeName/>
+			
+			
+			
+			<ContainerName/><StyleClass/><StyleText>BackColor:48, 145, 242</StyleText>
+			
+			<DisplayName>Exit</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>ReturnFalseAndClose</Action>
+			
+			<DisabledFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>50</OffsetOrPositionX><OffsetOrPositionY>190</OffsetOrPositionY><Width>375</Width><Height>35</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>60</Id><TypeName>DisplayOnlyItem</TypeName>
+			<Name>Error</Name><ControlTypeName>RichTextBox</ControlTypeName>
+			
+			
+			
+			<ContainerName/><StyleClass>Error</StyleClass><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<DisabledFlag/>
+			<DockTypeName>Bottom</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>50</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>70</Id><TypeName>DisplayOnlyItem</TypeName>
+			<Name>GroundPanel</Name><ControlTypeName>ShadowPanel</ControlTypeName>
+			
+			
+			
+			<ContainerName/><StyleClass/><StyleText>BackColor:255,255,255</StyleText>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<DisabledFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>10</OffsetOrPositionX><OffsetOrPositionY>0</OffsetOrPositionY><Width>478</Width><Height>251</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem>
+		
+</ArrayOfZoneItem>

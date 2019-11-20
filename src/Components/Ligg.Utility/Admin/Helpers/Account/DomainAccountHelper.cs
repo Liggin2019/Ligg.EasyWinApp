@@ -2,9 +2,6 @@
 using System.Data;
 using System.DirectoryServices;
 using System.DirectoryServices.AccountManagement;
-using System.Security.Principal;
-using System.Threading;
-using System.Web;
 
 namespace Ligg.Utility.Admin.Helpers.Account
 {
@@ -82,168 +79,6 @@ namespace Ligg.Utility.Admin.Helpers.Account
             ADS_UF_TRUSTED_TO_AUTHENTICATE_FOR_DELEGATION = 0X1000000
         }
 
-        public DomainAccountHelper()
-        {
-            //
-        }
-
-        //#list
-        public static DataTable GetOuUsers(string ouString)
-        {
-            DirectoryEntry de;
-            if (!String.IsNullOrEmpty(ouString))
-                de = new DirectoryEntry(AdPath + ouString + LdapDomain, DomainAdminAccount, DomainAdminPassword);
-            else
-                de = new DirectoryEntry(AdPath + LdapDomain, DomainAdminAccount, DomainAdminPassword);
-            string flag = "0";
-            try
-            {
-                var mySearcher = new System.DirectoryServices.DirectorySearcher(de);
-
-            }
-            catch { flag = "1"; }
-
-            if (flag == "1")
-            {
-                de.Close(); return null;
-            }
-            else
-            {
-                var mySearcher = new System.DirectoryServices.DirectorySearcher(de);
-                mySearcher.Filter = "(&(&(objectCategory=person)(objectClass=user)))";
-                int id = 0;
-                var dt = new DataTable();
-                foreach (System.DirectoryServices.SearchResult result in mySearcher.FindAll())
-                {
-
-                    DataRow dr = dt.NewRow();
-                    id = id + 1;
-                    dr[0] = id.ToString();
-                    dr[1] = result.Properties["samAccountName"][0].ToString();
-                    string strr = result.Properties["samAccountName"][0].ToString();
-                    dr[2] = result.Properties["samaccounttype"][0].ToString();
-                    dr[3] = result.Properties["name"][0].ToString();
-                    string strr1 = result.Properties["name"][0].ToString();
-                    try
-                    {
-                        dr[4] = result.Properties["memberof"][0].ToString();
-                    }
-                    catch (Exception err) { dr[4] = ""; Console.WriteLine("Debug", err.ToString()); }
-                    string status_str = result.GetDirectoryEntry().Properties["userAccountControl"][0].ToString();
-                    if (status_str == "514")
-                        dr[5] = "No";
-                    else dr[5] = "Yes";
-
-                    dt.Rows.Add(dr);
-                }
-                de.Close();
-                return dt;
-            }
-
-        }
-
-        //public static List<AdAccount> GetOuUsersToList(string ou_string)
-        //{
-        //    DirectoryEntry de1;
-        //    List<AdAccount> accountList = new List<AdAccount>();
-        //    string memberof_OK;
-
-        //    if (!String.IsNullOrEmpty(ou_string))
-        //        de1 = new DirectoryEntry(AdPath + ou_string + "," + LdapDomain, DomainAdminAccount, DomainAdminPassword);
-        //    else
-        //        de1 = new DirectoryEntry(AdPath + LdapDomain, DomainAdminAccount, DomainAdminPassword);
-        //    string flag = "0";
-        //    try
-        //    {
-        //        System.DirectoryServices.DirectorySearcher mySearcher = new System.DirectoryServices.DirectorySearcher(de1);
-
-        //    }
-        //    catch { flag = "1"; }
-
-        //    if (flag == "1")
-        //    {
-        //        de1.Close(); return null;
-        //    }
-        //    else
-        //    {
-        //        System.DirectoryServices.DirectorySearcher mySearcher = new System.DirectoryServices.DirectorySearcher(de1);
-        //        mySearcher.Filter = "(&(&(objectCategory=person)(objectClass=user)))";
-        //        int id = 0;
-        //        foreach (System.DirectoryServices.SearchResult result in mySearcher.FindAll())
-        //        {
-        //            string strr = result.Properties["samAccountName"][0].ToString();
-        //            string strr1 = result.Properties["name"][0].ToString();
-        //            try
-        //            {
-        //                memberof_OK = result.Properties["memberof"][0].ToString();
-        //            }
-        //            catch (Exception err) { memberof_OK = ""; Console.WriteLine("Debug", err.ToString()); }
-        //            string status_str = result.GetDirectoryEntry().Properties["userAccountControl"][0].ToString();
-        //            string logonName = result.Properties["samAccountName"][0].ToString();
-        //            string name = result.Properties["name"][0].ToString();
-        //            int user_status = 0;
-        //            user_status = status_str == "514" ? 1 : 2;
-        //            string remark = "";
-        //            if (status_str == "66048") remark = "password never expires";
-
-        //            //status_str:514,disnable;512,OK;66048,密码永不过期
-        //            accountList.Add(new AdAccount
-        //            {
-        //                LogonName = logonName,
-        //                Status = user_status,
-        //                //Memberof=memberof_OK, 
-        //                UserName = name,
-        //                Remark = remark
-        //            });
-        //        }
-        //        de1.Close();
-        //        return accountList;
-        //    }
-
-        //}
-
-
-        public static DataTable GetChildOus(DataTable dt, string ouString, int level)
-        {
-            level = level + 1;
-            DirectoryEntry de;
-            if (!String.IsNullOrEmpty(ouString))
-                de = new DirectoryEntry(AdPath + ouString + "," + LdapDomain, DomainAdminAccount, DomainAdminPassword);
-            else
-                de = new DirectoryEntry(AdPath + LdapDomain, DomainAdminAccount, DomainAdminPassword);
-            try
-            {
-                foreach (DirectoryEntry child in de.Children)
-                {
-                    string str = child.Name.ToString();
-                    string str1 = "";
-                    str1 = child.SchemaClassName.ToString();
-                    if (str1 == "organizationalUnit")
-                    {
-                        DataRow dr = dt.NewRow();
-                        string str2;
-                        // if (!String.IsNullOrEmpty(ou_string))
-                        {
-                            str2 = child.Name.ToString() + "," + ouString;
-                            dr[0] = child.Name.ToString();
-                            dr[1] = str2;
-                            dr[2] = level.ToString();
-                            dt.Rows.Add(dr);
-                            dt = GetChildOus(dt, str2, level);
-                        }
-                    }
-                }
-
-                de.Close();
-            }
-            catch (Exception err)
-            {
-                throw new ArgumentException("\n>> FindChildOus Error:" + err.ToString());
-            }
-
-            return dt;
-        }
-
 
         //#add
         public static DirectoryEntry Create(string ldapDN, string commonName, string samAccountName, string password)
@@ -266,51 +101,11 @@ namespace Ligg.Utility.Admin.Helpers.Account
 
 
 
-        //#del
-
-
-        //#edit
-        public static void AddToGroup(string commonName, string groupName)
-        {
-            using (new Impersonator(DomainName, DomainAdminAccount, DomainAdminPassword))
-            {
-                DirectoryEntry group = GetDirectoryEntryByGroupName(groupName);
-                DirectoryEntry user = GetDirectoryEntryByCommonName(commonName);
-                group.Properties["member"].Add(user.Properties["distinguishedName"].Value);
-                group.CommitChanges();
-                group.Close();
-                user.Close();
-            }
-        }
-
-        public static void RemoveFromGroup(string userCommonName, string groupName)
-        {
-            using (new Impersonator(DomainName, DomainAdminAccount, DomainAdminPassword))
-            {
-                DirectoryEntry group = GetDirectoryEntryByGroupName(groupName);
-                DirectoryEntry user = GetDirectoryEntryByCommonName(userCommonName);
-                group.Properties["member"].Remove(user.Properties["distinguishedName"].Value);
-                group.CommitChanges();
-                group.Close();
-                user.Close();
-            }
-        }
-
         public static void SetPasswordByCommonName(string commonName, string newPassword)
         {
             using (new Impersonator(DomainName, DomainAdminAccount, DomainAdminPassword))
             {
                 DirectoryEntry de = GetDirectoryEntryByCommonName(commonName);
-                de.Invoke("SetPassword", new object[] { newPassword });
-                de.Close();
-            }
-        }
-
-        public static void SetPasswordBySamAccountName(string samAccountName, string newPassword)
-        {
-            using (new Impersonator(DomainName, DomainAdminAccount, DomainAdminPassword))
-            {
-                DirectoryEntry de = GetDirectoryEntryBySamAccountName(samAccountName);
                 de.Invoke("SetPassword", new object[] { newPassword });
                 de.Close();
             }
@@ -322,162 +117,7 @@ namespace Ligg.Utility.Admin.Helpers.Account
         }
 
 
-        public static void DisableUserByCommonName(string commonName)
-        {
-            Disable(GetDirectoryEntryByCommonName(commonName));
-        }
 
-        //#get
-        public static string GetCurrentIdentityName(string getType)
-        {
-            IPrincipal principal = Thread.CurrentPrincipal;
-            var str = principal.GetType().ToString();
-            if (typeof(WindowsPrincipal).IsAssignableFrom(principal.GetType())) //验证Windows账户标识
-            {
-                if (getType == "0")
-                {
-                    var windowsprinciple = (WindowsPrincipal)principal;
-                    str = windowsprinciple.Identity.Name;
-                }
-                else if (getType == "1")
-                {
-                    str = new WindowsPrincipal(WindowsIdentity.GetCurrent()).Identity.Name;
-                }
-                else
-                {
-                    HttpContext myContext = HttpContext.Current;
-                    str = myContext.User.Identity.Name; ;
-                }
-                if (!String.IsNullOrEmpty(str))
-                    str = str.Split('\\')[1];
-            }
-            else
-            {
-                var genericprincipal = (GenericPrincipal)principal;
-                str = genericprincipal.Identity.Name;
-            }
-            return str;
-        }
-
-        public static string GetProperty(DirectoryEntry de, string propertyName)
-        {
-            if (de.Properties.Contains(propertyName))
-            {
-                return de.Properties[propertyName][0].ToString();
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
-
-        public static string GetProperty(SearchResult searchResult, string propertyName)
-        {
-            if (searchResult.Properties.Contains(propertyName))
-            {
-                return searchResult.Properties[propertyName][0].ToString();
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
-
-        public static void SetProperty(DirectoryEntry de, string propertyName, string propertyValue)
-        {
-            if (propertyValue != string.Empty || propertyValue != "" || propertyValue != null)
-            {
-                if (de.Properties.Contains(propertyName))
-                {
-                    de.Properties[propertyName][0] = propertyValue;
-                }
-                else
-                {
-                    de.Properties[propertyName].Add(propertyValue);
-                }
-            }
-        }
-
-        //#Check
-        public static LoginResult VerifyByCommonNameAndPassword(string commonName, string password)
-        {
-            DirectoryEntry de = GetDirectoryEntryByCommonName(commonName);
-
-            if (de != null)
-            {
-                // 必须在判断用户密码正确前，对帐号激活属性进行判断；否则将出现异常。
-                int userAccountControl = Convert.ToInt32(de.Properties["userAccountControl"][0]);
-                de.Close();
-
-                if (!IsActive(userAccountControl))
-                    return LoginResult.LOGIN_USER_ACCOUNT_INACTIVE;
-
-                if (GetDirectoryEntryByCommonNameAndPassword(commonName, password) != null)
-                    return LoginResult.LOGIN_USER_OK;
-                else
-                    return LoginResult.LOGIN_USER_PASSWORD_INCORRECT;
-            }
-            else
-            {
-                return LoginResult.LOGIN_USER_DOESNT_EXIST;
-            }
-        }
-
-        public static LoginResult VerifyBySamAccountNameAndPassword(string samAccountName, string password)
-        {
-            try
-            {
-                //var impersonate = new IdentityImpersonation(samAccountName, password, DomainName);
-                //impersonate.BeginImpersonate();
-                //impersonate.StopImpersonate();
-                using (new Impersonator(DomainName, samAccountName, password))
-                {
-                    //isValid = true;
-                }
-            }
-            catch
-            {
-                return LoginResult.LOGIN_USER_PASSWORD_INCORRECT;
-            }
-            return LoginResult.LOGIN_USER_OK;
-        }
-
-        public static bool IsExisting(string commonName)
-        {
-            DirectoryEntry de = GetDirectoryObject();
-            DirectorySearcher deSearch = new DirectorySearcher(de);
-            deSearch.Filter = "(&(&(objectCategory=person)(objectClass=user))(cn=" + commonName + "))";       // LDAP 查询串
-            SearchResultCollection results = deSearch.FindAll();
-
-            if (results.Count == 0)
-                return false;
-            else
-                return true;
-        }
-
-        public static bool IsActive(int userAccountControl)
-        {
-            int userAccountControl_Disabled = Convert.ToInt32(ADS_USER_FLAG_ENUM.ADS_UF_ACCOUNTDISABLE);
-            int flagExists = userAccountControl & userAccountControl_Disabled;
-
-            if (flagExists > 0)
-                return false;
-            else
-                return true;
-        }
-
-        public static bool IsInGroup(string account, string domainGrpName)
-        {
-            var ctx = new PrincipalContext(ContextType.Domain, DomainName);
-            var userPrincipal = UserPrincipal.FindByIdentity(ctx, account);
-            var groups = userPrincipal.GetGroups(ctx);
-            foreach (GroupPrincipal g in groups)
-            {
-                if (g.SamAccountName.ToLower() == domainGrpName.ToLower()) return true;
-            }
-            return false;
-
-        }
 
         public static bool IsInGroup(string domainName, string account, string domainGrpName)
         {
@@ -498,11 +138,6 @@ namespace Ligg.Utility.Admin.Helpers.Account
             return entry;
         }
 
-        private static DirectoryEntry GetDirectoryObject(string domainReference)
-        {
-            var entry = new DirectoryEntry(AdPath + domainReference, DomainAdminAccount, DomainAdminPassword, AuthenticationTypes.Secure);
-            return entry;
-        }
 
         private static DirectoryEntry GetDirectoryObject(string userName, string password)
         {
@@ -511,11 +146,6 @@ namespace Ligg.Utility.Admin.Helpers.Account
             return entry;
         }
 
-        private static DirectoryEntry GetDirectoryObject(string domainReference, string userName, string password)
-        {
-            var entry = new DirectoryEntry(AdPath + domainReference, userName, password, AuthenticationTypes.Secure);
-            return entry;
-        }
 
         private static DirectoryEntry GetDirectoryEntryByCommonName(string commonName)
         {
@@ -572,40 +202,6 @@ namespace Ligg.Utility.Admin.Helpers.Account
             }
         }
 
-        private static DirectoryEntry GetDirectoryEntryBySamAccountNameAndPassword(string samAccountName, string password)
-        {
-            DirectoryEntry de = GetDirectoryEntryBySamAccountName(samAccountName);
-            if (de != null)
-            {
-                string commonName = de.Properties["cn"][0].ToString();
-                if (GetDirectoryEntryByCommonNameAndPassword(commonName, password) != null)
-                    return GetDirectoryEntryByCommonNameAndPassword(commonName, password);
-                else return null;
-            }
-            else
-            {
-                return null;
-            }
-        }
-
-        private static DirectoryEntry GetDirectoryEntryByGroupName(string groupName)
-        {
-            DirectoryEntry de = GetDirectoryObject();
-            DirectorySearcher deSearch = new DirectorySearcher(de);
-            deSearch.Filter = "(&(objectClass=group)(cn=" + groupName + "))";
-            deSearch.SearchScope = SearchScope.Subtree;
-
-            try
-            {
-                SearchResult result = deSearch.FindOne();
-                de = new DirectoryEntry(result.Path);
-                return de;
-            }
-            catch
-            {
-                return null;
-            }
-        }
 
         private static void Enable(DirectoryEntry de)
         {
@@ -617,16 +213,5 @@ namespace Ligg.Utility.Admin.Helpers.Account
             }
         }
 
-        private static void Disable(DirectoryEntry de)
-        {
-            using (new Impersonator(DomainName, DomainAdminAccount, DomainAdminPassword))
-            {
-                de.Properties["userAccountControl"][0] = ADS_USER_FLAG_ENUM.ADS_UF_NORMAL_ACCOUNT |
-                                                         ADS_USER_FLAG_ENUM.ADS_UF_DONT_EXPIRE_PASSWD |
-                                                         ADS_USER_FLAG_ENUM.ADS_UF_ACCOUNTDISABLE;
-                de.CommitChanges();
-                de.Close();
-            }
-        }
     }
 }

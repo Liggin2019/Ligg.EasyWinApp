@@ -1,9 +1,0 @@
-E:\doing\coding\ligg\Ligg.EasyWinApp\src\Ligg.EasyRestful\bin\Debug\Ligg.EasyWinRestful.exe.config
-E:\doing\coding\ligg\Ligg.EasyWinApp\src\Ligg.EasyRestful\bin\Debug\Ligg.EasyWinRestful.exe
-E:\doing\coding\ligg\Ligg.EasyWinApp\src\Ligg.EasyRestful\bin\Debug\Ligg.EasyWinRestful.pdb
-E:\doing\coding\ligg\Ligg.EasyWinApp\src\Ligg.EasyRestful\obj\Debug\Ligg.EasyRestful.csprojAssemblyReference.cache
-E:\doing\coding\ligg\Ligg.EasyWinApp\src\Ligg.EasyRestful\obj\Debug\Ligg.EasyWinRestful.Properties.Resources.resources
-E:\doing\coding\ligg\Ligg.EasyWinApp\src\Ligg.EasyRestful\obj\Debug\Ligg.EasyRestful.csproj.GenerateResource.cache
-E:\doing\coding\ligg\Ligg.EasyWinApp\src\Ligg.EasyRestful\obj\Debug\Ligg.EasyRestful.csproj.CoreCompileInputs.cache
-E:\doing\coding\ligg\Ligg.EasyWinApp\src\Ligg.EasyRestful\obj\Debug\Ligg.EasyWinRestful.exe
-E:\doing\coding\ligg\Ligg.EasyWinApp\src\Ligg.EasyRestful\obj\Debug\Ligg.EasyWinRestful.pdb

@@ -1,0 +1,110 @@
+<ArrayOfZoneItem>
+	<ZoneItem>
+			<Id>9</Id>
+			<TypeName>VirtualItem</TypeName><Name/>
+			<RowId>-1</RowId>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>5</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>910</Id>
+			<TypeName>DisplayOnlyItem</TypeName><Name>splitter910</Name>
+			<RowId>9</RowId>
+			
+			
+			<ControlTypeName>SplitRectangle</ControlTypeName><StyleClass>Level2</StyleClass><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>10</OffsetOrPositionX><OffsetOrPositionY>1</OffsetOrPositionY><Width>580</Width><Height>1</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>10</Id>
+			<TypeName>VirtualItem</TypeName><Name/>
+			<RowId>-1</RowId>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<ValidFlag/><VisibleFlag/><EnabledFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>10</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>30</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>1010</Id>
+			<TypeName>DisplayOnlyItem</TypeName><Name>MstscL</Name>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName>Label</ControlTypeName><StyleClass>FieldName</StyleClass><StyleText/>
+			
+			<DisplayName>Mstsc /v: </DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<ValidFlag/><VisibleFlag/><EnabledFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>100</Width>
+			<Height>-1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>1011</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>MstscIp</Name>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName>ComboBox</ControlTypeName><StyleClass/><StyleText>Style:DropDown</StyleText>
+			
+			<DisplayName/><DataSource>#MonitoredServers.v#</DataSource>			
+			<DefaultValue>0</DefaultValue><ValidationRules/>
+			
+			<ValidFlag/><VisibleFlag/><EnabledFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>120</Width><Height>30</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>1012</Id>
+			<TypeName>DisplayOnlyItem</TypeName><Name>MstscParam</Name>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName>ComboBox</ControlTypeName><StyleClass/><StyleText>Style:DropDown</StyleText>
+			
+			<DisplayName/><DataSource>,/admin,/console,/?</DataSource>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<ValidFlag/><VisibleFlag/><EnabledFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>70</Width><Height>30</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>1013</Id>
+			<TypeName>DisplayAndTransactionItem</TypeName><Name>MstscRun</Name>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName>Run</DisplayName><DataSource>\Images\run.png</DataSource>			
+			<DefaultValue/><ValidationRules/><Action>ExecCmd;%systemdirectory%\mstsc.exe /v:$MstscIp.t$ $MstscParam.t$</Action>
+			
+			<ValidFlag/><VisibleFlag/><EnabledFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>25</Width><Height>19</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem>
+</ArrayOfZoneItem>

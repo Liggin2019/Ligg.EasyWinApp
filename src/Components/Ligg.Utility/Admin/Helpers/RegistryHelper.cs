@@ -6,7 +6,72 @@ namespace Ligg.Utility.Admin.Helpers
     public static class RegistryHelper
     {
         private static readonly string TypeName = System.Reflection.MethodBase.GetCurrentMethod().ReflectedType.FullName;
-        //#add
+
+        private static RegistryKey CreateKey(string rootKeyStName, string keyPath)
+        {
+            try
+            {
+                var rootKey = GetRootKeyByShortName(rootKeyStName);
+                using (var key = rootKey.OpenSubKey(keyPath, true))
+                {
+                    if (key == null)
+                    {
+                        return rootKey.CreateSubKey(keyPath);
+                    }
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("\n>> " + TypeName + ".CreateKey Error: " + ex.Message);
+            }
+        }
+
+
+        //#edit
+        public static void SetValue(string regPath, string val)
+        {
+            try
+            {
+                var regePathDetail = GetRegistryPathDetail(regPath);
+                RegistryHelper.SetValue(regePathDetail.RootKeyShortName, regePathDetail.KeyString, regePathDetail.ValueName, val);
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("\n>> " + TypeName + ".SetValue Error: " + ex.Message);
+            }
+        }
+
+
+        private static void SetValue(string rootKeyStName, string keyPath, string valName, string val)
+        {
+            try
+            {
+                var rootKey = GetRootKeyByShortName(rootKeyStName);
+                using (var key = rootKey.OpenSubKey(keyPath, true))
+                {
+                    if (key == null)
+                    {
+                        using (var newKey = CreateKey(rootKeyStName, keyPath))
+                        {
+                            newKey.SetValue(valName, val);
+                        }
+                    }
+                    else
+                    {
+                        var valForCheck = GetValue(rootKeyStName, keyPath, valName);
+                        if (valForCheck != val)
+                            key.SetValue(valName, val);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("\n>> " + TypeName + ".SetValue Error: " + ex.Message);
+            }
+        }
+
+
         //#get
         public static string GetValue(string regPath)
         {
@@ -301,7 +366,6 @@ namespace Ligg.Utility.Admin.Helpers
             }
         }
 
-        //#check
 
         public static bool IfKeyValueExits(string regPath)
         {
@@ -337,7 +401,6 @@ namespace Ligg.Utility.Admin.Helpers
                 throw new ArgumentException("\n>> " + TypeName + ".IfKeyValueExits Error: " + ex.Message);
             }
         }
-
 
         private static bool IfKeyHasValue(RegistryKey key, string valName)
         {

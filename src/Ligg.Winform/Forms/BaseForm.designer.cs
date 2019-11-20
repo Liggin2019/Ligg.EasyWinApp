@@ -236,16 +236,7 @@ namespace Ligg.Winform.Forms
             // 
             // BackgroundTaskDetailListViewEx
             // 
-            //this.BackgroundTaskDetailListViewEx.CanOrder = false;
-            //this.BackgroundTaskDetailListViewEx.Dock = System.Windows.Forms.DockStyle.Top;
-            //this.BackgroundTaskDetailListViewEx.HasPager = false;
-            //this.BackgroundTaskDetailListViewEx.IsOrderDescending = false;
-            //this.BackgroundTaskDetailListViewEx.Location = new System.Drawing.Point(0, 19);
-            //this.BackgroundTaskDetailListViewEx.Name = "BackgroundTaskDetailListViewEx";
-            //this.BackgroundTaskDetailListViewEx.OrderFieldName = null;
-            //this.BackgroundTaskDetailListViewEx.Size = new System.Drawing.Size(200, 57);
-            //this.BackgroundTaskDetailListViewEx.TabIndex = 13;
-            //this.BackgroundTaskDetailListViewEx.Visible = false;
+          
             // 
             // BackgroundTaskDetailPanel
             // 

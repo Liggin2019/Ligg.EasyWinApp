@@ -10,7 +10,7 @@
     {
         MutiView = 0,
         SingleView = 1,
-        Dialogue = 3,
+        Dialogue = 2,
     }
 
     public enum LayoutElementType
@@ -58,21 +58,7 @@
         RowLining = 1,
     }
 
-    public enum VariableItemType
-    {
-        None = 0,
-        SetSelf = 1, //
-        SetOther = 2,
-        Act = 3,
-        Break = 4, //
-    }
 
-    public enum UpdateVariableType
-    {
-        None = 0, //
-        Refresh = 1,
-        Update = 2, //
-    }
 
     public enum DropDownStripAlignType
     {

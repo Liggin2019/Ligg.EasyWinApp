@@ -1,0 +1,8 @@
+<ArrayOfProcedureItem>
+	<ProcedureItem>
+			<Id>20</Id>
+			<TypeName>Variable</TypeName><GroupId>0</GroupId><Name>MonitoredServers</Name>
+			<Formula>=RunningParam;ChosenNetworkLocation;MonitoredServers</Formula><Value/><Condition/>
+		</ProcedureItem>
+		
+</ArrayOfProcedureItem>

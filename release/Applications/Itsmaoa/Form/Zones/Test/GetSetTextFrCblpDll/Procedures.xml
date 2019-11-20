@@ -1,0 +1,15 @@
+<ArrayOfProcedureItem>
+		<ProcedureItem>
+			<Id>1020</Id>
+			<TypeName>Action</TypeName><GroupId>0</GroupId><Name>BatFilePath</Name>
+			<Formula>Sleep;3</Formula><Value>0</Value><Condition/>
+		</ProcedureItem><ProcedureItem>
+			<Id>2020</Id>
+			<TypeName>Variable</TypeName><GroupId>0</GroupId><Name>FilePath</Name>
+			<Formula>ew</Formula><Value></Value><Condition/>
+		</ProcedureItem><ProcedureItem>
+			<Id>2030</Id>
+			<TypeName>Variable</TypeName><GroupId>0</GroupId><Name>EncryptedScript</Name>
+			<Formula/><Value/><Condition/>
+		</ProcedureItem>
+</ArrayOfProcedureItem>

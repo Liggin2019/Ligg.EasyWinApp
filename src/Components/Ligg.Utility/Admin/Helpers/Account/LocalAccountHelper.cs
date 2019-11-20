@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.DirectoryServices;
 using System.DirectoryServices.AccountManagement;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.Security.Principal;
 using Ligg.Base.DataModel;
 
 namespace Ligg.Utility.Admin.Helpers.Account
@@ -124,7 +122,7 @@ namespace Ligg.Utility.Admin.Helpers.Account
 
         }
 
-        //#add
+ 
         public static bool Add(string userName, string passWord, string displayName, string description, string groupName, bool userCannotChangePassword, bool passwordNeverExpires)
         {
             try
@@ -152,7 +150,10 @@ namespace Ligg.Utility.Admin.Helpers.Account
             }
         }
 
+ 
+ 
 
+ 
         //#get
         static GroupPrincipal GetGroupByName(string groupName)
         {
@@ -178,7 +179,6 @@ namespace Ligg.Utility.Admin.Helpers.Account
         }
 
 
-        //#judge
 
         //**fit for local id, domain id; also fit for LAN is disconnected 
         public static bool IsValidAccountAndPassword(string domain, string id, string password)
@@ -258,6 +258,7 @@ namespace Ligg.Utility.Admin.Helpers.Account
             }
         }
 
+
         public static bool IsInGroupForLocalAccount(string account, string localGrpName)
         {
             try
@@ -277,6 +278,7 @@ namespace Ligg.Utility.Admin.Helpers.Account
                 return false;
             }
         }
+
 
         public static bool IsGroupValid(string localGrpName)
         {
@@ -306,17 +308,6 @@ namespace Ligg.Utility.Admin.Helpers.Account
         public string IsLocked;
         public int PasswordPolicy;
     }
-
-    /*  TypeName 
-   SidTypeUser: The account is a user account.
-
-   SidTypeGroup: The account is a global group account.
-
-   SidTypeWellKnownGroup: The account is a well-known group account (such as Everyone). For more information, see Well-Known SIDs.
-
-   SidTypeDeletedAccount: The account has been deleted.
-
-   SidTypeUnknown: The account type cannot be determined.*/
 
 
 }

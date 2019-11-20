@@ -1,5 +1,0 @@
-E:\Doing\coding\ligg\Git-Ligg.EasyWinApp\src\Ligg.EasyWinApp.ImplInterface\bin\Release\ImplInterface.dll
-E:\Doing\coding\ligg\Git-Ligg.EasyWinApp\src\Ligg.EasyWinApp.ImplInterface\bin\Release\ImplInterface.pdb
-E:\Doing\coding\ligg\Git-Ligg.EasyWinApp\src\Ligg.EasyWinApp.ImplInterface\obj\Release\Ligg.EasyWinApp.ImplInterface.csproj.CoreCompileInputs.cache
-E:\Doing\coding\ligg\Git-Ligg.EasyWinApp\src\Ligg.EasyWinApp.ImplInterface\obj\Release\ImplInterface.dll
-E:\Doing\coding\ligg\Git-Ligg.EasyWinApp\src\Ligg.EasyWinApp.ImplInterface\obj\Release\ImplInterface.pdb

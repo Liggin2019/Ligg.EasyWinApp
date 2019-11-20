@@ -1,0 +1,360 @@
+<ArrayOfLayoutElement>
+	<LayoutElement>
+			
+			
+			
+			
+			<Id>1</Id><Name>TemporaryConfigArea</Name><Container>MainSectionMainDivisionMidRegion</Container><TypeName>ContentArea</TypeName>
+			<Location/><InputVariables/><StyleText>Padding:2</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			<ResizeRegionParams/><Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Fill</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>10</Id><Name>TemporaryConfigLabel</Name><Container>TemporaryConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\_Common\TitleLabel</Location><InputVariables>Conventional Configuration^Level1^</InputVariables><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>33</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>10100</Id><Name>ConfigGrpZone100</Name><Container>TemporaryConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\Config\Common\Common</Location><InputVariables>100</InputVariables><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>33</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>10101</Id><Name>OnSelectAllChanged100</Name><Container>TemporaryConfigArea</Container><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>TemporaryConfig_TemporaryConfigArea_BatchAction_Select</Remark>
+			
+			<Action>SetControlValue;TemporaryConfig_TemporaryConfigArea_ConfigGrpZone100_Select;$TemporaryConfig_TemporaryConfigArea_BatchAction_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>10102</Id><Name>OnRefreshSelectedClicked100</Name><Container>TemporaryConfigArea</Container><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>TemporaryConfig_TemporaryConfigArea_BatchAction_Refresh</Remark>
+			
+			<Action>Crun;$TemporaryConfig_TemporaryConfigArea_ConfigGrpZone100_Select.v$;$TemporaryConfig_TemporaryConfigArea_ConfigGrpZone100_SetConfigGroupStatus-Crun$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>10103</Id><Name>OnAutofixSelectedClicked100</Name><Container>TemporaryConfigArea</Container><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>TemporaryConfig_TemporaryConfigArea_BatchAction_AutoFix</Remark>
+			
+			<Action>Crun;$TemporaryConfig_TemporaryConfigArea_ConfigGrpZone100_Select.v$;$TemporaryConfig_TemporaryConfigArea_ConfigGrpZone100_SetConfigGroupStatus-Crun$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>10109</Id><Name>SplitRect10109</Name><Container>TemporaryConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\_common\SplitRect</Location><InputVariables/><StyleText>BackColor:200,200,200</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>10200</Id><Name>ConfigGrpZone101</Name><Container>TemporaryConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\Config\Common\Common</Location><InputVariables>101</InputVariables><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>33</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>10201</Id><Name>OnSelectAllChanged101</Name><Container>TemporaryConfigArea</Container><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>TemporaryConfig_TemporaryConfigArea_BatchAction_Select</Remark>
+			
+			<Action>SetControlValue;TemporaryConfig_TemporaryConfigArea_ConfigGrpZone101_Select;$TemporaryConfig_TemporaryConfigArea_BatchAction_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>10202</Id><Name>OnRefreshSelectedClicked101</Name><Container>TemporaryConfigArea</Container><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>TemporaryConfig_TemporaryConfigArea_BatchAction_Refresh</Remark>
+			
+			<Action>Crun;$TemporaryConfig_TemporaryConfigArea_ConfigGrpZone101_Select.v$;$TemporaryConfig_TemporaryConfigArea_ConfigGrpZone101_SetConfigGroupStatus-Crun$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>10203</Id><Name>OnAutofixSelectedClicked101</Name><Container>TemporaryConfigArea</Container><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>TemporaryConfig_TemporaryConfigArea_BatchAction_AutoFix</Remark>
+			
+			<Action>Crun;$TemporaryConfig_TemporaryConfigArea_ConfigGrpZone101_Select.v$;$TemporaryConfig_TemporaryConfigArea_ConfigGrpZone101_SetConfigGroupStatus-Crun$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>10209</Id><Name>SplitRect1010209</Name><Container>TemporaryConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\_common\SplitRect</Location><InputVariables/><StyleText>BackColor:200,200,200</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>10300</Id><Name>ConfigGrpZone102</Name><Container>TemporaryConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\Config\Common\Common</Location><InputVariables>102</InputVariables><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>33</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>10301</Id><Name>OnSelectAllChanged102</Name><Container>TemporaryConfigArea</Container><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><InputVariables></InputVariables><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>TemporaryConfig_TemporaryConfigArea_BatchAction_Select</Remark>
+			
+			<Action>SetControlValue;TemporaryConfig_TemporaryConfigArea_ConfigGrpZone102_Select;$TemporaryConfig_TemporaryConfigArea_BatchAction_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>10302</Id><Name>OnRefreshSelectedClicked102</Name><Container>TemporaryConfigArea</Container><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>TemporaryConfig_TemporaryConfigArea_BatchAction_Refresh</Remark>
+			
+			<Action>Crun;$TemporaryConfig_TemporaryConfigArea_ConfigGrpZone102_Select.v$;$TemporaryConfig_TemporaryConfigArea_ConfigGrpZone102_SetConfigGroupStatus-Crun$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>10303</Id><Name>OnAutofixSelectedClicked102</Name><Container>TemporaryConfigArea</Container><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>TemporaryConfig_TemporaryConfigArea_BatchAction_AutoFix</Remark>
+			
+			<Action>Crun;$TemporaryConfig_TemporaryConfigArea_ConfigGrpZone102_Select.v$;$TemporaryConfig_TemporaryConfigArea_ConfigGrpZone102_SetConfigGroupStatus-Crun$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>10309</Id><Name>SplitRect110309</Name><Container>TemporaryConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\_common\SplitRect</Location><InputVariables/><StyleText>BackColor:200,200,200</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>19990</Id><Name>BatchAction</Name><Container>TemporaryConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\Config\Common\BatchAction</Location><InputVariables>100,101,102</InputVariables><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>33</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>19991</Id><Name>OnSelectChanged100</Name><Container>TemporaryConfigArea</Container><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>TemporaryConfig_TemporaryConfigArea_ConfigGrpZone100_Select</Remark>
+			
+			<Action>SetProcedureVariableValue~TemporaryConfig_TemporaryConfigArea_BatchAction_SelectedIds~=AddOrDelToSubParams;#TemporaryConfig_TemporaryConfigArea_BatchAction_SelectedIds.v#;100;$TemporaryConfig_TemporaryConfigArea_ConfigGrpZone100_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>19992</Id><Name>OnSelectChanged101</Name><Container>TemporaryConfigArea</Container><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>TemporaryConfig_TemporaryConfigArea_ConfigGrpZone101_Select</Remark>
+			
+			<Action>SetProcedureVariableValue~TemporaryConfig_TemporaryConfigArea_BatchAction_SelectedIds~=AddOrDelToSubParams;#TemporaryConfig_TemporaryConfigArea_BatchAction_SelectedIds.v#;101;$TemporaryConfig_TemporaryConfigArea_ConfigGrpZone101_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>19993</Id><Name>OnSelectChanged102</Name><Container>TemporaryConfigArea</Container><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>TemporaryConfig_TemporaryConfigArea_ConfigGrpZone102_Select</Remark>
+			
+			<Action>SetProcedureVariableValue~TemporaryConfig_TemporaryConfigArea_BatchAction_SelectedIds~=AddOrDelToSubParams;#TemporaryConfig_TemporaryConfigArea_BatchAction_SelectedIds.v#;102;$TemporaryConfig_TemporaryConfigArea_ConfigGrpZone102_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement>
+</ArrayOfLayoutElement>

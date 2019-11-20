@@ -1,0 +1,124 @@
+<ArrayOfWinConfigGroup>
+	<WinConfigGroup>
+		
+		<Id>0</Id><Name>Hardware</Name>
+		<HasManualJudge>false</HasManualJudge><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasAutoFix>false</HasAutoFix><HasManualFix>true</HasManualFix><ManualFixAction>RunAsAdmin;%ImplDir%\Tools\WinConfig\Everest\Everest.exe;2</ManualFixAction><HasManualFix1>true</HasManualFix1><ManualFix1Action>Run;%ImplDir%\Tools\WinConfig\Cpuz\cpuz.exe;2</ManualFix1Action><HasManualFix2>true</HasManualFix2><ManualFix2Action>Run;%ImplDir%\Tools\WinConfig\gpuz\gpuz.exe;2</ManualFix2Action><HasSave>true</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinConfigGroup>
+	<WinConfigGroup>
+
+		
+		<Id>1</Id><Name>Software</Name>
+    <HasManualJudge>true</HasManualJudge><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasAutoFix>true</HasAutoFix><HasManualFix>true</HasManualFix><ManualFixAction>ExecCmdAsAdmin;appwiz.cpl;2</ManualFixAction><HasManualFix1>false</HasManualFix1><ManualFix1Action/><HasManualFix2>false</HasManualFix2><ManualFix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\software-help.doc</ReadDocAction>
+		
+	</WinConfigGroup><WinConfigGroup>
+
+		
+		<Id>2</Id><Name>GroupPolicy</Name>
+    <HasManualJudge>false</HasManualJudge><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasAutoFix>true</HasAutoFix><HasManualFix>true</HasManualFix><ManualFixAction>ExecCmdAsAdmin;gpedit.msc;2</ManualFixAction><HasManualFix1>false</HasManualFix1><ManualFix1Action/><HasManualFix2>false</HasManualFix2><ManualFix2Action/><HasSave>true</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\group-policy-Help.doc</ReadDocAction>
+		
+	</WinConfigGroup><WinConfigGroup>
+
+		
+		<Id>3</Id><Name>Registry</Name>
+    <HasManualJudge>false</HasManualJudge><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasAutoFix>true</HasAutoFix><HasManualFix>true</HasManualFix><ManualFixAction>ExecCmd;regedit.exe;2</ManualFixAction><HasManualFix1>true</HasManualFix1><ManualFix1Action>ExecCmdAsAdmin;regedit.exe;2</ManualFix1Action><HasManualFix2>true</HasManualFix2><ManualFix2Action>ExecCmdAsAdmin;%systemroot%\Syswow64\Regedit.exe;2</ManualFix2Action><HasSave>true</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinConfigGroup><WinConfigGroup>
+
+		
+		<Id>4</Id><Name>WindowsService</Name>
+    <HasManualJudge>false</HasManualJudge><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasAutoFix>true</HasAutoFix><HasManualFix>true</HasManualFix><ManualFixAction/><HasManualFix1>true</HasManualFix1><ManualFix1Action/><HasManualFix2>false</HasManualFix2><ManualFix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinConfigGroup><WinConfigGroup>
+
+		
+		<Id>5</Id><Name>LocalAdminAccount</Name>
+    <HasManualJudge>false</HasManualJudge><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasAutoFix>true</HasAutoFix><HasManualFix>true</HasManualFix><ManualFixAction/><HasManualFix1>true</HasManualFix1><ManualFix1Action/><HasManualFix2>false</HasManualFix2><ManualFix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinConfigGroup><WinConfigGroup>
+
+		
+		<Id>6</Id><Name>MachineName</Name>
+    <HasManualJudge>false</HasManualJudge><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasAutoFix>true</HasAutoFix><HasManualFix>true</HasManualFix><ManualFixAction/><HasManualFix1>true</HasManualFix1><ManualFix1Action/><HasManualFix2>false</HasManualFix2><ManualFix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinConfigGroup><WinConfigGroup>
+
+		
+		<Id>7</Id><Name>HostFile</Name>
+    <HasManualJudge>false</HasManualJudge><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasAutoFix>true</HasAutoFix><HasManualFix>true</HasManualFix><ManualFixAction/><HasManualFix1>true</HasManualFix1><ManualFix1Action/><HasManualFix2>false</HasManualFix2><ManualFix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinConfigGroup><WinConfigGroup>
+
+		
+		<Id>8</Id><Name>ComputerStartDuration</Name>
+    <HasManualJudge>false</HasManualJudge><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasAutoFix>true</HasAutoFix><HasManualFix>true</HasManualFix><ManualFixAction/><HasManualFix1>true</HasManualFix1><ManualFix1Action/><HasManualFix2>false</HasManualFix2><ManualFix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinConfigGroup><WinConfigGroup>
+
+		
+		<Id>9</Id><Name>ComputerRunningDuration</Name>
+    <HasManualJudge>false</HasManualJudge><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasAutoFix>true</HasAutoFix><HasManualFix>true</HasManualFix><ManualFixAction/><HasManualFix1>true</HasManualFix1><ManualFix1Action/><HasManualFix2>false</HasManualFix2><ManualFix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinConfigGroup><WinConfigGroup>
+
+		
+		<Id>10</Id><Name>SystemDriveFreeSpace</Name>
+    <HasManualJudge>false</HasManualJudge><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasAutoFix>true</HasAutoFix><HasManualFix>true</HasManualFix><ManualFixAction/><HasManualFix1>true</HasManualFix1><ManualFix1Action/><HasManualFix2>false</HasManualFix2><ManualFix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinConfigGroup><WinConfigGroup>
+
+		
+		<Id>11</Id><Name>AVSSetting</Name>
+    <HasManualJudge>false</HasManualJudge><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasAutoFix>true</HasAutoFix><HasManualFix>true</HasManualFix><ManualFixAction/><HasManualFix1>true</HasManualFix1><ManualFix1Action/><HasManualFix2>false</HasManualFix2><ManualFix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinConfigGroup><WinConfigGroup>
+
+		
+		<Id>12</Id><Name>SapSettingFile</Name>
+    <HasManualJudge>false</HasManualJudge><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasAutoFix>true</HasAutoFix><HasManualFix>true</HasManualFix><ManualFixAction/><HasManualFix1>true</HasManualFix1><ManualFix1Action/><HasManualFix2>false</HasManualFix2><ManualFix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinConfigGroup><WinConfigGroup>
+
+		
+		<Id>13</Id><Name>OutlookSetting</Name>
+    <HasManualJudge>false</HasManualJudge><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasAutoFix>true</HasAutoFix><HasManualFix>true</HasManualFix><ManualFixAction/><HasManualFix1>true</HasManualFix1><ManualFix1Action/><HasManualFix2>false</HasManualFix2><ManualFix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinConfigGroup><WinConfigGroup>
+
+		
+		<Id>14</Id><Name>InternetSetting</Name>
+    <HasManualJudge>false</HasManualJudge><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasAutoFix>true</HasAutoFix><HasManualFix>true</HasManualFix><ManualFixAction/><HasManualFix1>true</HasManualFix1><ManualFix1Action/><HasManualFix2>false</HasManualFix2><ManualFix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinConfigGroup><WinConfigGroup>
+
+		
+		<Id>15</Id><Name>SystemDriveGhost</Name>
+    <HasManualJudge>false</HasManualJudge><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasAutoFix>true</HasAutoFix><HasManualFix>true</HasManualFix><ManualFixAction/><HasManualFix1>true</HasManualFix1><ManualFix1Action/><HasManualFix2>false</HasManualFix2><ManualFix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinConfigGroup><WinConfigGroup>
+
+		
+		<Id>16</Id><Name>Process</Name>
+    <HasManualJudge>false</HasManualJudge><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasAutoFix>true</HasAutoFix><HasManualFix>true</HasManualFix><ManualFixAction/><HasManualFix1>true</HasManualFix1><ManualFix1Action/><HasManualFix2>false</HasManualFix2><ManualFix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinConfigGroup><WinConfigGroup>
+
+		
+		<Id>100</Id><Name>LegalAutoDeskInstallation</Name>
+    <HasManualJudge>false</HasManualJudge><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasAutoFix>true</HasAutoFix><HasManualFix>true</HasManualFix><ManualFixAction/><HasManualFix1>true</HasManualFix1><ManualFix1Action/><HasManualFix2>false</HasManualFix2><ManualFix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinConfigGroup><WinConfigGroup>
+
+		
+		<Id>101</Id><Name>TemporaryHostFile</Name>
+    <HasManualJudge>false</HasManualJudge><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasAutoFix>true</HasAutoFix><HasManualFix>true</HasManualFix><ManualFixAction/><HasManualFix1>true</HasManualFix1><ManualFix1Action/><HasManualFix2>false</HasManualFix2><ManualFix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinConfigGroup><WinConfigGroup>
+
+		
+		<Id>102</Id><Name>TemporaryWsusConfig</Name>
+    <HasManualJudge>false</HasManualJudge><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasAutoFix>true</HasAutoFix><HasManualFix>true</HasManualFix><ManualFixAction/><HasManualFix1>true</HasManualFix1><ManualFix1Action/><HasManualFix2>false</HasManualFix2><ManualFix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinConfigGroup>
+	
+</ArrayOfWinConfigGroup>

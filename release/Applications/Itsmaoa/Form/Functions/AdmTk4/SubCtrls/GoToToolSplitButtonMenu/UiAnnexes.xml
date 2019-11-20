@@ -1,0 +1,730 @@
+<ArrayOfAnnex>
+		<Annex>
+			<Id>10</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Service</MasterName>
+			<DisplayName>Service</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+		</Annex><Annex>
+			<Id>10</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Service</MasterName>
+			<DisplayName>Service</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex><Annex>
+			<Id>10</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Service</MasterName>
+			<DisplayName>服务中心</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>1010</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>ServDesk</MasterName>
+			<DisplayName>Servive Desk</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+		</Annex><Annex>
+			<Id>1010</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>ServDesk</MasterName>
+			<DisplayName>Servive Desk</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex><Annex>
+			<Id>1010</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>ServDesk</MasterName>
+			<DisplayName>服务台</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>1020</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>InccidentMgr</MasterName>
+			<DisplayName>Inccident Management</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+		</Annex><Annex>
+			<Id>1020</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>InccidentMgr</MasterName>
+			<DisplayName>Inccident Management</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex><Annex>
+			<Id>1020</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>InccidentMgr</MasterName>
+			<DisplayName>事故管理</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>1030</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>SLAMgr</MasterName>
+			<DisplayName>SLA Management</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+		</Annex><Annex>
+			<Id>1030</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>SLAMgr</MasterName>
+			<DisplayName>SLA Management</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex><Annex>
+			<Id>1030</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>SLAMgr</MasterName>
+			<DisplayName>SLA 管理</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>1040</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>ServEval</MasterName>
+			<DisplayName>Servive Evaluation And Analysis</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+		</Annex><Annex>
+			<Id>1040</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>ServEval</MasterName>
+			<DisplayName>Servive Evaluation And Analysis</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex><Annex>
+			<Id>1040</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>ServEval</MasterName>
+			<DisplayName>服务评估和分析</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>1050</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>UsrTk</MasterName>
+			<DisplayName>User Toolkit</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+		</Annex><Annex>
+			<Id>1050</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>UsrTk</MasterName>
+			<DisplayName>User Toolkit</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex><Annex>
+			<Id>1050</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>UsrTk</MasterName>
+			<DisplayName>用户工具箱</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>1060</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>AdmTk</MasterName>
+			<DisplayName>Administrator Toolkit</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+		</Annex><Annex>
+			<Id>1060</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>AdmTk</MasterName>
+			<DisplayName>Administrator Toolkit</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex><Annex>
+			<Id>1060</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>AdmTk</MasterName>
+			<DisplayName>管理员工具箱</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>20</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Operation</MasterName>
+			<DisplayName>Operation</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+		</Annex><Annex>
+			<Id>20</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Operation</MasterName>
+			<DisplayName>Operation</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex><Annex>
+			<Id>20</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Operation</MasterName>
+			<DisplayName>运维中心</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>2010</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>AssetMgr</MasterName>
+			<DisplayName>Asset Management</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+		</Annex><Annex>
+			<Id>2010</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>AssetMgr</MasterName>
+			<DisplayName>Asset Management</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex><Annex>
+			<Id>2010</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>AssetMgr</MasterName>
+			<DisplayName>资产管理</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>2020</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>ConfigMgr</MasterName>
+			<DisplayName>Config Management</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+		</Annex><Annex>
+			<Id>2020</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>ConfigMgr</MasterName>
+			<DisplayName>Config Management</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex><Annex>
+			<Id>2020</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>ConfigMgr</MasterName>
+			<DisplayName>配置管理</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>2030</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>ChangeMgr</MasterName>
+			<DisplayName>Change Management</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+		</Annex><Annex>
+			<Id>2030</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>ChangeMgr</MasterName>
+			<DisplayName>Change Management</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex><Annex>
+			<Id>2030</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>ChangeMgr</MasterName>
+			<DisplayName>变更管理</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>2040</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>EventMgr</MasterName>
+			<DisplayName>Event Management</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+		</Annex><Annex>
+			<Id>2040</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>EventMgr</MasterName>
+			<DisplayName>Event Management</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex><Annex>
+			<Id>2040</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>EventMgr</MasterName>
+			<DisplayName>事件管理</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>2050</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>DeployMgr</MasterName>
+			<DisplayName>Deploy Management</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+		</Annex><Annex>
+			<Id>2050</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>DeployMgr</MasterName>
+			<DisplayName>Deploy Management</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex><Annex>
+			<Id>2050</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>DeployMgr</MasterName>
+			<DisplayName>部署管理</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>2060</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Automation</MasterName>
+			<DisplayName>Operation Automation</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+		</Annex><Annex>
+			<Id>2060</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Automation</MasterName>
+			<DisplayName>Operation Automation</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex><Annex>
+			<Id>2060</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Automation</MasterName>
+			<DisplayName>运维自动化</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>2070</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Monitor</MasterName>
+			<DisplayName>Monitor And Analysis</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+		</Annex><Annex>
+			<Id>2070</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Monitor</MasterName>
+			<DisplayName>Monitor And Analysis</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex><Annex>
+			<Id>2070</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Monitor</MasterName>
+			<DisplayName>监控和分析</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>30</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Knowledge</MasterName>
+			<DisplayName>Knowledge</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex><Annex>
+			<Id>30</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Knowledge</MasterName>
+			<DisplayName>Knowledge</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+		</Annex><Annex>
+			<Id>30</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Knowledge</MasterName>
+			<DisplayName>知识中心</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>3010</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>DocLib</MasterName>
+			<DisplayName>Documentation Libary</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+		</Annex><Annex>
+			<Id>3010</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>DocLib</MasterName>
+			<DisplayName>Documentation Libary</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex><Annex>
+			<Id>3010</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>DocLib</MasterName>
+			<DisplayName>资料库</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>3020</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>MediaLib</MasterName>
+			<DisplayName>Media Libary</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+		</Annex><Annex>
+			<Id>3020</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>MediaLib</MasterName>
+			<DisplayName>Media Libary</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex><Annex>
+			<Id>3020</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>MediaLib</MasterName>
+			<DisplayName>介质库</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>3030</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>NwConnLib</MasterName>
+			<DisplayName>Network Connection Libary</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+		</Annex><Annex>
+			<Id>3030</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>NwConnLib</MasterName>
+			<DisplayName>Network Connection Libary</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex><Annex>
+			<Id>3030</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>NwConnLib</MasterName>
+			<DisplayName>网络连接库</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>40</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Process</MasterName>
+			<DisplayName>Process</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+		</Annex><Annex>
+			<Id>40</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Process</MasterName>
+			<DisplayName>Process</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex><Annex>
+			<Id>40</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Process</MasterName>
+			<DisplayName>流程中心</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>50</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Project</MasterName>
+			<DisplayName>Project</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+		</Annex><Annex>
+			<Id>50</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Project</MasterName>
+			<DisplayName>Project</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex><Annex>
+			<Id>50</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Project</MasterName>
+			<DisplayName>项目中心</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>60</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Performance</MasterName>
+			<DisplayName>Performance</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+		</Annex><Annex>
+			<Id>60</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Performance</MasterName>
+			<DisplayName>Performance</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex><Annex>
+			<Id>60</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>Performance</MasterName>
+			<DisplayName>绩效中心</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex>
+		
+</ArrayOfAnnex>

@@ -190,17 +190,6 @@ namespace Ligg.Winform.Forms
                 BackgroundTaskDetailLabel.BackColor = StyleSet.BaseColor;
                 BackgroundTaskDetailLabel.ForeColor = StyleSet.CaptionTextColor;
 
-                //BackgroundTaskDetailListViewEx.Visible = true;
-                //BackgroundTaskDetailListViewEx.RightMargin = rightMargin;
-                //BackgroundTaskDetailListViewEx.Height = popupHeight - BackgroundTaskDetailLabel.Height;
-                //BackgroundTaskDetailListViewEx.ViewTypeName = "Details";
-                //BackgroundTaskDetailListViewEx.RowHeight = 18;
-                //BackgroundTaskDetailListViewEx.HasPager = false;
-                //BackgroundTaskDetailListViewEx.CanOrder = true;
-                //BackgroundTaskDetailListViewEx.OrderFieldName = "Id";
-                //BackgroundTaskDetailListViewEx.IsOrderDescending = true;
-                //BackgroundTaskDetailListViewEx.InitComponent(listViewExHeaderConfigXmlPath, listViewExCttMenuConfigXmlPath);
-
                 if (typeList != null) _backgroundTaskTypeList = typeList;
                 if (File.Exists(typeAnnexesXmlPath))
                 {
@@ -262,7 +251,7 @@ namespace Ligg.Winform.Forms
                         idValTextList.Add(idValueText);
                     }
                 }
-                ////BackgroundTaskDetailListViewEx.Render(idValTextList);
+                //BackgroundTaskDetailListViewEx.Render(idValTextList);
             }
             catch (Exception ex)
             {

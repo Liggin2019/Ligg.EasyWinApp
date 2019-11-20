@@ -1,7 +1,0 @@
-E:\Doing\coding\ligg\Ligg.EasyWinApp\src\Ligg.EasyWinConsole\bin\Release\Ligg.EasyWinConsole.exe.config
-E:\Doing\coding\ligg\Ligg.EasyWinApp\src\Ligg.EasyWinConsole\bin\Release\Ligg.EasyWinConsole.exe
-E:\Doing\coding\ligg\Ligg.EasyWinApp\src\Ligg.EasyWinConsole\bin\Release\Ligg.EasyWinConsole.pdb
-E:\Doing\coding\ligg\Ligg.EasyWinApp\src\Ligg.EasyWinConsole\obj\Release\Ligg.EasyWinConsole.csprojAssemblyReference.cache
-E:\Doing\coding\ligg\Ligg.EasyWinApp\src\Ligg.EasyWinConsole\obj\Release\Ligg.EasyWinConsole.csproj.CoreCompileInputs.cache
-E:\Doing\coding\ligg\Ligg.EasyWinApp\src\Ligg.EasyWinConsole\obj\Release\Ligg.EasyWinConsole.exe
-E:\Doing\coding\ligg\Ligg.EasyWinApp\src\Ligg.EasyWinConsole\obj\Release\Ligg.EasyWinConsole.pdb

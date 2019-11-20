@@ -30,7 +30,6 @@ namespace Ligg.Winform.Controls
         private ToolTip _toolTipShowLog = new ToolTip();
         private string _customFormat = "yyyy-MM-dd HH:mm:ss";
 
-
         private string _firstRunTimeString;
         private DateTime _firstRunTime;
         private int _circlePeriod = 0;
@@ -50,7 +49,6 @@ namespace Ligg.Winform.Controls
         private int _alarmLeadSeconds = 10;
         private int _intervalSeconds = 1;
         private List<TimerExRecurringRunLog> _logs = new List<TimerExRecurringRunLog>();
-
 
         private bool _isNowTicked;
 
@@ -179,7 +177,7 @@ namespace Ligg.Winform.Controls
                 SetNextRunTime(); textBoxStartTime.Text = _startTimeString;
             }
 
-            SetTick(!_isNowTicked);
+            StartOrStopTicking(!_isNowTicked);
 
             RenderPictureBoxInputStartTime();
 
@@ -521,7 +519,7 @@ namespace Ligg.Winform.Controls
         }
 
 
-        private void SetTick(bool setTickOn)
+        private void StartOrStopTicking(bool setTickOn)
         {
             try
             {

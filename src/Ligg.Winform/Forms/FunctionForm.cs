@@ -13,7 +13,6 @@ using Ligg.Base.DataModel.Enums;
 using Ligg.Base.Extension;
 using Ligg.Base.Handlers;
 using Ligg.Base.Helpers;
-using Ligg.EasyWinApp.ImplInterface;
 using Ligg.Winform.Controls;
 using Ligg.Winform.Controls.ShadowPanel;
 using Ligg.Winform.DataModel;
@@ -28,7 +27,7 @@ namespace Ligg.Winform.Forms
 {
     public partial class FunctionForm : FrameForm
     {
-        public bool Exit = false;
+        public bool IsOk = true;
         private FunctionInitParamSet _functionInitParamSet;
         public FunctionInitParamSet FunctionInitParamSet
         {
@@ -37,15 +36,15 @@ namespace Ligg.Winform.Forms
         }
         private List<Annex> _functionAnnexes = null;
 
-        private List<VariableItem> _variables = new List<VariableItem>();
+        private List<ProcedureItem> _procedures = new List<ProcedureItem>();
         private List<Annex> _annexes = new List<Annex>();
 
         private List<LayoutElement> _layoutElements = new List<LayoutElement>();
         private FunctionFormStyle _functionFormStyle;
         private FunctionFormViewMenuMode _functionFormViewMenuMode;
         private bool _hasTray;
-        private int _zoneWidthForNonMutiViewForm;
-        private int _zoneHeightForNonMutiViewForm;
+        private int _zoneWidthForSingleViewForm;
+        private int _zoneHeightForSingleViewForm;
         private bool _hasRunningStatusSectionForNonMutiViewForm;
         private List<ZoneItem> _zonesItems = new List<ZoneItem>();
 
@@ -60,11 +59,12 @@ namespace Ligg.Winform.Forms
         private FormWindowState _ordinaryWindowStatus = FormWindowState.Normal;
         private readonly ToolTip _pictureBoxToolTip = new ToolTip();
 
-        protected string AdditionalInfoForException { get; set; }
-        protected string FunctionNameForException { get; set; }
+        private string _basicInfoForException;
+        private string _additionalInfoForException;
+
         private string _startupDir;
         private string _appDir;
-        private string _uiDir;
+        private string _formDir;
         private string _functionsDir;
         private string _zonesDir;
         private string _implDir;
@@ -81,24 +81,18 @@ namespace Ligg.Winform.Forms
         {
             try
             {
-                _functionInitParamSet.AssemblyCode = GlobalConfiguration.AssemblyCode;
-
-
                 _startupDir = Directory.GetCurrentDirectory();
                 _appDir = _startupDir + "\\Applications\\" + _functionInitParamSet.ApplicationCode;
-                _uiDir = _appDir + "\\Ui";
-                _functionsDir = _uiDir + "\\Functions";
-                _zonesDir = _uiDir + "\\Zones";
-                var implDllPath = FileHelper.GetFilePath(FunctionInitParamSet.ImplementationDllPath, DirectoryHelper.DeleteLastSlashes(Directory.GetCurrentDirectory()));
-                if (!implDllPath.IsNullOrEmpty())
-                    _implDir = FileHelper.GetFileDetailByOption(implDllPath, FilePathComposition.Directory);
+                _formDir = _appDir + "\\Form";
+                _functionsDir = _formDir + "\\Functions";
+                _zonesDir = _formDir + "\\Zones";
+                _implDir = _functionInitParamSet.ImplementationDir;
                 _appDataDir = DirectoryHelper.GetSpecialDir("commonapplicationdata") + "\\" + _functionInitParamSet.AssemblyCode + "\\" + _functionInitParamSet.ApplicationCode;
 
                 if (!Directory.Exists(_appDataDir)) Directory.CreateDirectory(_appDataDir);
 
-                FunctionNameForException = _functionInitParamSet.ApplicationCode + "\\" + _functionInitParamSet.FunctionCode;
-                AdditionalInfoForException = "HelpdeskEmail:" + _functionInitParamSet.HelpdeskEmail + ";" + "CurrentUserName:"
-                + GlobalConfiguration.UserCode + ";" + "ApplicationVersion:" + _functionInitParamSet.ApplicationVersion;
+                _basicInfoForException = _functionInitParamSet.ApplicationCode + "\\" + _functionInitParamSet.FunctionCode;
+                _additionalInfoForException = "HelpdeskEmail:" + _functionInitParamSet.HelpdeskEmail + ";" + "ApplicationVersion:" + _functionInitParamSet.ApplicationVersion + ";UserCode:";
 
                 SetFrameTextByCulture(true, FunctionInitParamSet.SupportMutiCultures);
                 LoadForm();
@@ -106,7 +100,7 @@ namespace Ligg.Winform.Forms
             }
             catch (Exception ex)
             {
-                PopupMessage.PopupError(FunctionNameForException + ">" + GetType().FullName + ".FunctionForm_Load" + " Error", ex.Message, AdditionalInfoForException);
+                PopupMessage.PopupError(_basicInfoForException + ": " + GetType().FullName + ".FunctionForm_Load" + " Error", ex.Message, GetAdditionalInfoForException());
                 Application.Exit();
             }
         }
@@ -124,7 +118,7 @@ namespace Ligg.Winform.Forms
             }
             catch (Exception ex)
             {
-                PopupMessage.PopupError(FunctionNameForException + ">" + GetType().FullName + ".FunctionForm_Resize" + " Error", ex.Message, AdditionalInfoForException);
+                PopupMessage.PopupError(_basicInfoForException + ": " + GetType().FullName + ".FunctionForm_Resize" + " Error", ex.Message, GetAdditionalInfoForException());
             }
         }
 
@@ -160,7 +154,7 @@ namespace Ligg.Winform.Forms
                         splitButtonCulture.Text = CultureHelper.CurrentLanguageName;
                         splitButtonCulture.Tag = culName;
                         splitButtonCulture.ToolTipText = WinformRes.ChooseLanguage;
-                        GlobalConfiguration.CurrentLanguageCode = CultureHelper.CurrentLanguageCode;
+                        OnCurrentLanguageChanged();
                     }
 
                     SetFrameTextByCulture(false, FunctionInitParamSet.SupportMutiCultures);
@@ -170,11 +164,12 @@ namespace Ligg.Winform.Forms
             catch (Exception ex)
             {
                 var methodName = "ToolBarSectionPublicRegionToolStripSplitButtonCultureItemClickHandler";
-                PopupMessage.PopupError(FunctionNameForException + ">" + GetType().FullName + "." + methodName + " Error", ex.Message, AdditionalInfoForException);
+                PopupMessage.PopupError(_basicInfoForException + ": " + GetType().FullName + "." + methodName + " Error", ex.Message, GetAdditionalInfoForException());
             }
         }
 
         //#event handler 
+        //##ViewEventHandler
         private void ViewEventHandler(string viewName, LayoutElementType eventHandlerType)
         {
             try
@@ -189,10 +184,11 @@ namespace Ligg.Winform.Forms
             }
             catch (Exception ex)
             {
-                PopupMessage.PopupError(FunctionNameForException + ">" + GetType().FullName + ".ViewEventHandler" + " Error", ex.Message, AdditionalInfoForException);
+                PopupMessage.PopupError(_basicInfoForException + ": " + GetType().FullName + ".ViewEventHandler" + " Error: viewName='" + viewName + "'; ", ex.Message, GetAdditionalInfoForException());
             }
         }
 
+        //##ZoneEventHandler
         private void ZoneEventHandler(string zoneName, LayoutElementType eventHandlerType)
         {
             try
@@ -206,16 +202,16 @@ namespace Ligg.Winform.Forms
             }
             catch (Exception ex)
             {
-                PopupMessage.PopupError(FunctionNameForException + ">" + GetType().FullName + ".ZoneEventHandler" + " Error", ex.Message, AdditionalInfoForException);
+                PopupMessage.PopupError(_basicInfoForException + ": " + GetType().FullName + ".ZoneEventHandler" + " Error: zoneName='" + zoneName + "'", ex.Message, GetAdditionalInfoForException());
             }
         }
 
-        //#ViewMenuItemClickHandler
+        //##ViewMenuItemClickHandler
         private void ViewMenuItemClickHandler(object sender, EventArgs e)
         {
+            var ctrlName = "";
             try
             {
-                var ctrlName = "";
                 var type = sender.GetType().ToString();
                 if (type.ToLower().EndsWith("PictureBox".ToLower())) ctrlName = (sender as PictureBox).Name;
                 else if (type.ToLower().EndsWith("ToolStripButton".ToLower())) ctrlName = (sender as ToolStripButton).Name;
@@ -245,11 +241,8 @@ namespace Ligg.Winform.Forms
                             UncheckLastCheckedView();
                             AddViewStatus(menuItem.View, true);
                         }
-
                         CurrentViewMenuId = menuItem.Id;
-
                     }
-
                 }
                 else
                 {
@@ -264,16 +257,15 @@ namespace Ligg.Winform.Forms
                         CheckViewMenuItemAndUncheckParallelItems(menuItem.Id);
                         UpdateCustomizedViewMenu(menuItem.Id);
                     }
-
                 }
             }
             catch (Exception ex)
             {
-                PopupMessage.PopupError(
-                    FunctionNameForException + ">" + GetType().FullName + ".ViewMenuItemClickHandler" + " Error", ex.Message, AdditionalInfoForException);
+                PopupMessage.PopupError(_basicInfoForException + ": " + GetType().FullName + ".ViewMenuItemClickHandler" + " Error: ctrlName='" + ctrlName + "'", ex.Message, GetAdditionalInfoForException());
             }
         }
 
+        //##ContextMenuItemClickHandler
         protected void ContextMenuItemClickHandler(object sender, EventArgs e)
         {
             var ctrlName = "";
@@ -304,16 +296,17 @@ namespace Ligg.Winform.Forms
             }
             catch (Exception ex)
             {
-                PopupMessage.PopupError(FunctionNameForException + ">" + GetType().FullName + "." + "ContextMenuItemClickHandler" + " Error", ex.Message, AdditionalInfoForException);
+                PopupMessage.PopupError(_basicInfoForException + ": " + GetType().FullName + "." + "ContextMenuItemClickHandler" + " Error: ctrlName='" + ctrlName + "'", ex.Message, GetAdditionalInfoForException());
             }
         }
 
+        //##ControlEventHandler
         private void ControlEventHandler(object sender, EventArgs e)
         {
+            var ctrlName = "";
             try
             {
                 var ctrl = sender as Control;
-                var ctrlName = "";
                 var type = sender.GetType().ToString();
                 //to be improved
                 if (type.ToLower().EndsWith("ToolStripMenuItem".ToLower())) ctrlName = (sender as ToolStripMenuItem).Name;
@@ -358,16 +351,17 @@ namespace Ligg.Winform.Forms
             }
             catch (Exception ex)
             {
-                PopupMessage.PopupError(FunctionNameForException + ">" + GetType().FullName + "." + "ControlEventHandler" + " Error", ex.Message, AdditionalInfoForException);
+                PopupMessage.PopupError(_basicInfoForException + ": " + GetType().FullName + "." + "ControlEventHandler" + " Error: ctrlName='" + ctrlName + "'", ex.Message, GetAdditionalInfoForException());
             }
         }
 
+        //##ControlEventHandler1
         private void ControlEventHandler1(object sender, EventArgs e)
         {
+            var ctrlName = "";
             try
             {
                 var ctrl = sender as Control;
-                var ctrlName = "";
                 var type = sender.GetType().ToString();
                 //to be improved
                 if (type.ToLower().EndsWith("ToolStripMenuItem".ToLower())) ctrlName = (sender as ToolStripMenuItem).Name;
@@ -394,14 +388,14 @@ namespace Ligg.Winform.Forms
             }
             catch (Exception ex)
             {
-                var methodName = "ControlEventHandler";
-                PopupMessage.PopupError(FunctionNameForException + ">" + GetType().FullName + "." + methodName + " Error", ex.Message, AdditionalInfoForException);
+                PopupMessage.PopupError(_basicInfoForException + ": " + GetType().FullName + ". ControlEventHandler Error: ctrlName='" + ctrlName + "'", ex.Message, GetAdditionalInfoForException());
             }
         }
 
+        //##ControlHoverHandler
         private void ControlHoverHandler(object sender, EventArgs e)
         {
-            var ctrlNameForEx = "";
+            var ctrlName = "";
             try
             {
                 var type = sender.GetType().ToString();
@@ -409,6 +403,7 @@ namespace Ligg.Winform.Forms
                 {
                     var cpnt = sender as PictureBox;
                     var ctrlTag = cpnt.Tag.ToString();
+                    ctrlName = cpnt.Name;
                     _pictureBoxToolTip.SetToolTip(cpnt, ctrlTag);
                 }
                 else
@@ -418,8 +413,7 @@ namespace Ligg.Winform.Forms
             }
             catch (Exception ex)
             {
-                var methodName = "ControlHoverHandler";
-                PopupMessage.PopupError(FunctionNameForException + ">" + GetType().FullName + "." + methodName + " Error", ex.Message, AdditionalInfoForException);
+                PopupMessage.PopupError(_basicInfoForException + ": " + GetType().FullName + ".ControlHoverHandler Error: ctrlName='" + ctrlName + "'", ex.Message, GetAdditionalInfoForException());
             }
         }
 
@@ -436,8 +430,9 @@ namespace Ligg.Winform.Forms
 
                 if (_functionInitParamSet.FormType == FunctionFormType.MutiView)
                 {
-                    MergeSharedVariables();
-
+                    var funcProcs = GetAndMergeFunctionProcedures();
+                    InitZoneProcedures("", funcProcs);
+                    //#initFunctionProcedures
                     var formStyleCfgXmlPath = FileHelper.GetFilePath("\\FunctionFormStyle", _functionsDir + "\\" + _functionInitParamSet.FunctionCode);
                     var xmlMgr = new XmlHandler(formStyleCfgXmlPath);
                     _functionFormStyle = xmlMgr.ConvertToObject<FunctionFormStyle>();
@@ -452,7 +447,6 @@ namespace Ligg.Winform.Forms
 
                     MergeViewItems("Public", "");
                     RenderView("Public");
-                    //GoggleViewStatus("Public");
                     AddViewStatus("Public", false);
 
                     //*Menu
@@ -466,10 +460,15 @@ namespace Ligg.Winform.Forms
                     var viewMenuAreas = _layoutElements.FindAll(x => x.Type == ((int)LayoutElementType.ViewMenuArea));
                     if (viewMenuAreas.Count > 0)
                     {
-                        if (CurrentViewMenuId == 0) //*if RefeshUI, CurrentViewMenuId !=0
+                        if (CurrentViewMenuId != 0) //*if RefeshUI, CurrentViewMenuId !=0
+                        {
+                            _functionInitParamSet.StartViewMenuId = CurrentViewMenuId;
+                        }
+                        else
                         {
                             CurrentViewMenuId = _functionInitParamSet.StartViewMenuId < 0 ? 0 : _functionInitParamSet.StartViewMenuId;
                         }
+
                         if (_functionFormViewMenuMode == FunctionFormViewMenuMode.Customized)
                         {
                             if (CurrentViewMenuId != 0)
@@ -484,7 +483,8 @@ namespace Ligg.Winform.Forms
                             RenderSimpleViewMenuAreaAndItems();
                             RenderToolMenuAreasAndItems();
                             var menuItem = new LayoutElement();
-                            if (CurrentViewMenuId != 0) menuItem = _layoutElements.Find(x => x.Type == (int)LayoutElementType.ViewMenuItem & x.Id == CurrentViewMenuId);
+                            if (CurrentViewMenuId != 0) //*if RefeshUI, CurrentViewMenuId !=0
+                                menuItem = _layoutElements.Find(x => x.Type == (int)LayoutElementType.ViewMenuItem & x.Id == CurrentViewMenuId);
                             else
                             {
                                 var defaultViewMenuIdFlag = _layoutElements.Find(x => x.Type == (int)LayoutElementType.ViewMenuArea).DefaultViewMenuIdFlag;
@@ -508,9 +508,9 @@ namespace Ligg.Winform.Forms
                     {
                         throw new ArgumentException("zone Feature can't be null!");
                     }
-                    _hasRunningStatusSectionForNonMutiViewForm = zoneFeature.HasRunningStatusSection;
-                    _zoneWidthForNonMutiViewForm = zoneFeature.Width;
-                    _zoneHeightForNonMutiViewForm = zoneFeature.Height;
+                    _hasRunningStatusSectionForNonMutiViewForm = zoneFeature.ShowRunningStatusSection;
+                    _zoneWidthForSingleViewForm = zoneFeature.Width;
+                    _zoneHeightForSingleViewForm = zoneFeature.Height;
 
                     _functionFormStyle = new FunctionFormStyle();
                     _functionFormStyle.HasNoControlBox = zoneFeature.HasNoControlBox;
@@ -560,7 +560,6 @@ namespace Ligg.Winform.Forms
 
                 }
 
-
                 if (!_functionInitParamSet.StartActions.IsNullOrEmpty())
                 {
                     var actArray = _functionInitParamSet.StartActions.Split('^');
@@ -578,37 +577,14 @@ namespace Ligg.Winform.Forms
             }
         }
 
-        //##initData
-        //##MergeSharedVariables
-        private void MergeSharedVariables()
+        //##readappconfig
+        //##GetAndMergeFunctionProcedures
+        private List<ProcedureItem> GetAndMergeFunctionProcedures()
         {
             try
             {
-                var xmlPath = _functionsDir + "\\" + _functionInitParamSet.FunctionCode + "\\SharedVariables";
-                if (XmlHelper.FileExists(xmlPath))
-                {
-                    var xmlMgr = new XmlHandler(xmlPath);
-                    var varList = xmlMgr.ConvertToObject<List<VariableItem>>();
-
-                    if (varList.Count > 0)
-                    {
-                        foreach (var var in varList)
-                        {
-                            LayoutHelper.SetVariableType(var);
-                        }
-                        LayoutHelper.CheckZoneVariables("Shared", varList);
-                        foreach (var var in varList)
-                        {
-                            var.Value = string.IsNullOrEmpty(var.Value) ? "" : var.Value;
-                            if (var.GroupId < 0) var.GroupId = -1;
-                            var.ZoneName = "";
-                        }
-                        _variables.AddRange(varList);
-                        InitZoneVariables("", _variables);
-                    }
-                }
-
-
+                var funcProcedures = new List<ProcedureItem>();
+                var funcProceduresTmp = new List<ProcedureItem>();
                 var startParamsTxt = _functionInitParamSet.StartParams;
                 if (!startParamsTxt.IsNullOrEmpty())
                 {
@@ -628,15 +604,63 @@ namespace Ligg.Winform.Forms
                         finputStr = ct == 0 ? val : finputStr + "^" + val;
                         ct = ct + 1;
                     }
-                    var variableItem = new VariableItem();
+                    var variableItem = new ProcedureItem();
                     variableItem.Name = "finput";
                     variableItem.Value = finputStr;
-                    _variables.Add(variableItem);
+                    variableItem.Type = (int)ProcedureItemType.None;
+                    funcProcedures.Add(variableItem);
                 }
+
+                var xmlPath = _functionsDir + "\\" + _functionInitParamSet.FunctionCode + "\\Procedures";
+
+
+                if (XmlHelper.FileExists(xmlPath))
+                {
+                    var xmlMgr = new XmlHandler(xmlPath);
+                    funcProceduresTmp = xmlMgr.ConvertToObject<List<ProcedureItem>>();
+                }
+
+                if (funcProceduresTmp.Count > 0)
+                {
+                    LayoutHelper.CheckZoneProcedures("Function", funcProcedures);
+                    string annexesXmlPath = xmlPath + "Annexes";
+                    var annexList = new List<Annex>();
+                    if (File.Exists(annexesXmlPath + ".xml") | File.Exists(annexesXmlPath + ".exml"))
+                    {
+                        var xmlToReadForAnnexes = new XmlHandler(annexesXmlPath);
+                        annexList = xmlToReadForAnnexes.ConvertToObject<List<Annex>>();
+                    }
+
+                    foreach (var proc in funcProceduresTmp)
+                    {
+                        LayoutHelper.SetProcedureType(proc);
+                        proc.Value = string.IsNullOrEmpty(proc.Value) ? "" : proc.Value;
+                        if (proc.GroupId < 0) proc.GroupId = 0;
+                        var tempAnnexes = annexList.FindAll(x => x.MasterName == proc.Name);
+                        if (tempAnnexes.Count > 0)
+                        {
+                            foreach (var annex in tempAnnexes)
+                            {
+                                annex.ClassName = "ProcedureItem";
+                                annex.MasterName = proc.Name;
+                                _annexes.Add(annex);
+                            }
+                        }
+                    }
+                    funcProcedures.AddRange(funcProceduresTmp);
+
+                }
+
+                if (funcProcedures.Count > 0)
+                {
+                    _procedures.AddRange(funcProcedures);
+                }
+
+                return funcProcedures;
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".MergeSharedVariables Error: " + ex.Message);
+                throw new ArgumentException("\n>> " + GetType().FullName + ".GetAndMergeFunctionProcedures Error: " + ex.Message);
             }
         }
 
@@ -707,9 +731,7 @@ namespace Ligg.Winform.Forms
 
                 if (_functionInitParamSet.FormTitle.IsNullOrEmpty())
                 {
-                    var text = GetText("=GetAbbrevAnnexText;" + _functionInitParamSet.FunctionCode);
-                    if (text.IsNullOrEmpty()) text = _functionInitParamSet.AssemblyCode + "/" + _functionInitParamSet.ApplicationCode + "/" + _functionInitParamSet.FunctionCode;
-
+                    var text = LayoutHelper.GetControlDisplayName(_functionInitParamSet.SupportMutiCultures, "Abbrev", _functionInitParamSet.FunctionCode, _annexes, _functionInitParamSet.AssemblyCode + "/" + _functionInitParamSet.ApplicationCode + "/" + _functionInitParamSet.FunctionCode);
                     Text = text;
                 }
                 else
@@ -755,8 +777,8 @@ namespace Ligg.Winform.Forms
                 }
                 else
                 {
-                    Width = _zoneWidthForNonMutiViewForm + 4;
-                    Height = _zoneHeightForNonMutiViewForm + 35 + (_hasRunningStatusSectionForNonMutiViewForm ? 26 : 0);
+                    Width = _zoneWidthForSingleViewForm + 4;
+                    Height = _zoneHeightForSingleViewForm + 35 + (_hasRunningStatusSectionForNonMutiViewForm ? 26 : 0);
                 }
 
                 TreatCloseBoxAsMinimizeBox = (_functionFormStyle.TreatCloseBoxAsMinimizeBox ? true : false);
@@ -812,11 +834,6 @@ namespace Ligg.Winform.Forms
                     //Left = rect.Width / 2 - Width / 2;
                     //Top = _functionFormStyle.TopLocationY == -1 ? 20 : _functionFormStyle.TopLocationY;
                 }
-
-
-
-
-
             }
             catch (Exception ex)
             {
@@ -832,7 +849,7 @@ namespace Ligg.Winform.Forms
                 //title
                 if (_functionInitParamSet.FormTitle.IsNullOrEmpty())
                 {
-                    Text = LayoutHelper.GetControlDisplayName(_functionInitParamSet.SupportMutiCultures, "Shared", _functionInitParamSet.FunctionCode, _annexes, _functionInitParamSet.AssemblyCode + "/" + _functionInitParamSet.ApplicationCode + "/" + _functionInitParamSet.FunctionCode);
+                    Text = LayoutHelper.GetControlDisplayName(_functionInitParamSet.SupportMutiCultures, "Abbrev", _functionInitParamSet.FunctionCode, _annexes, _functionInitParamSet.AssemblyCode + "/" + _functionInitParamSet.ApplicationCode + "/" + _functionInitParamSet.FunctionCode);
                 }
                 else
                 {
@@ -918,7 +935,7 @@ namespace Ligg.Winform.Forms
                         }
                         else
                         {
-                            var txt = ResolveStringByRefVariablesAndControls(zoneItem.DisplayName);
+                            var txt = ResolveStringByRefProcedureVariablesAndControls(zoneItem.DisplayName);
                             if (zoneItem.DisplayName.StartsWith("="))
                             {
                                 zoneItemControl.Text = GetText(txt);
@@ -934,7 +951,7 @@ namespace Ligg.Winform.Forms
                     {
                         if (!string.IsNullOrEmpty(zoneItem.DisplayName))
                         {
-                            var txt = ResolveStringByRefVariablesAndControls(zoneItem.DisplayName);
+                            var txt = ResolveStringByRefProcedureVariablesAndControls(zoneItem.DisplayName);
                             if (zoneItem.DisplayName.StartsWith("="))
                             {
                                 zoneItemControl.Tag = GetText(txt);
@@ -958,7 +975,7 @@ namespace Ligg.Winform.Forms
                         }
                         else
                         {
-                            var txt = ResolveStringByRefVariablesAndControls(zoneItem.DisplayName);
+                            var txt = ResolveStringByRefProcedureVariablesAndControls(zoneItem.DisplayName);
                             if (zoneItem.DisplayName.StartsWith("="))
                             {
                                 zoneItemStatusLight.Title = GetText(txt);
@@ -979,10 +996,13 @@ namespace Ligg.Winform.Forms
                             var dataSrcStr = zoneItem.DataSource;
                             if (dataSrcStr.StartsWith("="))
                             {
-                                var valTxts = GetValueTextDataTable(dataSrcStr);
-                                zoneItemComboBox.DataSource = valTxts;
-                                zoneItemComboBox.ValueMember = "Value";
-                                zoneItemComboBox.DisplayMember = "Text";
+                                if (dataSrcStr.Contains("{") & dataSrcStr.Contains("}"))
+                                {
+                                    var valTxts = JsonHelper.ConvertToObject<List<ValueText>>(dataSrcStr);
+                                    zoneItemComboBox.DataSource = valTxts;
+                                    zoneItemComboBox.ValueMember = "Value";
+                                    zoneItemComboBox.DisplayMember = "Text";
+                                }
                             }
                             zoneItemComboBox.SelectedIndex = selectedIndex;
                         }
@@ -1044,7 +1064,6 @@ namespace Ligg.Winform.Forms
             }
         }
 
-        //##PublicRegionComponent
         //##InitPublicRegionComponent
         private void InitPublicRegionComponent()
         {
@@ -1082,9 +1101,6 @@ namespace Ligg.Winform.Forms
                     }
                     this.ToolBarSectionPublicRegionToolStrip.Items.Add(toolBarSectionPublicRegionSplitButtonCulture);
                 }
-
-
-
             }
             catch (Exception ex)
             {
@@ -1301,7 +1317,6 @@ namespace Ligg.Winform.Forms
 
         //#subfunc
         //##Menu
-
         //##GetMenuItems
         private List<LayoutElement> GetMenuItems()
         {
@@ -1317,7 +1332,7 @@ namespace Ligg.Winform.Forms
                     if (elmt.InvalidFlag.IsNullOrEmpty()) elmt.InvalidFlag = "false";
                     if (elmt.InvalidFlag.StartsWith("="))
                     {
-                        var txt = ResolveStringByRefVariablesAndControls((elmt.InvalidFlag));
+                        var txt = ResolveStringByRefProcedureVariablesAndControls((elmt.InvalidFlag));
                         elmt.InvalidFlag = GetText(txt).ToLower();
                     }
                 }
@@ -1377,7 +1392,7 @@ namespace Ligg.Winform.Forms
                             }
 
                             //view
-                            var txt = ResolveStringByRefVariables(elmt.View, _variables);
+                            var txt = ResolveStringByRefProcedureVariables(elmt.View, _procedures);
                             if (!elmt.View.IsNullOrEmpty()) elmt.View = GetText(txt);
                         }
 
@@ -1558,10 +1573,7 @@ namespace Ligg.Winform.Forms
                         {
                             RenderSimpleViewMenu(viewMenuAreaControl, null, topLevelViewMenuItem);
                         }
-
-
                     }
-
                 }
             }
             catch (Exception ex)
@@ -1570,6 +1582,7 @@ namespace Ligg.Winform.Forms
             }
         }
 
+        //##RenderSimpleViewMenu
         protected void RenderSimpleViewMenu(MenuStrip parentAreaCtrl, ToolStripMenuItem parentItemCtrl, LayoutElement viewMenuItem)
         {
             var itemNameForEx = "";
@@ -1585,7 +1598,7 @@ namespace Ligg.Winform.Forms
                 else
                 {
                     viewMenuItem.InvisibleFlag = ResolveConstants(viewMenuItem.InvisibleFlag);
-                    var txt = ResolveStringByRefVariables(viewMenuItem.InvisibleFlag);
+                    var txt = ResolveStringByRefProcedureVariables(viewMenuItem.InvisibleFlag);
                     itemInvisibleFlag = GetText(txt);
                 }
                 isItemVisible = (itemInvisibleFlag == "false" | itemInvisibleFlag == "0") ? true : false;
@@ -1596,7 +1609,7 @@ namespace Ligg.Winform.Forms
                 else
                 {
                     viewMenuItem.DisabledFlag = ResolveConstants(viewMenuItem.DisabledFlag);
-                    var txt = ResolveStringByRefVariables(viewMenuItem.DisabledFlag);
+                    var txt = ResolveStringByRefProcedureVariables(viewMenuItem.DisabledFlag);
                     itemDisabledFlag = GetText(txt);
 
                 }
@@ -1687,13 +1700,11 @@ namespace Ligg.Winform.Forms
                     {
                         RenderSimpleViewMenu(null, viewMenuItemControl, subViewMenuItem);
                     }
-
                 }
-
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".RenderToolOrCustomizedViewMenuAreaAndItems Error: itemName=" + itemNameForEx + "; " + ex.Message);
+                throw new ArgumentException("\n>> " + GetType().FullName + ".RenderSimpleViewMenu Error: itemName=" + itemNameForEx + "; " + ex.Message);
             }
         }
 
@@ -1761,7 +1772,7 @@ namespace Ligg.Winform.Forms
                         else
                         {
                             viewMenuItem.InvisibleFlag = ResolveConstants(viewMenuItem.InvisibleFlag);
-                            var txt = ResolveStringByRefVariables(viewMenuItem.InvisibleFlag);
+                            var txt = ResolveStringByRefProcedureVariables(viewMenuItem.InvisibleFlag);
                             itemInvisibleFlag = GetText(txt);
                         }
                         isItemVisible = (itemInvisibleFlag == "false" | itemInvisibleFlag == "0") ? true : false;
@@ -1772,7 +1783,7 @@ namespace Ligg.Winform.Forms
                         else
                         {
                             viewMenuItem.DisabledFlag = ResolveConstants(viewMenuItem.DisabledFlag);
-                            var txt = ResolveStringByRefVariables(viewMenuItem.DisabledFlag);
+                            var txt = ResolveStringByRefProcedureVariables(viewMenuItem.DisabledFlag);
                             itemDisabledFlag = GetText(txt);
 
                         }
@@ -1990,7 +2001,7 @@ namespace Ligg.Winform.Forms
                             if (!string.IsNullOrEmpty(viewMenuItem.DisplayName))
                             {
                                 viewMenuItem.DisplayName = ResolveConstants(viewMenuItem.DisplayName);
-                                var txt = ResolveStringByRefVariables(viewMenuItem.DisplayName);
+                                var txt = ResolveStringByRefProcedureVariables(viewMenuItem.DisplayName);
                                 viewMenuItemControl.Text = txt;
                             }
 
@@ -2067,7 +2078,7 @@ namespace Ligg.Winform.Forms
                         else
                         {
                             viewMenuItem.InvisibleFlag = ResolveConstants(viewMenuItem.InvisibleFlag);
-                            var txt = ResolveStringByRefVariables(viewMenuItem.InvisibleFlag);
+                            var txt = ResolveStringByRefProcedureVariables(viewMenuItem.InvisibleFlag);
                             itemInvisibleFlag = GetText(txt);
                         }
                         isItemVisible = (itemInvisibleFlag == "false" | itemInvisibleFlag == "0") ? true : false;
@@ -2078,7 +2089,7 @@ namespace Ligg.Winform.Forms
                         else
                         {
                             viewMenuItem.DisabledFlag = ResolveConstants(viewMenuItem.DisabledFlag);
-                            var txt = ResolveStringByRefVariables(viewMenuItem.DisabledFlag);
+                            var txt = ResolveStringByRefProcedureVariables(viewMenuItem.DisabledFlag);
                             itemDisabledFlag = GetText(txt);
 
                         }
@@ -2212,6 +2223,7 @@ namespace Ligg.Winform.Forms
             }
         }
 
+        //##RenderToolMenuAreasAndItems
         protected void RenderToolMenuAreasAndItems()
         {
             try
@@ -2231,9 +2243,213 @@ namespace Ligg.Winform.Forms
             }
         }
 
+        //##ResetDefaultViewMenu
+        private void ResetDefaultViewMenu(List<LayoutElement> layoutElements, int startingMenuId)
+        {
+            var menu = layoutElements.Find(x => x.Id == startingMenuId);
+            if (menu != null)
+            {
+                var menuAreaName = menu.Container;
+                var viewMenuArea = layoutElements.Find(x => x.Name == menuAreaName);
+                if (viewMenuArea != null)
+                {
+                    viewMenuArea.DefaultViewMenuIdFlag = menu.Id.ToString();
+                    if (viewMenuArea.ParentViewMenuId == 0) return;
+                    else ResetDefaultViewMenu(layoutElements, viewMenuArea.ParentViewMenuId);
+                }
+                else
+                {
+                    return;
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
 
+        //##HideViewMenuAreas
+        private void HideViewMenuAreas(int viewMenuId)
+        {
+            var menuArea = _layoutElements.Find(x => x.Type == (int)LayoutElementType.ViewMenuArea && x.ParentViewMenuId == viewMenuId);
+            if (menuArea != null)
+            {
+                var areaControl = GetControl(menuArea.Name);
+                ControlHelper.HideControlByDockStyle(areaControl, menuArea.DockType);
+                menuArea.IsChecked = false;
+                var checkedMenuItem = _layoutElements.Find(x => x.Container == menuArea.Name && x.Type == (int)LayoutElementType.ViewMenuItem && x.IsChecked);
+                if (checkedMenuItem != null)
+                {
+                    HideViewMenuAreas(checkedMenuItem.Id);
+                }
+            }
+        }
+
+        //##ShowViewMenuArea
+        private void ShowViewMenuArea(LayoutElement viewMenuArea)
+        {
+            try
+            {
+                var containerControl = GetControl(viewMenuArea.Container);
+                var viewMenuAreaControl = ControlHelper.GetControlByNameByParent(viewMenuArea.Name, containerControl);
+                var viewMenuAreaWidth = viewMenuArea.Width == -1 ? containerControl.Width : viewMenuArea.Width;
+                var viewMenuAreaHeight = viewMenuArea.Height == -1 ? containerControl.Height : viewMenuArea.Height;
+                ControlHelper.SetControlDockStyleAndLocationAndSize(viewMenuAreaControl, viewMenuArea.DockType, viewMenuAreaWidth, viewMenuAreaHeight, viewMenuArea.OffsetOrPositionX, viewMenuArea.OffsetOrPositionY);
+                viewMenuArea.IsChecked = true;
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("\n>> " + GetType().FullName + ".ShowViewMenuArea Error: " + ex.Message);
+            }
+        }
+
+        //##CheckViewMenuItemAndUncheckParallelItems
+        private void CheckViewMenuItemAndUncheckParallelItems(int viewMenuId)
+        {
+            try
+            {
+                var menuItem = _layoutElements.Find(x => x.Id == viewMenuId && x.Type == (int)LayoutElementType.ViewMenuItem);
+                var viewMenuArea = _layoutElements.Find(x => x.Name == menuItem.Container && x.Type == (int)LayoutElementType.ViewMenuArea);
+                var menuAreaControl = GetControl(viewMenuArea.Name);
+                //uncheck
+                var lastCheckedParallelmenuItem = _layoutElements.Find(x => x.Container == viewMenuArea.Name && x.Type == (int)LayoutElementType.ViewMenuItem && x.IsChecked);
+                if (lastCheckedParallelmenuItem != null)
+                {
+                    if (lastCheckedParallelmenuItem.ControlTypeName.ToLower().Contains("ImageTextToolButton".ToLower()))
+                    {
+                        var menuAreaCpnt = menuAreaControl as ToolStrip;
+                        var cpnt = menuAreaCpnt.Items.Find(lastCheckedParallelmenuItem.Name, true)[0] as ToolStripButton;
+                        cpnt.Checked = false;
+                    }
+                    else if (lastCheckedParallelmenuItem.ControlTypeName.ToLower().Contains("ImageTextButton".ToLower()))
+                    {
+                        var menuItemControl = ControlHelper.GetControlByNameByParent(lastCheckedParallelmenuItem.Name, menuAreaControl);
+                        var cpnt = menuItemControl as ImageTextButton;
+                        cpnt.Checked = false;
+                    }
+                    else if (lastCheckedParallelmenuItem.ControlTypeName.ToLower().Contains("TextButton".ToLower()))
+                    {
+                        var menuItemControl = ControlHelper.GetControlByNameByParent(lastCheckedParallelmenuItem.Name, menuAreaControl);
+                        var cpnt = menuItemControl as TextButton;
+                        cpnt.Checked = false;
+                    }
+                    lastCheckedParallelmenuItem.IsChecked = false;
+                }
+
+                //check
+                if (menuItem.ControlTypeName.ToLower().Contains("ImageTextToolButton".ToLower()))
+                {
+                    var menuAreaCpnt = menuAreaControl as ToolStrip;
+                    var cpnt = menuAreaCpnt.Items.Find(menuItem.Name, true)[0] as ToolStripButton;
+                    cpnt.Checked = true;
+                }
+                else if (menuItem.ControlTypeName.ToLower().Contains("ImageTextButton".ToLower()))
+                {
+                    var menuItemControl = ControlHelper.GetControlByNameByParent(menuItem.Name, menuAreaControl);
+                    var cpnt = menuItemControl as ImageTextButton;
+                    cpnt.Checked = true;
+                }
+                else if (menuItem.ControlTypeName.ToLower().Contains("TextButton".ToLower()))
+                {
+                    var menuItemControl = ControlHelper.GetControlByNameByParent(menuItem.Name, menuAreaControl);
+                    var cpnt = menuItemControl as TextButton;
+                    cpnt.Checked = true;
+                }
+                menuItem.IsChecked = true;
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("\n>> " + GetType().FullName + ".CheckViewMenuItemAndUncheckeParallelItems Error: " + ex.Message);
+            }
+        }
 
         //##view
+        //##MergeViewItems
+        private void MergeViewItems(string viewName, string viewDatasource)
+        {
+            var viewNameEx = "";
+            try
+            {
+                var xmlPath = _functionsDir + "\\" + _functionInitParamSet.FunctionCode + "\\Views\\" + viewName;
+                viewNameEx = viewName;
+                if (!viewDatasource.IsNullOrEmpty())
+                {
+                    xmlPath = FileHelper.GetFilePath(viewDatasource, _functionsDir + "\\" + _functionInitParamSet.FunctionCode + "\\Views");
+                }
+
+                var xmlMgr = new XmlHandler(xmlPath);
+                var tmpViewItems = xmlMgr.ConvertToObject<List<LayoutElement>>();
+                foreach (var viewItem in tmpViewItems)
+                {
+                    if (viewItem.DockOrder.IsNullOrEmpty()) viewItem.DockOrder = viewItem.Id.ToString();
+                    if (viewItem.InvalidFlag.IsNullOrEmpty()) viewItem.InvalidFlag = "false";
+                    if (viewItem.InvalidFlag.StartsWith("="))
+                    {
+                        var txt = ResolveStringByRefProcedureVariables((viewItem.InvalidFlag));
+                        viewItem.InvalidFlag = GetText(txt).ToLower();
+                    }
+                }
+                var viewItems = tmpViewItems.Where(x =>
+                    (x.InvalidFlag == "false" | x.InvalidFlag == "0") &
+                    (
+                   x.TypeName == LayoutElementType.ContentArea.ToString() | x.TypeName == LayoutElementType.PublicContentArea.ToString()
+                 //| x.TypeName == LayoutElementType.ViewBeforeRenderHandler.ToString() | x.TypeName == LayoutElementType.ViewAfterRenderHandler.ToString()
+                 //| x.TypeName == LayoutElementType.ViewAfterShowHandler.ToString() | x.TypeName == LayoutElementType.ViewAfterHideHandler.ToString().ToString()
+                 | x.TypeName == LayoutElementType.ZoneBeforeRenderHandler.ToString() | x.TypeName == LayoutElementType.ZoneAfterRenderHandler.ToString()
+                 | x.TypeName == LayoutElementType.TransactionOnlyItem.ToString()
+                 | x.TypeName == LayoutElementType.FollowingTransactionItem.ToString()
+                 | x.TypeName == LayoutElementType.Zone.ToString())).ToList();
+
+
+                if (viewItems.Count > 0)
+                {
+                    foreach (var item in viewItems)
+                    {
+                        LayoutHelper.SetLayoutElementType(item);
+                    }
+                    LayoutHelper.CheckViewItems(viewName, viewItems);
+                    foreach (var viewItem in viewItems)
+                    {
+                        //item.Id = -1;
+                        viewItem.IsRendered = false;
+                        viewItem.IsChecked = false;
+                        if (viewName.ToLower() == "public")
+                        {
+                            viewItem.View = "Public";
+                            if (viewItem.Type == (int)LayoutElementType.ContentArea) viewItem.Type = (int)LayoutElementType.PublicContentArea;
+                        }
+                        else
+                        {
+                            viewItem.View = viewName;
+                        }
+
+                        if (viewItem.Type == (int)LayoutElementType.PublicContentArea | viewItem.Type == (int)LayoutElementType.ContentArea)
+                        {
+                            viewItem.Name = viewName + "_" + viewItem.Name;
+                        }
+                        else
+                        {
+                            viewItem.Name = viewName + "_" + viewItem.Container + "_" + viewItem.Name;
+                        }
+
+                        if (viewItem.Type != (int)(LayoutElementType.ContentArea) &
+                            viewItem.Type != (int)(LayoutElementType.PublicContentArea) &
+                            viewItem.Type != (int)(LayoutElementType.ContentArea) &
+                            viewItem.Type != (int)(LayoutElementType.Zone))
+                        {
+                            var dir = FileHelper.GetFileDetailByOption(xmlPath, FilePathComposition.Directory);
+                            viewItem.Location = dir;
+                        }
+                        _layoutElements.Add(viewItem);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("\n>> " + GetType().FullName + ".MergeViewItems Error: ViewName=" + viewNameEx + "; " + ex.Message);
+            }
+        }
+
         //##RenderView
         protected void RenderView(string viewName)
         {
@@ -2255,6 +2471,7 @@ namespace Ligg.Winform.Forms
             }
         }
 
+        //##HideLastCheckedViewThenShowCurrentView
         protected void HideLastCheckedViewThenShowCurrentView(string viewName)
         {
             try
@@ -2290,6 +2507,7 @@ namespace Ligg.Winform.Forms
             }
         }
 
+        //##HideLastCheckedView
         private void HideLastCheckedView()
         {
             try
@@ -2319,6 +2537,67 @@ namespace Ligg.Winform.Forms
             catch (Exception ex)
             {
                 throw new ArgumentException("\n>> " + GetType().FullName + ".HideLastCheckedView Error: " + ex.Message);
+            }
+        }
+
+        //##AddViewStatus
+        private void AddViewStatus(string viewName, bool status)
+        {
+            try
+            {
+                var view = _renderedViewStatuses.Find(x => x.Name == viewName);
+                if (view == null)
+                    _renderedViewStatuses.Add(new RenderedViewStatus(viewName, status));
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("\n>> " + GetType().FullName + ".AddViewStatus Error: " + ex.Message);
+            }
+        }
+
+        //##SetViewCheckedAndUncheckLastView
+        private void SetViewCheckedAndUncheckLastView(string viewName)
+        {
+            try
+            {
+                var checkedView = _renderedViewStatuses.Find(x => x.IsChecked);
+                if (checkedView != null) checkedView.IsChecked = false;
+                var view = _renderedViewStatuses.Find(x => x.Name == viewName);
+                view.IsChecked = true;
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("\n>> " + GetType().FullName + ".SetViewCheckedAndUncheckLastView Error: " + ex.Message);
+            }
+        }
+
+        //##UncheckLastCheckedView
+        private void UncheckLastCheckedView()
+        {
+            try
+            {
+                var view = _renderedViewStatuses.Find(x => x.IsChecked);
+                if (view != null)
+                    view.IsChecked = false;
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("\n>> " + GetType().FullName + ".UncheckLastCheckedView Error: " + ex.Message);
+            }
+        }
+
+        //##IsViewRendered
+        private bool IsViewRendered(string viewName)
+        {
+            try
+            {
+                var view = _renderedViewStatuses.Find(x => x.Name == viewName);
+                if (view != null) return true;
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("\n>> " + GetType().FullName + ".IsViewRendered Error: " + ex.Message);
             }
         }
 
@@ -2367,13 +2646,96 @@ namespace Ligg.Winform.Forms
         }
 
         //##zone
+        //##MergeZoneItems
+        private void MergeZoneItems(LayoutElement zone)
+        {
+            try
+            {
+                var oneLevelZoneName = zone.Name.GetLastSeparatedString('_');
+                var location = "";
+                if (zone.Location.IsNullOrEmpty())
+                {
+                    location = _formDir + "\\Zones\\" + oneLevelZoneName;
+                }
+                else if (zone.Location.StartsWith("\\"))
+                {
+                    location = _formDir + "\\Zones" + zone.Location;
+                }
+                else
+                {
+                    location = zone.Location;
+                }
+
+                zone.Location = location;
+                var xmlMgr = new XmlHandler(location + "\\ui");
+                var tmpZoneItems = xmlMgr.ConvertToObject<List<ZoneItem>>().ToList();
+                var zoneItems = new List<ZoneItem>();
+
+                foreach (var item in tmpZoneItems)
+                {
+                    if (item.DockOrder.IsNullOrEmpty()) item.DockOrder = item.Id.ToString();
+                    if (item.InvalidFlag.IsNullOrEmpty()) item.InvalidFlag = "false";
+                    item.InvalidFlag = AddZoneIdentifer(item.InvalidFlag, zone.Name);
+                    if (item.InvalidFlag.StartsWith("="))
+                    {
+                        var txt = ResolveConstants((item.InvalidFlag));
+                        txt = ResolveStringByRefProcedureVariables((item.InvalidFlag));
+                        item.InvalidFlag = GetText(txt).ToLower();
+                    }
+
+                    if (item.InvalidFlag.ToLower() == "false" | item.InvalidFlag.ToLower() == "0")
+                    {
+                        zoneItems.Add(item);
+                    }
+                }
+
+                if (zoneItems.Count > 0)
+                {
+                    foreach (var item in zoneItems)
+                    {
+                        LayoutHelper.SetZoneItemType(item);
+                    }
+                    LayoutHelper.CheckZoneItems(zone.Name, zoneItems);
+                    string annexesXmlPath = location + "\\Annexes";
+                    var annexList = new List<Annex>();
+                    if (File.Exists(annexesXmlPath + ".xml") | File.Exists(annexesXmlPath + ".exml"))
+                    {
+                        var xmlToReadForAnnexes = new XmlHandler(annexesXmlPath);
+                        annexList = xmlToReadForAnnexes.ConvertToObject<List<Annex>>();
+                    }
+
+                    foreach (var item in zoneItems)
+                    {
+                        var tempAnnexes = annexList.FindAll(x => x.MasterName == item.Name);
+                        item.Name = zone.Name + "_" + item.Name;
+                        _zonesItems.Add(item);
+                        if (tempAnnexes.Count > 0)
+                        {
+                            foreach (var annex in tempAnnexes)
+                            {
+                                annex.ClassName = "ZoneItem";
+                                annex.MasterName = item.Name;
+                                _annexes.Add(annex);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new ArgumentException("\n>> " + GetType().FullName + ".MergeZoneItems Error: ZoneName=" + zone.Name + " " + ex.Message);
+            }
+        }
+
         //##InitZone
         private void InitZone(LayoutElement zone, ContainerPanel cttAreaControl)
         {
             try
             {
-                var zoneVariables = GetAndMergeZoneVariables(zone);
-                InitZoneVariables(zone.Name, zoneVariables);
+                var zoneProcedures = GetAndMergeZoneProcedures(zone);
+                InitZoneProcedures(zone.Name, zoneProcedures);
+
                 MergeZoneItems(zone);
                 ZoneEventHandler(zone.Name, LayoutElementType.ZoneBeforeRenderHandler);
 
@@ -2381,11 +2743,11 @@ namespace Ligg.Winform.Forms
                 var oneLevelZoneName = zone.Name.SplitByLastSeparator('_')[1]; ;
                 if (zone.Location.IsNullOrEmpty())
                 {
-                    location = _uiDir + "\\Zones\\" + oneLevelZoneName;
+                    location = _formDir + "\\Zones\\" + oneLevelZoneName;
                 }
                 else if (zone.Location.StartsWith("\\"))
                 {
-                    location = _uiDir + "\\Zones" + zone.Location;
+                    location = _formDir + "\\Zones" + zone.Location;
                 }
                 else
                 {
@@ -2428,11 +2790,116 @@ namespace Ligg.Winform.Forms
                     cttAreaControl.Controls.Add(zoneContainer);
                 }
                 RenderZoneItems(zone, zoneContainer);
+
                 ZoneEventHandler(zone.Name, LayoutElementType.ZoneAfterRenderHandler);
             }
             catch (Exception ex)
             {
                 throw new ArgumentException("\n>> " + GetType().FullName + ".InitZone Error" + "; " + ex.Message);
+            }
+        }
+
+        //##GetAndMergeZoneProcedures
+        private List<ProcedureItem> GetAndMergeZoneProcedures(LayoutElement zone)
+        {
+            try
+            {
+                var zoneProcedures = new List<ProcedureItem>();
+                var zoneProceduresTmp = new List<ProcedureItem>();
+                var inputTxt = zone.InputVariables;
+                if (!inputTxt.IsNullOrEmpty())
+                {
+                    var separator = inputTxt.GetParamSeparator();
+                    var inputTxtArry = inputTxt.Split(separator);
+                    var zinputStr = "";
+                    int ct = 0;
+                    foreach (var str in inputTxtArry)
+                    {
+                        var val = str;
+                        if (!str.IsNullOrEmpty())
+                        {
+                            var txt = ResolveConstants(str);
+                            val = GetText(txt);
+                        }
+
+                        zinputStr = ct == 0 ? val : zinputStr + "^" + val;
+                        ct = ct + 1;
+                    }
+
+                    var variableItem = new ProcedureItem();
+                    variableItem.Name = zone.Name + "_" + "zinput";
+                    variableItem.Value = zinputStr;
+                    variableItem.ZoneName = zone.Name;
+                    variableItem.Type = (int)ProcedureItemType.None;
+                    zoneProcedures.Add(variableItem);
+                }
+
+                var oneLevelZoneName = zone.Name.GetLastSeparatedString('_');
+                var location = "";
+                if (zone.Location.IsNullOrEmpty())
+                {
+                    location = _formDir + "\\Zones\\" + oneLevelZoneName;
+                }
+                else if (zone.Location.StartsWith("\\"))
+                {
+                    location = _formDir + "\\Zones" + zone.Location;
+                }
+                else
+                {
+                    location = zone.Location;
+                }
+                var xmlPath = location + "\\Procedures";
+                if (File.Exists(xmlPath + ".xml") | File.Exists(xmlPath + ".exml"))
+                {
+                    var xmlMgr = new XmlHandler(xmlPath);
+                    zoneProceduresTmp = xmlMgr.ConvertToObject<List<ProcedureItem>>();
+                }
+
+                if (zoneProceduresTmp.Count > 0)
+                {
+                    string annexesXmlPath = xmlPath + "Annexes";
+                    var annexList = new List<Annex>();
+                    if (File.Exists(annexesXmlPath + ".xml") | File.Exists(annexesXmlPath + ".exml"))
+                    {
+                        var xmlToReadForAnnexes = new XmlHandler(annexesXmlPath);
+                        annexList = xmlToReadForAnnexes.ConvertToObject<List<Annex>>();
+                    }
+
+                    foreach (var proc in zoneProceduresTmp)
+                    {
+                        LayoutHelper.SetProcedureType(proc);
+                        proc.Value = string.IsNullOrEmpty(proc.Value) ? "" : proc.Value;
+
+                        if (proc.GroupId < 0) proc.GroupId = 0;
+
+                        var tempAnnexes = annexList.FindAll(x => x.MasterName == proc.Name);
+
+                        proc.Name = zone.Name + "_" + proc.Name;
+                        proc.ZoneName = zone.Name;
+                        proc.Formula = AddZoneIdentifer(proc.Formula, zone.Name);
+                        proc.Condition = AddZoneIdentifer(proc.Condition, zone.Name);
+
+
+                        if (tempAnnexes.Count > 0)
+                        {
+                            foreach (var annex in tempAnnexes)
+                            {
+                                annex.ClassName = "ProcedureItem";
+                                annex.MasterName = proc.Name;
+                                _annexes.Add(annex);
+                            }
+                        }
+                    }
+                    zoneProcedures.AddRange(zoneProceduresTmp);
+                }
+                if (zoneProcedures.Count > 0)
+                    _procedures.AddRange(zoneProcedures);
+
+                return zoneProcedures;
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("\n>> " + GetType().FullName + ".GetAndMergeZoneProcedures Error: " + ex.Message);
             }
         }
 
@@ -2463,7 +2930,7 @@ namespace Ligg.Winform.Forms
                     {
                         zoneItem.InvisibleFlag = ResolveConstants(zoneItem.InvisibleFlag);
                         zoneItem.InvisibleFlag = AddZoneIdentifer(zoneItem.InvisibleFlag, zone.Name);
-                        invisibleFlag = ResolveStringByRefVariablesAndControls(zoneItem.InvisibleFlag);
+                        invisibleFlag = ResolveStringByRefProcedureVariablesAndControls(zoneItem.InvisibleFlag);
                         invisibleFlag = GetText(invisibleFlag);
                     }
                     isCpntVisible = (invisibleFlag.ToLower() == "false" | invisibleFlag.ToLower() == "0") ? true : false;
@@ -2476,7 +2943,7 @@ namespace Ligg.Winform.Forms
                     {
                         zoneItem.DisabledFlag = ResolveConstants(zoneItem.DisabledFlag);
                         zoneItem.DisabledFlag = AddZoneIdentifer(zoneItem.DisabledFlag, zone.Name);
-                        disabledFlag = ResolveStringByRefVariablesAndControls(zoneItem.DisabledFlag);
+                        disabledFlag = ResolveStringByRefProcedureVariablesAndControls(zoneItem.DisabledFlag);
                         disabledFlag = GetText(disabledFlag);
                     }
                     isCpntEnabled = (disabledFlag.ToLower() == "false" | disabledFlag.ToLower() == "0") ? true : false;
@@ -2487,7 +2954,7 @@ namespace Ligg.Winform.Forms
                     {
                         zoneItem.DataSource = ResolveConstants(zoneItem.DataSource);
                         zoneItem.DataSource = AddZoneIdentifer(zoneItem.DataSource, zone.Name);
-                        dataSrc = ResolveStringByRefVariablesAndControls(zoneItem.DataSource);
+                        dataSrc = ResolveStringByRefProcedureVariablesAndControls(zoneItem.DataSource);
                     }
 
                     //defVal
@@ -2496,7 +2963,7 @@ namespace Ligg.Winform.Forms
                     {
                         zoneItem.DefaultValue = ResolveConstants(zoneItem.DefaultValue);
                         zoneItem.DefaultValue = AddZoneIdentifer(zoneItem.DefaultValue, zone.Name);
-                        defVal = ResolveStringByRefVariablesAndControls(zoneItem.DefaultValue);
+                        defVal = ResolveStringByRefProcedureVariablesAndControls(zoneItem.DefaultValue);
                         defVal = GetText(defVal);
                     }
 
@@ -2506,7 +2973,7 @@ namespace Ligg.Winform.Forms
                     {
                         zoneItem.DisplayName = ResolveConstants(zoneItem.DisplayName);
                         zoneItem.DisplayName = AddZoneIdentifer(zoneItem.DisplayName, zone.Name);
-                        var txt = ResolveStringByRefVariablesAndControls(zoneItem.DisplayName);
+                        var txt = ResolveStringByRefProcedureVariablesAndControls(zoneItem.DisplayName);
                         if (zoneItem.DisplayName.StartsWith("="))
                         {
                             displayName = GetText(txt);
@@ -2518,7 +2985,7 @@ namespace Ligg.Winform.Forms
                     }
                     else
                     {
-                        displayName = LayoutHelper.GetControlDisplayName(_functionInitParamSet.SupportMutiCultures, "ZoneItem", zoneItem.Name, _annexes, zoneItem.Name.GetLastSeparatedString('_'));
+                        displayName = LayoutHelper.GetControlDisplayName(_functionInitParamSet.SupportMutiCultures, "ZoneItem", zoneItem.Name, _annexes, "");
                     }
 
                     //action
@@ -2546,7 +3013,7 @@ namespace Ligg.Winform.Forms
                     {
                         zoneItem.StyleClass = ResolveConstants(zoneItem.StyleClass);
                         zoneItem.StyleClass = AddZoneIdentifer(zoneItem.StyleClass, zone.Name);
-                        styleClass = ResolveStringByRefVariablesAndControls(zoneItem.StyleClass);
+                        styleClass = ResolveStringByRefProcedureVariablesAndControls(zoneItem.StyleClass);
                         styleClass = GetText(styleClass);
                     }
 
@@ -2556,7 +3023,7 @@ namespace Ligg.Winform.Forms
                     {
                         zoneItem.StyleText = ResolveConstants(zoneItem.StyleText);
                         zoneItem.StyleText = AddZoneIdentifer(zoneItem.StyleText, zone.Name);
-                        styleText = ResolveStringByRefVariablesAndControls(zoneItem.StyleText);
+                        styleText = ResolveStringByRefProcedureVariablesAndControls(zoneItem.StyleText);
                         styleText = GetText(styleText);
                     }
 
@@ -2938,23 +3405,46 @@ namespace Ligg.Winform.Forms
                         //DataSource
                         if (!dataSrc.IsNullOrEmpty())
                         {
-
+                            var valTxts = new List<ValueText>();
                             if (dataSrc.StartsWith("="))
                             {
-                                if (dataSrc.ToLower().Contains("FromXmlByNodeNames".ToLower()) | dataSrc.ToLower()
-                                        .Contains("FromIdLinkedAnnexesXmlByTextTypeByLang".ToLower()))
+                                dataSrc = GetText(dataSrc);
+                                if (dataSrc.Contains("{") & dataSrc.Contains("}"))
                                 {
-                                    var seperatorChar = dataSrc.GetParamSeparator();
-                                    var funcAndParamArray = dataSrc.Split(seperatorChar);
-                                    funcAndParamArray[1] = FileHelper.GetFilePath(funcAndParamArray[1], zone.Location);
-                                    dataSrc = StringExtension.JoinByStringArray(funcAndParamArray, seperatorChar);
+                                    valTxts = JsonHelper.ConvertToObject<List<ValueText>>(dataSrc);
                                 }
-
-                                var valTxtDataTable = GetValueTextDataTable(dataSrc);
-                                cpnt.DataSource = valTxtDataTable;
-                                cpnt.ValueMember = "Value";
-                                cpnt.DisplayMember = "Text";
                             }
+                            else
+                            {
+                                var strArray = dataSrc.Split(dataSrc.GetSubParamSeparator());
+                                if (dataSrc.Contains(":"))
+                                {
+                                    foreach (var v in strArray)
+                                    {
+                                        var arry = v.Split(':');
+                                        var valTxt = new ValueText();
+                                        valTxt.Value = arry[0];
+                                        valTxt.Text = arry[1];
+                                        valTxts.Add(valTxt);
+                                    }
+                                }
+                                else
+                                {
+                                    var i = 0;
+                                    foreach (var v in strArray)
+                                    {
+                                        var valTxt = new ValueText();
+                                        valTxt.Value = i.ToString();
+                                        valTxt.Text = v;
+                                        valTxts.Add(valTxt);
+                                        i++;
+                                    }
+                                }
+                            }
+
+                            cpnt.DataSource = valTxts;
+                            cpnt.ValueMember = "Value";
+                            cpnt.DisplayMember = "Text";
                         }
 
                         zonePanel.Controls.Add(cpnt); //for ComboBox, this sentence must be before setting default value! else the selected value will be first one
@@ -3242,6 +3732,7 @@ namespace Ligg.Winform.Forms
             }
         }
 
+        //##SetZoneCpntDockStyleOrPositionOnZoneArrangementTypeIsPositioning
         private void SetZoneCpntDockStyleOrPositionOnZoneArrangementTypeIsPositioning(ZoneArrangementType zoneArrangementType, Panel zonePanel, Control ctrl, int dockType, int width, int height, int offsetOrPositionX, int offsetOrPositionY)
         {
             if (zoneArrangementType == ZoneArrangementType.Positioning)
@@ -3260,462 +3751,8 @@ namespace Ligg.Winform.Forms
 
         }
 
-        private List<VariableItem> GetAndMergeZoneVariables(LayoutElement zone)
-        {
-            try
-            {
-                var zoneVariables = new List<VariableItem>();
-                var inputTxt = zone.InputVariables;
-                if (!inputTxt.IsNullOrEmpty())
-                {
-                    var separator = inputTxt.GetParamSeparator();
-                    var inputTxtArry = inputTxt.Split(separator);
-                    var zinputStr = "";
-                    int ct = 0;
-                    foreach (var str in inputTxtArry)
-                    {
-                        var val = str;
-                        if (!str.IsNullOrEmpty())
-                        {
-                            var txt = ResolveConstants(str);
-                            val = GetText(txt);
-                        }
 
-                        zinputStr = ct == 0 ? val : zinputStr + "^" + val;
-                        ct = ct + 1;
-                    }
-
-                    var variableItem = new VariableItem();
-                    variableItem.Name = zone.Name + "_" + "zinput";
-                    variableItem.Value = zinputStr;
-                    variableItem.ZoneName = zone.Name;
-                    zoneVariables.Add(variableItem);
-                }
-
-                var oneLevelZoneName = zone.Name.GetLastSeparatedString('_');
-                var xmlPath = "";
-                if (zone.Location.IsNullOrEmpty())
-                {
-                    xmlPath = _uiDir + "\\Zones\\" + oneLevelZoneName + "\\Variables";
-                }
-                else if (zone.Location.StartsWith("\\"))
-                {
-                    xmlPath = _uiDir + "\\Zones" + zone.Location + "\\Variables";
-                }
-                else
-                {
-                    xmlPath = zone.Location + "\\Variables";
-                }
-
-
-                if (File.Exists(xmlPath + ".xml") | File.Exists(xmlPath + ".exml"))
-                {
-                    var xmlMgr = new XmlHandler(xmlPath);
-                    var varList = xmlMgr.ConvertToObject<List<VariableItem>>();
-
-                    if (varList.Count > 0)
-                    {
-                        foreach (var var in varList)
-                        {
-                            LayoutHelper.SetVariableType(var);
-                        }
-                        LayoutHelper.CheckZoneVariables(zone.Name, varList);
-                        foreach (var var in varList)
-                        {
-                            var.Value = string.IsNullOrEmpty(var.Value) ? "" : var.Value;
-                            if (var.GroupId < 0) var.GroupId = 0;
-                            var.Name = zone.Name + "_" + var.Name;
-                            var.ZoneName = zone.Name;
-
-                        }
-
-                        zoneVariables.AddRange(varList);
-                    }
-                }
-                _variables.AddRange(zoneVariables);
-                return zoneVariables;
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".GetAndMergeZoneVariables Error: " + ex.Message);
-            }
-        }
-
-
-
-        //##ResetDefaultViewMenu
-        private void ResetDefaultViewMenu(List<LayoutElement> layoutElements, int startingMenuId)
-        {
-            var menu = layoutElements.Find(x => x.Id == startingMenuId);
-            if (menu != null)
-            {
-                var menuAreaName = menu.Container;
-                var viewMenuArea = layoutElements.Find(x => x.Name == menuAreaName);
-                if (viewMenuArea != null)
-                {
-                    viewMenuArea.DefaultViewMenuIdFlag = menu.Id.ToString();
-                    if (viewMenuArea.ParentViewMenuId == 0) return;
-                    else ResetDefaultViewMenu(layoutElements, viewMenuArea.ParentViewMenuId);
-                }
-                else
-                {
-                    return;
-                }
-            }
-            else
-            {
-                return;
-            }
-        }
-
-        private void HideViewMenuAreas(int viewMenuId)
-        {
-            var menuArea = _layoutElements.Find(x => x.Type == (int)LayoutElementType.ViewMenuArea && x.ParentViewMenuId == viewMenuId);
-            if (menuArea != null)
-            {
-                var areaControl = GetControl(menuArea.Name);
-                ControlHelper.HideControlByDockStyle(areaControl, menuArea.DockType);
-                menuArea.IsChecked = false;
-                var checkedMenuItem = _layoutElements.Find(x => x.Container == menuArea.Name && x.Type == (int)LayoutElementType.ViewMenuItem && x.IsChecked);
-                if (checkedMenuItem != null)
-                {
-                    HideViewMenuAreas(checkedMenuItem.Id);
-                }
-            }
-        }
-
-        private void ShowViewMenuArea(LayoutElement viewMenuArea)
-        {
-            try
-            {
-                var containerControl = GetControl(viewMenuArea.Container);
-                var viewMenuAreaControl = ControlHelper.GetControlByNameByParent(viewMenuArea.Name, containerControl);
-                var viewMenuAreaWidth = viewMenuArea.Width == -1 ? containerControl.Width : viewMenuArea.Width;
-                var viewMenuAreaHeight = viewMenuArea.Height == -1 ? containerControl.Height : viewMenuArea.Height;
-                ControlHelper.SetControlDockStyleAndLocationAndSize(viewMenuAreaControl, viewMenuArea.DockType, viewMenuAreaWidth, viewMenuAreaHeight, viewMenuArea.OffsetOrPositionX, viewMenuArea.OffsetOrPositionY);
-                viewMenuArea.IsChecked = true;
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".ShowViewMenuArea Error: " + ex.Message);
-            }
-        }
-
-        private void CheckViewMenuItemAndUncheckParallelItems(int viewMenuId)
-        {
-            try
-            {
-                var menuItem = _layoutElements.Find(x => x.Id == viewMenuId && x.Type == (int)LayoutElementType.ViewMenuItem);
-                var viewMenuArea = _layoutElements.Find(x => x.Name == menuItem.Container && x.Type == (int)LayoutElementType.ViewMenuArea);
-                var menuAreaControl = GetControl(viewMenuArea.Name);
-                //uncheck
-                var lastCheckedParallelmenuItem = _layoutElements.Find(x => x.Container == viewMenuArea.Name && x.Type == (int)LayoutElementType.ViewMenuItem && x.IsChecked);
-                if (lastCheckedParallelmenuItem != null)
-                {
-                    if (lastCheckedParallelmenuItem.ControlTypeName.ToLower().Contains("ImageTextToolButton".ToLower()))
-                    {
-                        var menuAreaCpnt = menuAreaControl as ToolStrip;
-                        var cpnt = menuAreaCpnt.Items.Find(lastCheckedParallelmenuItem.Name, true)[0] as ToolStripButton;
-                        cpnt.Checked = false;
-                    }
-                    else if (lastCheckedParallelmenuItem.ControlTypeName.ToLower().Contains("ImageTextButton".ToLower()))
-                    {
-                        var menuItemControl = ControlHelper.GetControlByNameByParent(lastCheckedParallelmenuItem.Name, menuAreaControl);
-                        var cpnt = menuItemControl as ImageTextButton;
-                        cpnt.Checked = false;
-                    }
-                    else if (lastCheckedParallelmenuItem.ControlTypeName.ToLower().Contains("TextButton".ToLower()))
-                    {
-                        var menuItemControl = ControlHelper.GetControlByNameByParent(lastCheckedParallelmenuItem.Name, menuAreaControl);
-                        var cpnt = menuItemControl as TextButton;
-                        cpnt.Checked = false;
-                    }
-                    lastCheckedParallelmenuItem.IsChecked = false;
-                }
-
-                //check
-                if (menuItem.ControlTypeName.ToLower().Contains("ImageTextToolButton".ToLower()))
-                {
-                    var menuAreaCpnt = menuAreaControl as ToolStrip;
-                    var cpnt = menuAreaCpnt.Items.Find(menuItem.Name, true)[0] as ToolStripButton;
-                    cpnt.Checked = true;
-                }
-                else if (menuItem.ControlTypeName.ToLower().Contains("ImageTextButton".ToLower()))
-                {
-                    var menuItemControl = ControlHelper.GetControlByNameByParent(menuItem.Name, menuAreaControl);
-                    var cpnt = menuItemControl as ImageTextButton;
-                    cpnt.Checked = true;
-                }
-                else if (menuItem.ControlTypeName.ToLower().Contains("TextButton".ToLower()))
-                {
-                    var menuItemControl = ControlHelper.GetControlByNameByParent(menuItem.Name, menuAreaControl);
-                    var cpnt = menuItemControl as TextButton;
-                    cpnt.Checked = true;
-                }
-                menuItem.IsChecked = true;
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".CheckViewMenuItemAndUncheckeParallelItems Error: " + ex.Message);
-            }
-        }
-
-        //##view
-        //##MergeViewItems
-        private void MergeViewItems(string viewName, string viewDatasource)
-        {
-            var viewNameEx = "";
-            try
-            {
-                var xmlPath = _functionsDir + "\\" + _functionInitParamSet.FunctionCode + "\\Views\\" + viewName;
-                viewNameEx = viewName;
-                if (!viewDatasource.IsNullOrEmpty())
-                {
-                    xmlPath = FileHelper.GetFilePath(viewDatasource, _functionsDir + "\\" + _functionInitParamSet.FunctionCode + "\\Views");
-                }
-
-                var xmlMgr = new XmlHandler(xmlPath);
-                var tmpViewItems = xmlMgr.ConvertToObject<List<LayoutElement>>();
-                foreach (var viewItem in tmpViewItems)
-                {
-                    if (viewItem.DockOrder.IsNullOrEmpty()) viewItem.DockOrder = viewItem.Id.ToString();
-                    if (viewItem.InvalidFlag.IsNullOrEmpty()) viewItem.InvalidFlag = "false";
-                    if (viewItem.InvalidFlag.StartsWith("="))
-                    {
-                        var txt = ResolveStringByRefVariables((viewItem.InvalidFlag));
-                        viewItem.InvalidFlag = GetText(txt).ToLower();
-                    }
-                }
-                var viewItems = tmpViewItems.Where(x =>
-                    (x.InvalidFlag == "false" | x.InvalidFlag == "0") &
-                    (
-                   x.TypeName == LayoutElementType.ContentArea.ToString() | x.TypeName == LayoutElementType.PublicContentArea.ToString()
-                 //| x.TypeName == LayoutElementType.ViewBeforeRenderHandler.ToString() | x.TypeName == LayoutElementType.ViewAfterRenderHandler.ToString()
-                 //| x.TypeName == LayoutElementType.ViewAfterShowHandler.ToString() | x.TypeName == LayoutElementType.ViewAfterHideHandler.ToString().ToString()
-                 | x.TypeName == LayoutElementType.ZoneBeforeRenderHandler.ToString() | x.TypeName == LayoutElementType.ZoneAfterRenderHandler.ToString()
-                 | x.TypeName == LayoutElementType.TransactionOnlyItem.ToString()
-                 | x.TypeName == LayoutElementType.FollowingTransactionItem.ToString()
-                 | x.TypeName == LayoutElementType.Zone.ToString())).ToList();
-
-
-                if (viewItems.Count > 0)
-                {
-                    foreach (var item in viewItems)
-                    {
-                        LayoutHelper.SetLayoutElementType(item);
-                    }
-                    LayoutHelper.CheckViewItems(viewName, viewItems);
-                    foreach (var viewItem in viewItems)
-                    {
-                        //item.Id = -1;
-                        viewItem.IsRendered = false;
-                        viewItem.IsChecked = false;
-                        if (viewName.ToLower() == "public")
-                        {
-                            viewItem.View = "Public";
-                            if (viewItem.Type == (int)LayoutElementType.ContentArea) viewItem.Type = (int)LayoutElementType.PublicContentArea;
-                        }
-                        else
-                        {
-                            viewItem.View = viewName;
-                        }
-
-                        if (viewItem.Type == (int)LayoutElementType.PublicContentArea | viewItem.Type == (int)LayoutElementType.ContentArea)
-                        {
-                            viewItem.Name = viewName + "_" + viewItem.Name;
-                        }
-                        else
-                        {
-                            viewItem.Name = viewName + "_" + viewItem.Container + "_" + viewItem.Name;
-                        }
-
-                        if (viewItem.Type != (int)(LayoutElementType.ContentArea) &
-                            viewItem.Type != (int)(LayoutElementType.PublicContentArea) &
-                            viewItem.Type != (int)(LayoutElementType.ContentArea) &
-                            viewItem.Type != (int)(LayoutElementType.Zone))
-                        {
-                            var dir = FileHelper.GetFileDetailByOption(xmlPath, FilePathComposition.Directory);
-                            viewItem.Location = dir;
-                        }
-                        _layoutElements.Add(viewItem);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".MergeViewItems Error: ViewName=" + viewNameEx + "; " + ex.Message);
-            }
-        }
-
-        private void AddViewStatus(string viewName, bool status)
-        {
-            try
-            {
-                var view = _renderedViewStatuses.Find(x => x.Name == viewName);
-                if (view == null)
-                    _renderedViewStatuses.Add(new RenderedViewStatus(viewName, status));
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".AddViewStatus Error: " + ex.Message);
-            }
-        }
-
-        private void SetViewCheckedAndUncheckLastView(string viewName)
-        {
-            try
-            {
-                var checkedView = _renderedViewStatuses.Find(x => x.IsChecked);
-                if (checkedView != null) checkedView.IsChecked = false;
-                var view = _renderedViewStatuses.Find(x => x.Name == viewName);
-                view.IsChecked = true;
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".SetViewCheckedAndUncheckLastView Error: " + ex.Message);
-            }
-        }
-
-        private void UncheckLastCheckedView()
-        {
-            try
-            {
-                var view = _renderedViewStatuses.Find(x => x.IsChecked);
-                if (view != null)
-                    view.IsChecked = false;
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".UncheckLastCheckedView Error: " + ex.Message);
-            }
-        }
-
-        private void ChangeViewStatus(string viewName, bool status)
-        {
-            try
-            {
-                var view = _renderedViewStatuses.Find(x => x.Name == viewName);
-                if (view != null)
-                    view.IsChecked = status;
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".AddCurrentViewStatus Error: " + ex.Message);
-            }
-        }
-
-        private bool IsViewChecked(string viewName)
-        {
-            try
-            {
-                if (!IsViewRendered(viewName)) return false;
-                var view = _renderedViewStatuses.Find(x => x.Name == viewName);
-                return view.IsChecked;
-
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".IsViewChecked Error: " + ex.Message);
-            }
-        }
-
-        private bool IsViewRendered(string viewName)
-        {
-            try
-            {
-                var view = _renderedViewStatuses.Find(x => x.Name == viewName);
-                if (view != null) return true;
-                return false;
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".IsViewRendered Error: " + ex.Message);
-            }
-        }
-
-
-        //##zone
-        private void MergeZoneItems(LayoutElement zone)
-        {
-            try
-            {
-                var oneLevelZoneName = zone.Name.GetLastSeparatedString('_');
-                var location = "";
-                if (zone.Location.IsNullOrEmpty())
-                {
-                    location = _uiDir + "\\Zones\\" + oneLevelZoneName;
-                }
-                else if (zone.Location.StartsWith("\\"))
-                {
-                    location = _uiDir + "\\Zones" + zone.Location;
-                }
-                else
-                {
-                    location = zone.Location;
-                }
-
-                zone.Location = location;
-                var xmlMgr = new XmlHandler(location + "\\ui");
-                var tmpZoneItems = xmlMgr.ConvertToObject<List<ZoneItem>>().ToList();
-                var zoneItems = new List<ZoneItem>();
-
-                foreach (var item in tmpZoneItems)
-                {
-                    if (item.DockOrder.IsNullOrEmpty()) item.DockOrder = item.Id.ToString();
-                    if (item.InvalidFlag.IsNullOrEmpty()) item.InvalidFlag = "false";
-                    item.InvalidFlag = AddZoneIdentifer(item.InvalidFlag, zone.Name);
-                    if (item.InvalidFlag.StartsWith("="))
-                    {
-                        var txt = ResolveConstants((item.InvalidFlag));
-                        txt = ResolveStringByRefVariables((item.InvalidFlag));
-                        item.InvalidFlag = GetText(txt).ToLower();
-                    }
-
-                    if (item.InvalidFlag.ToLower() == "false" | item.InvalidFlag.ToLower() == "0")
-                    {
-                        zoneItems.Add(item);
-                    }
-                }
-
-                if (zoneItems.Count > 0)
-                {
-                    foreach (var item in zoneItems)
-                    {
-                        LayoutHelper.SetZoneItemType(item);
-                    }
-                    LayoutHelper.CheckZoneItems(zone.Name, zoneItems);
-                    string annexesXmlPath = location + "\\Annexes";
-                    var annexList = new List<Annex>();
-                    if (File.Exists(annexesXmlPath + ".xml") | File.Exists(annexesXmlPath + ".exml"))
-                    {
-                        var xmlToReadForAnnexes = new XmlHandler(annexesXmlPath);
-                        annexList = xmlToReadForAnnexes.ConvertToObject<List<Annex>>();
-                    }
-
-                    foreach (var item in zoneItems)
-                    {
-                        var tempAnnexes = annexList.FindAll(x => x.MasterName == item.Name);
-                        item.Name = zone.Name + "_" + item.Name;
-                        _zonesItems.Add(item);
-                        if (tempAnnexes.Count > 0)
-                        {
-                            foreach (var annex in tempAnnexes)
-                            {
-                                annex.ClassName = "ZoneItem";
-                                annex.MasterName = item.Name;
-                                _annexes.Add(annex);
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-
-                throw new ArgumentException("\n>> " + GetType().FullName + ".MergeZoneItems Error: ZoneName=" + zone.Name + " " + ex.Message);
-            }
-        }
-
+        //##AddZoneIdentifer
         private string AddZoneIdentifer(string str, string zoneName)
         {
             try
@@ -3782,6 +3819,7 @@ namespace Ligg.Winform.Forms
             }
         }
 
+        //##DeleteControlZoneIdentifier
         private string DeleteControlZoneIdentifier(string str)
         {
             try
@@ -3798,7 +3836,8 @@ namespace Ligg.Winform.Forms
             }
         }
 
-        private string DeleteVariableZoneIdentifier(string str)
+        //##DeleteProcedureZoneIdentifier
+        private string DeleteProcedureZoneIdentifier(string str)
         {
             try
             {
@@ -3810,245 +3849,184 @@ namespace Ligg.Winform.Forms
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".DeleteVariableZoneIdentifier Error: Text=" + str + "; " + ex.Message);
+                throw new ArgumentException("\n>> " + GetType().FullName + ".DeleteProcedureZoneIdentifier Error: Text=" + str + "; " + ex.Message);
             }
         }
 
-        //##Variable
-        private void InitZoneVariables(string zoneName, List<VariableItem> zoneVariables)
+        //##Procedure
+        //##InitZoneProcedures
+        private void InitZoneProcedures(string zoneName, List<ProcedureItem> zoneProcedures)
         {
-            var varNameForEx = "";
             try
             {
-                foreach (var var in zoneVariables.Where(x => x.Type != 0))
+                foreach (var proc in zoneProcedures.Where(x => x.Type != (int)ProcedureItemType.None))
                 {
-                    varNameForEx = var.Name;
-                    var.Formula = ResolveConstants(var.Formula);
-                    if (!zoneName.IsNullOrEmpty())
-                        var.Formula = AddZoneIdentifer(var.Formula, zoneName);
-                    var.Condition = ResolveConstants(var.Condition);
-                    if (!zoneName.IsNullOrEmpty())
-                        var.Condition = AddZoneIdentifer(var.Condition, zoneName);
-                    if (!zoneName.IsNullOrEmpty())
-                        var.NameToBeSet = AddZoneIdentifer(var.NameToBeSet, zoneName);
+                    proc.Formula = ResolveConstants(proc.Formula);
+                    proc.Condition = ResolveConstants(proc.Condition);
+                }
 
-                    var conTxt = ResolveStringByRefVariables(var.Condition, zoneVariables);
+                if (zoneProcedures.Count != 0)
+                {
+                    var grpIds = zoneProcedures.Select(x => x.GroupId).Distinct();
+                    foreach (var groupId in grpIds)
+                    {
+                        var procListByGrp = zoneProcedures.FindAll(x => x.GroupId == groupId & x.Type != (int)ProcedureItemType.None);
+                        if (RefreshProcedures(procListByGrp, zoneProcedures)) return;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("\n>> " + GetType().FullName + ".InitZoneProcedures Error: zoneName = " + zoneName + "; " + ex.Message);
+            }
+        }
+
+        //##RefreshZoneProcedures
+        private void RefreshZoneProcedures(string zoneName)
+        {
+            try
+            {
+                var procList = new List<ProcedureItem>();
+                if (string.IsNullOrEmpty(zoneName))
+                {
+                    procList = _procedures.FindAll(x => string.IsNullOrEmpty(x.ZoneName)); //for function procedures
+                }
+                else
+                {
+                    procList = _procedures.FindAll(x => x.ZoneName == zoneName);
+                }
+                if (procList.Count == 0)
+                {
+                    return;
+                }
+
+                if (procList.Count != 0)
+                {
+                    var grpIds = procList.Select(x => x.GroupId).Distinct();
+                    foreach (var groupId in grpIds)
+                    {
+                        var procListByGrp = procList.FindAll(x => x.GroupId == groupId & x.Type != (int)ProcedureItemType.None);
+                        if (RefreshProcedures(procListByGrp, procList)) return;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("\n>> " + GetType().FullName + ".RefreshZoneProcedures Error: zoneName=" + zoneName + "; " + ex.Message);
+            }
+        }
+
+        //##RefreshZoneProceduresByGroup
+        private void RefreshZoneProceduresByGroup(string zoneName, int grpId)
+        {
+            try
+            {
+                var procList = new List<ProcedureItem>();
+                if (string.IsNullOrEmpty(zoneName))
+                {
+                    procList = _procedures.FindAll(x => string.IsNullOrEmpty(x.ZoneName)); //for function procedures
+                }
+                else
+                {
+                    procList = _procedures.FindAll(x => x.ZoneName == zoneName);
+                }
+
+                if (procList.Count == 0)
+                {
+                    return;
+                }
+
+                var procListByGrp = new List<ProcedureItem>();
+                if (grpId > -1) //<1, for all group
+                {
+                    procListByGrp = procList.FindAll(x => x.GroupId == grpId & x.Type != (int)ProcedureItemType.None);
+                }
+                else
+                {
+                    procListByGrp = procList;
+                }
+
+                if (procList.Count != 0)
+                {
+                    if (RefreshProcedures(procListByGrp, procList)) return;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("\n>> " + GetType().FullName + ".RefreshZoneProceduresByGroup Error: zoneName=" + zoneName + "; " + ex.Message);
+            }
+        }
+
+        //##RefreshProcedures
+        private bool RefreshProcedures(List<ProcedureItem> procListByGrp, List<ProcedureItem> procListAll)
+        {
+            var procNameForEx = "";
+            try
+            {
+                foreach (var proc in procListByGrp)
+                {
+                    procNameForEx = proc.Name;
+                    var conTxt = ResolveStringByRefProcedureVariables(proc.Condition, procListAll);
                     var con = conTxt.IsNullOrEmpty() ? string.Empty : GetText(conTxt);
-                    //var toDo = false;
+                    bool toDo = string.IsNullOrEmpty(con) || con.ToLower() == "true" | con.ToLower() == "1";
 
-                    // if (var.Value.IsNullOrEmpty())
-
-                    if (string.IsNullOrEmpty(con) || con.ToLower() == "true" | con.ToLower() == "1")
+                    if (toDo)
                     {
-                        if (var.Type == (int)VariableItemType.SetSelf)
+                        if (proc.Type == (int)ProcedureItemType.Variable)
                         {
-                            if (var.Value.IsNullOrEmpty())
+                            if (!string.IsNullOrEmpty(proc.Formula))
                             {
-                                if (!string.IsNullOrEmpty(var.Formula))
-                                {
-                                    var formularTxt = ResolveStringByRefVariables(var.Formula, zoneVariables);
-                                    var.Value = GetText(formularTxt);
-                                }
-                            }
-
-                        }
-                        else if (var.Type == (int)VariableItemType.SetOther)
-                        {
-                            if (var.Value.IsNullOrEmpty())
-                            {
-                                if (!string.IsNullOrEmpty(var.Formula))
-                                {
-                                    var formularTxt = ResolveStringByRefVariables(var.Formula, zoneVariables);
-                                    var.Value = GetText(formularTxt);
-                                }
-                            }
-
-                            if (!var.NameToBeSet.IsNullOrEmpty())
-                            {
-                                SetVariableValue(zoneVariables, var.NameToBeSet, var.Value);
+                                var formularTxt = ResolveStringByRefProcedureVariables(proc.Formula, procListAll);
+                                proc.Value = GetText(formularTxt);
                             }
                         }
-
-                        else if (var.Type == (int)VariableItemType.Act)
+                        else if (proc.Type == (int)ProcedureItemType.Action)
                         {
-                            if (!string.IsNullOrEmpty(var.Formula))
+                            if (!string.IsNullOrEmpty(proc.Formula))
                             {
-                                var formularTxt = ResolveStringByRefVariables(var.Formula, zoneVariables);
+                                var formularTxt = ResolveStringByRefProcedureVariables(proc.Formula, procListAll);
                                 formularTxt = GetText(formularTxt);
-                                Act("", formularTxt, var.Name.GetLastSeparatedString('_'), true);
+                                var displayName = LayoutHelper.GetControlDisplayName(_functionInitParamSet.SupportMutiCultures, "ProcedureItem", proc.Name, _annexes, proc.DisplayName);
+                                Act("", formularTxt, displayName, true);
                             }
                         }
-
-                    }
-
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".InitZoneVariables Error: zoneName = " +
-                                            zoneName + "; varName = " + varNameForEx + "; " + ex.Message);
-            }
-        }
-
-        private void UpdateZoneVariablesByGroup(string zoneName, int groupId, UpdateVariableType updateVariableType)
-        {
-            try
-            {
-                var vars = new List<VariableItem>();
-                if (zoneName.IsNullOrEmpty())
-                {
-                    vars = _variables.FindAll(x => x.ZoneName.IsNullOrEmpty());
-                }
-                else vars = _variables.FindAll(x => x.ZoneName == zoneName);
-                if (vars.Count > 0)
-                {
-                    UpdateVariablesByGroupByZoneName(updateVariableType, vars, groupId, zoneName);
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".UpdateZoneVariablesByGroup Error: " + ex.Message);
-            }
-        }
-
-        private void UpdateVariablesByGroupByZoneName(UpdateVariableType updateVariableType, List<VariableItem> vars, int grpId, string zoneName)
-        {
-            var varNameForEx = "";
-            try
-            {
-                var varList = new List<VariableItem>();
-                if (string.IsNullOrEmpty(zoneName))
-                {
-                    varList = vars.FindAll(x => string.IsNullOrEmpty(x.ZoneName)); //for Shared vars
-                }
-                else
-                {
-                    varList = vars.FindAll(x => x.ZoneName == zoneName);
-                }
-
-                if (grpId > -1)//<1, for all group
-                {
-                    varList = varList.FindAll(x => x.GroupId == grpId);
-                }
-
-                if (varList.Count != 0)
-                {
-                    var grpIds = varList.Select(x => x.GroupId).Distinct();
-                    foreach (var groupId in grpIds)
-                    {
-                        foreach (var var in varList.Where(x => x.GroupId == groupId))
-                        {
-                            varNameForEx = var.Name;
-                            var conTxt = ResolveStringByRefVariables(var.Condition, vars);
-                            var con = conTxt.IsNullOrEmpty() ? string.Empty : GetText(conTxt);
-                            var toDo = false;
-                            if (updateVariableType == UpdateVariableType.Refresh)
-                            {
-                                if (string.IsNullOrEmpty(con) || con.ToLower() == "true" | con.ToLower() == "1")
-                                {
-                                    toDo = true;
-                                }
-                            }
-                            else
-                            {
-                                toDo = true;
-                            }
-                            if (toDo)
-                            {
-                                if (var.Type == (int)VariableItemType.Break) break;
-                                else if (var.Type == (int)VariableItemType.SetSelf)
-                                {
-                                    if (!string.IsNullOrEmpty(var.Formula))
-                                    {
-                                        var formularTxt = ResolveStringByRefVariables(var.Formula, vars);
-                                        var.Value = GetText(formularTxt);
-                                    }
-                                }
-
-
-                                else if (var.Type == (int)VariableItemType.SetOther)
-                                {
-                                    if (!string.IsNullOrEmpty(var.Formula))
-                                    {
-                                        var formularTxt = ResolveStringByRefVariables(var.Formula, vars);
-                                        var.Value = GetText(formularTxt);
-                                    }
-
-                                    if (!var.NameToBeSet.IsNullOrEmpty())
-                                    {
-                                        SetVariableValue(vars, var.NameToBeSet, var.Value);
-                                    }
-                                }
-
-                                else if (var.Type == (int)VariableItemType.Act)
-                                {
-                                    if (!string.IsNullOrEmpty(var.Formula))
-                                    {
-                                        var formularTxt = ResolveStringByRefVariables(var.Formula, vars);
-                                        formularTxt = GetText(formularTxt);
-                                        Act("", formularTxt, var.Name.GetLastSeparatedString('_'), true);
-                                    }
-                                }
-                            }
-                        }
+                        else if (proc.Type == (int)ProcedureItemType.Break) break;
+                        else if (proc.Type == (int)ProcedureItemType.Exit) return false;
                     }
                 }
+
+                return true;
+
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".UpdateZoneVariablesByGroup Error: zoneName=" + zoneName + "; varName=" + varNameForEx + "; " + ex.Message);
+                throw new ArgumentException("\n>> " + GetType().FullName + ".RefreshProcedures Error: " + "procName=" + procNameForEx + "; " + ex.Message);
             }
         }
 
-        private void ClearZoneVariablesByGroup(string zoneName, int groupId)
+        //##ClearZoneProceduresVariablesByGroup
+        private void ClearZoneProceduresVariablesByGroup(string zoneName, int groupId)
         {
             try
             {
-                var vars = new List<VariableItem>();
+                var procList = new List<ProcedureItem>();
                 if (zoneName.IsNullOrEmpty())
                 {
-                    vars = _variables.FindAll(x => x.ZoneName.IsNullOrEmpty());
+                    procList = _procedures.FindAll(x => x.ZoneName.IsNullOrEmpty() & x.Type == (int)ProcedureItemType.Variable);
                 }
-                else vars = _variables.FindAll(x => x.ZoneName == zoneName);
-                if (vars.Count > 0)
-                {
-                    ClearVariablesByGroupByZoneName(vars, groupId, zoneName);
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".ClearZoneVariablesByGroup Error: " + ex.Message);
-            }
-        }
+                else procList = _procedures.FindAll(x => x.ZoneName == zoneName & x.Type == (int)ProcedureItemType.Variable);
 
-
-
-        private void ClearVariablesByGroupByZoneName(List<VariableItem> vars, int grpId, string zoneName)
-        {
-            var varNameForEx = "";
-            try
-            {
-                var varList = new List<VariableItem>();
-                if (string.IsNullOrEmpty(zoneName))
+                if (procList.Count > 0)
                 {
-                    varList = vars.FindAll(x => string.IsNullOrEmpty(x.ZoneName)); //for Shared vars
-                }
-                else
-                {
-                    varList = vars.FindAll(x => x.ZoneName == zoneName);
-                }
-
-                if (grpId > -1)//<1, for all group
-                {
-                    varList = varList.FindAll(x => x.GroupId == grpId);
-                }
-
-                if (varList.Count != 0)
-                {
-                    var grpIds = varList.Select(x => x.GroupId).Distinct();
-                    foreach (var groupId in grpIds)
+                    if (groupId > -1)//<1, for all group
                     {
-                        foreach (var var in varList.Where(x => x.GroupId == groupId))
+                        procList = procList.FindAll(x => x.GroupId == groupId);
+                    }
+
+                    var grpIds = procList.Select(x => x.GroupId).Distinct();
+                    foreach (var grpId in grpIds)
+                    {
+                        foreach (var var in procList.Where(x => x.GroupId == grpId))
                         {
                             var.Value = string.Empty;
                         }
@@ -4057,88 +4035,62 @@ namespace Ligg.Winform.Forms
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".ClearVariablesByGroupByZoneName Error: zoneName=" + zoneName + "; varName=" + varNameForEx + "; " + ex.Message);
+                throw new ArgumentException("\n>> " + GetType().FullName + ".ClearZoneProceduresVariablesByGroup Error: " + ex.Message);
             }
         }
 
-        //##UpdateVariable
-        private void UpdateVariable(string varName, UpdateVariableType updateVariableType)
+        //##RefreshProcedureVariable
+        private void RefreshProcedureVariable(string varName)
         {
             try
             {
-                var var = _variables.Find(x => x.Name == varName);
+                var var = _procedures.Find(x => x.Name == varName & x.Type == (int)ProcedureItemType.Variable);
                 if (var == null)
                 {
-                    throw new ArgumentException("Variable name does not exist! varName=" + varName);
+                    throw new ArgumentException("Procedure Variable name does not exist! varName=" + varName);
                 }
-                var vars = _variables.FindAll(x => x.ZoneName == var.ZoneName);
-                if (updateVariableType == UpdateVariableType.Update) //no condition
+
+                var vars = _procedures.FindAll(x => x.ZoneName == var.ZoneName);
                 {
-                    var formularTxt = ResolveStringByRefVariables(var.Formula, vars);
-                    var.Value = GetText(formularTxt);
-                }
-                else
-                {
-                    var conTxt = ResolveStringByRefVariables(var.Condition, vars);
+
+                    var conTxt = ResolveStringByRefProcedureVariables(var.Condition, vars);
                     var con = GetText(conTxt);
                     if (string.IsNullOrEmpty(con) || con.ToLower() == "true" | con.ToLower() == "1")
                     {
                         var formularTxt = ResolveConstants(var.Formula);
-                        formularTxt = ResolveStringByRefVariables(formularTxt, vars);
+                        formularTxt = ResolveStringByRefProcedureVariables(formularTxt, vars);
                         var.Value = GetText(formularTxt);
                     }
                 }
-
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".RefreshVariable Error: " + ex.Message);
+                throw new ArgumentException("\n>> " + GetType().FullName + ".RefreshProcedureVariable Error: " + ex.Message);
             }
         }
 
-
-        //##SetVariableValue
-        private void SetVariableValue(List<VariableItem> vars, string name, string val)
+        //##SetProcedureVariableValue
+        private void SetProcedureVariableValue(string varName, string val)
         {
             try
             {
-                var var = vars.Find(x => x.Name == name);
+                var var = _procedures.Find(x => x.Name == varName & x.Type == (int)ProcedureItemType.Variable);
                 if (var != null)
                 {
                     var.Value = val;
                 }
                 else
                 {
-                    throw new ArgumentException("Variable " + name + " does not exist!");
+                    throw new ArgumentException("Procedure Variable: " + varName + " does not exist!");
                 }
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".SetVariableValue Error:" + ex.Message);
+                throw new ArgumentException("\n>> " + GetType().FullName + ".SetProcedureVariableValue Error:" + ex.Message);
             }
         }
 
-        private void SetVariableValue(string varName, string val)
-        {
-            try
-            {
-                var var = _variables.Find(x => x.Name == varName);
-                if (var != null)
-                {
-                    var.Value = val;
-                }
-                else
-                {
-                    throw new ArgumentException("Variable " + varName + " does not exist!");
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".SetVariableValue Error:" + ex.Message);
-            }
-        }
-
-        //##zonectrls
+        //##ctrl
         //##zonecontrols
         private void RefreshZoneControlsValues(string zoneName)
         {
@@ -4162,12 +4114,11 @@ namespace Ligg.Winform.Forms
             }
         }
 
-        //##zonectrls
+        //##RefreshZoneControlsInvisibles
         private void RefreshZoneControlsInvisibles(string zoneName)
         {
             try
             {
-                //zoneName = ReplaceAbbreviatedCurrentZoneName(zoneName);
                 var zoneItems = _zonesItems.FindAll(x => x.Name.StartsWith(zoneName + "_"));
                 var items = zoneItems.Where(x => x.ControlTypeName.ToLower() != "row"
                                                  & (x.Type == (int)LayoutElementType.DisplayOnlyItem | x.Type == (int)LayoutElementType.DisplayAndTransactionItem)
@@ -4184,6 +4135,7 @@ namespace Ligg.Winform.Forms
             }
         }
 
+        //##RefreshZoneControlsDisableds
         private void RefreshZoneControlsDisableds(string zoneName)
         {
             try
@@ -4205,8 +4157,7 @@ namespace Ligg.Winform.Forms
             }
         }
 
-        //##ctrl
-        //##control
+        //##SetControlText
         protected void SetControlText(string ctrlName, string text)
         {
             try
@@ -4223,6 +4174,7 @@ namespace Ligg.Winform.Forms
             }
         }
 
+        //##RefreshControlText
         private void RefreshControlText(string ctrlName)
         {
             try
@@ -4232,7 +4184,7 @@ namespace Ligg.Winform.Forms
                 var text = "";
                 if (!item.DisplayName.IsNullOrEmpty())
                 {
-                    var txt = ResolveStringByRefVariablesAndControls(item.DisplayName);
+                    var txt = ResolveStringByRefProcedureVariablesAndControls(item.DisplayName);
                     text = GetText(txt);
                 }
 
@@ -4242,7 +4194,7 @@ namespace Ligg.Winform.Forms
                     {
                         if (item.DisplayName.StartsWith("="))
                         {
-                            var txt = ResolveStringByRefVariablesAndControls(item.DisplayName);
+                            var txt = ResolveStringByRefProcedureVariablesAndControls(item.DisplayName);
                             text = GetText(txt);
                         }
                     }
@@ -4256,6 +4208,7 @@ namespace Ligg.Winform.Forms
             }
         }
 
+        //##SetControlText
         private void SetControlText(ZoneItem item, string text)
         {
             try
@@ -4294,6 +4247,7 @@ namespace Ligg.Winform.Forms
             }
         }
 
+        //##RefreshControl
         protected void RefreshControl(string ctrlName)
         {
             try
@@ -4357,6 +4311,7 @@ namespace Ligg.Winform.Forms
             }
         }
 
+        //##SetControlValue
         protected void SetControlValue(string ctrlName, string val)
         {
             try
@@ -4434,6 +4389,7 @@ namespace Ligg.Winform.Forms
             }
         }
 
+        //##GetControlValueOrText
         protected string GetControlValueOrText(string txt)
         {
             try
@@ -4599,7 +4555,7 @@ namespace Ligg.Winform.Forms
                 var defVal = "";
                 if (!String.IsNullOrEmpty(item.DefaultValue))
                 {
-                    var txt = ResolveStringByRefVariablesAndControls(item.DefaultValue);
+                    var txt = ResolveStringByRefProcedureVariablesAndControls(item.DefaultValue);
                     defVal = GetText(txt);
                 }
 
@@ -4625,12 +4581,52 @@ namespace Ligg.Winform.Forms
                     var cpnt = ctrl as ComboBox;
                     if (!String.IsNullOrEmpty(item.DataSource))
                     {
-                        var txt = ResolveStringByRefVariablesAndControls(item.DataSource);
-                        var valTxts = GetValueTextDataTable(txt);
+                        var dataSrc = item.DataSource;
+                        dataSrc = ResolveConstants(dataSrc);
+                        dataSrc = ResolveStringByRefProcedureVariablesAndControls(dataSrc);
+
+                        var valTxts = new List<ValueText>();
+                        if (dataSrc.StartsWith("="))
+                        {
+                            dataSrc = GetText(dataSrc);
+                            if (dataSrc.Contains("{") & dataSrc.Contains("}"))
+                            {
+                                valTxts = JsonHelper.ConvertToObject<List<ValueText>>(dataSrc);
+                            }
+                        }
+                        else
+                        {
+                            var strArray = dataSrc.Split(dataSrc.GetSubParamSeparator());
+                            if (dataSrc.Contains("|"))
+                            {
+                                foreach (var v in strArray)
+                                {
+                                    var arry = v.Split('|');
+                                    var valTxt = new ValueText();
+                                    valTxt.Value = arry[0];
+                                    valTxt.Text = arry[1];
+                                    valTxts.Add(valTxt);
+                                }
+                            }
+                            else
+                            {
+                                var i = 0;
+                                foreach (var v in strArray)
+                                {
+                                    var valTxt = new ValueText();
+                                    valTxt.Value = i.ToString();
+                                    valTxt.Text = v;
+                                    valTxts.Add(valTxt);
+                                    i++;
+                                }
+                            }
+                        }
+
                         cpnt.DataSource = valTxts;
                         cpnt.ValueMember = "Value";
                         cpnt.DisplayMember = "Text";
                         //cpnt.SelectedIndex = selectedIndex;
+
                     }
                 }
                 else if (item.ControlTypeName == "TimerExTimingRun")
@@ -4638,7 +4634,7 @@ namespace Ligg.Winform.Forms
                     var cpnt = ctrl as TimerExTimingRun;
                     if (!String.IsNullOrEmpty(item.DataSource))
                     {
-                        var txt = ResolveStringByRefVariablesAndControls(item.DataSource);
+                        var txt = ResolveStringByRefProcedureVariablesAndControls(item.DataSource);
                         txt = GetText(txt);
                         cpnt.DataSource = txt;
                     }
@@ -4649,7 +4645,7 @@ namespace Ligg.Winform.Forms
                     var cpnt = ctrl as TimerExRecurringRun;
                     if (!String.IsNullOrEmpty(item.DataSource))
                     {
-                        var txt = ResolveStringByRefVariablesAndControls(item.DataSource);
+                        var txt = ResolveStringByRefProcedureVariablesAndControls(item.DataSource);
                         txt = GetText(txt);
                         cpnt.DataSource = txt;
                     }
@@ -4676,7 +4672,7 @@ namespace Ligg.Winform.Forms
                 if (string.IsNullOrEmpty(inVisibleFlag)) inVisibleFlag = "false";
                 else
                 {
-                    var txt = ResolveStringByRefVariablesAndControls(item.InvisibleFlag);
+                    var txt = ResolveStringByRefProcedureVariablesAndControls(item.InvisibleFlag);
                     inVisibleFlag = GetText(txt);
                 }
                 isCpntVisible = (inVisibleFlag.ToLower() == "false" | inVisibleFlag.ToLower() == "0") ? true : false;
@@ -4722,7 +4718,7 @@ namespace Ligg.Winform.Forms
                 if (string.IsNullOrEmpty(disabledFlag)) disabledFlag = "false";
                 else
                 {
-                    var txt = ResolveStringByRefVariablesAndControls(item.DisabledFlag);
+                    var txt = ResolveStringByRefProcedureVariablesAndControls(item.DisabledFlag);
                     disabledFlag = GetText(txt);
                 }
                 isCpntEnabled = (disabledFlag.ToLower() == "false" | disabledFlag.ToLower() == "0") ? true : false;
@@ -4804,10 +4800,10 @@ namespace Ligg.Winform.Forms
                 text = Regex.Replace(text, toBeRplStr, rplStr, RegexOptions.IgnoreCase);
             }
 
-            toBeRplStr = "%UiDir%".ToLower();
+            toBeRplStr = "%FormDir%".ToLower();
             if (text.ToLower().Contains(toBeRplStr))
             {
-                var rplStr = _uiDir;
+                var rplStr = _formDir;
                 text = Regex.Replace(text, toBeRplStr, rplStr, RegexOptions.IgnoreCase);
             }
 
@@ -4857,19 +4853,17 @@ namespace Ligg.Winform.Forms
             }
         }
 
-        protected virtual string ResolveConstantsEx(string text)
-        {
-            return text;
-        }
 
-        private string ResolveStringByRefVariablesAndControls(string str)
+
+        //##ResolveStringByRefProcedureVariablesAndControls
+        private string ResolveStringByRefProcedureVariablesAndControls(string str)
         {
             try
             {
                 if (str.IsNullOrEmpty()) return "";
                 if (str.Contains("#"))
                 {
-                    str = ResolveStringByRefVariables(str, _variables);
+                    str = ResolveStringByRefProcedureVariables(str, _procedures.Where(x => x.Type == (int)ProcedureItemType.None | x.Type == (int)ProcedureItemType.Variable).ToList());
                 }
                 if (str.Contains("$"))
                 {
@@ -4879,31 +4873,33 @@ namespace Ligg.Winform.Forms
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".ResolveStringByRefVariablesAndControls Error: " + ex.Message);
+                throw new ArgumentException("\n>> " + GetType().FullName + ".ResolveStringByRefProcedureVariablesAndControls Error: " + ex.Message);
             }
         }
 
-        private string ResolveStringByRefVariables(string str)
+        //##ResolveStringByRefProcedureVariables
+        private string ResolveStringByRefProcedureVariables(string str)
         {
             try
             {
                 if (str.IsNullOrEmpty()) return "";
                 if (str.Contains("#"))
                 {
-                    str = ResolveStringByRefVariables(str, _variables);
+                    str = ResolveStringByRefProcedureVariables(str, _procedures.Where(x => x.Type == (int)ProcedureItemType.None | x.Type == (int)ProcedureItemType.Variable).ToList());
                 }
                 return str;
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".ResolveStringByRefVariablesAndControls Error: " + ex.Message);
+                throw new ArgumentException("\n>> " + GetType().FullName + ".ResolveStringByRefProcedureVariables Error: " + ex.Message);
             }
         }
 
-        private string ResolveStringByRefVariables(string str, List<VariableItem> vars)
+        private string ResolveStringByRefProcedureVariables(string str, List<ProcedureItem> varList)
         {
             try
             {
+                var vars = varList.Where(x => x.Type == (int)ProcedureItemType.None | x.Type == (int)ProcedureItemType.Variable).ToList();
                 if (str.IsNullOrEmpty()) return "";
                 if (!str.Contains("#")) return str;
                 var strArray = str.Split('#');
@@ -4918,10 +4914,7 @@ namespace Ligg.Winform.Forms
                     {
                         if (i % 2 == 1)
                         {
-                            //var variable = vars.Find(x => x.Name == strArray[i]);
-                            //if (variable == null)
-                            //{
-                            if (strArray[i].IsPlusInteger() | strArray[i] == "0") //fun start input var
+                            if (strArray[i].IsPlusIntegerOrZero()) //func start input var
                             {
                                 var tempStr = strArray[i];
                                 if (tempStr == "0" | tempStr.IsPlusInteger())
@@ -4935,13 +4928,6 @@ namespace Ligg.Winform.Forms
                                     }
                                 }
                             }
-                            else if (strArray[i].ToLower().EndsWith(".v"))
-                            {
-                                var varName = strArray[i].Split('.')[0].Trim();
-                                var variable1 = vars.Find(x => x.Name == varName);
-                                strArray[i] = variable1.Value;
-                            }
-
                             else if (strArray[i].GetLastSeparatedString('_').IsPlusIntegerOrZero()) //zone input var
                             {
                                 var arry = strArray[i].Split('_');
@@ -4964,12 +4950,18 @@ namespace Ligg.Winform.Forms
                                             strArray[i] = zoneParamArray[index];
                                         }
                                     }
-                                    else throw new ArgumentException("Variable value: #" + strArray[i] + "# doesn't exsit! ");
+                                    else throw new ArgumentException("Procedure variable value: #" + strArray[i] + "# doesn't exsit! ");
                                 }
+                            }
+                            else if (strArray[i].ToLower().EndsWith(".v"))
+                            {
+                                var varName = strArray[i].Split('.')[0].Trim();
+                                var variable1 = vars.Find(x => x.Name == varName);
+                                strArray[i] = variable1.Value;
                             }
                             else
                             {
-                                //throw new ArgumentException("Variable: #" + strArray[i] + "# doesn't exsit! ");
+                                //throw new ArgumentException("Procedure: #" + strArray[i] + "# doesn't exsit! ");
                                 strArray[i] = "#" + strArray[i] + "#";
                             }
                         }
@@ -4981,12 +4973,11 @@ namespace Ligg.Winform.Forms
 
             catch (Exception ex)
             {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".ResolveStringByRefVariables Error: str=" +
-                                            str + "; " + ex.Message);
+                throw new ArgumentException("\n>> " + GetType().FullName + ".ResolveStringByRefProcedureVariables Error: str=" + str + "; " + ex.Message);
             }
         }
 
-
+        //##ResolveStringByRefControls
         private string ResolveStringByRefControls(string str, List<ZoneItem> zoneItems)
         {
             try
@@ -5073,7 +5064,7 @@ namespace Ligg.Winform.Forms
                     }
                     else if (funcName == "GetUserCode".ToLower())
                     {
-                        returnText = GlobalConfiguration.UserCode;
+                        returnText = GetCurrentUserCode();
                     }
 
                     else if (funcName == "currentViewMenuName".ToLower())
@@ -5192,6 +5183,7 @@ namespace Ligg.Winform.Forms
             }
         }
 
+        //##GetTextFromLayoutParser
         private string GetTextFromLayoutParser(string funcName, string[] funcParamArray)
         {
             var returnStr = FunctionHelper.GetText(funcName, funcParamArray);
@@ -5206,59 +5198,6 @@ namespace Ligg.Winform.Forms
         }
 
 
-        protected virtual string GetTextEx(string funName, string[] paramArray)
-        {
-            return string.Empty;
-        }
-
-        protected virtual DataTable GetValueTextDataTable(string str)
-        {
-            var funcName = "";
-            var funcParams = "";
-            try
-            {
-                if (str.IsNullOrEmpty()) //return string.Empty;
-                {
-                    throw new ArgumentException("GetValueTextDataTable parameters Can not be NullOrEmpty! ");
-                }
-
-                //str = 
-                if (!str.StartsWith("="))
-                {
-                    return null;
-                }
-                else
-                {
-                    var funcNameAndParamsStr = str.Substring(1, str.Length - 1).Trim();
-                    var seperatorChar = funcNameAndParamsStr.GetParamSeparator();
-
-                    var funcNameAndParamsArray = funcNameAndParamsStr.Split(seperatorChar);
-                    funcName = funcNameAndParamsArray[0].Trim().ToLower();
-                    var funcParamArray = new string[funcNameAndParamsArray.Length - 1];
-                    funcParams = StringExtension.JoinByStringArray(funcParamArray, seperatorChar);
-                    for (int i = 0; i < funcNameAndParamsArray.Length - 1; i++)
-                    {
-                        funcParamArray[i] = funcNameAndParamsArray[i + 1];
-
-                    }
-                    var reDt = FunctionHelper.GetValueTextDataTable(funcName, funcParamArray);
-                    if (reDt == null) reDt = GetValueTextDataTableEx(funcName, funcParamArray);
-                    return reDt;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".GetDataTable Error: funcName=" + funcName + ", Parameters=" + funcParams + "; " + ex.Message);
-            }
-        }
-
-        protected virtual DataTable GetValueTextDataTableEx(string funName, string[] paramArray)
-        {
-            return null;
-        }
-
-
-
 
         //##act
         private void Act(string controlName, string action, string transactionDisplayName, bool isTopLevelAction)
@@ -5267,13 +5206,13 @@ namespace Ligg.Winform.Forms
 
             try
             {
-                if (FunctionHelper.IsZoneInputVariable(action))
+                if (FunctionHelper.IsZoneInputProcedure(action))
                 {
-                    action = ResolveStringByRefVariables(action);
+                    action = ResolveStringByRefProcedureVariables(action);
                 }
                 else if (action.StartsWith("="))
                 {
-                    action = ResolveStringByRefVariablesAndControls(action);
+                    action = ResolveStringByRefProcedureVariablesAndControls(action);
                     action = GetText(action);
                 }
                 action = ResolveConstants(action);
@@ -5284,7 +5223,7 @@ namespace Ligg.Winform.Forms
                 var actionParamArray = new string[actionNameAndParamsArray.Length - 1];
                 for (int i = 0; i < actionNameAndParamsArray.Length - 1; i++)
                 {
-                    actionParamArray[i] = GetText(ResolveStringByRefVariablesAndControls(actionNameAndParamsArray[i + 1].Trim()));
+                    actionParamArray[i] = GetText(ResolveStringByRefProcedureVariablesAndControls(actionNameAndParamsArray[i + 1].Trim()));
                 }
                 var actionParams = StringExtension.JoinByStringArray(actionParamArray, separatorChar);
 
@@ -5295,7 +5234,7 @@ namespace Ligg.Winform.Forms
                 if (isTopLevelAction & actionName.ToLower() != "Implement".ToLower())
                 {
                     var msg = WinformRes.Dispensing;
-                    var txt = ResolveStringByRefVariablesAndControls(transactionDisplayName);
+                    var txt = ResolveStringByRefProcedureVariablesAndControls(transactionDisplayName);
                     var msg1 = transactionDisplayName.IsNullOrEmpty() ? actionName : GetText(txt);
                     msg1 = "'" + msg1 + "'";
                     var msg2 = "";
@@ -5380,9 +5319,13 @@ namespace Ligg.Winform.Forms
                 {
                     CloseForm();
                 }
-                else if (actionName.ToLower() == "Exit".ToLower())
+                else if (actionName.ToLower() == "ReturnFalse".ToLower())
                 {
-                    Exit = true;
+                    IsOk = false;
+                }
+                else if (actionName.ToLower() == "ReturnFalseAndClose".ToLower())
+                {
+                    IsOk = false;
                     CloseForm();
                 }
                 else if (actionName.ToLower() == "ExitApp".ToLower())
@@ -5414,7 +5357,14 @@ namespace Ligg.Winform.Forms
                 {
                     RefreshUi();
                 }
-                else if (actionName.ToLower() == "NewApp".ToLower())
+                else if (actionName.ToLower() == "RefreshForm".ToLower())
+                {
+                    Act(controlName, "NewForm", transactionDisplayName, isTopLevelAction);
+                    ExitApplication();
+                    //RefreshForm();
+                }
+
+                else if (actionName.ToLower() == "NewForm".ToLower())
                 {
                     bool copyCurrentForm = actionParamArray.Length == 0;
 
@@ -5450,8 +5400,8 @@ namespace Ligg.Winform.Forms
                     }
                     if (startPassword.IsNullOrEmpty()) startPassword = _functionInitParamSet.StartPassword;
 
-                    var usrCode = GlobalConfiguration.UserCode;
-                    var usrToken = GlobalConfiguration.UserToken;
+                    var usrCode = GetCurrentUserCode();
+                    var usrToken = GetCurrentUserToken();
 
                     var arg0 = invisibleStr + "@" + formTypeStr + "@" + startAppStr + "@" + startFuncOrZoneLocStr + "@" + startViewMenuIdOrInputZoneVarsStr + "@" + startParams
                                + "@" + startActionStr + "@" + startPassword + "@" + formTitle + "@" + usrCode + "@" + usrToken;
@@ -5513,15 +5463,11 @@ namespace Ligg.Winform.Forms
                     functionInitParamSet.FormTitle = formTitle;
                     functionInitParamSet.HelpdeskEmail = _functionInitParamSet.HelpdeskEmail;
                     functionInitParamSet.ApplicationVersion = _functionInitParamSet.ApplicationVersion;
-                    functionInitParamSet.ImplementationDllPath = _functionInitParamSet.ImplementationDllPath;
-                    functionInitParamSet.AdapterFullClassName = _functionInitParamSet.AdapterFullClassName;
+
+                    functionInitParamSet.ImplementationDir = _functionInitParamSet.ImplementationDir;
                     functionInitParamSet.SupportMutiCultures = _functionInitParamSet.SupportMutiCultures;
-                    //rd+1
-                    //var form = new ReleaseForm(functionInitParamSet);
-                    //rd-1
-                    var form = new DebugForm(functionInitParamSet);
-                    form.ShowInTaskbar = false;
-                    form.ShowDialog();
+
+                    PopupZoneDialogEx(functionInitParamSet);
                 }
                 else if (actionName.ToLower() == "PopupMsg".ToLower())
                 {
@@ -5594,91 +5540,80 @@ namespace Ligg.Winform.Forms
                         popupCtnCtrl.BringToFront();
                     }
                 }
-                else if (actionName.ToLower() == "RefreshZonesVariables".ToLower())
-                {
-                    var zoneNameArry = actionParamArray[0].SplitThenTrim(actionSubParamSeparator);
-                    var updateVariableType = UpdateVariableType.Refresh;
-                    if (actionParamArray.Length > 1)
-                    {
-                        updateVariableType = (UpdateVariableType)Convert.ToInt16(actionParamArray[1]);
-                    }
-                    foreach (var zoneName in zoneNameArry)
-                    {
-                        var zoneName1 = DeleteControlZoneIdentifier(zoneName.Trim());
-                        UpdateZoneVariablesByGroup(zoneName1, -1, updateVariableType);
-                    }
-                }
-                else if (actionName.ToLower() == "RefreshZonesVariablesByGroup".ToLower())
-                {
-                    var zoneNameArry = actionParamArray[0].SplitThenTrim(actionSubParamSeparator);
-                    var updateVariableType = UpdateVariableType.Refresh;
-                    if (actionParamArray.Length > 1)
-                    {
-                        updateVariableType = (UpdateVariableType)Convert.ToInt16(actionParamArray[1]);
-                    }
-                    foreach (var zoneName in zoneNameArry)
-                    {
-                        var zoneName1 = DeleteControlZoneIdentifier(zoneName.Trim());
-                        UpdateZoneVariablesByGroup(zoneName1, Convert.ToInt32(actionParamArray[1].Trim()), updateVariableType);
-                    }
-                }
-                else if (actionName.ToLower() == "ClearZonesVariables".ToLower())
+
+                //procedure
+                else if (actionName.ToLower() == "RefreshZonesProcedures".ToLower())
                 {
                     var zoneNameArry = actionParamArray[0].SplitThenTrim(actionSubParamSeparator);
 
                     foreach (var zoneName in zoneNameArry)
                     {
                         var zoneName1 = DeleteControlZoneIdentifier(zoneName.Trim());
-                        ClearZoneVariablesByGroup(zoneName1, -1);
+                        RefreshZoneProcedures(zoneName1);
                     }
                 }
-
-                else if (actionName.ToLower() == "ClearZonesVariablesByGroup".ToLower())
+                else if (actionName.ToLower() == "RefreshZonesProceduresByGroup".ToLower())
                 {
                     var zoneNameArry = actionParamArray[0].SplitThenTrim(actionSubParamSeparator);
 
                     foreach (var zoneName in zoneNameArry)
                     {
                         var zoneName1 = DeleteControlZoneIdentifier(zoneName.Trim());
-                        ClearZoneVariablesByGroup(zoneName1, Convert.ToInt32(actionParamArray[1].Trim()));
+                        RefreshZoneProceduresByGroup(zoneName1, Convert.ToInt32(actionParamArray[1].Trim()));
                     }
                 }
-                else if (actionName.ToLower() == "RefreshVariables".ToLower())
+
+                else if (actionName.ToLower() == "ClearZonesProcedureVariables".ToLower())
+                {
+                    var zoneNameArry = actionParamArray[0].SplitThenTrim(actionSubParamSeparator);
+
+                    foreach (var zoneName in zoneNameArry)
+                    {
+                        var zoneName1 = DeleteControlZoneIdentifier(zoneName.Trim());
+                        ClearZoneProceduresVariablesByGroup(zoneName1, -1);
+                    }
+                }
+                else if (actionName.ToLower() == "ClearZonesProcedureVariablesByGroup".ToLower())
+                {
+                    var zoneNameArry = actionParamArray[0].SplitThenTrim(actionSubParamSeparator);
+
+                    foreach (var zoneName in zoneNameArry)
+                    {
+                        var zoneName1 = DeleteControlZoneIdentifier(zoneName.Trim());
+                        ClearZoneProceduresVariablesByGroup(zoneName1, Convert.ToInt32(actionParamArray[1].Trim()));
+                    }
+                }
+                else if (actionName.ToLower() == "RefreshProcedureVariables".ToLower())
                 {
 
                     var varNameArry = actionParamArray[0].SplitThenTrim(actionSubParamSeparator);
-                    var updateVariableType = UpdateVariableType.Refresh;
-                    if (actionParamArray.Length > 1)
-                    {
-                        updateVariableType = (UpdateVariableType)Convert.ToInt16(actionParamArray[1]);
-                    }
                     foreach (var varName in varNameArry)
                     {
-                        var varName1 = DeleteVariableZoneIdentifier(varName.Trim());
-                        UpdateVariable(varName1, updateVariableType);
+                        var varName1 = DeleteProcedureZoneIdentifier(varName.Trim());
+                        RefreshProcedureVariable(varName1);
                     }
                 }
-                else if (actionName.ToLower() == "ClearVariables".ToLower())
+
+                else if (actionName.ToLower() == "ClearProcedureVariables".ToLower())
                 {
 
                     var varNameArry = actionParamArray[0].SplitThenTrim(actionSubParamSeparator);
 
                     foreach (var varName in varNameArry)
                     {
-                        var varName1 = DeleteVariableZoneIdentifier(varName.Trim());
-                        SetVariableValue(varName1.Trim(), string.Empty);
+                        var varName1 = DeleteProcedureZoneIdentifier(varName.Trim());
+                        SetProcedureVariableValue(varName1.Trim(), string.Empty);
                     }
                 }
 
-                else if (actionName.ToLower() == "SetVariableValue".ToLower())
+                else if (actionName.ToLower() == "SetProcedureVariableValue".ToLower())
                 {
-                    var varName = DeleteVariableZoneIdentifier(actionParamArray[0]);
+                    var varName = DeleteProcedureZoneIdentifier(actionParamArray[0]);
                     var varValue = actionParamArray[1].Trim();
-                    SetVariableValue(varName.Trim(), varValue);
+                    SetProcedureVariableValue(varName.Trim(), varValue);
                 }
 
                 //Control
-
                 else if (actionName.ToLower() == "RefreshZonesControlsValues".ToLower())
                 {
                     var zoneNameArry = actionParams.SplitThenTrim(actionSubParamSeparator);
@@ -5870,12 +5805,7 @@ namespace Ligg.Winform.Forms
 
 
 
-        //##ActEx
-        protected virtual string ActEx(string funcName, string[] funcParamArray)
-        {
 
-            return string.Empty;
-        }
 
         //##Implement
         protected virtual void Implement(string ctrlName, string funcName, string controlsNames, string values)
@@ -5914,9 +5844,8 @@ namespace Ligg.Winform.Forms
 
 
 
-
-
         //#subcommon
+        //##GetControl
         protected Control GetControl(string ctrlName)
         {
             try
@@ -5930,6 +5859,7 @@ namespace Ligg.Winform.Forms
             }
         }
 
+        //##ShowForm
         protected void ShowForm()
         {
             this.Visible = true;
@@ -5937,21 +5867,25 @@ namespace Ligg.Winform.Forms
             this.Show();
         }
 
+        //##MinimizeForm
         protected void MinimizeForm()
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
+        //##MaximizeForm
         protected void MaximizeForm()
         {
             this.WindowState = FormWindowState.Maximized;
         }
 
+        //##CloseForm
         protected void CloseForm()
         {
             Close();
         }
 
+        //##ExitApplication
         protected void ExitApplication()
         {
             _tray.Visible = false;
@@ -5960,6 +5894,7 @@ namespace Ligg.Winform.Forms
             Application.Exit();
         }
 
+        //##FadeIn
         private void FadeIn(int duration)
         {
             int interval = duration / 100;
@@ -5973,6 +5908,7 @@ namespace Ligg.Winform.Forms
 
         }
 
+        //##FadeOut
         private void FadeOut(int duration)
         {
             int interval = duration / 100;
@@ -5988,7 +5924,7 @@ namespace Ligg.Winform.Forms
         }
 
         //##RefreshForm
-        //only for testing UI, need to improve
+        //only for testing UI
         protected void RefreshUi()
         {
             try
@@ -6012,26 +5948,8 @@ namespace Ligg.Winform.Forms
                     }
                 }
 
-                //foreach (var item in _zonesItems)
-                //{
-                //    var isPopup = item.IsPopup;
-                //    if (isPopup)
-                //    {
-                //        var ctrl = new Control();
-                //        try
-                //        {
-                //            ctrl = GroundPanel.Controls.Find(item.Name + "_" + "Container", true)[0];
-                //            GroundPanel.Controls.Remove(ctrl);
-                //        }
-                //        catch (Exception ex)
-                //        {
-
-                //        }
-                //    }
-                //}
-
                 _functionFormStyle = null;
-                _variables.Clear();
+                _procedures.Clear();
                 _layoutElements.Clear();
                 _annexes.Clear();
                 _renderedViewStatuses.Clear();
@@ -6080,7 +5998,51 @@ namespace Ligg.Winform.Forms
             }
         }
 
+        //##GetAdditionalInfoForException
+        private string GetAdditionalInfoForException()
+        {
+            return _additionalInfoForException + GetCurrentUserCode();
+        }
+
+        //#virtual
+        //##ResolveConstantsEx
+        protected virtual string ResolveConstantsEx(string text)
+        {
+            return text;
+        }
+
+        //##GetTextEx
+        protected virtual string GetTextEx(string funName, string[] paramArray)
+        {
+            return string.Empty;
+        }
+
+        //##ActEx
+        protected virtual string ActEx(string funcName, string[] funcParamArray)
+        {
+            return string.Empty;
+        }
+
+        //##PopupZoneDialogEx
+        protected virtual void PopupZoneDialogEx(FunctionInitParamSet functionInitParamSet)
+        {
+        }
+
+        protected virtual string GetCurrentUserCode()
+        {
+            return string.Empty;
+        }
+
+        protected virtual string GetCurrentUserToken()
+        {
+            return string.Empty;
+        }
+
+        protected virtual void OnCurrentLanguageChanged()
+        {
+        }
+
+
         //#end
     }
 }
-

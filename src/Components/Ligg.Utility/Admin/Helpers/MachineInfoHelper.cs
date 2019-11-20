@@ -14,15 +14,11 @@ namespace Ligg.Utility.Admin.Helpers
 {
     public static class MachineInfoHelper
     {
-        private static readonly string
-            TypeName = System.Reflection.MethodBase.GetCurrentMethod().ReflectedType.FullName;
-
+        private static readonly string TypeName = System.Reflection.MethodBase.GetCurrentMethod().ReflectedType.FullName;
         public static string GetMachineInfo(string flag)
         {
-            RegistryKey currentVersionKey =
-                Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion");
-            RegistryKey centreProcessorKey =
-                Registry.LocalMachine.OpenSubKey(@"HARDWARE\DESCRIPTION\System\CentralProcessor\0");
+            RegistryKey currentVersionKey = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion");
+            RegistryKey centreProcessorKey = Registry.LocalMachine.OpenSubKey(@"HARDWARE\DESCRIPTION\System\CentralProcessor\0");
             RegistryKey biosKey = Registry.LocalMachine.OpenSubKey(@"HARDWARE\DESCRIPTION\System\BIOS");
             try
             {
@@ -32,9 +28,8 @@ namespace Ligg.Utility.Admin.Helpers
                     case "mac": return NetworkHelper.GetMacAddresses();
                     case "cpusinfo": return centreProcessorKey.GetValue("ProcessorNameString").ToString();
                     case "cpusfrequency": return centreProcessorKey.GetValue("~MHz").ToString();
-                    case "baseboardinfo":
-                        return biosKey.GetValue("BaseBoardManufacturer") + "   " + biosKey.GetValue("BaseBoardProduct");
-
+                    case "baseboardinfo": return biosKey.GetValue("BaseBoardManufacturer") + "   " + biosKey.GetValue("BaseBoardProduct");
+                    //case "assemblybits": return (IntPtr.Size * 8).ToString();
                     //NetBIOSname
                     case "machinename": return Environment.MachineName;
 
@@ -45,17 +40,14 @@ namespace Ligg.Utility.Admin.Helpers
                         return System.Net.NetworkInformation.IPGlobalProperties.GetIPGlobalProperties().DomainName;
 
 
-                    case "osinfo": //Microsoft Windows NT 5.2.3790 Service Pack 2
-                        return currentVersionKey.GetValue("ProductName").ToString() + "  " +
-                               currentVersionKey.GetValue("CurrentVersion").ToString() + " " +
-                               currentVersionKey.GetValue("CurrentBuildNumber").ToString();
+                    case "osinfo"://Microsoft Windows NT 5.2.3790 Service Pack 2
+                        return currentVersionKey.GetValue("ProductName").ToString() + "  " + currentVersionKey.GetValue("CurrentVersion").ToString() + " " + currentVersionKey.GetValue("CurrentBuildNumber").ToString();
 
-                    case "osversionname": //Microsoft Windows NT 5.2.3790 Service Pack 2
+                    case "osversionname"://Microsoft Windows NT 5.2.3790 Service Pack 2
                         return Environment.OSVersion.ToString();
 
                     case "osproductname": //Microsoft Windows Server 2003 R2
-                        return currentVersionKey.GetValue("ProductName").ToString();
-                        ;
+                        return currentVersionKey.GetValue("ProductName").ToString(); ;
 
                     case "osversionno": //Os version no, i.g. 5.2 
                         return currentVersionKey.GetValue("CurrentVersion").ToString();
@@ -98,10 +90,9 @@ namespace Ligg.Utility.Admin.Helpers
                     //**获取系统启动后经过的ms second 数
                     case "timespanafterboot":
                         return Environment.TickCount.ToString();
-                    
-
+                    //**s
                     //dirs
-                    case "systemdrive": //C:
+                    case "systemdrive"://C:
                         return Environment.ExpandEnvironmentVariables("%SystemDrive%");
 
                     case "systemrootdirectory": //C:\WINDOWS
@@ -116,28 +107,23 @@ namespace Ligg.Utility.Admin.Helpers
                             return tempStr.Substring(0, tempStr.LastIndexOf("\\"));
                             break;
                         }
-                    case "mydocumentsdirectory"
-                        : //win7 C:\Users\chris.li\Documents; xp C:\Documents and Settings\Administrator\My Documents 
+                    case "mydocumentsdirectory": //win7 C:\Users\chris.li\Documents; xp C:\Documents and Settings\Administrator\My Documents 
                         {
                             return System.Environment.GetFolderPath(Environment.SpecialFolder.Personal);
                         }
 
-                    case "commonappdatadirectory"
-                        : //win7 C:\ProgramData; xp C:\Documents and Settings\All Users\Application Data
+                    case "commonappdatadirectory"://win7 C:\ProgramData; xp C:\Documents and Settings\All Users\Application Data
                         {
                             return System.Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
                         }
 
-                    case "localappdatadirectory"
-                        : //win7 C:\Users\chris.li\AppData\Local; xp C:\Documents and Settings\Administrator\Local Settings\Application Data	
+                    case "localappdatadirectory": //win7 C:\Users\chris.li\AppData\Local; xp C:\Documents and Settings\Administrator\Local Settings\Application Data	
                         {
-                            return System.Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-                            ;
+                            return System.Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData); ;
                             break;
                         }
 
-                    case "roamingappdatadirectory"
-                        : //win7 C:\Users\chris.li\AppData\Roaming; xp C:\Documents and Settings\Administrator\Application Data 
+                    case "roamingappdatadirectory"://win7 C:\Users\chris.li\AppData\Roaming; xp C:\Documents and Settings\Administrator\Application Data 
                         {
                             return System.Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
                         }
@@ -146,10 +132,10 @@ namespace Ligg.Utility.Admin.Helpers
                             return System.Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles);
                         }
 
-                    case "userdomainname": //esselpropack  or machine name
+                    case "userdomainname"://esselpropack  or machine name
                         return Environment.UserDomainName;
 
-                    case "workingset": //获取映射到进程上下文的物理内存量
+                    case "workingset"://获取映射到进程上下文的物理内存量
                         return Environment.WorkingSet.ToString();
 
                     default:
@@ -167,7 +153,6 @@ namespace Ligg.Utility.Admin.Helpers
             }
         }
 
- 
 
         public static string GetCurrentUserName(bool isOnlyUserName)
         {
@@ -190,7 +175,7 @@ namespace Ligg.Utility.Admin.Helpers
                 //    usrName = usrName.Replace(machineName + @"\", "");
                 //}
 
-                return usrName; //essselpropack\usr.name
+                return usrName;//essselpropack\usr.name
             }
             catch
             {
@@ -199,11 +184,18 @@ namespace Ligg.Utility.Admin.Helpers
         }
 
 
+
     }
 
 
-
-
+    public class ProcessInfo
+    {
+        public int ProcessId;
+        public string Name;
+        //public string Title;
+        public string Path;
+        public DateTime StartTime;
+    }
 
 }
 

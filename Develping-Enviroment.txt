@@ -1,0 +1,14 @@
+Version:3.01
+
+Develping Enviroment:
+
+	Microsoft Visual Studio Enterprise 2017 
+	Version 15.8.9
+	VisualStudio.15.Release/15.8.9+28010.2050
+	Microsoft .NET Framework
+	Version 4.6.01586
+
+	Installed Version: Enterprise
+
+	Visual C++ 2017   00369-90000-00000-AA502
+	Microsoft Visual C++ 2017

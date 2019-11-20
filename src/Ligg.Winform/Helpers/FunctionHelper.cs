@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -61,7 +63,10 @@ namespace Ligg.Winform.Helpers
                     return string.Empty;
                 }
 
-
+                else if (funcName.ToLower() == "GetShortGuidStr".ToLower())
+                {
+                    return StringExtension.GetShortGuidStr();
+                }
                 else if (funcName.ToLower() == "GetInputText".ToLower())
                 {
                     var dlg = new TextInputDialog();
@@ -210,6 +215,18 @@ namespace Ligg.Winform.Helpers
                     Int16 sttIndex = Convert.ToInt16(funcParamArray[1]);
                     Int16 len = Convert.ToInt16(funcParamArray[2]);
                     return tmStr.Substring(sttIndex, len);
+                }
+                else if (funcName.ToLower() == "AddOrDelToSubParams".ToLower())
+                {
+                    var separator = ',';
+                    if (funcParamArray[0].ContainSubParamSeparator())
+                    {
+                        separator = funcParamArray[0].GetSubParamSeparator();
+                    }
+
+                    var add = funcParamArray[2].ToLower() == "true" ? true : false;
+                    return funcParamArray[0].AddOrDelToSeparatedStrings(funcParamArray[1], add, separator);
+
                 }
 
                 //file
@@ -528,6 +545,17 @@ namespace Ligg.Winform.Helpers
                     }
                     else if (funcParamArray[0].ToLower() == "TimeDynamic".ToLower())
                     {
+                        //var mins = Convert.ToInt16(funcParamArray[2]);
+                        //var dtStr = funcParamArray.Length > 3 ? funcParamArray[3] : "";
+                        //var dt = new DateTime();
+                        //if (!dtStr.IsNullOrEmpty()) dt = DateTime.ParseExact(dtStr, "yyyy - MM - dd HH: mm: ss", System.Globalization.CultureInfo.CurrentCulture);
+
+                        //var isLocalTime = false;
+                        //if (funcParamArray[4].Length > 4)
+                        //{
+                        //    isLocalTime = funcParamArray[4].ToLower() == "true" ? true : false;
+                        //}
+                        //return EncryptionHelper.GenerateTimeDynamicPassword(funcParamArray[1], mins, dt, isLocalTime);
                         return string.Empty;
                     }
                     else throw new ArgumentException("funcName: " + funcName + " has no param: " + funcParamArray[0] + "! ");
@@ -548,7 +576,26 @@ namespace Ligg.Winform.Helpers
                     else throw new ArgumentException("funcName: " + funcName + " has no param: " + funcParamArray[0] + "! ");
                 }
 
-                //xml
+                else if (funcName.ToLower() == "GetJson".ToLower())
+                {
+                    if (funcParamArray[0].ToLower() == "FromXml".ToLower())
+                    {
+
+                    }
+                    if (funcParamArray[0].ToLower() == "FromListXml".ToLower())
+                    {
+                        var xmlMgr = new XmlHandler(funcParamArray[1].ToLower());
+                        var dt = xmlMgr.ConvertToDataTable();
+                        var str = DataTableHelper.DataTableToJson(dt);
+                        return str;
+                    }
+                    else if (funcParamArray[0].ToLower() == "FromExcel".ToLower())
+                    {
+                        return string.Empty;
+                    }
+                    return "OutOfScope";
+                }
+                //xml, no use yet
                 else if (funcName.ToLower() == "GetTableXmlNodeVal".ToLower())
                 {
                     var path = funcParamArray[0];
@@ -565,88 +612,11 @@ namespace Ligg.Winform.Helpers
                     else return retStr;
                 }
 
-                else if (funcName.ToLower() == "GetJson".ToLower())
-                {
-                    return "OutOfScope";
-                }
-
                 else return "OutOfScope";
             }
             catch (Exception ex)
             {
                 throw new ArgumentException("\n>> " + TypeName + ".GetText error: " + ex.Message);
-            }
-        }
-
-        //#GetValueTextDataTable
-        public static DataTable GetValueTextDataTable(string funcName, string[] funcParamArray)
-        {
-            try
-            {
-                var dt = new DataTable();
-                var valueTexts = new List<ValueText>();
-                if (funcName.ToLower() == ("FromXmlByNodeNames".ToLower()))
-                {
-                    var xmlMgr = new XmlHandler(funcParamArray[0].ToLower());
-                    valueTexts = xmlMgr.GetNodeInnerTextsToValueTextList(funcParamArray[1], funcParamArray[2]);
-                }
-                else if (funcName.ToLower() == ("FromIdLinkedAnnexesXmlByTextTypeByLang".ToLower()))
-                {
-                    var xmlMgr = new XmlHandler(funcParamArray[0]);//path
-                    var enumInt = EnumHelper.GetIdByName<AnnexTextType>(funcParamArray[1]);//type
-                    var enum1 = (AnnexTextType)Enum.ToObject(typeof(AnnexTextType), enumInt);
-                    valueTexts = xmlMgr.GetTextsToValueTextListByTextTypeByLangFromIdLinkedAnnexesXml(enum1, funcParamArray[2]);
-                }
-                else if (funcName.ToLower() == ("SplitBySeperator".ToLower()))
-                {
-                    var strArray = funcParamArray[1].Split(Convert.ToChar(funcParamArray[0]));
-                    var i = 0;
-                    foreach (var v in strArray)
-                    {
-                        var valueText = new ValueText();
-                        valueText.Value = i.ToString();
-                        valueText.Text = v;
-                        valueTexts.Add(valueText);
-                        i++;
-                    }
-                }
-                else if (funcName.ToLower() == ("SplitBySeperators".ToLower()))
-                {
-                    var seperator0 = Convert.ToChar(funcParamArray[0]);
-                    var seperator1 = Convert.ToChar(funcParamArray[1]);
-                    var strArray = funcParamArray[2].Split(seperator0);
-                    var i = 0;
-                    foreach (var v in strArray)
-                    {
-                        var arry = v.Split(seperator1);
-                        var valueText = new ValueText();
-                        valueText.Value = arry[0];
-                        valueText.Text = arry[1];
-                        valueTexts.Add(valueText);
-                        i++;
-                    }
-                }
-                else
-                {
-                    return null;
-                }
-
-                dt.Columns.Add("Value");
-                dt.Columns.Add("Text");
-
-                foreach (var vt in valueTexts)
-                {
-                    DataRow dr;
-                    dr = dt.NewRow();
-                    dr["Value"] = vt.Value;
-                    dr["Text"] = vt.Text;
-                    dt.Rows.Add(dr);
-                }
-                return dt;
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("\n>> " + TypeName + ".GetValueTextDataTable error: " + ex.Message);
             }
         }
 
@@ -907,7 +877,7 @@ namespace Ligg.Winform.Helpers
             }
         }
 
-        public static bool IsZoneInputVariable(string text)
+        public static bool IsZoneInputProcedure(string text)
         {
             try
             {
@@ -929,7 +899,7 @@ namespace Ligg.Winform.Helpers
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("\n>> " + TypeName + ".IsZoneInputVariable Error: " + ex.Message);
+                throw new ArgumentException("\n>> " + TypeName + ".IsZoneInputProcedure Error: " + ex.Message);
             }
         }
 

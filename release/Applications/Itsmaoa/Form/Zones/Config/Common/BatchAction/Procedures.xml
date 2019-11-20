@@ -1,0 +1,7 @@
+<ArrayOfProcedureItem>
+		<ProcedureItem>
+			<Id>20</Id>
+			<Name>SelectedIds</Name><TypeName>Variable</TypeName><GroupId>0</GroupId>
+			<Formula></Formula><Value/><Condition/>
+		</ProcedureItem>
+</ArrayOfProcedureItem>

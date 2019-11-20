@@ -1,0 +1,19 @@
+<ArrayOfProcedureItem>
+		<ProcedureItem>
+			<Id>10</Id>
+			<Name>CurrentWinIdAsRunAsAdminAccountStatus</Name><TypeName>Variable</TypeName><GroupId>0</GroupId><Formula>=RunningParam;CurrentWinIdAsRunAsAdminAccountStatus</Formula>
+			<Value/><Condition/>
+		</ProcedureItem><ProcedureItem>
+			<Id>11</Id>
+			<Name>IsCurrentWinIdAsRunAsAdminAccountStatusFalse</Name><TypeName>Variable</TypeName><GroupId>0</GroupId><Formula>=GetBool;Not;#CurrentWinIdAsRunAsAdminAccountStatus.v#</Formula>
+			<Value/><Condition/>
+		</ProcedureItem><ProcedureItem>
+			<Id>20</Id>
+			<Name>RunAsAdminAccountStatus</Name><TypeName>Variable</TypeName><GroupId>1</GroupId><Formula>=RunningParam;RunAsAdminAccountStatus</Formula>
+			<Value/><Condition/>
+		</ProcedureItem><ProcedureItem>
+			<Id>21</Id>
+			<Name>IsRunAsAdminAccountStatusFalse</Name><TypeName>Variable</TypeName><GroupId>1</GroupId><Formula>=GetBool;Not;#RunAsAdminAccountStatus.v#</Formula>
+			<Value/><Condition/>
+		</ProcedureItem>
+</ArrayOfProcedureItem>

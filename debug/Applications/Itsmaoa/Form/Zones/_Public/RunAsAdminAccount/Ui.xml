@@ -1,0 +1,91 @@
+
+<ArrayOfZoneItem>
+
+		<ZoneItem>
+			<Id>1</Id>
+			<Name>InitRunAsAdminAccountStatus</Name><TypeName>ZoneBeforeRenderHandler</TypeName>
+			<RowId>-1</RowId>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action>RunAsAdminAccountService;InitRunAsAdminAccountStatus</Action>
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>-1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>10</Id>
+			<Name>Row10</Name><TypeName>VirtualItem</TypeName>
+			<RowId>-1</RowId>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>4</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>40</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>1010</Id>
+			<Name>RefreshRunAsAdminAccountStatus</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName>Refresh RunAsAdmin account status</DisplayName><DataSource>\Images\Refresh.png</DataSource>			
+			<DefaultValue/><ValidationRules/><Action>RunAsAdminAccountService;RefreshRunAsAdminAccountStatus</Action>
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>40</OffsetOrPositionX>
+			<OffsetOrPositionY>1</OffsetOrPositionY>			<Width>16</Width>
+			<Height>16</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>1011</Id>
+			<Name>FixRunAsAdminAccountStatus</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName>Fix RunAsAdmin account issue</DisplayName><DataSource>\Images\Fix-Manual.png</DataSource>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>1</OffsetOrPositionY>			<Width>16</Width>
+			<Height>16</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>1012</Id>
+			<Name>RunAsAdminAccountStatus</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowId>10</RowId>
+			
+			
+			<ControlTypeName>StatusLight</ControlTypeName><StyleClass>Level1</StyleClass><StyleText/>
+			
+			<DisplayName>RunAsAdmin Account Status</DisplayName><DataSource/>			
+			<DefaultValue>=RunningParam;RunAsAdminAccountStatus</DefaultValue><ValidationRules/><Action/>
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>1</OffsetOrPositionY>			<Width>200</Width>
+			<Height>28</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem>
+		
+		
+		
+		
+				
+		
+		
+		
+	</ArrayOfZoneItem>
+

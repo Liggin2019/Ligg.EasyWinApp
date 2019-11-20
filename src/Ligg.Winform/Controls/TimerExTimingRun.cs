@@ -26,17 +26,17 @@ namespace Ligg.Winform.Controls
         private ToolTip _toolTipStartOrPause = new ToolTip();
         private string _customFormat = "yyyy-MM-dd HH:mm:ss";
 
-        //private bool _isRunning;
-        private bool _isUserMode;
+
         private DateTime _startTime;
         private string _startTimeString;
         private DateTime _latestStartTime;
         private string _latestStartTimeString;
         private bool _isAlarmOccured;
 
-
         private int _intervalSeconds = 1;
         private int _alarmLeadSeconds = 10;
+
+        private bool _isNowTicked;
 
         private string _dataSource;
         public string DataSource
@@ -50,14 +50,14 @@ namespace Ligg.Winform.Controls
             }
         }
 
-        private bool _startTicking;
+        private bool _isUserMode;
+        //private bool _startTicking;
         public bool Value
         {
-            get => _startTicking;
+            get => _isUserMode;
             set
             {
                 if (!_startTimeString.IsNullOrEmpty() & value) _isUserMode = true;
-                SetTick(value);
             }
         }
 
@@ -74,6 +74,12 @@ namespace Ligg.Winform.Controls
 
                 Render();
                 SetTextByCulture();
+
+                if (_isUserMode)
+                {
+                    pictureBoxStartOrPause_Click(null, null);
+                }
+
             }
             catch (Exception ex)
             {
@@ -115,7 +121,7 @@ namespace Ligg.Winform.Controls
 
         private void pictureBoxStartOrPause_Click(object sender, EventArgs e)
         {
-            SetTick(!_startTicking);
+            StartOrStopTicking(!_isNowTicked);
         }
 
 
@@ -134,7 +140,7 @@ namespace Ligg.Winform.Controls
 
                 if (SystemTimeHelper.Now() > _startTime)
                 {
-                    _startTicking = false;
+                    _isNowTicked = false;
                     pictureBoxStartOrPause.Visible = false;
                     pictureBoxInputStartTime.Visible = false;
                     RenderPictureBoxStartOrPause();
@@ -266,13 +272,13 @@ namespace Ligg.Winform.Controls
 
 
 
-        private void SetTick(bool setTickOn)
+        private void StartOrStopTicking(bool setTickOn)
         {
             try
             {
                 if (setTickOn)
                 {
-                    if (_startTicking == false)
+                    if (_isNowTicked == false)
                     {
                         if (_startTimeString.IsNullOrEmpty())
                         {
@@ -287,14 +293,14 @@ namespace Ligg.Winform.Controls
                         }
 
                         _isAlarmOccured = false;
-                        _startTicking = true;
+                        _isNowTicked = true;
                         timerTrigger.Enabled = true;
                         timerTrigger.Start();
                     }
                 }
                 else
                 {
-                    _startTicking = false;
+                    _isNowTicked = false;
                     timerTrigger.Enabled = false;
                     timerTrigger.Stop();
                     labelLeftTime.Text = string.Empty;
@@ -310,8 +316,8 @@ namespace Ligg.Winform.Controls
 
         private void RenderPictureBoxStartOrPause()
         {
-            pictureBoxStartOrPause.BackgroundImage = _startTicking ? imageList.Images[2] : imageList.Images[1];
-            _toolTipStartOrPause.SetToolTip(pictureBoxStartOrPause, _startTicking ? WinformRes.Pause : WinformRes.Start);
+            pictureBoxStartOrPause.BackgroundImage = _isNowTicked ? imageList.Images[2] : imageList.Images[1];
+            _toolTipStartOrPause.SetToolTip(pictureBoxStartOrPause, _isNowTicked ? WinformRes.Pause : WinformRes.Start);
         }
 
 
@@ -324,7 +330,7 @@ namespace Ligg.Winform.Controls
                 labelStartTime.Text = WinformRes.StartTime;
                 labelLatestStartTime.Text = WinformRes.LatestStartTime;
                 _toolTipInputStartTime.SetToolTip(pictureBoxInputStartTime, WinformRes.Input + WinformRes.StartTime);
-                if (_startTicking)
+                if (_isNowTicked)
                     _toolTipStartOrPause.SetToolTip(pictureBoxStartOrPause, WinformRes.Pause);
                 else _toolTipStartOrPause.SetToolTip(pictureBoxStartOrPause, WinformRes.Start);
 

@@ -93,7 +93,7 @@ namespace Ligg.Winform.Forms
             // 
             // BackgroundTaskDetailListViewEx
             // 
-            ////this.BackgroundTaskDetailListViewEx.Location = new System.Drawing.Point(0, 18);
+            //this.BackgroundTaskDetailListViewEx.Location = new System.Drawing.Point(0, 18);
             // 
             // RunningStatusSectionBackgroundTaskRegionProgressCircle
             // 

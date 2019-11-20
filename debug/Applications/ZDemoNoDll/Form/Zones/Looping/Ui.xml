@@ -1,0 +1,139 @@
+<ArrayOfZoneItem>
+		<ZoneItem>
+			<Id>10</Id><TypeName>DisplayOnlyItem</TypeName>
+			<Name>RuningTimesL</Name><ControlTypeName>TitleLabel</ControlTypeName>
+			
+			
+			
+			<StyleClass/><StyleText>FontStyle:Bold;FontSize:9.00;TextAlign:MiddleLeft</StyleText>
+			
+			<DisplayName>Runing Times</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<Action1/><InvalidFlag/><InvisibleFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>30</OffsetOrPositionY><Width>100</Width><Height>30</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>20</Id><TypeName>DisplayOnlyItem</TypeName>
+			<Name>RuningTimes</Name><ControlTypeName>Label</ControlTypeName>
+			
+			
+			
+			<StyleClass/><StyleText>BackColor:191,219,255;ForeColor:255,255,0;FontSize:60;TextAlign:MiddleCenter</StyleText>
+			
+			<DisplayName>=Equal;#CurrentTimes.v#</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<Action1/><InvalidFlag/><InvisibleFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>120</OffsetOrPositionX><OffsetOrPositionY>5</OffsetOrPositionY><Width>130</Width><Height>86</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>30</Id><TypeName>DisplayAndTransactionItem</TypeName>
+			<Name>RunNow</Name><ControlTypeName>TextButton</ControlTypeName>
+			
+			
+			
+			<StyleClass>Button</StyleClass><StyleText>BackColor:235,235,235</StyleText>
+			
+			<DisplayName>Run</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>Crun~=IfElse;#CurrentTimes.v#,VLess,#TotalTimes.v#;true;false~$Run$~$Clear$</Action>
+			
+			<Action1/><InvalidFlag/><InvisibleFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>200</OffsetOrPositionX><OffsetOrPositionY>100</OffsetOrPositionY><Width>80</Width><Height>40</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>3011</Id><TypeName>TransactionOnlyItem</TypeName>
+			<Name>Run</Name><ControlTypeName/>
+			
+			
+			
+			<StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>Xrun;$RefreshVariables$,$RefreshRuningTimes$,$Action$,$RunNow$</Action>
+			
+			<Action1/><InvalidFlag/><InvisibleFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>3012</Id><TypeName>TransactionOnlyItem</TypeName>
+			<Name>RefreshVariables</Name><ControlTypeName/>
+			
+			
+			
+			<StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>RefreshZonesProceduresByGroup;$$;1</Action>
+			
+			<Action1/><InvalidFlag/><InvisibleFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>3013</Id><TypeName>TransactionOnlyItem</TypeName>
+			<Name>RefreshRuningTimes</Name><ControlTypeName/>
+			
+			
+			
+			<StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>RefreshControlsTexts;$RuningTimes$</Action>
+			
+			<Action1/><InvalidFlag/><InvisibleFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>3014</Id><TypeName>TransactionOnlyItem</TypeName>
+			<Name>Action</Name><ControlTypeName/>
+			
+			
+			
+			<StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>Sleep;1000</Action>
+			
+			<Action1/><InvalidFlag/><InvisibleFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>3020</Id><TypeName>TransactionOnlyItem</TypeName>
+			<Name>Clear</Name><ControlTypeName/>
+			
+			
+			
+			<StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>SetProcedureVariableValue;#CurrentTimes#;0</Action>
+			
+			<Action1/><InvalidFlag/><InvisibleFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Id>40</Id><TypeName>DisplayAndTransactionItem</TypeName>
+			<Name>ExitApp</Name><ControlTypeName>TextButton</ControlTypeName>
+			
+			
+			
+			<StyleClass>Button</StyleClass><StyleText>BackColor:235,235,235</StyleText>
+			
+			<DisplayName>Exit</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>ExitApp</Action>
+			
+			<Action1/><InvalidFlag/><InvisibleFlag/>
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>310</OffsetOrPositionX><OffsetOrPositionY>100</OffsetOrPositionY><Width>80</Width><Height>40</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem>
+		
+</ArrayOfZoneItem>

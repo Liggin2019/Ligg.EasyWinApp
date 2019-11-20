@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ligg.EasyWinform.Resources {
+namespace Ligg.EasyWinForm.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Ligg.EasyWinform.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Ligg.EasyWinform.Resources.EasyWinAppRes", typeof(EasyWinAppRes).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Ligg.EasyWinForm.Resources.EasyWinAppRes", typeof(EasyWinAppRes).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

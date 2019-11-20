@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
+using System.Net.Mime;
 using Ligg.Base.DataModel.Enums;
 
 namespace Ligg.Base.Helpers
@@ -23,14 +25,16 @@ namespace Ligg.Base.Helpers
             var returnOutput = false;
             if (execCmdMode == ExecCmdMode.AsyncWindow)
             {
-                inputStr = "start .\\Resources\\start.bat " + inputStr;
+                var exeFileDir = FileHelper.GetFileDetailByOption(Process.GetCurrentProcess().MainModule.FileName, FilePathComposition.Directory);
+                inputStr = "start " + exeFileDir + "\\Resources\\start.bat " + inputStr;
                 process.StartInfo.CreateNoWindow = true;
                 returnOutput = false;
 
             }
             else if (execCmdMode == ExecCmdMode.SyncWindow)
             {
-                inputStr = "start .\\Resources\\start.bat " + inputStr;
+                var exeFileDir = FileHelper.GetFileDetailByOption(Process.GetCurrentProcess().MainModule.FileName, FilePathComposition.Directory);
+                inputStr = "start " + exeFileDir + "\\Resources\\start.bat " + inputStr;
                 process.StartInfo.CreateNoWindow = true;
                 returnOutput = true;
             }
@@ -94,14 +98,16 @@ namespace Ligg.Base.Helpers
             var returnOutput = false;
             if (execCmdMode == ExecCmdMode.AsyncWindow)
             {
-                inputStr = "start .\\Resources\\start.bat " + inputStr;
+                var exeFileDir = FileHelper.GetFileDetailByOption(Process.GetCurrentProcess().MainModule.FileName, FilePathComposition.Directory);
+                inputStr = "start " + exeFileDir + "\\Resources\\start.bat " + inputStr;
                 process.StartInfo.CreateNoWindow = true;
                 returnOutput = false;
 
             }
             else if (execCmdMode == ExecCmdMode.SyncWindow)
             {
-                inputStr = "start .\\Resources\\start.bat " + inputStr;
+                var exeFileDir = FileHelper.GetFileDetailByOption(Process.GetCurrentProcess().MainModule.FileName, FilePathComposition.Directory);
+                inputStr = "start " + exeFileDir + "\\Resources\\start.bat " + inputStr;
                 process.StartInfo.CreateNoWindow = true;
                 returnOutput = true;
             }

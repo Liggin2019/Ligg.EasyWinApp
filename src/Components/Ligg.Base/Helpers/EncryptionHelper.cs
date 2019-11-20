@@ -16,8 +16,7 @@ namespace Ligg.Base.Helpers
         private static readonly string
             TypeName = System.Reflection.MethodBase.GetCurrentMethod().ReflectedType.FullName;
 
-        //#md5 
- 
+
         //#symmetric
         public static string SmEncrypt(string source)
         {
@@ -47,20 +46,9 @@ namespace Ligg.Base.Helpers
         }
 
 
+
         private static readonly SymmetricAlgorithm MobjCryptoService = new RijndaelManaged();
 
-        private static byte[] GetLegalKey()
-        {
-            string tempStr = _selfKey1;
-            MobjCryptoService.GenerateKey();
-            byte[] bytTemp = MobjCryptoService.Key;
-            int keyLength = bytTemp.Length;
-            if (tempStr.Length > keyLength)
-                tempStr = tempStr.Substring(0, keyLength);
-            else if (tempStr.Length < keyLength)
-                tempStr = tempStr.PadRight(keyLength, ' ');
-            return Encoding.ASCII.GetBytes(tempStr);
-        }
 
         private static byte[] GetLegalKey(string key)
         {
@@ -75,18 +63,6 @@ namespace Ligg.Base.Helpers
             return Encoding.ASCII.GetBytes(tempStr);
         }
 
-        private static byte[] GetLegalIv()
-        {
-            string tempStr = _selfKey2;
-            MobjCryptoService.GenerateIV();
-            byte[] bytTemp = MobjCryptoService.IV;
-            int ivLength = bytTemp.Length;
-            if (tempStr.Length > ivLength)
-                tempStr = tempStr.Substring(0, ivLength);
-            else if (tempStr.Length < ivLength)
-                tempStr = tempStr.PadRight(ivLength, ' ');
-            return Encoding.ASCII.GetBytes(tempStr);
-        }
 
         private static byte[] GetLegalIv(string key)
         {
@@ -100,7 +76,6 @@ namespace Ligg.Base.Helpers
                 tempStr = tempStr.PadRight(ivLength, ' ');
             return Encoding.ASCII.GetBytes(tempStr);
         }
-
 
 
     }

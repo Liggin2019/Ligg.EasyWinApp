@@ -1,0 +1,15 @@
+<ZoneFeature>
+	<Width>680</Width>
+	<Height>280</Height>
+	
+	<HasNoControlBox>true</HasNoControlBox>
+	<DrawIcon>true</DrawIcon>
+	<IconUrl>\Icon.ico</IconUrl>
+	
+	<ArrangementType>0</ArrangementType>
+	
+	<StyleText>backcolor:48, 145, 242</StyleText>
+	
+	<ShowRunningStatusSection>true</ShowRunningStatusSection>
+	
+</ZoneFeature>

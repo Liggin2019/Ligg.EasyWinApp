@@ -13,6 +13,94 @@ namespace Ligg.Utility.Admin.Helpers
     {
         private static readonly string TypeName = System.Reflection.MethodBase.GetCurrentMethod().ReflectedType.FullName;
 
+        //#list
+        public static List<WinServiceInfo> List(string machineName, List<string> serviceNameList)
+        {
+            ServiceController[] serviceControllers = null;
+            serviceControllers = string.IsNullOrEmpty(machineName)
+                                     ? ServiceController.GetServices()
+                                     : ServiceController.GetServices(machineName);
+            var winServices = new List<WinServiceInfo>();
+            try
+            {
+                var serviceControllerList =
+                    serviceControllers.Where(x => !x.ServiceName.IsNullOrEmpty());
+                if (serviceNameList != null)
+                {
+                    serviceControllerList = serviceControllerList.Where(x => serviceNameList.Contains(x.ServiceName));
+                }
+
+                foreach (ServiceController svcCtrl in serviceControllerList)
+                {
+                    var winSvc = new WinServiceInfo();
+                    winSvc.Name = svcCtrl.ServiceName;
+                    winSvc.Type = (int)svcCtrl.ServiceType; //GetServiceTypeName(controller.ServiceType);
+                    winSvc.DisplayName = svcCtrl.DisplayName;
+                    winSvc.Status = (int)svcCtrl.Status;
+                    try
+                    {//for that case you do not have auth to open registry
+                        using (var regKey = Registry.LocalMachine.OpenSubKey("SYSTEM\\CurrentControlSet\\services\\" + svcCtrl.ServiceName))
+                        {
+                            if (regKey != null)
+                            {
+                                winSvc.StartMode = Convert.ToInt16(regKey.GetValue("Start").ToString());
+                                //winSvc.Description = regKey.GetValue("Description").ToString();
+                                //winSvc.ImageUrl = regKey.GetValue("ImagePath").ToString();
+                                regKey.Close();
+                            }
+                        }
+                    }
+                    catch
+                    {
+
+                    }
+                    winServices.Add(winSvc);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("\n>> " + TypeName + ".List Error: " + ex.Message);
+            }
+            return winServices;
+        }
+
+        //#set
+        public static void Reset(string name)
+        {
+            try
+            {
+                var controller = new ServiceController(name);
+                var status = GetStatus(name);
+                if (status != (int)ServiceControllerStatus.Stopped)
+                    controller.Stop();
+                controller.WaitForStatus(ServiceControllerStatus.Stopped);
+                controller.Start();
+                controller.WaitForStatus(ServiceControllerStatus.Running);
+                controller.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("\n>> " + TypeName + ".Reset Error: " + ex.Message);
+            }
+        }
+
+        public static void Start(string name)
+        {
+            try
+            {
+                var controller = new ServiceController(name);
+                var status = GetStatus(name);
+                if (status != (int)ServiceControllerStatus.Running)
+                    controller.Start();
+                controller.WaitForStatus(ServiceControllerStatus.Running);
+                controller.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("\n>> " + TypeName + ".Start Error: " + ex.Message);
+            }
+        }
+
 
         public static int GetStatus(string name)
         {
@@ -27,7 +115,7 @@ namespace Ligg.Utility.Admin.Helpers
             }
         }
 
- 
+
         public class WinServiceInfo
         {
             public string Name { get; set; }
