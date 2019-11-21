@@ -20,3 +20,7 @@ Ligg.EasyWinSignalR是一个基于Windows的SignalR客户端应用编程框架�
   
 Ligg.EasyWinSignalR  is a SignalR client programming framework based on windows, a Person-To-Machines instant messager built-in functions such as chatting, sending/receiving files, snapping screen, etc.  By Person-To-Machine instuction，dynamically loading different CBLP DLL, to achieve specific business logic processing function. It can be used as an agent for operation automation to realize real-time and remote monitoring and maintenance for computers or embedded devices.
   
+
+**备注：目前只有Ligg.EasyWinForm的源码和演示，将完善后将逐步上传其他项目。请下载\domo.zip查看功能演示。
+
+**Remark: Currently, only source file and demo of Ligg.EasyWinForm were uploaded, will gradually upload other projects after perfection. Pls download \demo.zip to see funtion demo.
