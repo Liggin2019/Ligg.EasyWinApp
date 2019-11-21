@@ -3,7 +3,8 @@
   
 This solution  is a Windows application programming framework and UI library. By this framework, never need any code, only by XML file to build any complex Windows winform GUI, implement basic basic process control (value assignment, conditional judgment, loop, jump) and functions (string/file basic function, Windows script processing, logic judgment, mathematical operation, data input/output, etc.) in an Execel formular like manner; by dynamically loading 'Plug and Play' .Net component or COM component to achieve specific business logic processing function. It supports multi-threading and multi-language.
   
-  
+
+
 Ligg.EasyWinForm是一个Winform应用编程框架和UI库。通过该框架，不需任何代码，通过配置文件，搭建任意复杂的Windows应用界面，以类似Execel公式的方式实现基本的过程控制和功能；动态加载不同的“即插即用“的核心业务处理动态链接库（CBLP Dll）实现特定的业务处理功能。
   
 Ligg.EasyWinForm is a Winform application programming framework and winform UI library. By this framework, never need any code, only by configuration file to build any complex Windows GUI, implement basic basic process control and functions in an Execel formular like manner; by dynamically loading different 'Plug and Play' Core Business Logic Processing Dynamic Link Library(CBLP DLL) to achieve specific business logic processing function. 
@@ -20,6 +21,8 @@ Ligg.EasyWinSignalR是一个基于Windows的SignalR客户端应用编程框架�
   
 Ligg.EasyWinSignalR  is a SignalR client programming framework based on windows, a Person-To-Machines instant messager built-in functions such as chatting, sending/receiving files, snapping screen, etc.  By Person-To-Machine instuction，dynamically loading different CBLP DLL, to achieve specific business logic processing function. It can be used as an agent for operation automation to realize real-time and remote monitoring and maintenance for computers or embedded devices.
   
+
+
 
 **备注：目前只有Ligg.EasyWinForm的源码和演示，将完善后将逐步上传其他项目。请下载\domo.zip查看功能演示。
 
