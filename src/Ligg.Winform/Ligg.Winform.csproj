@@ -36,7 +36,7 @@
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\z_asset\packages\Newtonsoft.Json\12.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
@@ -66,16 +66,11 @@
     <Compile Include="Base\DataModel\Annex.cs" />
     <Compile Include="Base\DataModel\Enums\AnnexTextType.cs" />
     <Compile Include="Base\DataModel\Enums\FilePathComposition.cs" />
-    <Compile Include="Base\DataModel\Enums\FileSizeFormat.cs" />
     <Compile Include="Base\DataModel\Enums\TaskStatus.cs" />
     <Compile Include="Base\DataModel\Enums\UniversalStatus.cs" />
     <Compile Include="Base\DataModel\IdName.cs" />
-    <Compile Include="Base\DataModel\IdValueText.cs" />
-    <Compile Include="Base\DataModel\IPagedList.cs" />
-    <Compile Include="Base\DataModel\PagedList.cs" />
     <Compile Include="Base\DataModel\UniversalResult.cs" />
     <Compile Include="Base\DataModel\ValueText.cs" />
-    <Compile Include="Base\DataModel\ValueTextBool.cs" />
     <Compile Include="Base\Extension\DateTimeExtension.cs" />
     <Compile Include="Base\Extension\StringExtension.cs" />
     <Compile Include="Base\Helpers\AnnexHelper.cs" />

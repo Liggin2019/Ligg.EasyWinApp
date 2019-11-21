@@ -456,51 +456,12 @@ namespace Ligg.Base.Extension
             return true;
         }
 
-        public static bool IsNumeral(this string target)
-        {
-            if (string.IsNullOrEmpty(target))
-            {
-                return false;
-            }
-            if (target.GetQtyOfIncludedChar('.') > 1) return false;
-            if (target.StartsWith(".")) return false;
-            if (target.GetQtyOfIncludedChar('-') > 1) return false;
-
-            for (int i = 0; i < target.Length; i++)
-            {
-                if (i == 0)
-                {
-                    if (target[0] != '-' & !Char.IsNumber(target, i))
-                        return false;
-                }
-                else
-                {
-                    if (target[i] != '.' & !Char.IsNumber(target, i))
-                        return false;
-                }
-            }
-
-            return true;
-        }
-
-        public static bool IsLegalFileName(this string target)
-        {
-            if (target.IndexOfAny(IllegalFileNameCharacters) > -1) return false;
-            //if (FilenameExpression.IsMatch(target)) return true;
-            return true;
-        }
-
         public static bool IsAlphaNumeralAndHyphenOrEmpty(this string target)
         {
             if (target.IsNullOrEmpty()) return true;
             return AlphaNumeralAndHyphenExpression.IsMatch(target);
         }
 
-        public static bool ContainParamSeparator(this string target)
-        {
-            if (target.Contains("^") | target.Contains("~") | target.Contains(";")) return true;
-            return false;
-        }
 
         public static bool ContainSubParamSeparator(this string target)
         {

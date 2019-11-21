@@ -12,7 +12,7 @@ using Ligg.Winform.DataModel;
 using Ligg.Winform.DataModel.Enums;
 using Ligg.Winform.Dialogs;
 using Ligg.Winform.Helpers;
-using Ligg.EasyWinApp.Common;
+using Ligg.EasyWinApp.Common.Helpers;
 using Ligg.EasyWinApp.ImplInterface;
 
 namespace Ligg.EasyWinForm

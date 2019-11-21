@@ -91,28 +91,6 @@ namespace Ligg.Base.Handlers
             return this._document.OuterXml;
         }
 
-        public int GetCountOfChildNode(string nodeName)
-        {
-            try
-            {
-                int count = 0;
-                var nodeList = this._document.GetElementsByTagName(nodeName);
-                if (nodeList.Count > 0)
-                {
-                    for (int i = 0; i < nodeList.Count; i++)
-                    {
-                        count += nodeList.Item(i).ChildNodes.Count;
-                    }
-
-                }
-                return count;
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("\n>>" + GetType().FullName + ".GetCountOfChildNode Error: " + ex.Message);
-            }
-        }
-
         //#Convert
         public T ConvertToObject<T>()
         {

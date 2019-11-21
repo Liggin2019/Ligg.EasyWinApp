@@ -11,9 +11,6 @@ namespace Ligg.Base.Helpers
 {
     public static class FileHelper
     {
-
-
-
         //#get
         public static string GetFilePath(string url, string defaultLocaton)
         {
@@ -96,22 +93,6 @@ namespace Ligg.Base.Helpers
                 return string.Empty;
             }
         }
-
-
-        //function is not OK, need to check. error: 在dll里 call ,not ok. same code in form cs is OK.
-        //ok in listviewEx
-        //http://blog.csdn.net/wyh0318/article/details/8060620 获取系统文件图标
-        [DllImport("Shell32.dll")]
-        static extern int SHGetFileInfo(string filePath, uint fileAttributes, ref ShellFileInfo shellFileInfo, uint cbFileInfo, uint uFlags);
-        struct ShellFileInfo
-        {
-            public IntPtr iconIntPtr;
-            public int iconInt;
-            public uint attributes;
-            public char displayName;
-            public char typeName;
-        }
-
 
 
         public static void CheckFilePath(string filePath)

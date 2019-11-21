@@ -68,20 +68,6 @@ namespace Ligg.Base.Helpers
         }
 
 
-        //public static string GetDeskDir()
-        //{
-        //    return GetSpecialFolderPath(CSIDL_COMMON_DESKTOPDIRECTORY);
-        //}
-
-        //public static string GetProgramsDir()
-        //{
-        //    return GetSpecialFolderPath(CSIDL_COMMON_PROGRAMS);
-        //}
-
-        //public static string GetFavoriteDir()
-        //{
-        //    return GetSpecialFolderPath(CSIDL_COMMON_FAVORITES);
-        //}
 
         public static string GetSpecialDir(string flag)
         {
@@ -164,40 +150,5 @@ namespace Ligg.Base.Helpers
             }
         }
 
-        //#common
-        //[DllImport("shell32.dll", CharSet = CharSet.Unicode, PreserveSig = false)]
-        //internal static extern void SHGetFolderPathW(
-        //    IntPtr hwndOwner,
-        //    int nFolder,
-        //    IntPtr hToken,
-        //    uint dwFlags,
-        //    IntPtr pszPath);
-
-        //internal static string SHGetFolderPath(int nFolder)
-        //{
-        //    string pszPath = new string(' ', MAX_PATH);
-        //    IntPtr bstr = Marshal.StringToBSTR(pszPath);
-        //    SHGetFolderPathW(IntPtr.Zero, nFolder, IntPtr.Zero, SHGFP_TYPE_CURRENT, bstr);
-        //    string path = Marshal.PtrToStringBSTR(bstr);
-        //    int index = path.IndexOf('\0');
-        //    string path2 = path.Substring(0, index);
-        //    Marshal.FreeBSTR(bstr);
-        //    return path2;
-        //}
-
-
-        //public static string GetSpecialFolderPath(uint csidl)
-        //{
-        //    return SHGetFolderPath((int)(csidl | CSIDL_FLAG_CREATE));
-        //}
-
-        //internal const uint SHGFP_TYPE_CURRENT = 0;
-        //internal const int MAX_PATH = 260;
-        //internal const uint CSIDL_COMMON_STARTMENU = 0x0016;              // All Users\Start Menu
-        //internal const uint CSIDL_COMMON_PROGRAMS = 0x0017;               // All Users\Start Menu\Programs
-        //internal const uint CSIDL_COMMON_DESKTOPDIRECTORY = 0x0019;       // All Users\Desktop
-        //internal const uint CSIDL_PROGRAM_FILES = 0x0026;                 // C:\Program Files
-        //internal const uint CSIDL_FLAG_CREATE = 0x8000;                   // new for Win2K, or this in to force creation of folder
-        //internal const uint CSIDL_COMMON_FAVORITES = 0x001f;              // All Users Favorites
     }
 }

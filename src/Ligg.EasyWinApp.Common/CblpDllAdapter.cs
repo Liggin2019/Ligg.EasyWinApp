@@ -16,8 +16,8 @@ namespace Ligg.EasyWinApp.Common
             if (debug)
             {
                 //rd-2
-                Adapter = new Adapter();
-                Adapter.Initialize();
+                //Adapter = new Adapter();
+                //Adapter.Initialize();
             }
             else
             {

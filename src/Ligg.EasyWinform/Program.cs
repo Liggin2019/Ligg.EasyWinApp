@@ -6,6 +6,7 @@ using Ligg.Base.DataModel.Enums;
 using Ligg.Base.Extension;
 using Ligg.Base.Helpers;
 using Ligg.EasyWinApp.Common;
+using Ligg.EasyWinApp.Common.Helpers;
 using Ligg.EasyWinApp.ImplInterface;
 using Ligg.EasyWinForm.Resources;
 using Ligg.Winform;

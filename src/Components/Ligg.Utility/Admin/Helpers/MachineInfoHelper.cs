@@ -188,14 +188,6 @@ namespace Ligg.Utility.Admin.Helpers
     }
 
 
-    public class ProcessInfo
-    {
-        public int ProcessId;
-        public string Name;
-        //public string Title;
-        public string Path;
-        public DateTime StartTime;
-    }
 
 }
 

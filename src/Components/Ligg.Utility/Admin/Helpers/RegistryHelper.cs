@@ -333,39 +333,6 @@ namespace Ligg.Utility.Admin.Helpers
             }
         }
 
-        public static RegistryValueKind GetValueKind(string valueTypeName)
-        {
-            try
-            {
-                var valKind = RegistryValueKind.String;
-                var valKindName = valueTypeName.ToLower();
-                switch (valKindName)
-                {
-                    case "qword":
-                        valKind = RegistryValueKind.QWord;
-                        break;
-                    case "multistring":
-                        valKind = RegistryValueKind.MultiString;
-                        break;
-                    case "expandstring":
-                        valKind = RegistryValueKind.ExpandString;
-                        break;
-                    case "dword":
-                        valKind = RegistryValueKind.DWord;
-                        break;
-                    case "binary":
-                        valKind = RegistryValueKind.Binary;
-                        break;
-                }
-                return valKind;
-
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("\n>> " + TypeName + ".GetValueTypeName Error: " + ex.Message);
-            }
-        }
-
 
         public static bool IfKeyValueExits(string regPath)
         {

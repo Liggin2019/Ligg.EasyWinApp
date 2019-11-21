@@ -14,25 +14,6 @@ namespace Ligg.Base.Helpers
         //#list
 
         //#get
-        public static string GetFilePath(string url, string defaultLocaton)
-        {
-            var retStr = "";
-            if (url.StartsWith("\\\\"))
-            {
-                retStr = url;
-            }
-            else if (url.StartsWith("\\"))
-            {
-                retStr = defaultLocaton + url;
-            }
-            else
-            {
-                retStr = url;
-            }
-            return retStr;
-        }
-
-
         public static string GetFileDetailByOption(string path, FilePathComposition returnOpt)  //1:dir;2:fileName;
         {
             int lastIndex = path.LastIndexOf("\\");
