@@ -23,7 +23,7 @@ Ligg.EasyWinSignalR  is a SignalR client programming framework based on windows,
   
 
 
-
+//**
 **备注：目前只有Ligg.EasyWinForm的源码和演示，将完善后将逐步上传其他项目。请下载\domo.zip查看功能演示。
 
 **Remark: Currently, only source file and demo of Ligg.EasyWinForm were uploaded, will gradually upload other projects after perfection. Pls download \demo.zip to see funtion demo.
