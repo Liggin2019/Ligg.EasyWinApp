@@ -2,20 +2,71 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using System.Reflection;
 using System.Text;
 using Ligg.Base.Extension;
 
 namespace Ligg.Base.Helpers
 {
-    /// <summary>
-    /// Static class with path related methods. Can be useful to combine url or to retrive the server root directory.
-    /// </summary>
     public static class DataTableHelper
     {
         private static readonly string TypeName = System.Reflection.MethodBase.GetCurrentMethod().ReflectedType.FullName;
 
-        public static string DataTableToJson(DataTable table)
+        public static string ConvertToRichText(DataTable dt, bool hasHead, string[] fieldArray)
+        {
+            var headStr = "";
+            var strBlder = new StringBuilder();
+            if (dt.Rows.Count > 0)
+            {
+                if (hasHead)
+                {
+                    var tm = 0;
+                    for (int j = 0; j < dt.Columns.Count; j++)
+                    {
+                        var columnName = dt.Columns[j].ColumnName;
+                        if (columnName.IsBeContainedInStringArray(fieldArray) | fieldArray == null)
+                        {
+                            if (tm == 0)
+                            {
+                                headStr =columnName;
+                            }
+                            else
+                            {
+                                headStr = headStr + "\t" + columnName;
+                            }
+                            tm++;
+                        }
+                    }
+                    strBlder.AppendLine(headStr);
+                }
+
+
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    var txt = "";
+                    var ct = 0;
+                    for (int j = 0; j < dt.Columns.Count; j++)
+                    {
+                        var columnName = dt.Columns[j].ColumnName;
+                        if (columnName.IsBeContainedInStringArray(fieldArray) | fieldArray == null)
+                        {
+                            if (ct == 0)
+                            {
+                                txt = dt.Rows[i][j].ToString();
+                            }
+                            else
+                            {
+                                txt = txt + "\t" + dt.Rows[i][j];
+                            }
+                            ct++;
+                        }
+                    }
+                    strBlder.AppendLine(txt);
+                }
+            }
+            return strBlder.ToString();
+        }
+
+        public static string ConvertToJson(DataTable table)
         {
             try
             {
@@ -52,7 +103,7 @@ namespace Ligg.Base.Helpers
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("\n>> " + TypeName + ".DataTableToJson Error: " + ex.Message);
+                throw new ArgumentException("\n>> " + TypeName + ".ConvertToJson Error: " + ex.Message);
             }
         }
 

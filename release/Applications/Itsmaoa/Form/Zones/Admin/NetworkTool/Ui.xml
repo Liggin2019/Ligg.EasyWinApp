@@ -765,7 +765,7 @@
 			
 			<ControlTypeName>ComboBox</ControlTypeName><StyleClass/><StyleText/>
 			
-			<DisplayName/><DataSource>=GetJson;FromListXml;%ZonesDir%\Admin\NetworkTool\Data\NetworkPorts</DataSource>			
+			<DisplayName/><DataSource>=GetJson;FromListXmlFile;%ZonesDir%\Admin\NetworkTool\Data\NetworkPorts</DataSource>			
 			<DefaultValue/><ValidationRules/><Action>RefreshControlsValues;$TelnetPortNo$</Action>
 			
 			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>

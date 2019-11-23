@@ -409,6 +409,21 @@ namespace Ligg.Base.Extension
         }
 
         //#judge
+        public static bool IsBeContainedInStringArray(this string target, string[] strArray)
+        {
+            if (string.IsNullOrEmpty(target))
+            {
+                return false;
+            }
+
+            if (strArray == null)
+            {
+                return false;
+            }
+
+            return strArray.Any(x => x == target);
+        }
+
         public static bool IsNullOrEmpty(this string target)
         {
             if (string.IsNullOrEmpty(target))

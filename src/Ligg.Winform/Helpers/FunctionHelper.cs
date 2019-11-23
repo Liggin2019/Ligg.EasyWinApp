@@ -63,69 +63,6 @@ namespace Ligg.Winform.Helpers
                     return string.Empty;
                 }
 
-                else if (funcName.ToLower() == "GetShortGuidStr".ToLower())
-                {
-                    return StringExtension.GetShortGuidStr();
-                }
-                else if (funcName.ToLower() == "GetInputText".ToLower())
-                {
-                    var dlg = new TextInputDialog();
-                    var verifyRule = funcParamArray.Length > 0 ? funcParamArray[0] : "";
-                    var verifyParams = funcParamArray.Length > 1 ? funcParamArray[1] : "";
-                    dlg.VerificationRule = verifyRule;
-                    dlg.VerificationParams = verifyParams;
-                    dlg.ShowDialog();
-                    return dlg.InputText;
-                }
-
-                else if (funcName.ToLower() == "GetInputDateTime".ToLower())
-                {
-                    var dlg = new DateTimeInputDialog();
-                    var customFormat = funcParamArray.Length > 0 ? funcParamArray[0] : "";
-                    var verifyRule = funcParamArray.Length > 1 ? funcParamArray[1] : "";
-                    var verifyParams = funcParamArray.Length > 2 ? funcParamArray[2] : "";
-
-                    dlg.VerificationRule = verifyRule;
-                    dlg.VerificationParams = verifyParams;
-                    dlg.CustomFormat = customFormat;
-                    dlg.ShowDialog();
-                    return dlg.InputText;
-                }
-
-                else if (funcName.ToLower() == "LineQty".ToLower())
-                {
-                    int qty = funcParamArray[0].Split('\n').Length;
-                    return Convert.ToString(qty);
-                }
-                else if (funcName.ToLower() == "LinesBySearch".ToLower())
-                {
-                    var strArry = funcParamArray[0].Split('\n');
-                    var schStrArry = funcParamArray[1].Split(',');
-                    var strList = new List<string>();
-                    foreach (var v in strArry)
-                    {
-                        foreach (var s in schStrArry)
-                        {
-                            if (v.ToLower().Contains(s.ToLower()))
-                            {
-                                strList.Add(v);
-                            }
-                        }
-                    }
-
-                    var strList1 = strList.Distinct();
-                    var strBlder = new StringBuilder();
-                    foreach (var v in strList1)
-                    {
-                        if (!string.IsNullOrEmpty(v))
-                        {
-                            strBlder.AppendLine(v);
-                        }
-                    }
-
-                    return strBlder.ToString();
-                }
-
                 else if (funcName.ToLower() == "DateTime".ToLower())
                 {
                     var customFormat = "yyyy-MM-dd HH:mm:ss";
@@ -229,7 +166,94 @@ namespace Ligg.Winform.Helpers
 
                 }
 
-                //file
+                //get
+                else if (funcName.ToLower() == "GetShortGuidStr".ToLower())
+                {
+                    return StringExtension.GetShortGuidStr();
+                }
+                else if (funcName.ToLower() == "GetInputText".ToLower())
+                {
+                    var dlg = new TextInputDialog();
+                    var verifyRule = funcParamArray.Length > 0 ? funcParamArray[0] : "";
+                    var verifyParams = funcParamArray.Length > 1 ? funcParamArray[1] : "";
+                    dlg.VerificationRule = verifyRule;
+                    dlg.VerificationParams = verifyParams;
+                    dlg.ShowDialog();
+                    return dlg.InputText;
+                }
+                else if (funcName.ToLower() == "GetInputDateTime".ToLower())
+                {
+                    var dlg = new DateTimeInputDialog();
+                    var customFormat = funcParamArray.Length > 0 ? funcParamArray[0] : "";
+                    var verifyRule = funcParamArray.Length > 1 ? funcParamArray[1] : "";
+                    var verifyParams = funcParamArray.Length > 2 ? funcParamArray[2] : "";
+
+                    dlg.VerificationRule = verifyRule;
+                    dlg.VerificationParams = verifyParams;
+                    dlg.CustomFormat = customFormat;
+                    dlg.ShowDialog();
+                    return dlg.InputText;
+                }
+                else if (funcName.ToLower() == "GetLineQty".ToLower())
+                {
+                    int qty = funcParamArray[0].Split('\n').Length;
+                    return Convert.ToString(qty);
+                }
+                else if (funcName.ToLower() == "GetLinesBySearch".ToLower())
+                {
+                    var strArry = funcParamArray[0].Split('\n');
+                    var schStrArry = funcParamArray[1].Split(',');
+                    var strList = new List<string>();
+                    foreach (var v in strArry)
+                    {
+                        foreach (var s in schStrArry)
+                        {
+                            if (v.ToLower().Contains(s.ToLower()))
+                            {
+                                strList.Add(v);
+                            }
+                        }
+                    }
+
+                    var strList1 = strList.Distinct();
+                    var strBlder = new StringBuilder();
+                    foreach (var v in strList1)
+                    {
+                        if (!string.IsNullOrEmpty(v))
+                        {
+                            strBlder.AppendLine(v);
+                        }
+                    }
+
+                    return strBlder.ToString();
+                }
+
+
+                //##convert
+                else if (funcName.ToLower() == "ConvertJsonToRichText".ToLower())
+                {
+                    var jsonStr = funcParamArray[0];
+                    var dt = JsonHelper.ConvertToDataTable(jsonStr);
+                    bool hasHead = false;
+                    if (funcParamArray.Length > 1)
+                    {
+                        if (funcParamArray[1].ToLower() == "true") hasHead = true;
+                    }
+
+                    String[] strArray = null;
+                    if (funcParamArray.Length > 2)
+                    {
+                        if (!funcParamArray[2].IsNullOrEmpty())
+                        {
+                            strArray = funcParamArray[2].Split(funcParamArray[2].GetSubParamSeparator());
+                        }
+                    }
+                    var rtStr = DataTableHelper.ConvertToRichText(dt, hasHead, strArray);
+
+                    return rtStr;
+                }
+
+                //##file
                 else if (funcName.ToLower() == "FileDetail".ToLower())
                 {
                     if (funcParamArray[1].IsNullOrEmpty()) throw new ArgumentException("file path can't be empty! ");
@@ -286,7 +310,7 @@ namespace Ligg.Winform.Helpers
                     return string.Empty;
                 }
 
-                //dir
+                //##dir
                 else if (funcName.ToLower() == "ChooseDirectory".ToLower())
                 {
                     var dlg = new FolderBrowserDialog();
@@ -299,7 +323,7 @@ namespace Ligg.Winform.Helpers
                     return string.Empty;
                 }
 
-                //calc
+                //##calc
                 else if (funcName.ToLower() == "Calc".ToLower())
                 {
                     if (funcParamArray[0].ToLower() == "add".ToLower())
@@ -329,7 +353,8 @@ namespace Ligg.Winform.Helpers
                     else throw new ArgumentException("funcName: " + funcName + " has no param: " + funcParamArray[0] + "! ");
 
                 }
-                //ifelse
+
+                //##ifelse
                 else if (funcName.ToLower() == "IfElse".ToLower())
                 {
                     var con = funcParamArray[0];
@@ -421,9 +446,9 @@ namespace Ligg.Winform.Helpers
 
                     return returnVal1;
 
-                } //IfElse ends
+                } //##IfElse ends
 
-                //Status
+                //##Status
                 else if (funcName.ToLower() == "GetFinalStatus".ToLower())
                 {
                     if (funcParamArray.All(v => v.ToLower() == "true"))
@@ -437,7 +462,7 @@ namespace Ligg.Winform.Helpers
                     return "false";
                 }
 
-                //getbool
+                //##getbool
                 else if (funcName.ToLower() == "GetBool".ToLower())
                 {
                     if (funcParamArray[0].ToLower() == "TotalStatus".ToLower())
@@ -576,31 +601,52 @@ namespace Ligg.Winform.Helpers
                     else throw new ArgumentException("funcName: " + funcName + " has no param: " + funcParamArray[0] + "! ");
                 }
 
-                else if (funcName.ToLower() == "GetJson".ToLower())
+                else if (funcName.ToLower() == "GetFromTextFile".ToLower())
                 {
-                    if (funcParamArray[0].ToLower() == "FromXml".ToLower())
-                    {
-
-                    }
-                    if (funcParamArray[0].ToLower() == "FromListXml".ToLower())
-                    {
-                        var xmlMgr = new XmlHandler(funcParamArray[1].ToLower());
-                        var dt = xmlMgr.ConvertToDataTable();
-                        var str = DataTableHelper.DataTableToJson(dt);
-                        return str;
-                    }
-                    else if (funcParamArray[0].ToLower() == "FromExcel".ToLower())
-                    {
-                        return string.Empty;
-                    }
-                    return "OutOfScope";
+                    var txt = File.ReadAllText(funcParamArray[0]);
+                    return txt;
                 }
-                //xml, no use yet
-                else if (funcName.ToLower() == "GetTableXmlNodeVal".ToLower())
+                //not use yet
+                else if (funcName.ToLower() == "GetFromXmlFileByTagName".ToLower())
                 {
                     var path = funcParamArray[0];
                     var xmlMgr = new XmlHandler(path);
                     return xmlMgr.GetNodeInnerTextByTagName(funcParamArray[1], 0);
+                }
+
+                //##GetJson
+                else if (funcName.ToLower() == "GetJson".ToLower())
+                {
+                    if(funcParamArray[0].ToLower() == "FromSimpleXmlFile".ToLower())
+                    {
+                        var xmlMgr = new XmlHandler(funcParamArray[1].ToLower());
+                        var dt = xmlMgr.ConvertToDataTable();
+                        var str = DataTableHelper.ConvertToJson(dt);
+                        str = str.Replace("[", "");
+                        str = str.Replace("]", "");
+                        return str;
+
+                    }
+                    else if(funcParamArray[0].ToLower() == "FromListXmlFile".ToLower())
+                    {
+                        var xmlMgr = new XmlHandler(funcParamArray[1].ToLower());
+                        var dt = xmlMgr.ConvertToDataTable();
+                        var str = DataTableHelper.ConvertToJson(dt);
+                        return str;
+                    }
+                    else if(funcParamArray[0].ToLower() == "FromListXmlFileByNodes".ToLower())
+                    {
+                        return "";
+                    }
+                    else if (funcParamArray[0].ToLower() == "FromExcelFile".ToLower())
+                    {
+                        return string.Empty;
+                    }
+                    else if (funcParamArray[0].ToLower() == "FromExcelFileByFields".ToLower())
+                    {
+                        return string.Empty;
+                    }
+                    else throw new ArgumentException("funcName: " + funcName + " has no param: " + funcParamArray[0] + "! ");
                 }
 
                 //following can be extended to impl in AdapterGetHelper
@@ -690,8 +736,6 @@ namespace Ligg.Winform.Helpers
                         actArgsStr = funcParamArray[1];
                     ProcessHelper.Run(funcParamArray[0], actArgsStr);
                 }
-
-
                 else if (funcName.ToLower() == "OpenFile".ToLower())
                 {
                     var actArgsStr = "";
@@ -701,13 +745,10 @@ namespace Ligg.Winform.Helpers
                 {
                     ProcessHelper.OpenFolder(funcParamArray[0]);
                 }
-
-
                 else if (funcName.ToLower() == ("Redirect").ToLower())
                 {
                     ProcessHelper.Redirect(funcParamArray[0]);
                 }
-
                 else if (funcName.ToLower() == "SendLocalEmail".ToLower())
                 {
                     var mailTo = funcParamArray[0];
@@ -721,7 +762,6 @@ namespace Ligg.Winform.Helpers
                         body = body.Replace("\\r\\n", "%0D%0A");
                     LocalEmailHelper.Send(mailTo, subject, body);
                 }
-
                 else if (funcName.ToLower() == ("RunCmd".ToLower()) | funcName.ToLower() == ("ExecCmd".ToLower()))
                 {
                     var actArgsStr = "";
@@ -739,7 +779,6 @@ namespace Ligg.Winform.Helpers
                         }
                         inputStr = actArgsStr.IsNullOrEmpty() ? funcParamArray[0] : funcParamArray[0] + " " + actArgsStr;
                     }
-
                     else if (funcName.ToLower() == "ExecCmd".ToLower())
                     {
                         if (funcParamArray.Length > 1)
@@ -755,31 +794,120 @@ namespace Ligg.Winform.Helpers
                     returnStr = ProcessHelper.Cmd(inputStr, execCmdMode);
 
                 }
-
-                else if (funcName.ToLower() == "ExportToExcel".ToLower())
-                {
-                    var content = funcParamArray[0];
-                    content = "UTF格式";
-                    var title = "ExpertToExcel".ToUniqueStringByNow();
-                    var folder = DirectoryHelper.GetSpecialDir("personal");
-
-                    var path = folder + "\\" + title + ".xls";
-                    File.WriteAllText(path, content, Encoding.Default);
-                    ProcessHelper.OpenFile(path, "");
-                }
                 else if (funcName.ToLower() == "EncryptTextFile".ToLower())
                 {
-                    var path = funcParamArray[0];
-                    path = FileHelper.GetFilePath(path, Path.GetDirectoryName(Application.ExecutablePath));
-                    var folder = FileHelper.GetFileDetailByOption(path, FilePathComposition.Directory);
-                    var fileTitle = FileHelper.GetFileDetailByOption(path, FilePathComposition.FileTitle);
-                    var postfix = FileHelper.GetFileDetailByOption(path, FilePathComposition.Postfix);
-                    var txt = EncryptionHelper.SmEncrypt(File.ReadAllText(path));
-                    var path1 = folder + "\\" + fileTitle + ".E" + postfix.Substring(1, postfix.Length - 1);
-                    File.WriteAllText(path1, txt, Encoding.Default);
-
-                    if (funcParamArray.Length > 1 & funcParamArray[1].ToLower() == "true") File.Delete(path);
+                   
                 }
+
+                //##export
+                else if (funcName.ToLower() == "ExportToTxtFile".ToLower())
+                {
+                    var content = funcParamArray[0];
+                    var filePath = "ExportToTxtFile.txt";
+                    if (funcParamArray.Length > 1)
+                    {
+                        if (funcParamArray[1].IsNullOrEmpty())
+                        {
+                            filePath = DirectoryHelper.GetSpecialDir("personal") + "\\" + filePath;
+                        }
+                        else
+                        {
+                            filePath = funcParamArray[1];
+                        }
+                    }
+                    else
+                    {
+                        filePath = DirectoryHelper.GetSpecialDir("personal") + "\\" + filePath;
+                    }
+
+                    bool overWrite = false;
+                    if (funcParamArray.Length > 2)
+                    {
+                        if (funcParamArray[2].ToLower() == "true") overWrite = true;
+                    }
+
+
+                    if (!overWrite)
+                    {
+                        if (File.Exists(filePath))
+                            filePath = FileHelper.GetFileDetailByOption(filePath, FilePathComposition.Directory) + "\\" + FileHelper.GetFileDetailByOption(filePath, FilePathComposition.FileTitle).ToUniqueStringByNow() + ".txt";
+                    }
+
+                    File.WriteAllText(filePath, content, Encoding.Default);
+
+                    bool openFile = false;
+                    if (funcParamArray.Length > 3)
+                    {
+                        if (funcParamArray[3].ToLower() == "true") openFile = true;
+                    }
+                    if (openFile) ProcessHelper.OpenFile(filePath, "");
+                }
+                else if (funcName.ToLower() == "ExportToXlsFile".ToLower())
+                {
+                    var content = funcParamArray[0];
+                    var filePath = "ExportToXls.xls";
+                    if (funcParamArray.Length > 1)
+                    {
+                        if (funcParamArray[1].IsNullOrEmpty())
+                        {
+                            filePath = DirectoryHelper.GetSpecialDir("personal") + "\\" + filePath;
+                        }
+                        else
+                        {
+                            filePath = funcParamArray[1];
+                        }
+                    }
+                    else
+                    {
+                        filePath = DirectoryHelper.GetSpecialDir("personal") + "\\" + filePath;
+                    }
+
+                    bool overWrite = false;
+                    if (funcParamArray.Length > 2)
+                    {
+                        if (funcParamArray[2].ToLower() == "true")
+                        {
+                            overWrite = true;
+                        }
+                    }
+
+                    if (!filePath.ToLower().EndsWith(".xls")) filePath = filePath + ".xls";
+
+                    if (!overWrite)
+                    {
+                        if (File.Exists(filePath))
+                            if (File.Exists(filePath)) filePath = FileHelper.GetFileDetailByOption(filePath, FilePathComposition.Directory) + "\\" + FileHelper.GetFileDetailByOption(filePath, FilePathComposition.FileTitle).ToUniqueStringByNow() + ".xls";
+                    }
+
+                    File.WriteAllText(filePath, content, Encoding.Default);
+
+                    bool openFile = false;
+                    if (funcParamArray.Length > 3)
+                    {
+                        if (funcParamArray[3].ToLower() == "true")
+                        {
+                            openFile = true;
+                        }
+                    }
+                    if (openFile) ProcessHelper.OpenFile(filePath, "");
+                }
+                else if (funcName.ToLower() == "ExportToXlsFileByFields".ToLower())
+                {
+
+                }
+                else if (funcName.ToLower() == "ExportToXmlFile".ToLower())
+                {
+
+                }
+                else if (funcName.ToLower() == "ExportToListXml".ToLower())
+                {
+
+                }
+                else if (funcName.ToLower() == "ExportToListXmlFileByNodes".ToLower())
+                {
+
+                }
+
                 else
                 {
                     return "OutOfScope";
@@ -797,6 +925,11 @@ namespace Ligg.Winform.Helpers
         //##common
         public static string ResolveSpecialFolder(string filePath)
         {
+            if (filePath.ToLower().Contains("%currentdirectory%")) //C:
+            {
+                var tempStr = Directory.GetCurrentDirectory();
+                filePath = Regex.Replace(filePath, "%curDir%", tempStr, RegexOptions.IgnoreCase);
+            }
             if (filePath.ToLower().Contains("%systemdrive%")) //C:
             {
                 var tempStr = DirectoryHelper.GetSpecialDir("systemdrive");

@@ -1,7 +1,7 @@
 ﻿# Ligg.EasyWinApp
-本解决方案是一个Windows应用编程框架和UI库，通过该框架，不需任何代码，通过XML配置文件，搭建任意复杂的Windows应用界面，以类似Execel公式的方式实现基本的过程控制(赋值、条件判断、循环、跳转)和功能(字符处理、文件处理、Windows脚本执行、逻辑运算、数学运算、数据输入输出)；动态加载“即插即用“的.Net组件或COM组件实现特定的业务处理功能；支持多线程、多语言。
+本解决方案是一个Windows应用编程框架和UI库，通过该框架，不需任何代码，通过XML配置文件，搭建任意复杂的Windows应用界面，以类似Execel公式的方式实现基本的过程控制(赋值、条件判断、循环、跳转)和功能(字符/文件处理、Windows脚本执行、逻辑运算、数学运算、数据输入输出及输入验证、数据格式转换、加密解密、表单字段验证等)；动态加载“即插即用“的.Net组件或COM组件实现特定的业务处理功能；支持多线程、多语言。
   
-This solution  is a Windows application programming framework and UI library. By this framework, never need any code, only by XML file to build any complex Windows winform GUI, implement basic basic process control (value assignment, conditional judgment, loop, jump) and functions (string/file basic function, Windows script processing, logic judgment, mathematical operation, data input/output, etc.) in an Execel formular like manner; by dynamically loading 'Plug and Play' .Net component or COM component to achieve specific business logic processing function. It supports multi-threading and multi-language.
+This solution  is a Windows application programming framework and UI library. By this framework, never need any code, only by XML file to build any complex Windows winform GUI, implement basic basic process control (value assignment, conditional judgment, loop, jump) and functions (string/file basic function, Windows script processing, logic judgment, mathematical operation, data input/output and input verification, data conversion, encryption/decryption, form field validation, etc.) in an Execel formular like manner; by dynamically loading 'Plug and Play' .Net component or COM component to achieve specific business logic processing function. It supports multi-threading and multi-language.
   
 
 
