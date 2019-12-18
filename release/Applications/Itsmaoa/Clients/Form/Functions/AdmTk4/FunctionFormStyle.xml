@@ -16,5 +16,5 @@
 	<HasTray>false</HasTray>
 	<TrayIconUrl>\MtnTk.ico</TrayIconUrl>
 	<TrayDataSource>\TrayMenuItems.xml</TrayDataSource>
-	<ResizeRegionParams>MainMenu:0;ToolBarSection:64,600,370;NavigationSection:0;ShortcutSection:0;MainSectionLeftNavDivision:0,0,0;MainSectionRightNavDivision:145,175,145;MainSectionMainDivision:130,0;MainSectionRightDivision:230,34,0;RunningMessageSection:0;RunningStatusSection:26,0;HorResizableDivisionStatus:none</ResizeRegionParams>
+	<ResizeRegionParams>TopNavSection:0;ToolBarSection:64,600,370;MiddleNavSection:0;DownNavSection:0;MainSectionLeftNavDivision:0;MainSectionRightNavDivision:200;MainSectionMainDivision:130,0;MainSectionRightDivision:230,34,0;RunningMessageSection:0;RunningStatusSection:26,0;HorResizableDivisionStatus:none</ResizeRegionParams>
 </FunctionFormStyle>

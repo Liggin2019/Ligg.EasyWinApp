@@ -21,7 +21,7 @@ namespace Ligg.EasyWinApp.Common
             }
             else
             {
-                //rd+5
+                //rd + 5
                 //if (File.Exists(implementationDllPath))
                 //{
                 //    Adapter = CreateAdapter(implementationDllPath, adapterFullClassName);

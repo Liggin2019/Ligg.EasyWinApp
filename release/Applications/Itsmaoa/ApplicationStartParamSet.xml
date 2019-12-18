@@ -1,5 +1,5 @@
 <ApplicationStartParamSet>
-	<ApplicationVersion>3.0.3</ApplicationVersion>
+	<ApplicationVersion>3.0.2</ApplicationVersion>
 	<HelpdeskEmail>LiggHelpdesk@outlook.com</HelpdeskEmail>
 	<ImplementationDllPath>\applications\ItSmaoa\Impl\ItsmaoaCBLP.dll</ImplementationDllPath>
 	<AdapterFullClassName>Ligg.EasyWinApp.Implementation.Adapter</AdapterFullClassName>

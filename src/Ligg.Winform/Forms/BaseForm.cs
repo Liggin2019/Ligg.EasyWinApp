@@ -41,15 +41,15 @@ namespace Ligg.WinForm.Forms
 
         protected void RunningStatusSectionBackTaskRegionImageTextButton_Click(object sender, EventArgs e)
         {
-            var baseCtrl = RunningStatusSectionBackgroundTaskRegion;
+            var baseCtrl = RunningStatusSectionBackTaskRegion;
             var p = baseCtrl.PointToClient(new Point(0, 0));
             var p1 = GroundPanel.PointToClient(new Point(0, 0));
             var pos = new Point(p1.X - p.X, p1.Y - p.Y);
-            pos.X = pos.X - BackgroundTaskDetailContainer.Width + RunningStatusSectionBackgroundTaskRegionWidth - 5;
-            pos.Y = pos.Y - BackgroundTaskDetailContainer.Height - 5;
-            BackgroundTaskDetailContainer.Location = pos;
-            BackgroundTaskDetailContainer.Visible = true;
-            BackgroundTaskDetailContainer.BringToFront();
+            pos.X = pos.X - BackTaskDetailContainer.Width + RunningStatusSectionBackgroundTaskRegionWidth - 5;
+            pos.Y = pos.Y - BackTaskDetailContainer.Height - 5;
+            BackTaskDetailContainer.Location = pos;
+            BackTaskDetailContainer.Visible = true;
+            BackTaskDetailContainer.BringToFront();
         }
 
         //#proc
@@ -81,8 +81,8 @@ namespace Ligg.WinForm.Forms
             RunningStatusSectionMsgRegionLabelMsg3.Text = "";
 
 
-            RunningStatusSectionBackgroundTaskRegion.Visible = false;
-            RunningStatusSectionBackgroundTaskRegionProgressCircleZone.Width = 0;
+            RunningStatusSectionBackTaskRegion.Visible = false;
+            RunningStatusSectionBackTaskRegionProgressCircleZone.Width = 0;
             //RunningStatusSectionBackgroundTaskRegionProgressCircle.BaseColor = StyleSet.BaseColor;
             //RunningStatusSectionBackgroundTaskRegionProgressCircle.Location = new System.Drawing.Point(1, 1);
             //RunningStatusSectionBackgroundTaskRegionProgressCircle.RingThickness = 1;
@@ -90,8 +90,8 @@ namespace Ligg.WinForm.Forms
             //RunningStatusSectionBackgroundTaskRegionProgressCircle.SpokeNumber = 10;
             //RunningStatusSectionBackgroundTaskRegionProgressCircle.SpokeThickness = 3;
             //RunningStatusSectionBackgroundTaskRegionProgressCircle.Stop();
-            RunningStatusSectionBackgroundTaskRegionImageTextButton.Text = BackgroundTaskImageTextButtonText + @" 0/0";
-            BackgroundTaskDetailLabel.Text = BackgroundTaskInfoLabelText;
+            RunningStatusSectionBackTaskRegionImageTextButton.Text = BackgroundTaskImageTextButtonText + @" 0/0";
+            BackTaskDetailLabel.Text = BackgroundTaskInfoLabelText;
         }
 
         protected void ResizeBaseComponent()
@@ -100,9 +100,9 @@ namespace Ligg.WinForm.Forms
             RunningMessageSectionRichTextBox.Height = RunningMessageSectionHeight - 3;
 
             RunningStatusSection.Height = RunningStatusSectionHeight;
-            RunningStatusSectionBackgroundTaskRegion.Width = RunningStatusSectionBackgroundTaskRegionWidth;
+            RunningStatusSectionBackTaskRegion.Width = RunningStatusSectionBackgroundTaskRegionWidth;
 
-            RunningStatusSectionMsgRegion.Width = RunningMessageSection.Width - RunningStatusSectionBackgroundTaskRegion.Width - 5;
+            RunningStatusSectionMsgRegion.Width = RunningMessageSection.Width - RunningStatusSectionBackTaskRegion.Width - 5;
             RunningStatusSectionMsgRegionMsgZone.Width = RunningStatusSectionMsgRegion.Width;
         }
 

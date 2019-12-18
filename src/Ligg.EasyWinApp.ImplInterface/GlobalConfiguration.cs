@@ -7,6 +7,7 @@ namespace Ligg.EasyWinApp.ImplInterface
         private static readonly string TypeName = System.Reflection.MethodBase.GetCurrentMethod().ReflectedType.FullName;
         //#set from ReadParams() 
         public static string ArchitectureCode = "";
+        public static string ArchitectureVersion = "";
         public static string OrganizationCode = "";
         public static string GlobalKey1 = "";
         public static string GlobalKey2 = "";
@@ -22,7 +23,6 @@ namespace Ligg.EasyWinApp.ImplInterface
         public static Int64 UserId;
         public static string UserCode = "";
         public static string UserToken = "";
-        public static string LicensedAppCodes = "";
 
         public static void ReadParams()
         {
@@ -30,6 +30,7 @@ namespace Ligg.EasyWinApp.ImplInterface
             {
                 //Get from License certificate/dog
                 ArchitectureCode = "Ligg";
+                ArchitectureVersion = "3.0.3";
                 OrganizationCode = "LgTech";
                 GlobalKey1 = "GlobalEncrptKey1";
                 GlobalKey2 = "GlobalEncrptKey2";

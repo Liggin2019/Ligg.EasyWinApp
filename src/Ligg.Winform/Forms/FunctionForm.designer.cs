@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.ToolBarSection.SuspendLayout();
-            this.NavigationSection.SuspendLayout();
+            this.MiddleNavSection.SuspendLayout();
             this.MainSectionLeftNavDivision.SuspendLayout();
             this.MainSectionRightNavDivision.SuspendLayout();
             this.RunningMessageSection.SuspendLayout();
             this.RunningStatusSection.SuspendLayout();
-            this.RunningStatusSectionBackgroundTaskRegion.SuspendLayout();
+            this.RunningStatusSectionBackTaskRegion.SuspendLayout();
             this.GroundPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainMenuSection
             // 
-            this.MainMenuSection.Size = new System.Drawing.Size(878, 0);
+            this.TopNavSection.Size = new System.Drawing.Size(878, 0);
             // 
             // ToolBarSection
             // 
@@ -48,8 +48,8 @@
             // 
             // NavigationSection
             // 
-            this.NavigationSection.Location = new System.Drawing.Point(0, 52);
-            this.NavigationSection.Size = new System.Drawing.Size(878, 26);
+            this.MiddleNavSection.Location = new System.Drawing.Point(0, 52);
+            this.MiddleNavSection.Size = new System.Drawing.Size(878, 26);
             // 
             // MainSectionHorizontalResizeDivision
             // 
@@ -109,12 +109,12 @@
             // 
             // RunningStatusSectionBackgroundTaskRegionImageTextButton
             // 
-            this.RunningStatusSectionBackgroundTaskRegionImageTextButton.Location = new System.Drawing.Point(0, 0);
-            this.RunningStatusSectionBackgroundTaskRegionImageTextButton.Text = "Task List 0/0";
+            this.RunningStatusSectionBackTaskRegionImageTextButton.Location = new System.Drawing.Point(0, 0);
+            this.RunningStatusSectionBackTaskRegionImageTextButton.Text = "Task List 0/0";
             // 
             // RunningStatusSectionBackgroundTaskRegion
             // 
-            this.RunningStatusSectionBackgroundTaskRegion.Location = new System.Drawing.Point(779, 1);
+            this.RunningStatusSectionBackTaskRegion.Location = new System.Drawing.Point(779, 1);
             // 
             // RunningStatusSectionBackgroundTaskRegionProgressCircle
             // 
@@ -126,7 +126,7 @@
             // 
             // BackgroundTaskDetailLabel
             // 
-            this.BackgroundTaskDetailLabel.Text = "Task List";
+            this.BackTaskDetailLabel.Text = "Task List";
             // 
             // GroundPanel
             // 
@@ -143,12 +143,12 @@
             this.Load += new System.EventHandler(this.FunctionForm_Load);
             this.Resize += new System.EventHandler(this.FunctionForm_Resize);
             this.ToolBarSection.ResumeLayout(false);
-            this.NavigationSection.ResumeLayout(false);
+            this.MiddleNavSection.ResumeLayout(false);
             this.MainSectionLeftNavDivision.ResumeLayout(false);
             this.MainSectionRightNavDivision.ResumeLayout(false);
             this.RunningMessageSection.ResumeLayout(false);
             this.RunningStatusSection.ResumeLayout(false);
-            this.RunningStatusSectionBackgroundTaskRegion.ResumeLayout(false);
+            this.RunningStatusSectionBackTaskRegion.ResumeLayout(false);
             this.GroundPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 

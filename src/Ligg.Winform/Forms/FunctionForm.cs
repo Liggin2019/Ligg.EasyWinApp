@@ -514,7 +514,7 @@ namespace Ligg.WinForm.Forms
                     _functionFormStyle.TrayIconUrl = zoneFeature.TrayIconUrl;
                     _functionFormStyle.TrayDataSource = zoneFeature.TrayDataSource;
 
-                    _functionFormStyle.ResizeRegionParams = "MainSectionMainDivision: 0,0; " + "MainMenu:0; ToolBarSection: 5,0,-1; NavigationSection: 0,0; ShortcutSection: 0,0; MainSectionLeftNavDivision: 0,0,0; MainSectionRightNavDivision: 0,0,0; MainSectionRightDivision: 0,0,0; RunningMessageSection: 0; " +
+                    _functionFormStyle.ResizeRegionParams = "MainSectionMainDivision: 0,0; " + "TopNavSection:0; ToolBarSection: 5,0,-1; MiddleNavSection: 0,0; DownNavSection: 0,0; MainSectionLeftNavDivision: 0,0,0; MainSectionRightNavDivision: 0,0,0; MainSectionRightDivision: 0,0,0; RunningMessageSection: 0; " +
                                                             (_hasRunningStatusSectionForNonMutiViewForm ? "RunningStatusSection: 26,0;" : "RunningStatusSection: 0,0;") + "HorResizableDivisionStatus: none";
                     InitLayout(_functionInitParamSet.FormType);
                     ResizeRegion(_functionFormStyle.ResizeRegionParams);
@@ -924,7 +924,7 @@ namespace Ligg.WinForm.Forms
 
                 //*zone
                 var zoneItems = _zonesItems.FindAll(x => x.Type == (int)LayoutElementType.DisplayOnlyItem
-                    | x.Type == (int)LayoutElementType.DisplayAndTransactionItem);
+                                                       | x.Type == (int)LayoutElementType.DisplayAndTransactionItem);
                 foreach (var zoneItem in zoneItems)
                 {
                     var zoneItemControl = GetControl(zoneItem.Name);
@@ -1129,21 +1129,21 @@ namespace Ligg.WinForm.Forms
             {
                 if (!string.IsNullOrEmpty(resizeStrs))
                 {
-                    var resizeStr = resizeStrs.GetStyleValue("MainMenu");
+                    var resizeStr = resizeStrs.GetStyleValue("TopNavSection");
                     if (!resizeStr.IsNullOrEmpty())
                     {
                         var resizeStrArry = resizeStr.Split(',');
                         if (Convert.ToInt16(resizeStrArry[0]) > -1)
-                            MainMenuSectionHeight = Convert.ToInt16(resizeStrArry[0]);
+                            TopNavSectionHeight = Convert.ToInt16(resizeStrArry[0]);
                         if (resizeStrArry.Length > 1)
                         {
                             if (Convert.ToInt16(resizeStrArry[1]) > -1)
-                                MainMenuSectionLeftRegionWidth = Convert.ToInt16(resizeStrArry[1]);
+                                TopNavSectionLeftRegionWidth = Convert.ToInt16(resizeStrArry[1]);
                         }
                         if (resizeStrArry.Length > 2)
                         {
                             if (Convert.ToInt16(resizeStrArry[2]) > -1)
-                                MainMenuSectionRightRegionWidth = Convert.ToInt16(resizeStrArry[2]);
+                                TopNavSectionRightRegionWidth = Convert.ToInt16(resizeStrArry[2]);
                         }
                     }
 
@@ -1174,42 +1174,42 @@ namespace Ligg.WinForm.Forms
                         }
                     }
 
-                    resizeStr = resizeStrs.GetStyleValue("NavigationSection");
+                    resizeStr = resizeStrs.GetStyleValue("MiddleNavSection");
                     if (!resizeStr.IsNullOrEmpty())
                     {
                         var resizeStrArry = resizeStr.Split(',');
                         if (Convert.ToInt16(resizeStrArry[0]) > -1)
-                            NavigationSectionHeight = Convert.ToInt16(resizeStrArry[0]);
+                            MiddleNavSectionHeight = Convert.ToInt16(resizeStrArry[0]);
 
                         if (resizeStrArry.Length > 1)
                         {
                             if (Convert.ToInt16(resizeStrArry[1]) > -1)
-                                NavigationSectionLeftRegionWidth = Convert.ToInt16(resizeStrArry[1]);
+                                MiddleNavSectionLeftRegionWidth = Convert.ToInt16(resizeStrArry[1]);
                         }
                         if (resizeStrArry.Length > 2)
                         {
                             if (Convert.ToInt16(resizeStrArry[2]) > -1)
-                                NavigationSectionRightRegionWidth = Convert.ToInt16(resizeStrArry[2]);
+                                MiddleNavSectionRightRegionWidth = Convert.ToInt16(resizeStrArry[2]);
                         }
                     }
 
 
-                    resizeStr = resizeStrs.GetStyleValue("ShortcutSection");
+                    resizeStr = resizeStrs.GetStyleValue("DownNavSection");
                     if (!resizeStr.IsNullOrEmpty())
                     {
                         var resizeStrArry = resizeStr.Split(',');
                         if (resizeStrArry[0] != "-1")
-                            ShortcutSectionHeight = Convert.ToInt16(resizeStrArry[0]);
+                            DownNavSectionHeight = Convert.ToInt16(resizeStrArry[0]);
 
                         if (resizeStrArry.Length > 1)
                         {
                             if (Convert.ToInt16(resizeStrArry[1]) > -1)
-                                ShortcutSectionLeftRegionWidth = Convert.ToInt16(resizeStrArry[1]);
+                                DownNavSectionLeftRegionWidth = Convert.ToInt16(resizeStrArry[1]);
                         }
                         if (resizeStrArry.Length > 2)
                         {
                             if (Convert.ToInt16(resizeStrArry[2]) > -1)
-                                ShortcutSectionRightRegionWidth = Convert.ToInt16(resizeStrArry[2]);
+                                DownNavSectionRightRegionWidth = Convert.ToInt16(resizeStrArry[2]);
                         }
                     }
 
@@ -2935,10 +2935,10 @@ namespace Ligg.WinForm.Forms
                     {
                         zoneItem.DisplayName = ResolveConstants(zoneItem.DisplayName);
                         zoneItem.DisplayName = AddZoneIdentifer(zoneItem.DisplayName, zone.Name);
-                        var txt = ResolveStringByRefProcedureVariablesAndControls(zoneItem.DisplayName);
+                        zoneItem.DisplayName = ResolveStringByRefProcedureVariablesAndControls(zoneItem.DisplayName);
                         if (zoneItem.DisplayName.StartsWith("="))
                         {
-                            displayName = GetText(txt);
+                            displayName = GetText(zoneItem.DisplayName);
                         }
                         else
                         {
@@ -4581,7 +4581,21 @@ namespace Ligg.WinForm.Forms
             if (text.IsNullOrEmpty()) return string.Empty;
             if (!text.Contains("%")) return text;
 
-            var toBeRplStr = "%AppCode%".ToLower();
+            var toBeRplStr = "%ArchCode%".ToLower();
+            if (text.ToLower().Contains(toBeRplStr))
+            {
+                var rplStr = _functionInitParamSet.ArchitectureCode;
+                text = Regex.Replace(text, toBeRplStr, rplStr, RegexOptions.IgnoreCase);
+            }
+
+            toBeRplStr = "%ArchVersion%".ToLower();
+            if (text.ToLower().Contains(toBeRplStr))
+            {
+                var rplStr = _functionInitParamSet.ArchitectureVersion;
+                text = Regex.Replace(text, toBeRplStr, rplStr, RegexOptions.IgnoreCase);
+            }
+
+            toBeRplStr = "%AppCode%".ToLower();
             if (text.ToLower().Contains(toBeRplStr))
             {
                 var rplStr = _functionInitParamSet.ApplicationCode;
@@ -5226,7 +5240,7 @@ namespace Ligg.WinForm.Forms
 
                     if (startPassword.IsNullOrEmpty())
                     {
-                        if (startAppStr == _functionInitParamSet.ApplicationCode&startFuncOrZoneLocStr==_functionInitParamSet.FunctionCode)
+                        if (startAppStr == _functionInitParamSet.ApplicationCode & startFuncOrZoneLocStr == _functionInitParamSet.FunctionCode)
                             startPassword = _functionInitParamSet.StartPassword;
                     }
 
@@ -5281,6 +5295,7 @@ namespace Ligg.WinForm.Forms
                     var functionInitParamSet = new FunctionInitParamSet();
                     functionInitParamSet.FormType = FunctionFormType.SingleView;
                     functionInitParamSet.ArchitectureCode = _functionInitParamSet.ArchitectureCode;
+                    functionInitParamSet.ArchitectureVersion = _functionInitParamSet.ArchitectureVersion;
                     functionInitParamSet.ApplicationCode = _functionInitParamSet.ApplicationCode;
                     var temArry = startZoneLocation.SplitByLastSeparator('\\');
                     functionInitParamSet.FunctionCode = temArry.Length == 0 ? temArry[0] : temArry[1];
@@ -5784,9 +5799,9 @@ namespace Ligg.WinForm.Forms
                 _renderedViewStatuses.Clear();
                 _zonesItems.Clear();
 
-                MainMenuSectionLeftRegion.Controls.Clear();
-                MainMenuSectionCenterRegion.Controls.Clear();
-                MainMenuSectionRightRegion.Controls.Clear();
+                TopNavSectionLeftRegion.Controls.Clear();
+                TopNavSectionCenterRegion.Controls.Clear();
+                TopNavSectionRightRegion.Controls.Clear();
 
                 ToolBarSectionLeftRegion.Controls.Clear();
                 ToolBarSectionCenterRegion.Controls.Clear();
@@ -5794,13 +5809,13 @@ namespace Ligg.WinForm.Forms
                 ToolBarSectionPublicRegionToolStrip.Items.Clear();
                 //ToolBarSectionPublicRegionToolStrip.Controls.Clear(); //error:集合为只读。
 
-                NavigationSectionLeftRegion.Controls.Clear();
-                NavigationSectionCenterRegion.Controls.Clear();
-                NavigationSectionRightRegion.Controls.Clear();
+                MiddleNavSectionLeftRegion.Controls.Clear();
+                MiddleNavSectionCenterRegion.Controls.Clear();
+                MiddleNavSectionRightRegion.Controls.Clear();
 
-                ShortcutSectionLeftRegion.Controls.Clear();
-                ShortcutSectionCenterRegion.Controls.Clear();
-                ShortcutSectionRightRegion.Controls.Clear();
+                DownNavSectionLeftRegion.Controls.Clear();
+                DownNavSectionCenterRegion.Controls.Clear();
+                DownNavSectionRightRegion.Controls.Clear();
 
                 MainSectionLeftNavDivisionUpRegion.Controls.Clear();
                 MainSectionLeftNavDivisionMidRegion.Controls.Clear();

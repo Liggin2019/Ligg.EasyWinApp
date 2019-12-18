@@ -131,6 +131,7 @@ namespace Ligg.EasyWinForm
                 funcInitParamSet.IsFormInvisible = invisibleStr.ToLower() == "true" ? true : false;
                 funcInitParamSet.FormType = formType;
                 funcInitParamSet.ArchitectureCode = GlobalConfiguration.ArchitectureCode;
+                funcInitParamSet.ArchitectureVersion = GlobalConfiguration.ArchitectureVersion;
                 funcInitParamSet.ApplicationCode = startAppStr;
                 if (formType == FunctionFormType.MultipleView)
                 {

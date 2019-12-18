@@ -1,5 +1,5 @@
 <OrganizationSetting>
-    <MachineIpToCheckIfInLan>192.168.10.99</MachineIpToCheckIfInLan>
+    <MachineIpToCheckIfInLan>192.168.10.60</MachineIpToCheckIfInLan>
     <MachineNameToCheckIfInLan>DevDesktop</MachineNameToCheckIfInLan>
     <FullDomainName>ligg.com</FullDomainName>
     <ShortDomainName>ligg</ShortDomainName>

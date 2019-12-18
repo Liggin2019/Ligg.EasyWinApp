@@ -34,7 +34,7 @@ namespace Ligg.WinForm.Forms
             this.MainSection = new Ligg.WinForm.Controls.ContainerPanel();
             this.RunningMessageSection.SuspendLayout();
             this.RunningStatusSection.SuspendLayout();
-            this.RunningStatusSectionBackgroundTaskRegion.SuspendLayout();
+            this.RunningStatusSectionBackTaskRegion.SuspendLayout();
             this.GroundPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,14 +82,14 @@ namespace Ligg.WinForm.Forms
             // 
             // RunningStatusSectionBackgroundTaskRegionImageTextButton
             // 
-            this.RunningStatusSectionBackgroundTaskRegionImageTextButton.Location = new System.Drawing.Point(0, 0);
-            this.RunningStatusSectionBackgroundTaskRegionImageTextButton.Size = new System.Drawing.Size(150, 22);
-            this.RunningStatusSectionBackgroundTaskRegionImageTextButton.Text = " Task List 0/0";
+            this.RunningStatusSectionBackTaskRegionImageTextButton.Location = new System.Drawing.Point(0, 0);
+            this.RunningStatusSectionBackTaskRegionImageTextButton.Size = new System.Drawing.Size(150, 22);
+            this.RunningStatusSectionBackTaskRegionImageTextButton.Text = " Task List 0/0";
             // 
             // RunningStatusSectionBackgroundTaskRegion
             // 
-            this.RunningStatusSectionBackgroundTaskRegion.Location = new System.Drawing.Point(765, 1);
-            this.RunningStatusSectionBackgroundTaskRegion.Size = new System.Drawing.Size(150, 22);
+            this.RunningStatusSectionBackTaskRegion.Location = new System.Drawing.Point(765, 1);
+            this.RunningStatusSectionBackTaskRegion.Size = new System.Drawing.Size(150, 22);
             // 
             // BackgroundTaskDetailListViewEx
             // 
@@ -112,8 +112,8 @@ namespace Ligg.WinForm.Forms
             // 
             // BackgroundTaskDetailLabel
             // 
-            this.BackgroundTaskDetailLabel.Size = new System.Drawing.Size(200, 18);
-            this.BackgroundTaskDetailLabel.Text = " Task List";
+            this.BackTaskDetailLabel.Size = new System.Drawing.Size(200, 18);
+            this.BackTaskDetailLabel.Text = " Task List";
             // 
             // GroundPanel
             // 
@@ -146,7 +146,7 @@ namespace Ligg.WinForm.Forms
             this.Text = "Zone Form";
             this.RunningMessageSection.ResumeLayout(false);
             this.RunningStatusSection.ResumeLayout(false);
-            this.RunningStatusSectionBackgroundTaskRegion.ResumeLayout(false);
+            this.RunningStatusSectionBackTaskRegion.ResumeLayout(false);
             this.GroundPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 

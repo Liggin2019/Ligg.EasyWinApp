@@ -7,6 +7,7 @@ namespace Ligg.WinForm.DataModel
         public bool IsFormInvisible { get; set; }
         public FunctionFormType FormType { get; set; }
         public string ArchitectureCode { get; set; }
+        public string ArchitectureVersion { get; set; }
         public string ApplicationCode { get; set; }
         public string ApplicationVersion { get; set; }
         public string FunctionCode { get; set; }

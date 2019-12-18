@@ -265,7 +265,9 @@ namespace Ligg.EasyWinForm
             var singleViewFormInitParamSet = new FunctionInitParamSet();
             singleViewFormInitParamSet.FormType = FunctionFormType.SingleView;
             singleViewFormInitParamSet.ArchitectureCode = mainFunctionInitParamSet.ArchitectureCode;
+            singleViewFormInitParamSet.ArchitectureVersion = mainFunctionInitParamSet.ArchitectureVersion;
             singleViewFormInitParamSet.ApplicationCode = mainFunctionInitParamSet.ApplicationCode;
+            singleViewFormInitParamSet.ApplicationVersion = mainFunctionInitParamSet.ApplicationVersion;
             var temArry = ApplicationStartParamSet.SoftwareCoverZoneLocation.SplitByLastSeparator('\\');
             singleViewFormInitParamSet.FunctionCode = temArry.Length == 0 ? temArry[0] : temArry[1];
             singleViewFormInitParamSet.ZoneLocationForNonMultiViewForm = FileHelper.GetFilePath(ApplicationStartParamSet.SoftwareCoverZoneLocation, _zonesDir);
@@ -274,7 +276,6 @@ namespace Ligg.EasyWinForm
             singleViewFormInitParamSet.StartParams = string.Empty;
             singleViewFormInitParamSet.StartPassword = string.Empty;
             singleViewFormInitParamSet.HelpdeskEmail = mainFunctionInitParamSet.HelpdeskEmail;
-            singleViewFormInitParamSet.ApplicationVersion = mainFunctionInitParamSet.ApplicationVersion;
 
             singleViewFormInitParamSet.ImplementationDir = mainFunctionInitParamSet.ImplementationDir;
             singleViewFormInitParamSet.SupportMultiCultures = mainFunctionInitParamSet.SupportMultiCultures;
@@ -298,7 +299,9 @@ namespace Ligg.EasyWinForm
             var singleViewFormInitParamSet = new FunctionInitParamSet();
             singleViewFormInitParamSet.FormType = FunctionFormType.SingleView;
             singleViewFormInitParamSet.ArchitectureCode = mainFunctionInitParamSet.ArchitectureCode;
+            singleViewFormInitParamSet.ArchitectureVersion = mainFunctionInitParamSet.ArchitectureVersion;
             singleViewFormInitParamSet.ApplicationCode = mainFunctionInitParamSet.ApplicationCode;
+            singleViewFormInitParamSet.ApplicationVersion = mainFunctionInitParamSet.ApplicationVersion;
             var temArry = ApplicationStartParamSet.LogonZoneLocation.SplitByLastSeparator('\\');
             singleViewFormInitParamSet.FunctionCode = temArry.Length == 0 ? temArry[0] : temArry[1];
             singleViewFormInitParamSet.ZoneLocationForNonMultiViewForm = FileHelper.GetFilePath(ApplicationStartParamSet.LogonZoneLocation, _zonesDir);
@@ -310,7 +313,6 @@ namespace Ligg.EasyWinForm
             //singleViewFormInitParamSet.StartUserToken = string.Empty;
             //singleViewFormInitParamSet.StartUserShortName = string.Empty;
             singleViewFormInitParamSet.HelpdeskEmail = mainFunctionInitParamSet.HelpdeskEmail;
-            singleViewFormInitParamSet.ApplicationVersion = mainFunctionInitParamSet.ApplicationVersion;
 
             singleViewFormInitParamSet.ImplementationDir = mainFunctionInitParamSet.ImplementationDir;
             singleViewFormInitParamSet.SupportMultiCultures = mainFunctionInitParamSet.SupportMultiCultures;

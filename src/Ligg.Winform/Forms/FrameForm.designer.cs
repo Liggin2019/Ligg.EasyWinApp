@@ -34,24 +34,24 @@ namespace Ligg.WinForm.Forms
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrameForm));
-            this.MainMenuSection = new Ligg.WinForm.Controls.ContainerPanel();
-            this.MainMenuSectionRightRegion = new System.Windows.Forms.Panel();
-            this.MainMenuSectionCenterRegion = new System.Windows.Forms.Panel();
-            this.MainMenuSectionLeftRegion = new System.Windows.Forms.Panel();
+            this.TopNavSection = new Ligg.WinForm.Controls.ContainerPanel();
+            this.TopNavSectionRightRegion = new System.Windows.Forms.Panel();
+            this.TopNavSectionCenterRegion = new System.Windows.Forms.Panel();
+            this.TopNavSectionLeftRegion = new System.Windows.Forms.Panel();
             this.ToolBarSection = new Ligg.WinForm.Controls.ContainerPanel();
             this.ToolBarSectionRightRegion = new System.Windows.Forms.Panel();
             this.ToolBarSectionCenterRegion = new System.Windows.Forms.Panel();
             this.ToolBarSectionPublicRegion = new System.Windows.Forms.Panel();
             this.ToolBarSectionPublicRegionToolStrip = new System.Windows.Forms.ToolStrip();
             this.ToolBarSectionLeftRegion = new System.Windows.Forms.Panel();
-            this.NavigationSection = new Ligg.WinForm.Controls.ContainerPanel();
-            this.NavigationSectionCenterRegion = new System.Windows.Forms.Panel();
-            this.NavigationSectionRightRegion = new System.Windows.Forms.Panel();
-            this.NavigationSectionLeftRegion = new System.Windows.Forms.Panel();
-            this.ShortcutSection = new Ligg.WinForm.Controls.ContainerPanel();
-            this.ShortcutSectionRightRegion = new System.Windows.Forms.Panel();
-            this.ShortcutSectionCenterRegion = new System.Windows.Forms.Panel();
-            this.ShortcutSectionLeftRegion = new System.Windows.Forms.Panel();
+            this.MiddleNavSection = new Ligg.WinForm.Controls.ContainerPanel();
+            this.MiddleNavSectionCenterRegion = new System.Windows.Forms.Panel();
+            this.MiddleNavSectionRightRegion = new System.Windows.Forms.Panel();
+            this.MiddleNavSectionLeftRegion = new System.Windows.Forms.Panel();
+            this.DownNavSection = new Ligg.WinForm.Controls.ContainerPanel();
+            this.DownNavSectionRightRegion = new System.Windows.Forms.Panel();
+            this.DownNavSectionCenterRegion = new System.Windows.Forms.Panel();
+            this.DownNavSectionLeftRegion = new System.Windows.Forms.Panel();
             this.MainSection = new Ligg.WinForm.Controls.ContainerPanel();
             this.MainSectionMainDivision = new System.Windows.Forms.Panel();
             this.MainSectionMainDivisionDownRegion = new System.Windows.Forms.Panel();
@@ -75,14 +75,14 @@ namespace Ligg.WinForm.Forms
             this.PictureList = new System.Windows.Forms.ImageList(this.components);
             this.RunningMessageSection.SuspendLayout();
             this.RunningStatusSection.SuspendLayout();
-            this.RunningStatusSectionBackgroundTaskRegion.SuspendLayout();
+            this.RunningStatusSectionBackTaskRegion.SuspendLayout();
             this.GroundPanel.SuspendLayout();
-            this.MainMenuSection.SuspendLayout();
+            this.TopNavSection.SuspendLayout();
             this.ToolBarSection.SuspendLayout();
             this.ToolBarSectionPublicRegion.SuspendLayout();
-            this.NavigationSection.SuspendLayout();
-            this.ShortcutSection.SuspendLayout();
-            this.ShortcutSectionRightRegion.SuspendLayout();
+            this.MiddleNavSection.SuspendLayout();
+            this.DownNavSection.SuspendLayout();
+            this.DownNavSectionRightRegion.SuspendLayout();
             this.MainSection.SuspendLayout();
             this.MainSectionMainDivision.SuspendLayout();
             this.MainSectionRightDivision.SuspendLayout();
@@ -134,29 +134,16 @@ namespace Ligg.WinForm.Forms
             this.RunningStatusSectionMsgRegionLabelMsg.Size = new System.Drawing.Size(0, 12);
             this.RunningStatusSectionMsgRegionLabelMsg.Text = "";
             // 
-            // RunningStatusSectionBackgroundTaskRegionImageTextButton
+            // RunningStatusSectionBackTaskRegionImageTextButton
             // 
-            this.RunningStatusSectionBackgroundTaskRegionImageTextButton.Location = new System.Drawing.Point(0, 0);
-            this.RunningStatusSectionBackgroundTaskRegionImageTextButton.Size = new System.Drawing.Size(150, 22);
-            this.RunningStatusSectionBackgroundTaskRegionImageTextButton.Text = " Task List 0/0";
+            this.RunningStatusSectionBackTaskRegionImageTextButton.Location = new System.Drawing.Point(0, 0);
+            this.RunningStatusSectionBackTaskRegionImageTextButton.Size = new System.Drawing.Size(150, 22);
+            this.RunningStatusSectionBackTaskRegionImageTextButton.Text = " Task List 0/0";
             // 
-            // RunningStatusSectionBackgroundTaskRegion
+            // RunningStatusSectionBackTaskRegion
             // 
-            this.RunningStatusSectionBackgroundTaskRegion.Location = new System.Drawing.Point(765, 1);
-            this.RunningStatusSectionBackgroundTaskRegion.Size = new System.Drawing.Size(150, 22);
-            // 
-            // BackgroundTaskDetailListViewEx
-            // 
-            //this.BackgroundTaskDetailListViewEx.Location = new System.Drawing.Point(0, 18);
-            // 
-            // RunningStatusSectionBackgroundTaskRegionProgressCircle
-            // 
-            //this.RunningStatusSectionBackgroundTaskRegionProgressCircle.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(145)))), ((int)(((byte)(242)))));
-            //this.RunningStatusSectionBackgroundTaskRegionProgressCircle.Location = new System.Drawing.Point(1, 1);
-            //this.RunningStatusSectionBackgroundTaskRegionProgressCircle.RingThickness = 1;
-            //this.RunningStatusSectionBackgroundTaskRegionProgressCircle.Size = new System.Drawing.Size(0, 21);
-            //this.RunningStatusSectionBackgroundTaskRegionProgressCircle.SpokeNumber = 10;
-            //this.RunningStatusSectionBackgroundTaskRegionProgressCircle.SpokeThickness = 3;
+            this.RunningStatusSectionBackTaskRegion.Location = new System.Drawing.Point(765, 1);
+            this.RunningStatusSectionBackTaskRegion.Size = new System.Drawing.Size(150, 22);
             // 
             // RunningStatusSectionMsgRegionLabelMsg3
             // 
@@ -164,67 +151,67 @@ namespace Ligg.WinForm.Forms
             this.RunningStatusSectionMsgRegionLabelMsg3.Size = new System.Drawing.Size(0, 12);
             this.RunningStatusSectionMsgRegionLabelMsg3.Text = "";
             // 
-            // BackgroundTaskDetailLabel
+            // BackTaskDetailLabel
             // 
-            this.BackgroundTaskDetailLabel.Size = new System.Drawing.Size(200, 18);
-            this.BackgroundTaskDetailLabel.Text = " Task List";
+            this.BackTaskDetailLabel.Size = new System.Drawing.Size(200, 18);
+            this.BackTaskDetailLabel.Text = " Task List";
             // 
             // GroundPanel
             // 
             this.GroundPanel.BackColor = System.Drawing.Color.White;
             this.GroundPanel.Controls.Add(this.MainSection);
-            this.GroundPanel.Controls.Add(this.ShortcutSection);
-            this.GroundPanel.Controls.Add(this.NavigationSection);
+            this.GroundPanel.Controls.Add(this.DownNavSection);
+            this.GroundPanel.Controls.Add(this.MiddleNavSection);
             this.GroundPanel.Controls.Add(this.ToolBarSection);
-            this.GroundPanel.Controls.Add(this.MainMenuSection);
+            this.GroundPanel.Controls.Add(this.TopNavSection);
             this.GroundPanel.Size = new System.Drawing.Size(916, 590);
             this.GroundPanel.Controls.SetChildIndex(this.RunningStatusSection, 0);
             this.GroundPanel.Controls.SetChildIndex(this.RunningMessageSection, 0);
-            this.GroundPanel.Controls.SetChildIndex(this.MainMenuSection, 0);
+            this.GroundPanel.Controls.SetChildIndex(this.TopNavSection, 0);
             this.GroundPanel.Controls.SetChildIndex(this.ToolBarSection, 0);
-            this.GroundPanel.Controls.SetChildIndex(this.NavigationSection, 0);
-            this.GroundPanel.Controls.SetChildIndex(this.ShortcutSection, 0);
+            this.GroundPanel.Controls.SetChildIndex(this.MiddleNavSection, 0);
+            this.GroundPanel.Controls.SetChildIndex(this.DownNavSection, 0);
             this.GroundPanel.Controls.SetChildIndex(this.MainSection, 0);
             // 
-            // MainMenuSection
+            // TopNavSection
             // 
-            this.MainMenuSection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(145)))), ((int)(((byte)(242)))));
-            this.MainMenuSection.BorderColor = System.Drawing.Color.Empty;
-            this.MainMenuSection.BorderWidthOnBottom = 0;
-            this.MainMenuSection.Controls.Add(this.MainMenuSectionRightRegion);
-            this.MainMenuSection.Controls.Add(this.MainMenuSectionCenterRegion);
-            this.MainMenuSection.Controls.Add(this.MainMenuSectionLeftRegion);
-            this.MainMenuSection.Dock = System.Windows.Forms.DockStyle.Top;
-            this.MainMenuSection.Location = new System.Drawing.Point(0, 0);
-            this.MainMenuSection.Name = "MainMenuSection";
-            this.MainMenuSection.Radius = 4;
-            this.MainMenuSection.Size = new System.Drawing.Size(916, 28);
-            this.MainMenuSection.StyleType = Ligg.WinForm.Controls.ContainerPanel.ContainerPanelStyle.None;
-            this.MainMenuSection.TabIndex = 22;
+            this.TopNavSection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(145)))), ((int)(((byte)(242)))));
+            this.TopNavSection.BorderColor = System.Drawing.Color.Empty;
+            this.TopNavSection.BorderWidthOnBottom = 0;
+            this.TopNavSection.Controls.Add(this.TopNavSectionRightRegion);
+            this.TopNavSection.Controls.Add(this.TopNavSectionCenterRegion);
+            this.TopNavSection.Controls.Add(this.TopNavSectionLeftRegion);
+            this.TopNavSection.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TopNavSection.Location = new System.Drawing.Point(0, 0);
+            this.TopNavSection.Name = "TopNavSection";
+            this.TopNavSection.Radius = 4;
+            this.TopNavSection.Size = new System.Drawing.Size(916, 28);
+            this.TopNavSection.StyleType = Ligg.WinForm.Controls.ContainerPanel.ContainerPanelStyle.None;
+            this.TopNavSection.TabIndex = 22;
             // 
-            // MainMenuSectionRightRegion
+            // TopNavSectionRightRegion
             // 
-            this.MainMenuSectionRightRegion.Dock = System.Windows.Forms.DockStyle.Right;
-            this.MainMenuSectionRightRegion.Location = new System.Drawing.Point(716, 0);
-            this.MainMenuSectionRightRegion.Name = "MainMenuSectionRightRegion";
-            this.MainMenuSectionRightRegion.Size = new System.Drawing.Size(200, 28);
-            this.MainMenuSectionRightRegion.TabIndex = 24;
+            this.TopNavSectionRightRegion.Dock = System.Windows.Forms.DockStyle.Right;
+            this.TopNavSectionRightRegion.Location = new System.Drawing.Point(716, 0);
+            this.TopNavSectionRightRegion.Name = "TopNavSectionRightRegion";
+            this.TopNavSectionRightRegion.Size = new System.Drawing.Size(200, 28);
+            this.TopNavSectionRightRegion.TabIndex = 24;
             // 
-            // MainMenuSectionCenterRegion
+            // TopNavSectionCenterRegion
             // 
-            this.MainMenuSectionCenterRegion.Dock = System.Windows.Forms.DockStyle.Left;
-            this.MainMenuSectionCenterRegion.Location = new System.Drawing.Point(164, 0);
-            this.MainMenuSectionCenterRegion.Name = "MainMenuSectionCenterRegion";
-            this.MainMenuSectionCenterRegion.Size = new System.Drawing.Size(152, 28);
-            this.MainMenuSectionCenterRegion.TabIndex = 23;
+            this.TopNavSectionCenterRegion.Dock = System.Windows.Forms.DockStyle.Left;
+            this.TopNavSectionCenterRegion.Location = new System.Drawing.Point(164, 0);
+            this.TopNavSectionCenterRegion.Name = "TopNavSectionCenterRegion";
+            this.TopNavSectionCenterRegion.Size = new System.Drawing.Size(152, 28);
+            this.TopNavSectionCenterRegion.TabIndex = 23;
             // 
-            // MainMenuSectionLeftRegion
+            // TopNavSectionLeftRegion
             // 
-            this.MainMenuSectionLeftRegion.Dock = System.Windows.Forms.DockStyle.Left;
-            this.MainMenuSectionLeftRegion.Location = new System.Drawing.Point(0, 0);
-            this.MainMenuSectionLeftRegion.Name = "MainMenuSectionLeftRegion";
-            this.MainMenuSectionLeftRegion.Size = new System.Drawing.Size(164, 28);
-            this.MainMenuSectionLeftRegion.TabIndex = 20;
+            this.TopNavSectionLeftRegion.Dock = System.Windows.Forms.DockStyle.Left;
+            this.TopNavSectionLeftRegion.Location = new System.Drawing.Point(0, 0);
+            this.TopNavSectionLeftRegion.Name = "TopNavSectionLeftRegion";
+            this.TopNavSectionLeftRegion.Size = new System.Drawing.Size(164, 28);
+            this.TopNavSectionLeftRegion.TabIndex = 20;
             // 
             // ToolBarSection
             // 
@@ -245,8 +232,8 @@ namespace Ligg.WinForm.Forms
             // 
             // ToolBarSectionRightRegion
             // 
-            this.ToolBarSectionRightRegion.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ToolBarSectionRightRegion.Location = new System.Drawing.Point(285, 0);
+            this.ToolBarSectionRightRegion.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ToolBarSectionRightRegion.Location = new System.Drawing.Point(609, 0);
             this.ToolBarSectionRightRegion.Name = "ToolBarSectionRightRegion";
             this.ToolBarSectionRightRegion.Size = new System.Drawing.Size(202, 59);
             this.ToolBarSectionRightRegion.TabIndex = 25;
@@ -291,83 +278,83 @@ namespace Ligg.WinForm.Forms
             this.ToolBarSectionLeftRegion.Size = new System.Drawing.Size(158, 59);
             this.ToolBarSectionLeftRegion.TabIndex = 19;
             // 
-            // NavigationSection
+            // MiddleNavSection
             // 
-            this.NavigationSection.BorderColor = System.Drawing.Color.Empty;
-            this.NavigationSection.BorderWidthOnBottom = 0;
-            this.NavigationSection.Controls.Add(this.NavigationSectionCenterRegion);
-            this.NavigationSection.Controls.Add(this.NavigationSectionRightRegion);
-            this.NavigationSection.Controls.Add(this.NavigationSectionLeftRegion);
-            this.NavigationSection.Dock = System.Windows.Forms.DockStyle.Top;
-            this.NavigationSection.Location = new System.Drawing.Point(0, 87);
-            this.NavigationSection.Name = "NavigationSection";
-            this.NavigationSection.Radius = 4;
-            this.NavigationSection.Size = new System.Drawing.Size(916, 26);
-            this.NavigationSection.StyleType = Ligg.WinForm.Controls.ContainerPanel.ContainerPanelStyle.None;
-            this.NavigationSection.TabIndex = 18;
+            this.MiddleNavSection.BorderColor = System.Drawing.Color.Empty;
+            this.MiddleNavSection.BorderWidthOnBottom = 0;
+            this.MiddleNavSection.Controls.Add(this.MiddleNavSectionCenterRegion);
+            this.MiddleNavSection.Controls.Add(this.MiddleNavSectionRightRegion);
+            this.MiddleNavSection.Controls.Add(this.MiddleNavSectionLeftRegion);
+            this.MiddleNavSection.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MiddleNavSection.Location = new System.Drawing.Point(0, 87);
+            this.MiddleNavSection.Name = "MiddleNavSection";
+            this.MiddleNavSection.Radius = 4;
+            this.MiddleNavSection.Size = new System.Drawing.Size(916, 26);
+            this.MiddleNavSection.StyleType = Ligg.WinForm.Controls.ContainerPanel.ContainerPanelStyle.None;
+            this.MiddleNavSection.TabIndex = 18;
             // 
-            // NavigationSectionCenterRegion
+            // MiddleNavSectionCenterRegion
             // 
-            this.NavigationSectionCenterRegion.Dock = System.Windows.Forms.DockStyle.Left;
-            this.NavigationSectionCenterRegion.Location = new System.Drawing.Point(46, 0);
-            this.NavigationSectionCenterRegion.Name = "NavigationSectionCenterRegion";
-            this.NavigationSectionCenterRegion.Size = new System.Drawing.Size(128, 26);
-            this.NavigationSectionCenterRegion.TabIndex = 18;
+            this.MiddleNavSectionCenterRegion.Dock = System.Windows.Forms.DockStyle.Left;
+            this.MiddleNavSectionCenterRegion.Location = new System.Drawing.Point(46, 0);
+            this.MiddleNavSectionCenterRegion.Name = "MiddleNavSectionCenterRegion";
+            this.MiddleNavSectionCenterRegion.Size = new System.Drawing.Size(128, 26);
+            this.MiddleNavSectionCenterRegion.TabIndex = 18;
             // 
-            // NavigationSectionRightRegion
+            // MiddleNavSectionRightRegion
             // 
-            this.NavigationSectionRightRegion.Dock = System.Windows.Forms.DockStyle.Right;
-            this.NavigationSectionRightRegion.Location = new System.Drawing.Point(761, 0);
-            this.NavigationSectionRightRegion.Name = "NavigationSectionRightRegion";
-            this.NavigationSectionRightRegion.Size = new System.Drawing.Size(155, 26);
-            this.NavigationSectionRightRegion.TabIndex = 17;
+            this.MiddleNavSectionRightRegion.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MiddleNavSectionRightRegion.Location = new System.Drawing.Point(761, 0);
+            this.MiddleNavSectionRightRegion.Name = "MiddleNavSectionRightRegion";
+            this.MiddleNavSectionRightRegion.Size = new System.Drawing.Size(155, 26);
+            this.MiddleNavSectionRightRegion.TabIndex = 17;
             // 
-            // NavigationSectionLeftRegion
+            // MiddleNavSectionLeftRegion
             // 
-            this.NavigationSectionLeftRegion.Dock = System.Windows.Forms.DockStyle.Left;
-            this.NavigationSectionLeftRegion.Location = new System.Drawing.Point(0, 0);
-            this.NavigationSectionLeftRegion.Name = "NavigationSectionLeftRegion";
-            this.NavigationSectionLeftRegion.Size = new System.Drawing.Size(46, 26);
-            this.NavigationSectionLeftRegion.TabIndex = 16;
+            this.MiddleNavSectionLeftRegion.Dock = System.Windows.Forms.DockStyle.Left;
+            this.MiddleNavSectionLeftRegion.Location = new System.Drawing.Point(0, 0);
+            this.MiddleNavSectionLeftRegion.Name = "MiddleNavSectionLeftRegion";
+            this.MiddleNavSectionLeftRegion.Size = new System.Drawing.Size(46, 26);
+            this.MiddleNavSectionLeftRegion.TabIndex = 16;
             // 
-            // ShortcutSection
+            // DownNavSection
             // 
-            this.ShortcutSection.BorderColor = System.Drawing.Color.Empty;
-            this.ShortcutSection.BorderWidthOnBottom = 0;
-            this.ShortcutSection.Controls.Add(this.ShortcutSectionRightRegion);
-            this.ShortcutSection.Controls.Add(this.ShortcutSectionLeftRegion);
-            this.ShortcutSection.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ShortcutSection.Location = new System.Drawing.Point(0, 113);
-            this.ShortcutSection.Name = "ShortcutSection";
-            this.ShortcutSection.Radius = 4;
-            this.ShortcutSection.Size = new System.Drawing.Size(916, 26);
-            this.ShortcutSection.StyleType = Ligg.WinForm.Controls.ContainerPanel.ContainerPanelStyle.None;
-            this.ShortcutSection.TabIndex = 15;
+            this.DownNavSection.BorderColor = System.Drawing.Color.Empty;
+            this.DownNavSection.BorderWidthOnBottom = 0;
+            this.DownNavSection.Controls.Add(this.DownNavSectionRightRegion);
+            this.DownNavSection.Controls.Add(this.DownNavSectionLeftRegion);
+            this.DownNavSection.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DownNavSection.Location = new System.Drawing.Point(0, 113);
+            this.DownNavSection.Name = "DownNavSection";
+            this.DownNavSection.Radius = 4;
+            this.DownNavSection.Size = new System.Drawing.Size(916, 26);
+            this.DownNavSection.StyleType = Ligg.WinForm.Controls.ContainerPanel.ContainerPanelStyle.None;
+            this.DownNavSection.TabIndex = 15;
             // 
-            // ShortcutSectionRightRegion
+            // DownNavSectionRightRegion
             // 
-            this.ShortcutSectionRightRegion.Controls.Add(this.ShortcutSectionCenterRegion);
-            this.ShortcutSectionRightRegion.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ShortcutSectionRightRegion.Location = new System.Drawing.Point(81, 0);
-            this.ShortcutSectionRightRegion.Name = "ShortcutSectionRightRegion";
-            this.ShortcutSectionRightRegion.Size = new System.Drawing.Size(737, 26);
-            this.ShortcutSectionRightRegion.TabIndex = 14;
+            this.DownNavSectionRightRegion.Controls.Add(this.DownNavSectionCenterRegion);
+            this.DownNavSectionRightRegion.Dock = System.Windows.Forms.DockStyle.Left;
+            this.DownNavSectionRightRegion.Location = new System.Drawing.Point(81, 0);
+            this.DownNavSectionRightRegion.Name = "DownNavSectionRightRegion";
+            this.DownNavSectionRightRegion.Size = new System.Drawing.Size(737, 26);
+            this.DownNavSectionRightRegion.TabIndex = 14;
             // 
-            // ShortcutSectionCenterRegion
+            // DownNavSectionCenterRegion
             // 
-            this.ShortcutSectionCenterRegion.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ShortcutSectionCenterRegion.Location = new System.Drawing.Point(0, 0);
-            this.ShortcutSectionCenterRegion.Name = "ShortcutSectionCenterRegion";
-            this.ShortcutSectionCenterRegion.Size = new System.Drawing.Size(78, 26);
-            this.ShortcutSectionCenterRegion.TabIndex = 14;
+            this.DownNavSectionCenterRegion.Dock = System.Windows.Forms.DockStyle.Left;
+            this.DownNavSectionCenterRegion.Location = new System.Drawing.Point(0, 0);
+            this.DownNavSectionCenterRegion.Name = "DownNavSectionCenterRegion";
+            this.DownNavSectionCenterRegion.Size = new System.Drawing.Size(78, 26);
+            this.DownNavSectionCenterRegion.TabIndex = 14;
             // 
-            // ShortcutSectionLeftRegion
+            // DownNavSectionLeftRegion
             // 
-            this.ShortcutSectionLeftRegion.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ShortcutSectionLeftRegion.Location = new System.Drawing.Point(0, 0);
-            this.ShortcutSectionLeftRegion.Name = "ShortcutSectionLeftRegion";
-            this.ShortcutSectionLeftRegion.Size = new System.Drawing.Size(81, 26);
-            this.ShortcutSectionLeftRegion.TabIndex = 13;
+            this.DownNavSectionLeftRegion.Dock = System.Windows.Forms.DockStyle.Left;
+            this.DownNavSectionLeftRegion.Location = new System.Drawing.Point(0, 0);
+            this.DownNavSectionLeftRegion.Name = "DownNavSectionLeftRegion";
+            this.DownNavSectionLeftRegion.Size = new System.Drawing.Size(81, 26);
+            this.DownNavSectionLeftRegion.TabIndex = 13;
             // 
             // MainSection
             // 
@@ -583,14 +570,14 @@ namespace Ligg.WinForm.Forms
             this.Text = "Frame Form";
             this.RunningMessageSection.ResumeLayout(false);
             this.RunningStatusSection.ResumeLayout(false);
-            this.RunningStatusSectionBackgroundTaskRegion.ResumeLayout(false);
+            this.RunningStatusSectionBackTaskRegion.ResumeLayout(false);
             this.GroundPanel.ResumeLayout(false);
-            this.MainMenuSection.ResumeLayout(false);
+            this.TopNavSection.ResumeLayout(false);
             this.ToolBarSection.ResumeLayout(false);
             this.ToolBarSectionPublicRegion.ResumeLayout(false);
-            this.NavigationSection.ResumeLayout(false);
-            this.ShortcutSection.ResumeLayout(false);
-            this.ShortcutSectionRightRegion.ResumeLayout(false);
+            this.MiddleNavSection.ResumeLayout(false);
+            this.DownNavSection.ResumeLayout(false);
+            this.DownNavSectionRightRegion.ResumeLayout(false);
             this.MainSection.ResumeLayout(false);
             this.MainSectionMainDivision.ResumeLayout(false);
             this.MainSectionRightDivision.ResumeLayout(false);
@@ -603,17 +590,17 @@ namespace Ligg.WinForm.Forms
         }
 
         #endregion
-        protected ContainerPanel MainMenuSection;
+        protected ContainerPanel TopNavSection;
         protected ContainerPanel ToolBarSection;
-        protected ContainerPanel NavigationSection;
-        protected ContainerPanel ShortcutSection;
+        protected ContainerPanel MiddleNavSection;
+        protected ContainerPanel DownNavSection;
         protected ContainerPanel MainSection;
 
-        protected System.Windows.Forms.Panel ShortcutSectionLeftRegion;
-        protected System.Windows.Forms.Panel NavigationSectionLeftRegion;
-        protected System.Windows.Forms.Panel NavigationSectionRightRegion;
+        protected System.Windows.Forms.Panel DownNavSectionLeftRegion;
+        protected System.Windows.Forms.Panel MiddleNavSectionLeftRegion;
+        protected System.Windows.Forms.Panel MiddleNavSectionRightRegion;
 
-        protected System.Windows.Forms.Panel ShortcutSectionRightRegion;
+        protected System.Windows.Forms.Panel DownNavSectionRightRegion;
         protected System.Windows.Forms.Panel MainSectionLeftNavDivision;
         protected System.Windows.Forms.Panel MainSectionRightNavDivision;
         protected System.Windows.Forms.Panel MainSectionLeftNavDivisionMidRegion;
@@ -637,11 +624,11 @@ namespace Ligg.WinForm.Forms
         protected System.Windows.Forms.Panel MainSectionRightDivisionUpRegion;
         protected System.Windows.Forms.Panel MainSectionMainDivisionDownRegion;
         protected System.Windows.Forms.Panel MainSectionMainDivisionMidRegion;
-        protected Panel MainMenuSectionRightRegion;
-        protected Panel MainMenuSectionCenterRegion;
-        protected Panel MainMenuSectionLeftRegion;
-        protected Panel ShortcutSectionCenterRegion;
-        protected Panel NavigationSectionCenterRegion;
+        protected Panel TopNavSectionRightRegion;
+        protected Panel TopNavSectionCenterRegion;
+        protected Panel TopNavSectionLeftRegion;
+        protected Panel DownNavSectionCenterRegion;
+        protected Panel MiddleNavSectionCenterRegion;
         protected Panel ToolBarSectionRightRegion;
         protected Panel ToolBarSectionCenterRegion;
     }

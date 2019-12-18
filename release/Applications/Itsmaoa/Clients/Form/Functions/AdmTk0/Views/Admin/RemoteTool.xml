@@ -57,7 +57,7 @@
 			
 			<DisplayName/><Remark>Public_NetworkLocation_NetworkLocation</Remark>
 			
-			<Action>RefreshProcedureVariables;#RemoteTool_MstscZone_MonitoredServers#</Action>
+			<Action>RefreshProcedureVariables;#RemoteTool_MstscZone_MonitoredServerAddresses#</Action>
 			
 			<InvalidFlag/>
 			

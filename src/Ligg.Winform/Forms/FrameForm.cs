@@ -12,9 +12,9 @@ namespace Ligg.WinForm.Forms
         private readonly ToolTip _horizontalResizeButtonToolTip = new ToolTip();
         private int _mainSectionRightNavDivisionWidth;
 
-        protected int MainMenuSectionHeight = 30;
-        protected int MainMenuSectionLeftRegionWidth = 10;
-        protected int MainMenuSectionRightRegionWidth = 10;
+        protected int TopNavSectionHeight = 30;
+        protected int TopNavSectionLeftRegionWidth = 10;
+        protected int TopNavSectionRightRegionWidth = 10;
 
 
         protected int ToolBarSectionHeight = 64;
@@ -23,13 +23,13 @@ namespace Ligg.WinForm.Forms
         protected int ToolBarSectionCenterRegionWidth = 10;
 
 
-        protected int NavigationSectionHeight = 28;
-        protected int NavigationSectionLeftRegionWidth =10;
-        protected int NavigationSectionRightRegionWidth = 10;
+        protected int MiddleNavSectionHeight = 28;
+        protected int MiddleNavSectionLeftRegionWidth = 10;
+        protected int MiddleNavSectionRightRegionWidth = 10;
 
-        protected int ShortcutSectionHeight = 28;
-        protected int ShortcutSectionLeftRegionWidth = 10;
-        protected int ShortcutSectionRightRegionWidth = 10;
+        protected int DownNavSectionHeight = 28;
+        protected int DownNavSectionLeftRegionWidth = 10;
+        protected int DownNavSectionRightRegionWidth = 10;
 
         protected int MainSectionLeftNavDivisionWidth = 80;
         protected int MainSectionLeftNavDivisionUpRegionHeight = 24;
@@ -83,16 +83,16 @@ namespace Ligg.WinForm.Forms
         {
             GroundPanel.BackColor = StyleSheet.GroundColor;
 
-            MainMenuSection.BackColor = StyleSheet.GroundColor;
-            MainMenuSection.StyleType = Ligg.WinForm.Controls.ContainerPanel.ContainerPanelStyle.None;
-            MainMenuSection.RoundStyle = RoundStyle.None;
-            MainMenuSection.Radius = 0;
-            MainMenuSection.BorderWidthOnLeft = 0;
-            MainMenuSection.BorderWidthOnTop = 0;
-            MainMenuSection.BorderWidthOnRight = 0;
-            MainMenuSection.BorderWidthOnBottom = 1;
-            MainMenuSection.BorderColor = StyleSheet.ControlBorderColor;
-            MainMenuSection.Padding = new Padding(2);
+            TopNavSection.BackColor = StyleSheet.GroundColor;
+            TopNavSection.StyleType = Ligg.WinForm.Controls.ContainerPanel.ContainerPanelStyle.None;
+            TopNavSection.RoundStyle = RoundStyle.None;
+            TopNavSection.Radius = 0;
+            TopNavSection.BorderWidthOnLeft = 0;
+            TopNavSection.BorderWidthOnTop = 0;
+            TopNavSection.BorderWidthOnRight = 0;
+            TopNavSection.BorderWidthOnBottom = 1;
+            TopNavSection.BorderColor = StyleSheet.ControlBorderColor;
+            TopNavSection.Padding = new Padding(2);
 
             ToolBarSection.BackColor = StyleSheet.BaseColor;
             ToolBarSection.StyleType = Ligg.WinForm.Controls.ContainerPanel.ContainerPanelStyle.None;
@@ -107,33 +107,33 @@ namespace Ligg.WinForm.Forms
             ToolBarSectionPublicRegionToolStrip.BackColor = StyleSheet.BaseColor;
             ToolBarSectionLeftRegion.BackColor = StyleSheet.BaseColor;
 
-            NavigationSection.BackColor = StyleSheet.NavigationSectionBackColor;
-            NavigationSection.StyleType = Ligg.WinForm.Controls.ContainerPanel.ContainerPanelStyle.Borders;
-            NavigationSection.RoundStyle = RoundStyle.None;
-            NavigationSection.Radius = 0;
-            NavigationSection.BorderWidthOnLeft = 0;
-            NavigationSection.BorderWidthOnTop = 0;
-            NavigationSection.BorderWidthOnRight = 0;
-            NavigationSection.BorderWidthOnBottom = 1;
-            NavigationSection.BorderColor = StyleSheet.ControlBorderColor;
-            NavigationSection.Padding = new Padding(2);
+            MiddleNavSection.BackColor = StyleSheet.NavigationSectionBackColor;
+            MiddleNavSection.StyleType = Ligg.WinForm.Controls.ContainerPanel.ContainerPanelStyle.Borders;
+            MiddleNavSection.RoundStyle = RoundStyle.None;
+            MiddleNavSection.Radius = 0;
+            MiddleNavSection.BorderWidthOnLeft = 0;
+            MiddleNavSection.BorderWidthOnTop = 0;
+            MiddleNavSection.BorderWidthOnRight = 0;
+            MiddleNavSection.BorderWidthOnBottom = 1;
+            MiddleNavSection.BorderColor = StyleSheet.ControlBorderColor;
+            MiddleNavSection.Padding = new Padding(2);
 
-            NavigationSectionLeftRegion.BackColor = StyleSheet.NavigationSectionBackColor;
-            NavigationSectionRightRegion.BackColor = StyleSheet.NavigationSectionBackColor;
+            MiddleNavSectionLeftRegion.BackColor = StyleSheet.NavigationSectionBackColor;
+            MiddleNavSectionRightRegion.BackColor = StyleSheet.NavigationSectionBackColor;
 
-            ShortcutSection.BackColor = StyleSheet.ShortcutSectionBackColor;
-            ShortcutSection.StyleType = Ligg.WinForm.Controls.ContainerPanel.ContainerPanelStyle.Borders;
-            ShortcutSection.RoundStyle = RoundStyle.None;
-            ShortcutSection.Radius = 0;
-            ShortcutSection.BorderWidthOnLeft = 0;
-            ShortcutSection.BorderWidthOnTop = 0;
-            ShortcutSection.BorderWidthOnRight = 0;
-            ShortcutSection.BorderWidthOnBottom = 1;
-            ShortcutSection.BorderColor = StyleSheet.ControlBorderColor;
-            ShortcutSection.Padding = new Padding(2);
+            DownNavSection.BackColor = StyleSheet.ShortcutSectionBackColor;
+            DownNavSection.StyleType = Ligg.WinForm.Controls.ContainerPanel.ContainerPanelStyle.Borders;
+            DownNavSection.RoundStyle = RoundStyle.None;
+            DownNavSection.Radius = 0;
+            DownNavSection.BorderWidthOnLeft = 0;
+            DownNavSection.BorderWidthOnTop = 0;
+            DownNavSection.BorderWidthOnRight = 0;
+            DownNavSection.BorderWidthOnBottom = 1;
+            DownNavSection.BorderColor = StyleSheet.ControlBorderColor;
+            DownNavSection.Padding = new Padding(2);
 
-            ShortcutSectionLeftRegion.BackColor = StyleSheet.ShortcutSectionBackColor;
-            ShortcutSectionRightRegion.BackColor = StyleSheet.ShortcutSectionBackColor;
+            DownNavSectionLeftRegion.BackColor = StyleSheet.ShortcutSectionBackColor;
+            DownNavSectionRightRegion.BackColor = StyleSheet.ShortcutSectionBackColor;
 
             MainSection.BackColor = StyleSheet.GroundColor;
             MainSection.StyleType = Ligg.WinForm.Controls.ContainerPanel.ContainerPanelStyle.Borders;
@@ -206,10 +206,10 @@ namespace Ligg.WinForm.Forms
 
         protected void ResizeFrameComponent()
         {
-            MainMenuSection.Height = MainMenuSectionHeight;
-            MainMenuSectionLeftRegion.Width = MainMenuSectionLeftRegionWidth;
-            MainMenuSectionRightRegion.Width = MainMenuSectionRightRegionWidth;
-            MainMenuSectionCenterRegion.Width = MainMenuSection.Width - MainMenuSectionLeftRegionWidth - MainMenuSectionRightRegionWidth-4;
+            TopNavSection.Height = TopNavSectionHeight;
+            TopNavSectionLeftRegion.Width = TopNavSectionLeftRegionWidth;
+            TopNavSectionRightRegion.Width = TopNavSectionRightRegionWidth;
+            TopNavSectionCenterRegion.Width = TopNavSection.Width - TopNavSectionLeftRegionWidth - TopNavSectionRightRegionWidth - 4;
 
             ToolBarSection.Height = ToolBarSectionHeight;
             ToolBarSectionPublicRegion.Width = ToolBarSectionPublicRegionWidth;
@@ -217,17 +217,17 @@ namespace Ligg.WinForm.Forms
             ToolBarSectionCenterRegion.Width = ToolBarSectionCenterRegionWidth;
             ToolBarSectionRightRegion.Width = ToolBarSection.Width - ToolBarSectionPublicRegionWidth- ToolBarSectionLeftRegionWidth - ToolBarSectionCenterRegionWidth-4;
 
-            NavigationSection.Height = NavigationSectionHeight;
-            NavigationSectionLeftRegion.Width = NavigationSectionLeftRegionWidth;
-            NavigationSectionRightRegion.Width = NavigationSectionRightRegionWidth;
-            NavigationSectionCenterRegion.Width = NavigationSection.Width - NavigationSectionLeftRegionWidth - NavigationSectionRightRegionWidth - 4;
+            MiddleNavSection.Height = MiddleNavSectionHeight;
+            MiddleNavSectionLeftRegion.Width = MiddleNavSectionLeftRegionWidth;
+            MiddleNavSectionRightRegion.Width = MiddleNavSectionRightRegionWidth;
+            MiddleNavSectionCenterRegion.Width = MiddleNavSection.Width - MiddleNavSectionLeftRegionWidth - MiddleNavSectionRightRegionWidth - 4;
 
-            ShortcutSection.Height = ShortcutSectionHeight;
-            ShortcutSectionLeftRegion.Width = ShortcutSectionLeftRegionWidth;
-            ShortcutSectionRightRegion.Width = ShortcutSectionRightRegionWidth;
-            ShortcutSectionCenterRegion.Width = ShortcutSection.Width - ShortcutSectionLeftRegionWidth - ShortcutSectionRightRegionWidth - 4;
+            DownNavSection.Height = DownNavSectionHeight;
+            DownNavSectionLeftRegion.Width = DownNavSectionLeftRegionWidth;
+            DownNavSectionRightRegion.Width = DownNavSectionRightRegionWidth;
+            DownNavSectionCenterRegion.Width = DownNavSection.Width - DownNavSectionLeftRegionWidth - DownNavSectionRightRegionWidth - 4;
 
-            MainSection.Height = GroundPanel.Height - MainMenuSectionHeight - ToolBarSectionHeight - NavigationSectionHeight - ShortcutSectionHeight - RunningMessageSectionHeight - RunningStatusSectionHeight;
+            MainSection.Height = GroundPanel.Height - TopNavSectionHeight - ToolBarSectionHeight - MiddleNavSectionHeight - DownNavSectionHeight - RunningMessageSectionHeight - RunningStatusSectionHeight;
 
             MainSectionLeftNavDivision.Width = MainSectionLeftNavDivisionWidth;
             MainSectionLeftNavDivisionUpRegion.Height = MainSectionLeftNavDivisionUpRegionHeight;
@@ -251,7 +251,7 @@ namespace Ligg.WinForm.Forms
             ResizeBaseComponent();
         }
 
-        protected void SetFrameTextByCulture(bool isOnLoad, bool supportMutiLangs)
+        protected void SetFrameTextByCulture(bool isOnLoad, bool supportMultiCulture)
         {
             if (isOnLoad)
             {
@@ -263,8 +263,9 @@ namespace Ligg.WinForm.Forms
                 {
                     _horizontalResizeButtonToolTip.SetToolTip(HorizontalResizeButton, WinformRes.ShowLeftDivision);
                 }
-                if (!supportMutiLangs) ToolBarSectionPublicRegionWidth = 0;
+                if (!supportMultiCulture) ToolBarSectionPublicRegionWidth = 0;
             }
+
             ResetBaseTextByCulture();
         }
 

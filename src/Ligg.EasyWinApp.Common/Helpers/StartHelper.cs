@@ -8,7 +8,6 @@ namespace Ligg.EasyWinApp.Common.Helpers
 {
     public static class StartHelper
     {
-
         public static bool CheckHostingLocation(string hostingServers, string startUpDir)
         {
             if (string.IsNullOrEmpty(hostingServers)) return true;
