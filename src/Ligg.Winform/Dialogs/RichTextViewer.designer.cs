@@ -1,4 +1,4 @@
-﻿namespace Ligg.Winform.Dialogs
+﻿namespace Ligg.WinForm.Dialogs
 {
     partial class MessageViewer
     {

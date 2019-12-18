@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Drawing;
 
-namespace Ligg.Winform.Skin
+namespace Ligg.WinForm.Skin
 {
     internal class NativeMethods
     {

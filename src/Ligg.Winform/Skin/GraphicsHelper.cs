@@ -3,9 +3,9 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
-using Ligg.Winform.DataModel.Enums;
+using Ligg.WinForm.DataModel.Enums;
 
-namespace Ligg.Winform.Skin
+namespace Ligg.WinForm.Skin
 {
     public static class GraphicsHelper
     {

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Ligg.Winform")]
+[assembly: AssemblyTitle("Ligg.WinForm")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("LL")]
-[assembly: AssemblyProduct("Ligg.Winform")]
+[assembly: AssemblyProduct("Ligg.WinForm")]
 [assembly: AssemblyCopyright("Copyright © LL 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

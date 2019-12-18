@@ -7,11 +7,12 @@ using Ligg.Base.Extension;
 using Ligg.Base.Helpers;
 using Ligg.Base.Handlers;
 using Ligg.EasyWinForm.Resources;
-using Ligg.Winform;
-using Ligg.Winform.DataModel;
-using Ligg.Winform.DataModel.Enums;
-using Ligg.Winform.Dialogs;
-using Ligg.Winform.Helpers;
+using Ligg.WinForm;
+using Ligg.WinForm.DataModel;
+using Ligg.WinForm.DataModel.Enums;
+using Ligg.WinForm.Dialogs;
+using Ligg.WinForm.Helpers;
+using Ligg.EasyWinApp.Common;
 using Ligg.EasyWinApp.Common.Helpers;
 using Ligg.EasyWinApp.ImplInterface;
 
@@ -20,12 +21,13 @@ namespace Ligg.EasyWinForm
     internal class BootStrap
     {
         internal string DefaultCultureName = "";
-        internal string StartUpDir = "";
+        private string _startUpDir = "";
         private string _appDir = "";
         private string _formDir = "";
         private string _zonesDir = "";
         private string _startFuncLocation = "";
         internal string StartZoneLocation = "";
+        internal string StartPassword = "";
         internal static ApplicationStartParamSet ApplicationStartParamSet;
 
         internal BootStrap()
@@ -38,14 +40,14 @@ namespace Ligg.EasyWinForm
         internal void SetPaths(FunctionFormType formType, string appCode, string funcCodeOrZoneLoc)
         {
             var executableDir = Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
-            var StartUpDir = Directory.GetParent(executableDir).ToString();
-            Directory.SetCurrentDirectory(DirectoryHelper.DeleteLastSlashes(StartUpDir));
-            //StartUpDir = DirectoryHelper.DeleteLastSlashes(Directory.GetCurrentDirectory());
-
-            _appDir = StartUpDir + "\\Applications\\" + appCode;
-            _formDir = StartUpDir + "\\Applications\\" + appCode + "\\Form";
+            var startUpDir = Directory.GetParent(executableDir).ToString();
+            startUpDir = Directory.GetParent(startUpDir).ToString();
+            Directory.SetCurrentDirectory(startUpDir);
+            _startUpDir = startUpDir;
+            _appDir = startUpDir + "\\Applications\\" + appCode;
+            _formDir = startUpDir + "\\Applications\\" + appCode + "\\Clients\\Form";
             _zonesDir = _formDir + "\\Zones";
-            if (formType == FunctionFormType.MutiView)
+            if (formType == FunctionFormType.MultipleView)
                 _startFuncLocation = _formDir + "\\Functions\\" + funcCodeOrZoneLoc;
             else StartZoneLocation = FileHelper.GetFilePath(funcCodeOrZoneLoc, _zonesDir);
         }
@@ -100,7 +102,7 @@ namespace Ligg.EasyWinForm
                 var applicationStartParamSet = xmlMgr.ConvertToObject<ApplicationStartParamSet>();
 
                 var functionStartParamSet = new FunctionStartParamSet();
-                if (formType == FunctionFormType.MutiView)
+                if (formType == FunctionFormType.MultipleView)
                 {
                     xmlPath = _startFuncLocation + "\\FunctionStartParamSet";
                     if (File.Exists(xmlPath + ".xml") | File.Exists(xmlPath + ".exml"))
@@ -118,12 +120,20 @@ namespace Ligg.EasyWinForm
                         functionStartParamSet = xmlMgr.ConvertToObject<FunctionStartParamSet>();
                     }
                 }
+                applicationStartParamSet.StyleSheetCode = !functionStartParamSet.StyleSheetCode.IsNullOrEmpty() ?
+                functionStartParamSet.StyleSheetCode : applicationStartParamSet.StyleSheetCode;
 
-                applicationStartParamSet.VerifyPasswordAtStart = functionStartParamSet.VerifyPasswordAtStart;
-                applicationStartParamSet.PasswordVerificationRule = functionStartParamSet.PasswordVerificationRule;
+                applicationStartParamSet.VerifyPasswordAtStart = functionStartParamSet.VerifyPasswordAtStart ?
+                    functionStartParamSet.VerifyPasswordAtStart : applicationStartParamSet.VerifyPasswordAtStart;
 
-                applicationStartParamSet.ShowSoftwareCoverAtStart = functionStartParamSet.ShowSoftwareCoverAtStart ? functionStartParamSet.ShowSoftwareCoverAtStart : applicationStartParamSet.ShowSoftwareCoverAtStart;
-                applicationStartParamSet.LogonAtStart = functionStartParamSet.LogonAtStart ? functionStartParamSet.LogonAtStart : applicationStartParamSet.LogonAtStart;
+                applicationStartParamSet.PasswordVerificationRule = !functionStartParamSet.PasswordVerificationRule.IsNullOrEmpty() ?
+                    functionStartParamSet.PasswordVerificationRule : applicationStartParamSet.PasswordVerificationRule;
+
+                applicationStartParamSet.ShowSoftwareCoverAtStart = functionStartParamSet.ShowSoftwareCoverAtStart ?
+                    functionStartParamSet.ShowSoftwareCoverAtStart : applicationStartParamSet.ShowSoftwareCoverAtStart;
+
+                applicationStartParamSet.LogonAtStart = functionStartParamSet.LogonAtStart ?
+                    functionStartParamSet.LogonAtStart : applicationStartParamSet.LogonAtStart;
 
                 ApplicationStartParamSet = applicationStartParamSet;
             }
@@ -134,7 +144,7 @@ namespace Ligg.EasyWinForm
         }
 
         //#act
-        internal bool VerifyStartPassword(string passwordVerificationStr, string password)
+        internal bool VerifyStartPassword(bool verifyByInput, string passwordVerificationStr, string password)
         {
             try
             {
@@ -142,15 +152,16 @@ namespace Ligg.EasyWinForm
                 {
                     if (passwordVerificationStr.Contains("；")) passwordVerificationStr = passwordVerificationStr.Replace("；", ";");
                     if (passwordVerificationStr.Contains("，")) passwordVerificationStr = passwordVerificationStr.Replace("，", ",");
-                    var accessType = passwordVerificationStr.SplitByTwoDifferentStrings("AccessType:", ";", true)[0];
                     var verifyRule = passwordVerificationStr.SplitByTwoDifferentStrings("VerificationRule:", ";", true)[0];
                     var verifyParams = passwordVerificationStr.SplitByTwoDifferentStrings("VerificationParams:", ";", true)[0];
 
                     if (verifyRule.ToLower() != "ClearText".ToLower() & verifyRule.ToLower() != "TdePassword".ToLower() & verifyRule.ToLower() != "Password".ToLower())
                         throw new ArgumentException("verifyRule is not correct!");
 
-                    if (accessType.ToLower() == "Manual".ToLower())
+
+                    if (verifyByInput)
                     {
+                        StartPassword = verifyParams;
                         var dlg = new TextInputDialog();
                         {
                             dlg.Text = EasyWinAppRes.PlsInputPassword;
@@ -158,40 +169,23 @@ namespace Ligg.EasyWinForm
                             dlg.VerificationParams = verifyParams;
                             dlg.ShowDialog();
                             return dlg.IsOk;
+
                         }
                     }
-                    else if (accessType.ToLower() == "Auto".ToLower())
+                    else
                     {
-                        if (password.IsNullOrEmpty())
+                        if (TextVerificationHelper.Verify(password, verifyRule, verifyParams))
                         {
-                            throw new ArgumentException("Password can't be empty!");
+                            StartPassword = verifyParams;
+                            return true;
                         }
                         else
                         {
-                            if (!TextVerificationHelper.Verify(password, verifyRule, verifyParams))
-                                throw new ArgumentException("Password is incorrect!");
+                            return false;
                         }
+
                     }
-                    else if (accessType.ToLower() == "Both".ToLower())
-                    {
-                        if (password.IsNullOrEmpty())
-                        {
-                            var dlg = new TextInputDialog();
-                            {
-                                dlg.Text = EasyWinAppRes.PlsInputPassword;
-                                dlg.VerificationRule = verifyRule;
-                                dlg.VerificationParams = verifyParams;
-                                dlg.ShowDialog();
-                                return dlg.IsOk;
-                            }
-                        }
-                        else
-                        {
-                            if (!TextVerificationHelper.Verify(password, verifyRule, verifyParams))
-                                throw new ArgumentException("Password is incorrect!");
-                        }
-                    }
-                    return false;
+
                 }
             }
             catch (Exception ex)
@@ -210,8 +204,7 @@ namespace Ligg.EasyWinForm
                 if (appStartParamSet.CheckHostingLocation)
                 {
                     msg = "Verifying Assembly Hosting Location";
-
-                    if (!StartHelper.CheckHostingLocation(appStartParamSet.HostingServers, StartUpDir))
+                    if (!StartHelper.CheckHostingLocation(appStartParamSet.HostingServers, _startUpDir))
                     {
                         PopupMessage.PopupError(EasyWinAppRes.ApplicationStartError, EasyWinAppRes.ApplicationStartError + ": " + msg + " " + "Error");
                         return false;
@@ -221,20 +214,16 @@ namespace Ligg.EasyWinForm
                 if (appStartParamSet.CheckLicenseAvailability)
                 {
                     msg = "Checking License Availability";
-
                     if (!StartHelper.CheckLicenseAvailability())
                     {
                         PopupMessage.PopupError(EasyWinAppRes.ApplicationStartError, EasyWinAppRes.ApplicationStartError + ": " + msg + " " + "Error");
                         return false;
                     }
                 }
-
-                if (appStartParamSet.CheckPublishmentValidity)
+                if (appStartParamSet.CheckPublicationValidity)
                 {
-                    msg = "Checking publishment Validity";
-
-
-                    if (!StartHelper.CheckPublishmentValidity())
+                    msg = "Checking publication Validity";
+                    if (!StartHelper.CheckPublicationValidity())
                     {
                         PopupMessage.PopupError(EasyWinAppRes.ApplicationStartError,
                             EasyWinAppRes.ApplicationStartError + ": " + msg + " " + "Error");
@@ -245,8 +234,6 @@ namespace Ligg.EasyWinForm
                 if (appStartParamSet.CheckSoftwareVersion)
                 {
                     msg = "Checking Software Version";
-
-
                     if (!StartHelper.CheckSoftwareVersion())
                     {
                         PopupMessage.PopupError(EasyWinAppRes.ApplicationStartError,
@@ -266,7 +253,7 @@ namespace Ligg.EasyWinForm
         public void InitGlobalConfiguration(string applicationCode, bool supportMutiCultures, string defaultLanguageCode, string currentLanguageCode, string startParams, string implementationDir)
         {
             GlobalConfiguration.AppCode = applicationCode;
-            GlobalConfiguration.SupportMutiCultures = supportMutiCultures;
+            GlobalConfiguration.SupportMultiCultures = supportMutiCultures;
             GlobalConfiguration.DefaultLanguageCode = defaultLanguageCode;
             GlobalConfiguration.CurrentLanguageCode = currentLanguageCode;
             GlobalConfiguration.StartParams = startParams.Split(startParams.GetSubParamSeparator());
@@ -277,11 +264,11 @@ namespace Ligg.EasyWinForm
         {
             var singleViewFormInitParamSet = new FunctionInitParamSet();
             singleViewFormInitParamSet.FormType = FunctionFormType.SingleView;
-            singleViewFormInitParamSet.AssemblyCode = mainFunctionInitParamSet.AssemblyCode;
+            singleViewFormInitParamSet.ArchitectureCode = mainFunctionInitParamSet.ArchitectureCode;
             singleViewFormInitParamSet.ApplicationCode = mainFunctionInitParamSet.ApplicationCode;
             var temArry = ApplicationStartParamSet.SoftwareCoverZoneLocation.SplitByLastSeparator('\\');
             singleViewFormInitParamSet.FunctionCode = temArry.Length == 0 ? temArry[0] : temArry[1];
-            singleViewFormInitParamSet.ZoneLocationForNonMutiViewForm = FileHelper.GetFilePath(ApplicationStartParamSet.SoftwareCoverZoneLocation, _zonesDir);
+            singleViewFormInitParamSet.ZoneLocationForNonMultiViewForm = FileHelper.GetFilePath(ApplicationStartParamSet.SoftwareCoverZoneLocation, _zonesDir);
             singleViewFormInitParamSet.InputZoneVariablesForNonMutiViewForm = mainFunctionInitParamSet.FunctionCode;
 
             singleViewFormInitParamSet.StartParams = string.Empty;
@@ -290,26 +277,31 @@ namespace Ligg.EasyWinForm
             singleViewFormInitParamSet.ApplicationVersion = mainFunctionInitParamSet.ApplicationVersion;
 
             singleViewFormInitParamSet.ImplementationDir = mainFunctionInitParamSet.ImplementationDir;
-            singleViewFormInitParamSet.SupportMutiCultures = mainFunctionInitParamSet.SupportMutiCultures;
+            singleViewFormInitParamSet.SupportMultiCultures = mainFunctionInitParamSet.SupportMultiCultures;
             var form = new StartForm(singleViewFormInitParamSet);
             Application.Run(form);
         }
 
 
-        internal bool VerifyUserToken(string userCode, string userToken)
+        internal bool VerifyUserToken(Int64 userId, string userCode, string userToken)
         {
-            return GlobalConfiguration.VerifyUserToken(userCode, userToken);
+            return GlobalConfiguration.VerifyUserToken(userId, userCode, userToken);
+        }
+
+        internal bool VerifyUserPassword(string userCode, string userToken)
+        {
+            return StartHelper.VerifyUserPassword(userCode, userToken);
         }
 
         internal bool Logon(FunctionInitParamSet mainFunctionInitParamSet)
         {
             var singleViewFormInitParamSet = new FunctionInitParamSet();
             singleViewFormInitParamSet.FormType = FunctionFormType.SingleView;
-            singleViewFormInitParamSet.AssemblyCode = mainFunctionInitParamSet.AssemblyCode;
+            singleViewFormInitParamSet.ArchitectureCode = mainFunctionInitParamSet.ArchitectureCode;
             singleViewFormInitParamSet.ApplicationCode = mainFunctionInitParamSet.ApplicationCode;
             var temArry = ApplicationStartParamSet.LogonZoneLocation.SplitByLastSeparator('\\');
             singleViewFormInitParamSet.FunctionCode = temArry.Length == 0 ? temArry[0] : temArry[1];
-            singleViewFormInitParamSet.ZoneLocationForNonMutiViewForm = FileHelper.GetFilePath(ApplicationStartParamSet.LogonZoneLocation, _zonesDir);
+            singleViewFormInitParamSet.ZoneLocationForNonMultiViewForm = FileHelper.GetFilePath(ApplicationStartParamSet.LogonZoneLocation, _zonesDir);
             singleViewFormInitParamSet.InputZoneVariablesForNonMutiViewForm = string.Empty;
 
             singleViewFormInitParamSet.StartParams = string.Empty;
@@ -321,7 +313,7 @@ namespace Ligg.EasyWinForm
             singleViewFormInitParamSet.ApplicationVersion = mainFunctionInitParamSet.ApplicationVersion;
 
             singleViewFormInitParamSet.ImplementationDir = mainFunctionInitParamSet.ImplementationDir;
-            singleViewFormInitParamSet.SupportMutiCultures = mainFunctionInitParamSet.SupportMutiCultures;
+            singleViewFormInitParamSet.SupportMultiCultures = mainFunctionInitParamSet.SupportMultiCultures;
 
             var form = new StartForm(singleViewFormInitParamSet);
             Application.Run(form);

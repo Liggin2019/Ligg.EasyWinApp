@@ -9,7 +9,7 @@ using Ligg.Base.DataModel;
 using Ligg.Base.Extension;
 using Microsoft.Win32;
 
-namespace Ligg.Winform.Helpers
+namespace Ligg.WinForm.Helpers
 {
     public static class SystemInfoHelper
     {

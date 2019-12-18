@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web.Script.Serialization;
 using Newtonsoft.Json;
 
@@ -15,7 +16,6 @@ namespace Ligg.Base.Helpers
     {
         private static readonly string TypeName = System.Reflection.MethodBase.GetCurrentMethod().ReflectedType.FullName;
 
-        //#get
         public static T ConvertToObject<T>(string input)
         {
             try

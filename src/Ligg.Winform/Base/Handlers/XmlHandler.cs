@@ -18,7 +18,7 @@ namespace Ligg.Base.Handlers
         private string _filePath;//文件路径
         private string _nodePath;//节点路径 such as: Company/Department/Employees/Employee       
 
-        //cons
+        //#cons
         public XmlHandler(string filePath)
         {
             this._filePath = filePath;
@@ -27,7 +27,7 @@ namespace Ligg.Base.Handlers
             LoadFromFile(filePath);
         }
 
-        //prop
+        //#prop
         public string FilePath
         {
             get { return _filePath; }
@@ -44,8 +44,8 @@ namespace Ligg.Base.Handlers
         }
 
 
-        //Method
-        //#load
+        //#Method
+        //##load
         private void LoadFromFile(string filePath)
         {
             try
@@ -68,12 +68,12 @@ namespace Ligg.Base.Handlers
                 }
                 else
                 {
-                    using (var sr = new StreamReader(filePath))
-                    {
-                        //string str = sr.ReadToEnd();
-                        //string deStr = EncryptionHelper.SmDecrypt(str);
-                        //_document.LoadXml(deStr);
-                    }
+                    //using (var sr = new StreamReader(filePath))
+                    //{
+                    //    string str = sr.ReadToEnd();
+                    //    string deStr = EncryptionHelper.SmDecrypt(str);
+                    //    _document.LoadXml(deStr);
+                    //}
                 }
             }
             catch (ArgumentException ex)
@@ -90,7 +90,6 @@ namespace Ligg.Base.Handlers
         {
             return this._document.OuterXml;
         }
-
 
         public string GetNodeInnerTextByTagName(string nodeName, int i)
         {
@@ -114,8 +113,7 @@ namespace Ligg.Base.Handlers
 
 
 
-
-        //#Convert
+        //##Convert
         public T ConvertToObject<T>()
         {
             try
@@ -129,8 +127,6 @@ namespace Ligg.Base.Handlers
 
 
         }
-
-
 
         public DataTable ConvertToDataTable()
         {

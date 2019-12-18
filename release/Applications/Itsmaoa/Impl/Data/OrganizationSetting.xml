@@ -3,8 +3,8 @@
     <MachineNameToCheckIfInLan>DevDesktop</MachineNameToCheckIfInLan>
     <FullDomainName>ligg.com</FullDomainName>
     <ShortDomainName>ligg</ShortDomainName>
-    <CentralLanIpPrefixes>192.168.10,192.168.18</CentralLanIpPrefixes>
-    <CloseLanIpPrefixes>192.168.20,192.168.30</CloseLanIpPrefixes>
+    <CentralLanIpPrefixes>192.168.10,192.168.11,192.168.12,192.168.20</CentralLanIpPrefixes>
+    <CloseLanIpPrefixes>192.168.30,192.168.40</CloseLanIpPrefixes>
     <DcNames>lgcnad;lgusaad;lgdead</DcNames>
     <RunAsAdminDomainAccount>lg.admin</RunAsAdminDomainAccount>
     <RunAsAdminDomainAccountPassword>P@s$w0rd</RunAsAdminDomainAccountPassword>

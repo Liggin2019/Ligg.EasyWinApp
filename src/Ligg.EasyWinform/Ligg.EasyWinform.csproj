@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\debug\Form\</OutputPath>
+    <OutputPath>..\..\debug\Clients\Form\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -27,7 +27,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\release\Form\</OutputPath>
+    <OutputPath>..\..\release\Clients\Form\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -106,9 +106,9 @@
       <Project>{46727cbd-db04-4733-88d0-4c1d7d2792fb}</Project>
       <Name>Ligg.EasyWinApp.ImplInterface</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Ligg.Winform\Ligg.Winform.csproj">
+    <ProjectReference Include="..\Ligg.Winform\Ligg.WinForm.csproj">
       <Project>{f6d5915b-d0e7-4389-901f-2737a37a37e7}</Project>
-      <Name>Ligg.Winform</Name>
+      <Name>Ligg.WinForm</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-namespace Ligg.Winform.Controls.ShadowPanel
+namespace Ligg.WinForm.Controls.ShadowPanel
 {
     [ToolboxItem(false)]
     public class ShadowPanel : Panel

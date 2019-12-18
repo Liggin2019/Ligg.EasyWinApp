@@ -6,16 +6,15 @@ namespace Ligg.EasyWinApp.Implementation.Services
 {
     internal class ServerConnectionService
     {
-        internal void InitServerConnectionStatus()
+        internal void Init()
         {
             try
             {
-                new NetworkLocationService().InitCurrentNetworkLocation();
-                if (RunningParams.ServerConnectionStatus == UniversalStatus.Unknown) RefreshServerConnectionStatus();
+                new NetworkLocationService().Init();
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".InitServerConnectionStatus Error: " + ex.Message);
+                throw new ArgumentException("\n>> " + GetType().FullName + ".Init Error: " +ex.Message);
             }
         }
 
@@ -23,36 +22,14 @@ namespace Ligg.EasyWinApp.Implementation.Services
         {
             try
             {
-                RefreshPingServerStatus();
                 RefreshTelnetServerStatus();
+                //UpdatePingServerStatus();
             }
             catch (Exception ex)
             {
                 RunningParams.ServerConnectionStatus = UniversalStatus.Unknown;
-                throw new ArgumentException("\n>> " + GetType().FullName + ".RefreshServerConnection Error: " + ex.Message);
-            }
-        }
-
-        internal void RefreshPingServerStatus()
-        {
-            try
-            {
-                if (!NetworkHelper.IsPingSucceeded(RunningParams.CurrentNetworkLocation.ServerAddress))
-                {
-                    RunningParams.PingServerStatus = UniversalStatus.NotOk;
-                    //RunningParams.TelnetServerStatus = UniversalStatus.NotOk;
-                }
-                else
-                {
-                    RunningParams.PingServerStatus = UniversalStatus.Ok;
-                }
-                UpdateServerConnectionStatus();
-
-            }
-            catch (Exception ex)
-            {
-                RunningParams.ServerConnectionStatus = UniversalStatus.Unknown;
-                throw new ArgumentException("\n>> " + GetType().FullName + ".RefreshPingServerStatus Error: " + ex.Message);
+                throw new ArgumentException("\n>> " + GetType().FullName + ".RefreshServerConnection Error: " +
+                                            ex.Message);
             }
         }
 
@@ -60,14 +37,14 @@ namespace Ligg.EasyWinApp.Implementation.Services
         {
             try
             {
-                if (!NetworkHelper.IsTelnetSucceeded(RunningParams.CurrentNetworkLocation.ServerAddress, RunningParams.CurrentNetworkLocation.ServerPort, 50))
+                if (!NetworkHelper.IsTelnetSucceeded(RunningParams.CurrentNetworkLocation.ServerAddress,
+                    RunningParams.CurrentNetworkLocation.ServerPort, 50))
                 {
-                    RunningParams.TelnetServerStatus = UniversalStatus.NotOk;
+                    ServerConnectionServiceData.TelnetServerStatus = UniversalStatus.NotOk;
                 }
                 else
                 {
-                    RunningParams.TelnetServerStatus = UniversalStatus.Ok;
-                    //RunningParams.PingServerStatus = UniversalStatus.Ok;
+                    ServerConnectionServiceData.TelnetServerStatus = UniversalStatus.Ok;
                 }
 
                 UpdateServerConnectionStatus();
@@ -75,32 +52,62 @@ namespace Ligg.EasyWinApp.Implementation.Services
             catch (Exception ex)
             {
                 RunningParams.ServerConnectionStatus = UniversalStatus.Unknown;
-                throw new ArgumentException("\n>> " + GetType().FullName + ".RefreshTelnetServerStatus Error: " + ex.Message);
+                throw new ArgumentException("\n>> " + GetType().FullName + ".RefreshTelnetServerStatus Error: " +
+                                            ex.Message);
             }
         }
+
+
+        internal void UpdatePingServerStatus()
+        {
+            try
+            {
+                if (!NetworkHelper.IsPingSucceeded(RunningParams.CurrentNetworkLocation.ServerAddress))
+                {
+                    ServerConnectionServiceData.PingServerStatus = UniversalStatus.NotOk;
+                }
+                else
+                {
+                    ServerConnectionServiceData.PingServerStatus = UniversalStatus.Ok;
+                }
+            }
+            catch (Exception ex)
+            {
+                RunningParams.ServerConnectionStatus = UniversalStatus.Unknown;
+                throw new ArgumentException("\n>> " + GetType().FullName + ".UpdatePingServerStatus Error: " +
+                                            ex.Message);
+            }
+        }
+
 
         private void UpdateServerConnectionStatus()
         {
             try
             {
                 //if (RunningParams.PingServerStatus == UniversalStatus.Ok & RunningParams.TelnetServerStatus == UniversalStatus.Ok)
-                if (RunningParams.TelnetServerStatus == UniversalStatus.Ok)
+                if (ServerConnectionServiceData.TelnetServerStatus == UniversalStatus.Ok)
                 {
                     RunningParams.ServerConnectionStatus = UniversalStatus.Ok;
                 }
-                else { RunningParams.ServerConnectionStatus = UniversalStatus.NotOk; }
+                else
+                {
+                    RunningParams.ServerConnectionStatus = UniversalStatus.NotOk;
+                }
 
             }
             catch (Exception ex)
             {
                 RunningParams.ServerConnectionStatus = UniversalStatus.Unknown;
-                throw new ArgumentException("\n>> " + GetType().FullName + ".UpdateServerConnectionStatus Error: " + ex.Message);
+                throw new ArgumentException("\n>> " + GetType().FullName + ".UpdateServerConnectionStatus Error: " +
+                                            ex.Message);
             }
         }
 
+    }
 
-
-
-
+    internal static class ServerConnectionServiceData
+    {
+        internal static UniversalStatus PingServerStatus = UniversalStatus.Unknown;
+        internal static UniversalStatus TelnetServerStatus = UniversalStatus.Unknown;
     }
 }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using Ligg.Base.Extension;
-using Ligg.Winform.Forms;
+using Ligg.WinForm.Forms;
 
-namespace Ligg.Winform.Dialogs
+namespace Ligg.WinForm.Dialogs
 {
     public partial class MessageViewer : GroundForm
     {
@@ -23,8 +23,8 @@ namespace Ligg.Winform.Dialogs
             InitializeComponent();
             this.ShowInTaskbar = false;
             this.ShowIcon = false;
-            GroundPanel.BackColor = StyleSet.PopupContainerBackColor;
-            richTextBoxContent.BackColor = StyleSet.PopupContainerBackColor;
+            GroundPanel.BackColor = StyleSheet.PopupContainerBackColor;
+            richTextBoxContent.BackColor = StyleSheet.PopupContainerBackColor;
             this.richTextBoxContent.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
         }
 

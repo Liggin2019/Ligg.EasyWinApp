@@ -1,5 +1,5 @@
 ﻿
-namespace Ligg.Winform.DataModel
+namespace Ligg.WinForm.DataModel
 {
     public class ProcedureItem
     {
@@ -13,7 +13,6 @@ namespace Ligg.Winform.DataModel
         public string Condition;
         public string Formula;
         public string Value;
-        public string NameToBeSet;
     }
 
 }

@@ -1,0 +1,331 @@
+<ArrayOfZoneItem>
+		<ZoneItem>
+			
+			<Name>Row10</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockStyleName>-1</DockStyleName><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>40</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>ServerConnectionCheckL</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row10</RowName>
+			
+			
+			<ControlTypeName>TitleLabel</ControlTypeName><StyleClass>Level1</StyleClass><StyleText/>
+			
+			<DisplayName>Server Connection Check</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockStyleName>-1</DockStyleName><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>285</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Row20</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockStyleName>-1</DockStyleName><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>30</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>ServerAddressL</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row20</RowName>
+			
+			
+			<ControlTypeName>Label</ControlTypeName><StyleClass>Level1</StyleClass><StyleText/>
+			
+			<DisplayName>Server Address</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockStyleName>-1</DockStyleName><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>90</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>ServerAddress</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row20</RowName>
+			
+			
+			<ControlTypeName>TextBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue>=RunningParam;CurrentNetworkLocation;ServerAddress</DefaultValue><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag>true</DisabledFlag>
+			<DockStyleName>-1</DockStyleName><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>100</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>ServerPortL</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row20</RowName>
+			
+			
+			<ControlTypeName>Label</ControlTypeName><StyleClass>Level1</StyleClass><StyleText/>
+			
+			<DisplayName>Port</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockStyleName>-1</DockStyleName><OffsetOrPositionX>12</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>30</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>ServerPort</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row20</RowName>
+			
+			
+			<ControlTypeName>TextBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue>=RunningParam;CurrentNetworkLocation;ServerPort</DefaultValue><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag>true</DisabledFlag>
+			<DockStyleName>-1</DockStyleName><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>30</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Row30</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockStyleName>-1</DockStyleName><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>30</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>TelnetServerStatus</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row30</RowName>
+			
+			
+			<ControlTypeName>StatusLight</ControlTypeName><StyleClass>Level1</StyleClass><StyleText/>
+			
+			<DisplayName>Telnet Server Port</DisplayName><DataSource/>			
+			<DefaultValue>=ServerConnectionService;TelnetServerStatus</DefaultValue><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockStyleName>-1</DockStyleName><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>180</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RefeshTelnetServerStatus</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row30</RowName>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName>Refesh Telnet server status</DisplayName><DataSource>\Images\refresh.png</DataSource>			
+			<DefaultValue>-1</DefaultValue><Action>Xrun;$RefeshTelnetServerStatus-Xrun1$,$RefeshTelnetServerStatus-Xrun2$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockStyleName>-1</DockStyleName><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>10</OffsetOrPositionY>			<Width>16</Width>
+			<Height>16</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RefeshTelnetServerStatus-Xrun1</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row30</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue>-1</DefaultValue><Action>ServerConnectionService;RefreshTelnetServerStatus</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockStyleName>-1</DockStyleName><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>10</OffsetOrPositionY>			<Width>16</Width>
+			<Height>16</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RefeshTelnetServerStatus-Xrun2</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row30</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue>-1</DefaultValue><Action>RefreshControlsValues;$PingServerStatus$,$TelnetServerStatus$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockStyleName>-1</DockStyleName><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>10</OffsetOrPositionY>			<Width>16</Width>
+			<Height>16</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Telenet</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row30</RowName>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName>Telnet server port</DisplayName><DataSource>\Images\check.png</DataSource>			
+			<DefaultValue>-1</DefaultValue><ValidationRules/><Action>RunCmd;\Tools\telnet.exe;$ServerAddress.v$ $ServerPort.v$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockStyleName>-1</DockStyleName><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>10</OffsetOrPositionY>			<Width>16</Width>
+			<Height>16</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Row40</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockStyleName>-1</DockStyleName><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>30</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>PingServerStatus</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row40</RowName>
+			
+			
+			<ControlTypeName>StatusLight</ControlTypeName><StyleClass>Level1</StyleClass><StyleText/>
+			
+			<DisplayName>Ping Server Address</DisplayName><DataSource/>			
+			<DefaultValue>=ServerConnectionService;PingServerStatus</DefaultValue><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockStyleName>-1</DockStyleName><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>180</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RefeshPingServerStatus</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row40</RowName>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName>Refesh Ping server status</DisplayName><DataSource>\Images\refresh.png</DataSource>			
+			<DefaultValue>-1</DefaultValue><Action>Xrun;$RefeshPingServerStatus-Xrun1$,$RefeshPingServerStatus-Xrun2$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockStyleName>-1</DockStyleName><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>10</OffsetOrPositionY>			<Width>16</Width>
+			<Height>16</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RefeshPingServerStatus-Xrun1</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row40</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue>-1</DefaultValue><Action>ServerConnectionService;UpdatePingServerStatus</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockStyleName>-1</DockStyleName><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>10</OffsetOrPositionY>			<Width>16</Width>
+			<Height>16</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RefeshPingServerStatus-Xrun2</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row40</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue>-1</DefaultValue><Action>RefreshControlsValues;$PingServerStatus$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockStyleName>-1</DockStyleName><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>10</OffsetOrPositionY>			<Width>16</Width>
+			<Height>16</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Ping</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row40</RowName>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName>Ping server address</DisplayName><DataSource>\Images\check.png</DataSource>			
+			<DefaultValue>-1</DefaultValue><Action>ExecCmd;ping $ServerAddress.v$ -t</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockStyleName>-1</DockStyleName><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>10</OffsetOrPositionY>			<Width>16</Width>
+			<Height>16</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Tracert</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row40</RowName>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName>Tracert server address</DisplayName><DataSource>\Images\check.png</DataSource>			
+			<DefaultValue>-1</DefaultValue><Action>ExecCmd;tracert $ServerAddress.v$ </Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockStyleName>-1</DockStyleName><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>10</OffsetOrPositionY>			<Width>16</Width>
+			<Height>16</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>CheckNetwork</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row40</RowName>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName>Check network</DisplayName><DataSource>\Images\fix.png</DataSource>			
+			<DefaultValue>-1</DefaultValue><Action>ExecCmd;ncpa.cpl;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockStyleName>-1</DockStyleName><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>10</OffsetOrPositionY>			<Width>16</Width>
+			<Height>16</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem>
+		
+		
+		
+		
+				
+		
+		
+		
+	</ArrayOfZoneItem>
+

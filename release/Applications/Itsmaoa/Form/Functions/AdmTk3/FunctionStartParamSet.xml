@@ -1,7 +1,0 @@
-<FunctionStartParamSet>
-	<ShowSoftwareCoverAtStart>true</ShowSoftwareCoverAtStart>
-	<VerifyPasswordAtStart>true</VerifyPasswordAtStart>
-	<PasswordVerificationRule>AccessType:Manual;VerificationRule:ClearText;VerificationParams:1234</PasswordVerificationRule>
-	<LogonAtStart>true</LogonAtStart>
-		
-</FunctionStartParamSet>

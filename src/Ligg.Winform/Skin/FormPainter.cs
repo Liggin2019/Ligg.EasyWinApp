@@ -1,9 +1,9 @@
 ﻿using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
-using Ligg.Winform.DataModel.Enums;
+using Ligg.WinForm.DataModel.Enums;
 
-namespace Ligg.Winform.Skin
+namespace Ligg.WinForm.Skin
 {
     public class FormPainter : FormRenderer
     {
@@ -18,7 +18,7 @@ namespace Ligg.Winform.Skin
 
         public override void InitGroundForm(SkinForm form)
         {
-            form.BackColor = StyleSet.BaseColor;
+            form.BackColor = StyleSheet.BaseColor;
         }
 
         protected override void OnRenderGroundFormCaption(FormCaptionRenderEventArgs e)
@@ -92,7 +92,7 @@ namespace Ligg.Winform.Skin
             SkinForm form = e.Form;
             using (SmoothingModeGraphics antiGraphics = new SmoothingModeGraphics(g))
             {
-                using (Brush brush = new SolidBrush(StyleSet.BaseColor))
+                using (Brush brush = new SolidBrush(StyleSheet.BaseColor))
                 {
                     using (GraphicsPath path = GraphicsHelper.CreatePath(
                         rect, form.Radius, form.RoundStyle, false))
@@ -156,15 +156,15 @@ namespace Ligg.Winform.Skin
 
         private void DrawCaptionBackground(Graphics g, Rectangle captionRect, bool isActive)
         {
-            Color baseColor = isActive ? StyleSet.CaptionActiveColor : StyleSet.CaptionInactiveColor;
+            Color baseColor = isActive ? StyleSheet.CaptionActiveColor : StyleSheet.CaptionInactiveColor;
 
             GraphicsHelper.DrawBackground(
                 g,
                 captionRect,
                 baseColor,
-                StyleSet.FormBorderColor,
+                StyleSheet.FormBorderColor,
                 //StyleSet.FormInnerBorderColor,
-                StyleSet.FormBorderColor,
+                StyleSheet.FormBorderColor,
                 RoundStyle.None,
                 0,
                 //.25f,
@@ -181,7 +181,7 @@ namespace Ligg.Winform.Skin
                 text,
                 font,
                 textRect,
-                StyleSet.CaptionTextColor,
+                StyleSheet.CaptionTextColor,
                 TextFormatFlags.VerticalCenter |
                 TextFormatFlags.Left |
                 TextFormatFlags.SingleLine |
@@ -194,7 +194,7 @@ namespace Ligg.Winform.Skin
             rect.Height -= 1;
             using (GraphicsPath path = GraphicsHelper.CreatePath(rect, radius, roundStyle, false))
             {
-                using (Pen pen = new Pen(StyleSet.FormBorderColor))
+                using (Pen pen = new Pen(StyleSheet.FormBorderColor))
                 {
                     g.DrawPath(pen, path);
                 }
@@ -203,7 +203,7 @@ namespace Ligg.Winform.Skin
             rect.Inflate(-1, -1);
             using (GraphicsPath path = GraphicsHelper.CreatePath(rect, radius, roundStyle, false))
             {
-                using (Pen pen = new Pen(StyleSet.FormInnerBorderColor))
+                using (Pen pen = new Pen(StyleSheet.FormInnerBorderColor))
                 {
                     g.DrawPath(pen, path);
                 }
@@ -216,15 +216,15 @@ namespace Ligg.Winform.Skin
 
             if (state == ControlState.Pressed)
             {
-                baseColor = StyleSet.ControlBoxPressedColor;
+                baseColor = StyleSheet.ControlBoxPressedColor;
             }
             else if (state == ControlState.Hovering)
             {
-                baseColor = StyleSet.ControlBoxHoveringColor;
+                baseColor = StyleSheet.ControlBoxHoveringColor;
             }
             else
             {
-                baseColor = isActive ? StyleSet.ControlBoxActiveColor : StyleSet.ControlBoxInActiveColor;
+                baseColor = isActive ? StyleSheet.ControlBoxActiveColor : StyleSheet.ControlBoxInActiveColor;
             }
 
             RoundStyle roundStyle = RoundStyle.BottomLeft;
@@ -248,15 +248,15 @@ namespace Ligg.Winform.Skin
 
             if (state == ControlState.Pressed)
             {
-                baseColor = StyleSet.ControlBoxPressedColor;
+                baseColor = StyleSheet.ControlBoxPressedColor;
             }
             else if (state == ControlState.Hovering)
             {
-                baseColor = StyleSet.ControlBoxHoveringColor;
+                baseColor = StyleSheet.ControlBoxHoveringColor;
             }
             else
             {
-                baseColor = isActive ?StyleSet.ControlBoxActiveColor :StyleSet.ControlBoxInActiveColor;
+                baseColor = isActive ?StyleSheet.ControlBoxActiveColor :StyleSheet.ControlBoxInActiveColor;
             }
 
             using (SmoothingModeGraphics antiGraphics = new SmoothingModeGraphics(g))
@@ -277,21 +277,21 @@ namespace Ligg.Winform.Skin
 
         private void DrawGroundFormCloseBox(Graphics g,Rectangle rect,ControlState state,bool isActive,bool ifHasMinimizeBox,bool ifHasMaximizeBox)
         {
-            Color baseColor = StyleSet.ControlBoxActiveColor;
+            Color baseColor = StyleSheet.ControlBoxActiveColor;
 
             if (state == ControlState.Pressed)
             {
-                baseColor = StyleSet.CloseControlBoxPressedColor;
+                baseColor = StyleSheet.CloseControlBoxPressedColor;
             }
             else if (state == ControlState.Hovering)
             {
-                baseColor = StyleSet.CloseControlBoxHoveringColor;
+                baseColor = StyleSheet.CloseControlBoxHoveringColor;
             }
             else
             {
                 baseColor = isActive ?
-                    StyleSet.ControlBoxActiveColor :
-                    StyleSet.ControlBoxInActiveColor;
+                    StyleSheet.ControlBoxActiveColor :
+                    StyleSheet.ControlBoxInActiveColor;
             }
 
             RoundStyle roundStyle = ifHasMinimizeBox || ifHasMaximizeBox ?RoundStyle.BottomRight : RoundStyle.Bottom;
@@ -303,7 +303,7 @@ namespace Ligg.Winform.Skin
                     rect,
                     baseColor,
                     baseColor,
-                    StyleSet.ControlBoxInnerBorderColor,
+                    StyleSheet.ControlBoxInnerBorderColor,
                     roundStyle,
                     6,
                     .38F,
@@ -311,7 +311,7 @@ namespace Ligg.Winform.Skin
                     false,
                     LinearGradientMode.Vertical);
 
-                using (Pen pen = new Pen(StyleSet.FormBorderColor))
+                using (Pen pen = new Pen(StyleSheet.FormBorderColor))
                 {
                     g.DrawLine(pen, rect.X, rect.Y, rect.Right, rect.Y);
                 }

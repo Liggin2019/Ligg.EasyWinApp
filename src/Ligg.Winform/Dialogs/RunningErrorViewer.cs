@@ -5,10 +5,10 @@ using System.Windows.Forms;
 using Ligg.Base.DataModel;
 using Ligg.Base.Extension;
 using Ligg.Base.Helpers;
-using Ligg.Winform.Helpers;
-using Ligg.Winform.Resources;
+using Ligg.WinForm.Helpers;
+using Ligg.WinForm.Resources;
 
-namespace Ligg.Winform.Dialogs
+namespace Ligg.WinForm.Dialogs
 {
     public partial class RunningErrorViewer
     {
@@ -39,7 +39,7 @@ namespace Ligg.Winform.Dialogs
             }
 
             imageTextButtonSendErrorInfo.Text = WinformRes.SendErrorInfoToDev;
-            GroundPanel.BackColor = StyleSet.NavigationSectionBackColor;
+            GroundPanel.BackColor = StyleSheet.NavigationSectionBackColor;
         }
 
 

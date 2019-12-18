@@ -2,10 +2,10 @@
 using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using Ligg.Winform.DataModel.Enums;
-using Ligg.Winform.Skin;
+using Ligg.WinForm.DataModel.Enums;
+using Ligg.WinForm.Skin;
 
-namespace Ligg.Winform.Controls
+namespace Ligg.WinForm.Controls
 {
     public class TextButton : Button
     {
@@ -149,28 +149,28 @@ namespace Ligg.Winform.Controls
             g.SmoothingMode = SmoothingMode.AntiAlias;
 
             Color backColor;
-            Color borderColor = StyleSet.ControlBorderColor;
-            Color innerBorderColor = StyleSet.ControlInnerBorderColor;
+            Color borderColor = StyleSheet.ControlBorderColor;
+            Color innerBorderColor = StyleSheet.ControlInnerBorderColor;
             if (Enabled)
             {
                 switch (ControlState)
                 {
                     case ControlState.Hovering:
-                        backColor = StyleSet.ControlHoveringBackColor;
+                        backColor = StyleSheet.ControlHoveringBackColor;
                         break;
                     case ControlState.Pressed:
-                        backColor = StyleSet.ControlFocusedBackColor;
+                        backColor = StyleSheet.ControlFocusedBackColor;
                         break;
 
                     default: //normal
                         {
                             if (SensitiveType == ControlSensitiveType.Focus && Focused)
                             {
-                                backColor = innerBorderColor = StyleSet.ControlFocusedBackColor;
+                                backColor = innerBorderColor = StyleSheet.ControlFocusedBackColor;
                             }
                             else if (SensitiveType == ControlSensitiveType.Check && Checked)
                             {
-                                backColor = innerBorderColor = StyleSet.ControlFocusedBackColor;
+                                backColor = innerBorderColor = StyleSheet.ControlFocusedBackColor;
                             }
                             else
                             {
@@ -182,8 +182,8 @@ namespace Ligg.Winform.Controls
                                 }
                                 else
                                 {
-                                    borderColor = StyleSet.ControlBorderColor;
-                                    innerBorderColor = StyleSet.ControlInnerBorderColor;
+                                    borderColor = StyleSheet.ControlBorderColor;
+                                    innerBorderColor = StyleSheet.ControlInnerBorderColor;
                                 }
                             }
                         }
@@ -192,7 +192,7 @@ namespace Ligg.Winform.Controls
             }
             else
             {
-                backColor = StyleSet.ControlDisabledBaseColor;
+                backColor = StyleSheet.ControlDisabledBaseColor;
             }
 
 

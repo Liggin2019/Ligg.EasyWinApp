@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using Ligg.Base.DataModel;
 using Ligg.Base.DataModel.Enums;
 using Ligg.Base.Extension;
@@ -21,7 +22,7 @@ namespace Ligg.EasyWinApp.Implementation
                     return new ValidationService().GetValidationResult(funcParamArray[0], funcParamArray[1]);
                 }
 
-                //#runningparams
+                //#RunningParam
                 else if (funcName.ToLower().ToLower() == "RunningParam".ToLower().ToLower())
                 {
                     if (funcParamArray[0].ToLower() == "AssemblyBits".ToLower())
@@ -62,9 +63,9 @@ namespace Ligg.EasyWinApp.Implementation
                         {
                             return RunningParams.ChosenNetworkLocation.MonitoredNetworkAddresses.ToString();
                         }
-                        else if (funcParamArray[1].ToLower() == "MonitoredServers".ToLower())
+                        else if (funcParamArray[1].ToLower() == "MonitoredServerAddresses".ToLower())
                         {
-                            return RunningParams.ChosenNetworkLocation.MonitoredNetworkAddresses.ToString();
+                            return RunningParams.ChosenNetworkLocation.MonitoredServerAddresses.ToString();
                         }
                         else throw new ArgumentException("funcName: " + funcName + " has no param '" + funcParamArray[0] + "/" + funcParamArray[1] + "'! ");
                     }
@@ -72,25 +73,13 @@ namespace Ligg.EasyWinApp.Implementation
                     //##ServerConnectionStatus
                     else if (funcParamArray[0].ToLower() == "ServerConnectionStatus".ToLower())
                     {
-                        return RunningParams.ServerConnectionStatus == UniversalStatus.Unknown ? "Unknown" :
-                                    (RunningParams.ServerConnectionStatus == UniversalStatus.Ok ? "true" : "false");
-                    }
-                    else if (funcParamArray[0].ToLower() == "PingServerStatus".ToLower())
-                    {
-                        return RunningParams.PingServerStatus == UniversalStatus.Unknown ? "Unknown" :
-                            (RunningParams.PingServerStatus == UniversalStatus.Ok ? "true" : "false");
-                    }
-                    else if (funcParamArray[0].ToLower() == "TelnetServerStatus".ToLower())
-                    {
-                        return RunningParams.TelnetServerStatus == UniversalStatus.Unknown ? "Unknown" :
-                            (RunningParams.TelnetServerStatus == UniversalStatus.Ok ? "true" : "false");
+                        return ((int)RunningParams.ServerConnectionStatus).ToString();
                     }
 
                     //##RunAsAdminAccountStatus
                     else if (funcParamArray[0].ToLower() == "RunAsAdminAccountStatus".ToLower())
                     {
-                        return RunningParams.RunAsAdminAccountStatus == UniversalStatus.Unknown ? "Unknown" :
-                            (RunningParams.RunAsAdminAccountStatus == UniversalStatus.Ok ? "true" : "false");
+                        return ((int)RunningParams.RunAsAdminAccountStatus).ToString();
                     }
                     else if (funcParamArray[0].ToLower() == "CurrentRunAsAdminAccountName".ToLower())
                     {
@@ -98,46 +87,7 @@ namespace Ligg.EasyWinApp.Implementation
                         var raaAcctName = RunningParams.CurrentRunAsAdminAccountName;
                         return raaAcctDomain.IsNullOrEmpty() ? raaAcctName : raaAcctDomain + @"\" + raaAcctName;
                     }
-                    else if (funcParamArray[0].ToLower() == "CurrentWinIdAsRunAsAdminAccountStatus".ToLower())
-                    {
-                        return RunningParams.CurrentWinIdAsRunAsAdminAccountStatus == UniversalStatus.Unknown ? "Unknown" :
-                            (RunningParams.CurrentWinIdAsRunAsAdminAccountStatus == UniversalStatus.Ok ? "true" : "false");
-                    }
-                    else if (funcParamArray[0].ToLower() == "Win10CompatibilityStatus".ToLower())
-                    {
-                        return RunningParams.Win10CompatibilityStatus == UniversalStatus.Unknown ? "Unknown" :
-                            (RunningParams.Win10CompatibilityStatus == UniversalStatus.Ok ? "true" : "false");
-                    }
-                    else if (funcParamArray[0].ToLower() == "SeclogonWinServiceStatus".ToLower())
-                    {
-                        return RunningParams.SeclogonWinServiceStatus == UniversalStatus.Unknown ? "Unknown" :
-                            (RunningParams.SeclogonWinServiceStatus == UniversalStatus.Ok ? "true" : "false");
-                    }
-                    else if (funcParamArray[0].ToLower() == "DefaultRunAsAdminAccountStatus".ToLower())
-                    {
-                        return RunningParams.DefaultRunAsAdminAccountStatus == UniversalStatus.Unknown ? "Unknown" :
-                            (RunningParams.DefaultRunAsAdminAccountStatus == UniversalStatus.Ok ? "true" : "false");
-                    }
-                    else if (funcParamArray[0].ToLower() == "DesignatedRunAsAdminAccountStatus".ToLower())
-                    {
-                        return RunningParams.DesignatedRunAsAdminAccountStatus == UniversalStatus.Unknown ? "Unknown" :
-                            (RunningParams.DesignatedRunAsAdminAccountStatus == UniversalStatus.Ok ? "true" : "false");
-                    }
-                    else if (funcParamArray[0].ToLower() == "xxxx".ToLower())
-                    {
-                        return RunningParams.Win10CompatibilityStatus == UniversalStatus.Unknown ? "Unknown" :
-                            (RunningParams.Win10CompatibilityStatus == UniversalStatus.Ok ? "true" : "false");
-                    }
-                    else if (funcParamArray[0].ToLower() == "Win10CompatibilityStatus".ToLower())
-                    {
-                        //return (ApplicationHelper.IsWin10CompatibilityOk()) ? "true" : "false";
-                        return "false";
-                    }
-                    else if (funcParamArray[0].ToLower() == "SeclogonWinServiceStatus".ToLower())
-                    {
-                        //return (ApplicationHelper.IsSeclogonWinServiceRunning()) ? "true" : "false";
-                        return "false";
-                    }
+
 
                     else throw new ArgumentException("funcName: " + funcName + " has no param " + funcParamArray[0] + "! ");
                 }
@@ -153,7 +103,6 @@ namespace Ligg.EasyWinApp.Implementation
                     {
                         return new CommonService().GetNetworkInfo(funcParamArray[1], funcParamArray[2]);
                     }
-
                     else throw new ArgumentException("funcName: " + funcName + " has no param '" + funcParamArray[0] + "'! ");
                 }
 
@@ -173,54 +122,60 @@ namespace Ligg.EasyWinApp.Implementation
                         var str = ObjectHelper.ConvertToJson(valTxts);
                         return str;
                     }
+                    else if (funcParamArray[0].ToLower() == "PingServerStatus".ToLower())
+                    {
+                        return ((int)ServerConnectionServiceData.PingServerStatus).ToString();
+                    }
+                    else if (funcParamArray[0].ToLower() == "TelnetServerStatus".ToLower())
+                    {
+                        return ((int)ServerConnectionServiceData.TelnetServerStatus).ToString();
+                    }
 
                     else throw new ArgumentException("funcName: " + funcName + " has no param '" + funcParamArray[0] + "'! ");
                 }
 
-                //#JobService
-                else if (funcName.ToLower() == ("JobService".ToLower()))
+                else if (funcName.ToLower().ToLower() == "ServerConnectionService".ToLower().ToLower())
                 {
-                    if (funcParamArray[0].ToLower() == "GetJobExecType".ToLower())
+                    if (funcParamArray[0].ToLower() == "PingServerStatus".ToLower())
                     {
-                        return new JobService().GetJobExecType(Convert.ToInt32(funcParamArray[1]));
+                        return ((int)ServerConnectionServiceData.PingServerStatus).ToString();
                     }
-                    else if (funcParamArray[0].ToLower() == "GetJobExecParams".ToLower())
+                    else if (funcParamArray[0].ToLower() == "TelnetServerStatus".ToLower())
                     {
-                        return new JobService().GetJobExecParams(Convert.ToInt32(funcParamArray[1]));
-                    }
-                    else if (funcParamArray[0].ToLower() == "GetJobDisplayName".ToLower())
-                    {
-                        return new JobService().GetJobDisplayName(Convert.ToInt32(funcParamArray[1]));
-                    }
-
-                    else if (funcParamArray[0].ToLower() == "GetJobTaskCount".ToLower())
-                    {
-                        return (new JobService().GetJobTaskCount(Convert.ToInt32(funcParamArray[1]))).ToString();
-                    }
-                    else if (funcParamArray[0].ToLower() == "GetCurrentJobTaskList".ToLower())
-                    {
-                        return new JobService().GetCurrentJobTaskList(Convert.ToInt32(funcParamArray[1]), funcParamArray[2]);
-                    }
-                    else if (funcParamArray[0].ToLower() == "GetJobCurrentTaskAction".ToLower())
-                    {
-                        return new JobService().GetJobCurrentTaskAction(Convert.ToInt32(funcParamArray[1]), Convert.ToInt32(funcParamArray[2]));
+                        return ((int)ServerConnectionServiceData.TelnetServerStatus).ToString();
                     }
 
                     else throw new ArgumentException("funcName: " + funcName + " has no param '" + funcParamArray[0] + "'! ");
-
                 }
-
-                //#WinConfigService
-                else if (funcName.ToLower() == ("WinConfigService".ToLower()))
+                else if (funcName.ToLower().ToLower() == "RunAsAdminAccountService".ToLower().ToLower())
                 {
-                    if (funcParamArray[0].ToLower() == "GetWinConfigGroupProperty".ToLower())
+                    if (funcParamArray[0].ToLower() == "CurrentWinIdAsRunAsAdminAccountStatus".ToLower())
                     {
-                        return new WinConfigService().GetWinConfigGroupProperty(Convert.ToInt16(funcParamArray[1]), funcParamArray[2]);
+                        return ((int)RunAsAdminAccountServiceData.CurrentWinIdAsRunAsAdminAccountStatus).ToString();
                     }
-                    else if (funcParamArray[0].ToLower() == "GetWinConfigGroupStatus".ToLower())
+                    else if (funcParamArray[0].ToLower() == "Win10CompatibilityStatus".ToLower())
                     {
-                        return new WinConfigService().GetWinConfigGroupStatus(Convert.ToInt16(funcParamArray[1])).ToString();
+                        return ((int)RunAsAdminAccountServiceData.Win10CompatibilityStatus).ToString();
                     }
+                    else if (funcParamArray[0].ToLower() == "SeclogonWinServiceStatus".ToLower())
+                    {
+                        return ((int)RunAsAdminAccountServiceData.SeclogonWinServiceStatus).ToString();
+                    }
+                    else if (funcParamArray[0].ToLower() == "DefaultRunAsAdminAccountStatus".ToLower())
+                    {
+                        var retStr = (RunAsAdminAccountServiceData.DefaultRunAsAdminAccountStatus).ToString(CultureInfo.InvariantCulture);
+                        return retStr;
+                    }
+                    else if (funcParamArray[0].ToLower() == "DesignatedRunAsAdminAccountStatus".ToLower())
+                    {
+                        var retStr = (RunAsAdminAccountServiceData.DesignatedRunAsAdminAccountStatus).ToString(CultureInfo.InvariantCulture);
+                        return retStr;
+                    }
+                    else if (funcParamArray[0].ToLower() == "SeclogonWinServiceStatus".ToLower())
+                    {
+                        return ((int)RunAsAdminAccountServiceData.SeclogonWinServiceStatus).ToString();
+                    }
+
                     else throw new ArgumentException("funcName: " + funcName + " has no param '" + funcParamArray[0] + "'! ");
                 }
 
@@ -236,11 +191,52 @@ namespace Ligg.EasyWinApp.Implementation
                     else throw new ArgumentException("funcName: " + funcName + " has no param '" + funcParamArray[0] + "'! ");
                 }
 
-                else if (funcName.ToLower() == ("TestService".ToLower()))
+                //#JobService
+                else if (funcName.ToLower() == ("JobService".ToLower()))
                 {
-                    if (funcParamArray[0].ToLower() == "Test1".ToLower())
+                    if (funcParamArray[0].ToLower() == "GetJobExecType".ToLower())
                     {
-                        return WinConfigServiceData.test;
+                        return new JobService().GetJobExecType(Convert.ToInt32(funcParamArray[1])).ToString();
+                    }
+                    else if (funcParamArray[0].ToLower() == "GetJobExecMode".ToLower())
+                    {
+                        return new JobService().GetJobExecMode(Convert.ToInt32(funcParamArray[1])).ToString();
+                    }
+                    else if (funcParamArray[0].ToLower() == "GetJobExecParams".ToLower())
+                    {
+                        return new JobService().GetJobExecParams(Convert.ToInt32(funcParamArray[1]));
+                    }
+                    else if (funcParamArray[0].ToLower() == "GetJobDisplayName".ToLower())
+                    {
+                        return new JobService().GetJobDisplayName(Convert.ToInt32(funcParamArray[1]));
+                    }
+
+                    else if (funcParamArray[0].ToLower() == "GetJobTaskCount".ToLower())
+                    {
+                        return (new JobService().GetJobTaskCount(Convert.ToInt32(funcParamArray[1]), funcParamArray[2])).ToString();
+                    }
+                    else if (funcParamArray[0].ToLower() == "GetCurrentJobTaskList".ToLower())
+                    {
+                        return new JobService().GetCurrentJobTaskList(Convert.ToInt32(funcParamArray[1]), funcParamArray[2]);
+                    }
+                    else if (funcParamArray[0].ToLower() == "GetJobCurrentTaskAction".ToLower())
+                    {
+                        return new JobService().GetJobCurrentTaskAction(Convert.ToInt32(funcParamArray[1]), funcParamArray[2], Convert.ToInt32(funcParamArray[3]));
+                    }
+
+                    else throw new ArgumentException("funcName: " + funcName + " has no param '" + funcParamArray[0] + "'! ");
+
+                }
+                //#WinChgConfigGroupService
+                else if (funcName.ToLower() == ("WinChgConfigGroupService".ToLower()))
+                {
+                    if (funcParamArray[0].ToLower() == "GetProperty".ToLower())
+                    {
+                        return new WinChgConfigGroupService().GetProperty(Convert.ToInt16(funcParamArray[1]), funcParamArray[2]);
+                    }
+                    else if (funcParamArray[0].ToLower() == "GetStatus".ToLower())
+                    {
+                        return new WinChgConfigGroupService().GetStatus(Convert.ToInt16(funcParamArray[1])).ToString();
                     }
                     else throw new ArgumentException("funcName: " + funcName + " has no param '" + funcParamArray[0] + "'! ");
                 }

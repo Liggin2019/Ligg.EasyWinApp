@@ -1,11 +1,11 @@
 ﻿using System.Windows.Forms;
-using Ligg.Winform.DataModel.Enums;
-using Ligg.Winform.Dialogs;
-using Ligg.Winform.Forms;
-using Ligg.Winform.Resources;
+using Ligg.WinForm.DataModel.Enums;
+using Ligg.WinForm.Dialogs;
+using Ligg.WinForm.Forms;
+using Ligg.WinForm.Resources;
 
 
-namespace Ligg.Winform
+namespace Ligg.WinForm
 {
     public static class PopupMessage
     {

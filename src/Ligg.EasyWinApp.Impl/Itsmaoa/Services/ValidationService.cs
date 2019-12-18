@@ -30,7 +30,7 @@ namespace Ligg.EasyWinApp.Implementation.Services
                         if (ValidationServiceData.ValidationAnnexes == null) ValidationServiceData.Init();
 
                         var txt = "";
-                        txt = GlobalConfiguration.SupportMutiCultures ? AnnexHelper.GetText("", ruleName, ValidationServiceData.ValidationAnnexes, AnnexTextType.Description, GlobalConfiguration.CurrentLanguageCode, GetAnnexMode.StepByStep) :
+                        txt = GlobalConfiguration.SupportMultiCultures ? AnnexHelper.GetText("", ruleName, ValidationServiceData.ValidationAnnexes, AnnexTextType.Description, GlobalConfiguration.CurrentLanguageCode, GetAnnexMode.StepByStep) :
                             AnnexHelper.GetText("", ruleName, JobServiceData.JobAnnexes, AnnexTextType.Description, "", GetAnnexMode.FirstAnnex);
 
                         return txt;

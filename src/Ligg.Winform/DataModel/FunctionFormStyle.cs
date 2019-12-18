@@ -1,5 +1,5 @@
 ﻿
-namespace Ligg.Winform.DataModel
+namespace Ligg.WinForm.DataModel
 {
     public class FunctionFormStyle
     {
@@ -7,6 +7,7 @@ namespace Ligg.Winform.DataModel
         public int Height { get; set; }
         public int TopLocationX { get; set; }
         public int TopLocationY { get; set; }
+        public bool ChangeSkinDuringRunning { get; set; }
         public bool MaximizeBox { get; set; }
         public bool MinimizeBox { get; set; }
         public bool HasNoControlBox { get; set; }

@@ -1,4 +1,4 @@
-﻿namespace Ligg.Winform.DataModel
+﻿namespace Ligg.WinForm.DataModel
 {
 
     public class ControlAction

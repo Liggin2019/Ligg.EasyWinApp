@@ -1,9 +1,9 @@
 ﻿using System;
 using Ligg.Base.Extension;
 using Ligg.Base.Helpers;
-using Ligg.Winform.DataModel.Enums;
+using Ligg.WinForm.DataModel.Enums;
 
-namespace Ligg.Winform.Helpers
+namespace Ligg.WinForm.Helpers
 {
     public static class TextVerificationHelper
     {

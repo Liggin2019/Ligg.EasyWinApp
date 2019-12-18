@@ -1,0 +1,31 @@
+<ArrayOfAnnex>
+		
+	<Annex>
+		<Id>-1</Id>
+		<MasterId>-1</MasterId>
+		<MasterName>Refresh</MasterName>
+		<DisplayName>刷新所选项目</DisplayName>
+		
+		
+		
+		<LanguageCode>szh</LanguageCode>
+	</Annex><Annex>
+		<Id>-1</Id>
+		<MasterId>-1</MasterId>
+		<MasterName>Repair</MasterName>
+		<DisplayName>自动修复所选项目</DisplayName>
+		
+		
+		
+		<LanguageCode>szh</LanguageCode>
+	</Annex><Annex>
+		<Id>-1</Id>
+		<MasterId>-1</MasterId>
+		<MasterName>Save</MasterName>
+		<DisplayName>保存所选项目</DisplayName>
+		
+		
+		
+		<LanguageCode>szh</LanguageCode>
+	</Annex>
+</ArrayOfAnnex>

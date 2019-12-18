@@ -1,4 +1,4 @@
-﻿namespace Ligg.Winform.Controls
+﻿namespace Ligg.WinForm.Controls
 {
     partial class SplitRectangle
     {

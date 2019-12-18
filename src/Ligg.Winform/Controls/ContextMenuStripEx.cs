@@ -6,10 +6,10 @@ using Ligg.Base.DataModel;
 using Ligg.Base.DataModel.Enums;
 using Ligg.Base.Handlers;
 using Ligg.Base.Helpers;
-using Ligg.Winform.DataModel;
-using Ligg.Winform.Helpers;
+using Ligg.WinForm.DataModel;
+using Ligg.WinForm.Helpers;
 
-namespace Ligg.Winform.Controls
+namespace Ligg.WinForm.Controls
 {
     public sealed class ContextMenuStripEx : ContextMenuStrip
     {
@@ -19,7 +19,7 @@ namespace Ligg.Winform.Controls
         //#property
         private List<ContextMenuItem> _menuItems = null;
         private List<Annex> _annexes = null;
-        private bool _supportMutiLanguages;
+        private bool _supportMultiLanguages;
 
         public ControlAction CurrentAction
         {
@@ -28,11 +28,11 @@ namespace Ligg.Winform.Controls
         }
 
         //#constructor
-        public ContextMenuStripEx(bool supportMutiLanguages, string contentMenuCfgXmPath)
+        public ContextMenuStripEx(bool supportMultiLanguages, string contentMenuCfgXmPath)
         {
             try
             {
-                _supportMutiLanguages = supportMutiLanguages;
+                _supportMultiLanguages = supportMultiLanguages;
                 var dir = FileHelper.GetFileDetailByOption(contentMenuCfgXmPath, FilePathComposition.Directory);
                 var fileTitle = FileHelper.GetFileDetailByOption(contentMenuCfgXmPath, FilePathComposition.FileTitle);
                 var contentMenuItemsAnnexesCfgXmlPath = dir + "\\" + fileTitle + "Annexes";
@@ -44,7 +44,7 @@ namespace Ligg.Winform.Controls
                 CheckMenuConfigData(_menuItems);
                 if (_menuItems.Count > 0)
                 {
-                    InitComponet(null, -1);
+                    InitComponent(null, -1);
                 }
             }
             catch (Exception ex)
@@ -53,17 +53,17 @@ namespace Ligg.Winform.Controls
             }
         }
 
-        public ContextMenuStripEx(bool supportMutiLanguages, List<ContextMenuItem> contentMenuItems, List<Annex> annexes)
+        public ContextMenuStripEx(bool supportMultiLanguages, List<ContextMenuItem> contentMenuItems, List<Annex> annexes)
         {
             try
             {
-                _supportMutiLanguages = supportMutiLanguages;
+                _supportMultiLanguages = supportMultiLanguages;
                 _menuItems = contentMenuItems;
                 _annexes = annexes;
                 CheckMenuConfigData(_menuItems);
                 if (_menuItems.Count > 0)
                 {
-                    InitComponet(null, -1);
+                    InitComponent(null, -1);
                 }
             }
             catch (Exception ex)
@@ -83,7 +83,7 @@ namespace Ligg.Winform.Controls
             {
                 var curAction = new ControlAction();
                 curAction.Action = menuItem.Action;
-                curAction.DisplayName = LayoutHelper.GetControlDisplayName(_supportMutiLanguages, "",menuItem.Name, _annexes, menuItem.DisplayName);
+                curAction.DisplayName = LayoutHelper.GetControlDisplayName(_supportMultiLanguages, "", menuItem.Name, _annexes, menuItem.DisplayName);
 
                 CurrentAction = curAction;
                 OnItemClick(this, args);
@@ -98,7 +98,7 @@ namespace Ligg.Winform.Controls
                 foreach (var menuItem in _menuItems)
                 {
                     var menuItemCpnt = this.Items.Find(menuItem.Name, true);
-                    menuItemCpnt[0].Text = LayoutHelper.GetControlDisplayName(_supportMutiLanguages, "", menuItem.Name, _annexes, menuItem.DisplayName);
+                    menuItemCpnt[0].Text = LayoutHelper.GetControlDisplayName(_supportMultiLanguages, "", menuItem.Name, _annexes, menuItem.DisplayName);
                 }
             }
             catch (Exception ex)
@@ -121,10 +121,10 @@ namespace Ligg.Winform.Controls
                 _annexes = annexes;
             }
 
-            InitComponet(null, -1);//如有image，会报错如ResetEnabled
+            InitComponent(null, -1);//如有image，会报错如ResetEnabled
         }
 
-        private void InitComponet(ToolStripMenuItem toolStripMenuItem, int id)
+        private void InitComponent(ToolStripMenuItem toolStripMenuItem, int id)
         {
             try
             {
@@ -132,21 +132,21 @@ namespace Ligg.Winform.Controls
                 {
                     //Visible
                     bool isCpntVisible = true;
-                    var visibleFlag = menuItem.VisibleFlag;
-                    if (string.IsNullOrEmpty(visibleFlag)) visibleFlag = "true";
-                    isCpntVisible = (visibleFlag.ToLower() == "false" | visibleFlag.ToLower() == "0") ? false : true;
+                    var invisibleFlag = menuItem.InvisibleFlag;
+                    if (string.IsNullOrEmpty(invisibleFlag)) invisibleFlag = "false";
+                    isCpntVisible = (invisibleFlag.ToLower() != "true");
 
                     //Enabled
                     bool isCpntEnabled = true;
-                    var enabledFlag = menuItem.EnabledFlag;
-                    if (string.IsNullOrEmpty(enabledFlag)) enabledFlag = "true";
-                    isCpntEnabled = (enabledFlag.ToLower() == "false" | enabledFlag.ToLower() == "0") ? false : true;
+                    var disabledFlag = menuItem.DisabledFlag;
+                    if (string.IsNullOrEmpty(disabledFlag)) disabledFlag = "false";
+                    isCpntEnabled = (disabledFlag.ToLower() != "true");
 
-                    if (menuItem.ControlTypeName.ToLower() != "Seperator".ToLower())
+                    if (menuItem.ControlTypeName.ToLower() != "Separator".ToLower())
                     {
                         var menuItemCpnt = new ToolStripMenuItem();
                         menuItemCpnt.Name = menuItem.Name;
-                        menuItemCpnt.Text = LayoutHelper.GetControlDisplayName(_supportMutiLanguages, "", menuItemCpnt.Name, _annexes, menuItem.DisplayName);
+                        menuItemCpnt.Text = LayoutHelper.GetControlDisplayName(_supportMultiLanguages, "", menuItemCpnt.Name, _annexes, menuItem.DisplayName);
 
                         menuItemCpnt.TextAlign = ContentAlignment.MiddleLeft;
                         var img1 = ControlHelper.GetImage(menuItem.ImageUrl);
@@ -165,14 +165,14 @@ namespace Ligg.Winform.Controls
                         var subMenuItems = _menuItems.FindAll(x => x.ParentId == item.Id);
                         if (subMenuItems.Count > 0)
                         {
-                            InitComponet(menuItemCpnt, menuItem.Id);
+                            InitComponent(menuItemCpnt, menuItem.Id);
                         }
                         else
                         {
                             menuItemCpnt.Click += new System.EventHandler(toolStripMenuItem_Click);
                         }
                     }
-                    else if (menuItem.ControlTypeName.ToLower().Contains("Seperator".ToLower()))
+                    else if (menuItem.ControlTypeName.ToLower().Contains("Separator".ToLower()))
                     {
                         var menuItemCpnt = new System.Windows.Forms.ToolStripSeparator();
                         menuItemCpnt.Name = menuItem.Name;
@@ -191,7 +191,7 @@ namespace Ligg.Winform.Controls
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("\n>> " + GetType().FullName + "." + "InitComponet Error: " + ex.Message);
+                throw new ArgumentException("\n>> " + GetType().FullName + "." + "InitComponent Error: " + ex.Message);
             }
         }
 
@@ -212,32 +212,6 @@ namespace Ligg.Winform.Controls
         }
 
 
-        //#ResetEnabled
-        //****if item has image, cause 'outof memory error' as following
-        //        See the end of this message for details on invoking 
-        //just-in-time (JIT) debugging instead of this dialog box.
-
-        //************** Exception Text **************
-        //System.OutOfMemoryException: Out of memory.
-        //   at System.Drawing.Graphics.CheckErrorStatus(Int32 status)
-        //   at System.Drawing.Graphics.DrawImage(Image image, Rectangle destRect, Int32 srcX, Int32 srcY, Int32 srcWidth, Int32 srcHeight, GraphicsUnit srcUnit, ImageAttributes imageAttrs, DrawImageAbort callback, IntPtr callbackData)
-        //   at System.Drawing.Graphics.DrawImage(Image image, Rectangle destRect, Int32 srcX, Int32 srcY, Int32 srcWidth, Int32 srcHeight, GraphicsUnit srcUnit, ImageAttributes imageAttr)
-        //   at System.Windows.Forms.ToolStripRenderer.CreateDisabledImage(Image normalImage)
-        //   at System.Windows.Forms.ToolStripRenderer.OnRenderItemImage(ToolStripItemImageRenderEventArgs e)
-        //   at System.Windows.Forms.ToolStripRenderer.DrawItemImage(ToolStripItemImageRenderEventArgs e)
-        //   at System.Windows.Forms.ToolStripMenuItem.OnPaint(PaintEventArgs e)
-        //   at System.Windows.Forms.ToolStripItem.HandlePaint(PaintEventArgs e)
-        //   at System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
-        //   at System.Windows.Forms.ToolStrip.OnPaint(PaintEventArgs e)
-        //   at System.Windows.Forms.Control.PaintWithErrorHandling(PaintEventArgs e, Int16 layer)
-        //   at System.Windows.Forms.Control.WmPaint(Message& m)
-        //   at System.Windows.Forms.Control.WndProc(Message& m)
-        //   at System.Windows.Forms.ScrollableControl.WndProc(Message& m)
-        //   at System.Windows.Forms.ToolStrip.WndProc(Message& m)
-        //   at System.Windows.Forms.ToolStripDropDown.WndProc(Message& m)
-        //   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
-        //   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
-        //   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
 
         public void Reset(List<ContextMenuItem> menuItems)
         {
@@ -248,15 +222,17 @@ namespace Ligg.Winform.Controls
                     var cpnts = Items.Find(menuItem.Name, true);
                     if (cpnts != null && cpnts.Length > 0)
                     {
+                        //Visible
                         bool isCpntVisible = true;
-                        var visibleFlag = menuItem.VisibleFlag;
-                        if (string.IsNullOrEmpty(visibleFlag)) visibleFlag = "true";
-                        isCpntVisible = (visibleFlag.ToLower() == "false" | visibleFlag.ToLower() == "0") ? false : true;
+                        var invisibleFlag = menuItem.InvisibleFlag;
+                        if (string.IsNullOrEmpty(invisibleFlag)) invisibleFlag = "false";
+                        isCpntVisible = (invisibleFlag.ToLower() != "true");
 
+                        //Enabled
                         bool isCpntEnabled = true;
-                        var enabledFlag = menuItem.EnabledFlag;
-                        if (string.IsNullOrEmpty(enabledFlag)) enabledFlag = "true";
-                        isCpntEnabled = (enabledFlag.ToLower() == "false" | enabledFlag.ToLower() == "0") ? false : true;
+                        var disabledFlag = menuItem.DisabledFlag;
+                        if (string.IsNullOrEmpty(disabledFlag)) disabledFlag = "false";
+                        isCpntEnabled = (disabledFlag.ToLower() != "true");
 
                         cpnts[0].Visible = isCpntVisible != false;
 
@@ -287,7 +263,34 @@ namespace Ligg.Winform.Controls
         public ContextMenuStripEx ContextMenuStripEx { get; set; }
         public string ItemName { get; set; }
         public string Action { get; set; }
-        public string ActionParams { get; set; }
     }
+
+    //#ResetEnabled
+    //****if item has image, cause 'outof memory error' as following
+    //        See the end of this message for details on invoking 
+    //just-in-time (JIT) debugging instead of this dialog box.
+
+    //************** Exception Text **************
+    //System.OutOfMemoryException: Out of memory.
+    //   at System.Drawing.Graphics.CheckErrorStatus(Int32 status)
+    //   at System.Drawing.Graphics.DrawImage(Image image, Rectangle destRect, Int32 srcX, Int32 srcY, Int32 srcWidth, Int32 srcHeight, GraphicsUnit srcUnit, ImageAttributes imageAttrs, DrawImageAbort callback, IntPtr callbackData)
+    //   at System.Drawing.Graphics.DrawImage(Image image, Rectangle destRect, Int32 srcX, Int32 srcY, Int32 srcWidth, Int32 srcHeight, GraphicsUnit srcUnit, ImageAttributes imageAttr)
+    //   at System.Windows.Forms.ToolStripRenderer.CreateDisabledImage(Image normalImage)
+    //   at System.Windows.Forms.ToolStripRenderer.OnRenderItemImage(ToolStripItemImageRenderEventArgs e)
+    //   at System.Windows.Forms.ToolStripRenderer.DrawItemImage(ToolStripItemImageRenderEventArgs e)
+    //   at System.Windows.Forms.ToolStripMenuItem.OnPaint(PaintEventArgs e)
+    //   at System.Windows.Forms.ToolStripItem.HandlePaint(PaintEventArgs e)
+    //   at System.Windows.Forms.ToolStripItem.FireEvent(EventArgs e, ToolStripItemEventType met)
+    //   at System.Windows.Forms.ToolStrip.OnPaint(PaintEventArgs e)
+    //   at System.Windows.Forms.Control.PaintWithErrorHandling(PaintEventArgs e, Int16 layer)
+    //   at System.Windows.Forms.Control.WmPaint(Message& m)
+    //   at System.Windows.Forms.Control.WndProc(Message& m)
+    //   at System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+    //   at System.Windows.Forms.ToolStrip.WndProc(Message& m)
+    //   at System.Windows.Forms.ToolStripDropDown.WndProc(Message& m)
+    //   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+    //   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+    //   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
 
 }

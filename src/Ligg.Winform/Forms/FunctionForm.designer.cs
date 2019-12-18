@@ -1,4 +1,4 @@
-﻿namespace Ligg.Winform.Forms
+﻿namespace Ligg.WinForm.Forms
 {
     partial class FunctionForm
     {
@@ -118,7 +118,7 @@
             // 
             // RunningStatusSectionBackgroundTaskRegionProgressCircle
             // 
-            this.RunningStatusSectionBackgroundTaskRegionProgressCircle.Size = new System.Drawing.Size(21, 21);
+            //this.RunningStatusSectionBackgroundTaskRegionProgressCircle.Size = new System.Drawing.Size(21, 21);
             // 
             // RunningStatusSectionMsgRegionLabelMsg3
             // 

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace Ligg.Winform.Controls
+namespace Ligg.WinForm.Controls
 {
     public partial class SplitRectangle : UserControl
     {

@@ -1,8 +1,8 @@
 ﻿using System.Windows.Forms;
-using Ligg.Winform.Controls;
-using Ligg.Winform.DataModel.Enums;
+using Ligg.WinForm.Controls;
+using Ligg.WinForm.DataModel.Enums;
 
-namespace Ligg.Winform.Forms
+namespace Ligg.WinForm.Forms
 {
     partial class BaseForm
     {
@@ -33,21 +33,21 @@ namespace Ligg.Winform.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseForm));
-            this.RunningStatusSection = new Ligg.Winform.Controls.ContainerPanel();
+            this.RunningStatusSection = new Ligg.WinForm.Controls.ContainerPanel();
             this.RunningStatusSectionBackgroundTaskRegion = new System.Windows.Forms.Panel();
-            this.RunningStatusSectionBackgroundTaskRegionImageTextButton = new Ligg.Winform.Controls.ImageTextButton();
+            this.RunningStatusSectionBackgroundTaskRegionImageTextButton = new Ligg.WinForm.Controls.ImageTextButton();
             this.RunningStatusSectionBackgroundTaskRegionProgressCircleZone = new System.Windows.Forms.Panel();
-            this.RunningStatusSectionBackgroundTaskRegionProgressCircle = new Ligg.Winform.Controls.ProgressCircle();
+            //this.RunningStatusSectionBackgroundTaskRegionProgressCircle = new Ligg.WinForm.Controls.ProgressCircle();
             this.RunningStatusSectionMsgRegion = new System.Windows.Forms.Panel();
             this.RunningStatusSectionMsgRegionMsgZone = new System.Windows.Forms.Panel();
             this.RunningStatusSectionMsgRegionLabelMsg3 = new System.Windows.Forms.Label();
             this.RunningStatusSectionMsgRegionLabelMsg2 = new System.Windows.Forms.Label();
             this.RunningStatusSectionMsgRegionLabelMsg1 = new System.Windows.Forms.Label();
             this.RunningStatusSectionMsgRegionLabelMsg = new System.Windows.Forms.Label();
-            this.RunningMessageSection = new Ligg.Winform.Controls.ContainerPanel();
+            this.RunningMessageSection = new Ligg.WinForm.Controls.ContainerPanel();
             this.RunningMessageSectionRichTextBox = new System.Windows.Forms.RichTextBox();
-            this.BackgroundTaskDetailContainer = new Ligg.Winform.Controls.PopupContainer();
-            //this.BackgroundTaskDetailListViewEx = new Ligg.Winform.Controls.ListViewEx();
+            this.BackgroundTaskDetailContainer = new Ligg.WinForm.Controls.PopupContainer();
+            //this.BackgroundTaskDetailListViewEx = new Ligg.WinForm.Controls.ListViewEx();
             this.BackgroundTaskDetailPanel = new System.Windows.Forms.Panel();
             this.BackgroundTaskDetailLabel = new System.Windows.Forms.Label();
             this.GroundPanel.SuspendLayout();
@@ -81,7 +81,7 @@ namespace Ligg.Winform.Forms
             this.RunningStatusSection.Padding = new System.Windows.Forms.Padding(1);
             this.RunningStatusSection.Radius = 4;
             this.RunningStatusSection.Size = new System.Drawing.Size(796, 23);
-            this.RunningStatusSection.StyleType = Ligg.Winform.Controls.ContainerPanel.ContainerPanelStyle.Borders;
+            this.RunningStatusSection.StyleType = Ligg.WinForm.Controls.ContainerPanel.ContainerPanelStyle.Borders;
             this.RunningStatusSection.TabIndex = 9;
             // 
             // RunningStatusSectionBackgroundTaskRegion
@@ -106,7 +106,7 @@ namespace Ligg.Winform.Forms
             this.RunningStatusSectionBackgroundTaskRegionImageTextButton.Location = new System.Drawing.Point(30, 0);
             this.RunningStatusSectionBackgroundTaskRegionImageTextButton.Name = "RunningStatusSectionBackgroundTaskRegionImageTextButton";
             this.RunningStatusSectionBackgroundTaskRegionImageTextButton.Radius = 0;
-            this.RunningStatusSectionBackgroundTaskRegionImageTextButton.RoundStyle = Ligg.Winform.DataModel.Enums.RoundStyle.None;
+            this.RunningStatusSectionBackgroundTaskRegionImageTextButton.RoundStyle = Ligg.WinForm.DataModel.Enums.RoundStyle.None;
             this.RunningStatusSectionBackgroundTaskRegionImageTextButton.Size = new System.Drawing.Size(101, 21);
             this.RunningStatusSectionBackgroundTaskRegionImageTextButton.SensitiveType = ControlSensitiveType.None;
             this.RunningStatusSectionBackgroundTaskRegionImageTextButton.TabIndex = 1;
@@ -118,7 +118,7 @@ namespace Ligg.Winform.Forms
             // 
             // RunningStatusSectionBackgroundTaskRegionProgressCircleZone
             // 
-            this.RunningStatusSectionBackgroundTaskRegionProgressCircleZone.Controls.Add(this.RunningStatusSectionBackgroundTaskRegionProgressCircle);
+            //this.RunningStatusSectionBackgroundTaskRegionProgressCircleZone.Controls.Add(this.RunningStatusSectionBackgroundTaskRegionProgressCircle);
             this.RunningStatusSectionBackgroundTaskRegionProgressCircleZone.Dock = System.Windows.Forms.DockStyle.Left;
             this.RunningStatusSectionBackgroundTaskRegionProgressCircleZone.Location = new System.Drawing.Point(0, 0);
             this.RunningStatusSectionBackgroundTaskRegionProgressCircleZone.Name = "RunningStatusSectionBackgroundTaskRegionProgressCircleZone";
@@ -127,12 +127,12 @@ namespace Ligg.Winform.Forms
             // 
             // RunningStatusSectionBackgroundTaskRegionProgressCircle
             // 
-            this.RunningStatusSectionBackgroundTaskRegionProgressCircle.ForeColor = System.Drawing.Color.Red;
-            this.RunningStatusSectionBackgroundTaskRegionProgressCircle.Location = new System.Drawing.Point(0, 0);
-            this.RunningStatusSectionBackgroundTaskRegionProgressCircle.Margin = new System.Windows.Forms.Padding(0);
-            this.RunningStatusSectionBackgroundTaskRegionProgressCircle.Name = "RunningStatusSectionBackgroundTaskRegionProgressCircle";
-            this.RunningStatusSectionBackgroundTaskRegionProgressCircle.Size = new System.Drawing.Size(27, 21);
-            this.RunningStatusSectionBackgroundTaskRegionProgressCircle.TabIndex = 18;
+            //this.RunningStatusSectionBackgroundTaskRegionProgressCircle.ForeColor = System.Drawing.Color.Red;
+            //this.RunningStatusSectionBackgroundTaskRegionProgressCircle.Location = new System.Drawing.Point(0, 0);
+            //this.RunningStatusSectionBackgroundTaskRegionProgressCircle.Margin = new System.Windows.Forms.Padding(0);
+            //this.RunningStatusSectionBackgroundTaskRegionProgressCircle.Name = "RunningStatusSectionBackgroundTaskRegionProgressCircle";
+            //this.RunningStatusSectionBackgroundTaskRegionProgressCircle.Size = new System.Drawing.Size(27, 21);
+            //this.RunningStatusSectionBackgroundTaskRegionProgressCircle.TabIndex = 18;
             // 
             // RunningStatusSectionMsgRegion
             // 
@@ -212,7 +212,7 @@ namespace Ligg.Winform.Forms
             this.RunningMessageSection.Name = "RunningMessageSection";
             this.RunningMessageSection.Radius = 4;
             this.RunningMessageSection.Size = new System.Drawing.Size(796, 72);
-            this.RunningMessageSection.StyleType = Ligg.Winform.Controls.ContainerPanel.ContainerPanelStyle.Borders;
+            this.RunningMessageSection.StyleType = Ligg.WinForm.Controls.ContainerPanel.ContainerPanelStyle.Borders;
             this.RunningMessageSection.TabIndex = 10;
             // 
             // RunningMessageSectionRichTextBox
@@ -236,7 +236,7 @@ namespace Ligg.Winform.Forms
             // 
             // BackgroundTaskDetailListViewEx
             // 
-          
+
             // 
             // BackgroundTaskDetailPanel
             // 
@@ -283,9 +283,9 @@ namespace Ligg.Winform.Forms
 
         #endregion
 
-        public Ligg.Winform.Controls.ContainerPanel RunningMessageSection;
+        public Ligg.WinForm.Controls.ContainerPanel RunningMessageSection;
         public System.Windows.Forms.RichTextBox RunningMessageSectionRichTextBox;
-        public Ligg.Winform.Controls.ContainerPanel RunningStatusSection;
+        public Ligg.WinForm.Controls.ContainerPanel RunningStatusSection;
         public System.Windows.Forms.Panel RunningStatusSectionMsgRegion;
         private Panel RunningStatusSectionMsgRegionMsgZone;
         public Label RunningStatusSectionMsgRegionLabelMsg2;
@@ -297,7 +297,7 @@ namespace Ligg.Winform.Forms
         private Panel BackgroundTaskDetailPanel;
         //public ListViewEx BackgroundTaskDetailListViewEx;
         private Panel RunningStatusSectionBackgroundTaskRegionProgressCircleZone;
-        public ProgressCircle RunningStatusSectionBackgroundTaskRegionProgressCircle;
+        //public ProgressCircle RunningStatusSectionBackgroundTaskRegionProgressCircle;
         public Label RunningStatusSectionMsgRegionLabelMsg3;
         protected Label BackgroundTaskDetailLabel;
     }

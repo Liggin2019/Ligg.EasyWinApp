@@ -9,8 +9,7 @@ namespace Ligg.EasyWinApp.ImplInterface
         string ResolveConstants(string text);
         string GetText(string funName, string[] paramArray);
         string Act(string funcName, string[] paramArray);
-
+        bool Logon(string userCode, string userPassword);
     }
-
 
 }

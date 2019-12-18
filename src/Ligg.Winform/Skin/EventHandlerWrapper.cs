@@ -1,8 +1,8 @@
 ﻿using System.Windows.Forms;
 using System.Drawing;
-using Ligg.Winform.DataModel.Enums;
+using Ligg.WinForm.DataModel.Enums;
 
-namespace Ligg.Winform.Skin
+namespace Ligg.WinForm.Skin
 {
     public delegate void FormBackgroundRenderEventHandler(object sender, FormBackgroundRenderEventArgs e);
     public class FormBackgroundRenderEventArgs : PaintEventArgs

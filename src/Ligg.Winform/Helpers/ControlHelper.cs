@@ -4,11 +4,11 @@ using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
 using Ligg.Base.Extension;
-using Ligg.Winform.Controls;
-using Ligg.Winform.DataModel.Enums;
+using Ligg.WinForm.Controls;
+using Ligg.WinForm.DataModel.Enums;
 using ContentAlignment = System.Drawing.ContentAlignment;
 
-namespace Ligg.Winform.Helpers
+namespace Ligg.WinForm.Helpers
 {
     public static class ControlHelper
     {
@@ -20,7 +20,7 @@ namespace Ligg.Winform.Helpers
             try
             {
                 if (styleClass.IsNullOrEmpty()) return;
-                var myType = typeof(StyleSet);
+                var myType = typeof(StyleSheet);
                 var myInfo = myType.GetField("PanelClass" + "_" + styleClass);
                 if (myInfo == null) return;
                 var styleText = Convert.ToString(myInfo.GetValue(null));
@@ -53,7 +53,7 @@ namespace Ligg.Winform.Helpers
             try
             {
                 if (styleClass.IsNullOrEmpty()) return;
-                var myType = typeof(StyleSet);
+                var myType = typeof(StyleSheet);
                 var myInfo = myType.GetField("ShadowPanelClass" + "_" + styleClass);
                 if (myInfo == null) return;
                 var styleText = Convert.ToString(myInfo.GetValue(null));
@@ -86,7 +86,7 @@ namespace Ligg.Winform.Helpers
             try
             {
                 if (styleClass.IsNullOrEmpty()) return;
-                var myType = typeof(StyleSet);
+                var myType = typeof(StyleSheet);
                 var myInfo = myType.GetField("ContainerPanelClass" + "_" + styleClass);
                 if (myInfo == null) return;
                 var styleText = Convert.ToString(myInfo.GetValue(null));
@@ -187,7 +187,7 @@ namespace Ligg.Winform.Helpers
             try
             {
                 if (styleClass.IsNullOrEmpty()) return;
-                var myType = typeof(StyleSet);
+                var myType = typeof(StyleSheet);
                 var myInfo = myType.GetField("SplitRectangleClass" + "_" + styleClass);
                 if (myInfo == null) return;
                 var styleText = Convert.ToString(myInfo.GetValue(null));
@@ -330,70 +330,7 @@ namespace Ligg.Winform.Helpers
         }
 
 
-        //#TimerEX
-        public static void SetTimerExTimingRunStyleByClass(TimerExTimingRun control, string styleClass)
-        {
-            try
-            {
-                if (styleClass.IsNullOrEmpty()) return;
-                var myType = typeof(StyleSet);
-                var myInfo = myType.GetField("TimerExTimingRunClass" + "_" + styleClass);
-                if (myInfo == null) return;
-                var styleText = Convert.ToString(myInfo.GetValue(null));
-                if (styleText.IsNullOrEmpty()) return;
-                SetTimerExTimingRunStyleByText(control, styleText);
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("\n >> " + TypeName + ".SetTimerExTimingRunStyleByClass Error: " + ex.Message);
-            }
-        }
 
-        public static void SetTimerExTimingRunStyleByText(TimerExTimingRun cpnt, string styleText)
-        {
-            try
-            {
-                if (styleText.IsNullOrEmpty()) return;
-                SetControlBackColor(cpnt, styleText);
-                SetControlPadding(cpnt, styleText);
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("\n>>  " + TypeName + ".SetTimerExTimingRunStyleByText Error: " + ex.Message);
-            }
-        }
-
-        public static void SetTimerExRecurringRunStyleByClass(TimerExRecurringRun control, string styleClass)
-        {
-            try
-            {
-                if (styleClass.IsNullOrEmpty()) return;
-                var myType = typeof(StyleSet);
-                var myInfo = myType.GetField("TimerExRecurringRunClass" + "_" + styleClass);
-                if (myInfo == null) return;
-                var styleText = Convert.ToString(myInfo.GetValue(null));
-                if (styleText.IsNullOrEmpty()) return;
-                SetTimerExRecurringRunStyleByText(control, styleText);
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("\n >> " + TypeName + ".SetTimerExRecurringRunStyleByClass Error: " + ex.Message);
-            }
-        }
-
-        public static void SetTimerExRecurringRunStyleByText(TimerExRecurringRun cpnt, string styleText)
-        {
-            try
-            {
-                if (styleText.IsNullOrEmpty()) return;
-                SetControlBackColor(cpnt, styleText);
-                SetControlPadding(cpnt, styleText);
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("\n>>  " + TypeName + ".SetTimerExRecurringRunStyleByText Error: " + ex.Message);
-            }
-        }
 
 
 
@@ -403,7 +340,7 @@ namespace Ligg.Winform.Helpers
             try
             {
                 if (styleClass.IsNullOrEmpty()) return;
-                var myType = typeof(StyleSet);
+                var myType = typeof(StyleSheet);
                 var myInfo = myType.GetField("ImageTextButtonClass" + "_" + styleClass);
                 if (myInfo == null) return;
                 var styleText = Convert.ToString(myInfo.GetValue(null));
@@ -463,7 +400,7 @@ namespace Ligg.Winform.Helpers
             try
             {
                 if (styleClass.IsNullOrEmpty()) return;
-                var myType = typeof(StyleSet);
+                var myType = typeof(StyleSheet);
                 var styleText = "";
                 var myInfo = myType.GetField("TextButtonClass" + "_" + styleClass);
                 if (myInfo == null) return;
@@ -560,7 +497,7 @@ namespace Ligg.Winform.Helpers
             try
             {
                 if (styleClass.IsNullOrEmpty()) return;
-                var myType = typeof(StyleSet);
+                var myType = typeof(StyleSheet);
                 var styleText = "";
                 var myInfo = myType.GetField("StatusLightClass" + "_" + styleClass);
                 if (myInfo == null) return;
@@ -592,13 +529,51 @@ namespace Ligg.Winform.Helpers
 
         }
 
+        //#ScoreLight
+        public static void SetScoreLightStyleByClass(ScoreLight control, string styleClass)
+        {
+            try
+            {
+                if (styleClass.IsNullOrEmpty()) return;
+                var myType = typeof(StyleSheet);
+                var styleText = "";
+                var myInfo = myType.GetField("ScoreLightClass" + "_" + styleClass);
+                if (myInfo == null) return;
+                styleText = Convert.ToString(myInfo.GetValue(null));
+                if (styleText.IsNullOrEmpty()) return;
+                SetScoreLightStyleByText(control, styleText);
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("\n >> " + TypeName + ".SetScoreLightStyleByClass Error: " + ex.Message);
+            }
+        }
+
+        public static void SetScoreLightStyleByText(ScoreLight control, string styleText)
+        {
+            try
+            {
+                if (styleText.IsNullOrEmpty()) return;
+                control.LabelStyle = styleText;
+                SetControlBackColor(control, styleText);
+                SetControlForeColor(control, styleText);
+                SetControlFont(control, styleText);
+                SetControlPadding(control, styleText);
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("\n >> " + TypeName + ".SetScoreLightStyleByText Error: " + ex.Message);
+            }
+
+        }
+
         //#CommandLabel
         public static void SetCommandLabelStyleByClass(CommandLabel control, string styleClass)
         {
             try
             {
                 if (styleClass.IsNullOrEmpty()) return;
-                var myType = typeof(StyleSet);
+                var myType = typeof(StyleSheet);
                 var myInfo = myType.GetField("CommandLabelClass" + "_" + styleClass);
                 if (myInfo == null) return;
                 var styleText = Convert.ToString(myInfo.GetValue(null));
@@ -670,7 +645,7 @@ namespace Ligg.Winform.Helpers
             try
             {
                 if (styleClass.IsNullOrEmpty()) return;
-                var myType = typeof(StyleSet);
+                var myType = typeof(StyleSheet);
                 var myInfo = myType.GetField("TitleLabelClass" + "_" + styleClass);
                 if (myInfo == null) return;
                 var styleText = Convert.ToString(myInfo.GetValue(null));
@@ -719,7 +694,7 @@ namespace Ligg.Winform.Helpers
             try
             {
                 if (styleClass.IsNullOrEmpty()) return;
-                var myType = typeof(StyleSet);
+                var myType = typeof(StyleSheet);
                 var myInfo = myType.GetField("LabelClass" + "_" + styleClass);
                 if (myInfo == null) return;
                 var styleText = Convert.ToString(myInfo.GetValue(null));
@@ -781,7 +756,7 @@ namespace Ligg.Winform.Helpers
             try
             {
                 if (styleClass.IsNullOrEmpty()) return;
-                var myType = typeof(StyleSet);
+                var myType = typeof(StyleSheet);
                 var myInfo = myType.GetField("CheckBoxClass" + "_" + styleClass);
                 if (myInfo == null) return;
                 var styleText = Convert.ToString(myInfo.GetValue(null));
@@ -842,7 +817,7 @@ namespace Ligg.Winform.Helpers
             try
             {
                 if (styleClass.IsNullOrEmpty()) return;
-                var myType = typeof(StyleSet);
+                var myType = typeof(StyleSheet);
                 var myInfo = myType.GetField("RichTextBoxClass" + "_" + styleClass);
                 if (myInfo == null) return;
                 var styleText = Convert.ToString(myInfo.GetValue(null));
@@ -896,7 +871,7 @@ namespace Ligg.Winform.Helpers
             try
             {
                 if (styleClass.IsNullOrEmpty()) return;
-                var myType = typeof(StyleSet);
+                var myType = typeof(StyleSheet);
                 var myInfo = myType.GetField("RadioButton" + "_" + styleClass);
                 if (myInfo == null) return;
                 var styleText = Convert.ToString(myInfo.GetValue(null));
@@ -957,7 +932,7 @@ namespace Ligg.Winform.Helpers
             try
             {
                 if (styleClass.IsNullOrEmpty()) return;
-                var myType = typeof(StyleSet);
+                var myType = typeof(StyleSheet);
                 var myInfo = myType.GetField("ProgressBarClass" + "_" + styleClass);
                 if (myInfo == null) return;
                 var styleText = Convert.ToString(myInfo.GetValue(null));

@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Ligg.Winform.Controls
+namespace Ligg.WinForm.Controls
 {
     public sealed class TitleLabel : Label
     {

@@ -3,8 +3,8 @@ using System.Data;
 using Ligg.Base.Helpers;
 using Ligg.EasyWinApp.Common;
 using Ligg.EasyWinApp.ImplInterface;
-using Ligg.Winform.DataModel;
-using Ligg.Winform.Forms;
+using Ligg.WinForm.DataModel;
+using Ligg.WinForm.Forms;
 
 namespace Ligg.EasyWinForm
 {
@@ -78,6 +78,18 @@ namespace Ligg.EasyWinForm
             catch (Exception ex)
             {
                 throw new ArgumentException("\n>> " + GetType().FullName + ".PopupZoneDialogEx Error: " + ex.Message);
+            }
+        }
+
+        protected override Int64 GetCurrentUserId()
+        {
+            try
+            {
+                return GlobalConfiguration.UserId;
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("\n>> " + GetType().FullName + ".GetCurrentUserToken Error: " + ex.Message);
             }
         }
 

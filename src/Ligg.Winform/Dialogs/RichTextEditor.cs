@@ -7,10 +7,10 @@ using System.Text;
 using System.Windows.Forms;
 using Ligg.Base.Extension;
 using Ligg.Base.Helpers;
-using Ligg.Winform.Forms;
-using Ligg.Winform.Resources;
+using Ligg.WinForm.Forms;
+using Ligg.WinForm.Resources;
 
-namespace Ligg.Winform.Dialogs
+namespace Ligg.WinForm.Dialogs
 {
     public partial class RichTextViewer : GroundForm
     {
@@ -34,12 +34,12 @@ namespace Ligg.Winform.Dialogs
             InitializeComponent();
             this.ShowInTaskbar = false;
             this.ShowIcon = false;
-            GroundPanel.BackColor = StyleSet.PopupContainerBackColor;
-            richTextBoxContent.BackColor = StyleSet.PopupContainerBackColor;
+            GroundPanel.BackColor = StyleSheet.PopupContainerBackColor;
+            richTextBoxContent.BackColor = StyleSheet.PopupContainerBackColor;
             containerPanelMsg.Padding = new Padding(2);
             containerPanelMsg.Height = 19;
-            containerPanelMsg.BackColor = StyleSet.RunningStatusSectionBackColor;
-            containerPanelMsg.BorderColor = StyleSet.ControlBorderColor;
+            containerPanelMsg.BackColor = StyleSheet.RunningStatusSectionBackColor;
+            containerPanelMsg.BorderColor = StyleSheet.ControlBorderColor;
             this.richTextBoxContent.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
         }
 

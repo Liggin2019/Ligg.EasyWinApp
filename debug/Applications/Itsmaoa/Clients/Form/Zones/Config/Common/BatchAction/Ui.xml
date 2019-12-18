@@ -1,0 +1,80 @@
+<ArrayOfZoneItem>
+	<ZoneItem>
+			
+			<Name>Row10</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>20</Width>
+			<Height>30</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Select</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row10</RowName>
+			
+			
+			<ControlTypeName>CheckBox</ControlTypeName><StyleClass>FieldName</StyleClass><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>DoNothing</Action>
+			
+			<InvalidFlag/><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>26</Width>
+			<Height>26</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Refresh</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row10</RowName>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName>Refresh Selected Items</DisplayName><DataSource>\images\refresh.png</DataSource>			
+			<DefaultValue/><ValidationRules/><Action>WinChgConfigGroupService;RefreshSelectedItems;#SelectedIds.v#</Action>
+			
+			<InvalidFlag/><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>372</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>20</Width><Height>20</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Repair</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row10</RowName>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName>Repair Selected Items</DisplayName><DataSource>\images\repair.png</DataSource>			
+			<DefaultValue/><ValidationRules/><Action>WinChgConfigGroupService;RepairSelectedItems;#SelectedIds.v#</Action>
+			
+			<InvalidFlag/><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>20</Width><Height>20</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Save</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row10</RowName>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName>Save Slected Items</DisplayName><DataSource>\images\save.png</DataSource>			
+			<DefaultValue/><ValidationRules/><Action>WinChgConfigGroupService;SaveSelectedItems;#SelectedIds.v#</Action>
+			
+			<InvalidFlag/><InvisibleFlag/>
+			<DockOrder/><OffsetOrPositionX>92</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>20</Width><Height>20</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem>
+	
+</ArrayOfZoneItem>

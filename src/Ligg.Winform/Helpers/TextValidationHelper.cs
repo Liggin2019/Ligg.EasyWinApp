@@ -1,8 +1,8 @@
 ﻿using System;
 using Ligg.Base.Extension;
-using Ligg.Winform.Resources;
+using Ligg.WinForm.Resources;
 
-namespace Ligg.Winform.Helpers
+namespace Ligg.WinForm.Helpers
 {
     public static class TextValidationHelper
     {

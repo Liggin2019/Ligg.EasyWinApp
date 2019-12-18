@@ -1,0 +1,15 @@
+<ArrayOfProcedureItem>
+		<ProcedureItem>
+			
+			<Name>InitNetworkLocation</Name><DisplayName>Init NetworkLocation</DisplayName><TypeName>Action</TypeName><GroupId>0</GroupId><Formula>NetworkLocationService;Init</Formula>
+			<Value/><Condition/>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>MonitoredNetworkAddresses</Name><DisplayName/><TypeName>Variable</TypeName><GroupId>0</GroupId><Formula>=RunningParam;ChosenNetworkLocation;MonitoredNetworkAddresses</Formula>
+			<Value/><Condition/>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>MonitoredServerAddresses</Name><DisplayName/><TypeName>Variable</TypeName><GroupId>0</GroupId>
+			<Formula>=RunningParam;ChosenNetworkLocation;MonitoredServerAddresses</Formula><Value/><Condition/>
+		</ProcedureItem>
+</ArrayOfProcedureItem>

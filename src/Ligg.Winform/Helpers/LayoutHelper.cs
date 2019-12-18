@@ -5,10 +5,10 @@ using Ligg.Base.DataModel;
 using Ligg.Base.DataModel.Enums;
 using Ligg.Base.Extension;
 using Ligg.Base.Helpers;
-using Ligg.Winform.DataModel;
-using Ligg.Winform.DataModel.Enums;
+using Ligg.WinForm.DataModel;
+using Ligg.WinForm.DataModel.Enums;
 
-namespace Ligg.Winform.Helpers
+namespace Ligg.WinForm.Helpers
 {
     public static class LayoutHelper
     {
@@ -143,25 +143,18 @@ namespace Ligg.Winform.Helpers
                 foreach (var item in items)
                 {
                     LayoutHelper.CheckElementName(item.Name);
-                    if (
-                        //item.Type != (int)LayoutElementType.ViewBeforeRenderHandler & item.Type != (int)LayoutElementType.ViewAfterRenderHandler
-                        //& item.Type != (int)LayoutElementType.ViewAfterShowHandler & item.Type != (int)LayoutElementType.ViewAfterHideHandler& 
-                        item.Type != (int)LayoutElementType.ZoneBeforeRenderHandler & item.Type != (int)LayoutElementType.ZoneAfterRenderHandler
-                        )
+                    if (item.Type == (int)LayoutElementType.ContentArea | item.Type == (int)LayoutElementType.Zone)
                     {
-                        if (item.Container.IsNullOrEmpty()) throw new ArgumentException("ViewItem except EventHandler container can't be null!  viewName=" + viewName + ", item.Id=" + item.Id + ", item.Name=" + item.Name);
+                        if (item.Container.IsNullOrEmpty()) throw new ArgumentException("ContentArea or Zone ViewItem container can't be null!  viewName=" + viewName + ", item.Id=" + item.Id + ", item.Name=" + item.Name);
                     }
 
-                    if (item.Type == (int)LayoutElementType.PublicContentArea | item.Type == (int)LayoutElementType.ContentArea)
+                    if (item.Type == (int)LayoutElementType.ContentArea)
                     {
                         if (item.DockType < 1 || item.DockType > 5)
                         {
-                            throw new ArgumentException("Content area's DockType can't be less than 1 or greater than 5! viewName=" + viewName + ", area.Id=" + item.Id + ", area.Name=" + item.Name);
+                            throw new ArgumentException("Content area's DockTypeName should be ‘Top’, ‘Right’, ‘Bottom’, ‘Left' or 'Fill’! viewName=" + viewName + ", area.Id=" + item.Id + ", area.Name=" + item.Name);
                         }
-                        if (items.FindAll(x => x.Name == item.Name && ((item.Type == (int)LayoutElementType.ViewMenuArea | item.Type == (int)LayoutElementType.PublicContentArea | item.Type == (int)LayoutElementType.ContentArea))).Count > 1)
-                        {
-                            throw new ArgumentException("Content area can't have duplicated name! viewName=" + viewName + ", area.Id=" + item.Id + ", area.Name=" + item.Name);
-                        }
+
                         var sameAreaItems = items.FindAll(x => x.Container == item.Name);
                         foreach (var subItem in sameAreaItems)
                         {
@@ -172,6 +165,18 @@ namespace Ligg.Winform.Helpers
                         }
                     }
 
+
+                    if (items.FindAll(x => x.Name == item.Name && ((item.Type == (int)LayoutElementType.FollowingTransactionItem | item.Type == (int)LayoutElementType.TransactionOnlyItem | item.Type == (int)LayoutElementType.ContentArea))).Count > 1)
+                    {
+                        throw new ArgumentException("FollowingTransactionItem/TransactionOnlyItem/ContentArea can't have duplicated name! viewName=" + viewName + ", item.Id=" + item.Id + ", item.Name=" + item.Name);
+                    }
+
+                    if (items.FindAll(x => x.Id == item.Id).Count > 1)
+                    {
+                        throw new ArgumentException("View Item can't have duplicated Id! viewName=" + viewName + ", item.Id=" + item.Id + ", item.Name=" + item.Name);
+                    }
+
+
                 }
             }
             catch (Exception ex)
@@ -180,33 +185,30 @@ namespace Ligg.Winform.Helpers
             }
         }
 
-        public static void CheckZoneProcedures(string zoneName, List<ProcedureItem> varItems)
+        public static void CheckProcedures(bool isFunctionLevel, string zoneOrFuncName, List<ProcedureItem> procItems)
         {
             try
             {
-                foreach (var item in varItems)
+                foreach (var item in procItems)
                 {
                     LayoutHelper.CheckElementName(item.Name);
+                    var zoneOrFunctionName = isFunctionLevel ? "functionName" : "zoneName";
                     if (string.IsNullOrEmpty(item.Name))
                     {
-                        throw new ArgumentException("VaribleItem Name  can't be null! zoneName=" + zoneName + ", VaribleItem.Id=" + item.Id);
-                    }
-                    if (item.GroupId > 9998)
-                    {
-                        throw new ArgumentException("VaribleItem GroupId  can't greater than 9999! zoneName=" + zoneName + ", VaribleItem.Id=" + item.Id + ", VaribleItem.Name=" + item.Name);
+                        throw new ArgumentException("procItem Name  can't be null! " + zoneOrFunctionName + "=" + zoneOrFuncName + ", procItem.Id=" + item.Id);
                     }
                     if (!string.IsNullOrEmpty(item.Name))
                     {
-                        var sameIdVars = varItems.FindAll(x => x.Id == item.Id);
-                        if (sameIdVars.Count > 1)
-                        {
-                            throw new ArgumentException("VaribleItem can't have duplicated Id! zonaName=" + zoneName + ", VaribleItem.Id=" + item.Id + ", VaribleItem.Name=" + item.Name);
-                        }
+                        //var sameIdVars = procItems.FindAll(x => x.Id == item.Id);
+                        //if (sameIdVars.Count > 1)
+                        //{
+                        //    throw new ArgumentException("procItem can't have duplicated Id! " + zoneOrFunctionName + "=" + zoneOrFuncName + ", procItem.Id=" + item.Id + ", procItem.Name=" + item.Name);
+                        //}
 
-                        var sameNameVars = varItems.FindAll(x => x.Name == item.Name);
+                        var sameNameVars = procItems.FindAll(x => x.Name == item.Name);
                         if (sameNameVars.Count > 1)
                         {
-                            throw new ArgumentException("VaribleItem can't have duplicated name! zonaName=" + zoneName + ", VaribleItem.Id=" + item.Id + ", VaribleItem.Name=" + item.Name);
+                            throw new ArgumentException("procItem can't have duplicated name! " + zoneOrFunctionName + "=" + zoneOrFuncName + ", procItem.Id=" + item.Id + ", procItem.Name=" + item.Name);
                         }
                     }
 
@@ -214,7 +216,7 @@ namespace Ligg.Winform.Helpers
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("\n>> " + TypeName + ".CheckZoneProcedures Error: " + ex.Message);
+                throw new ArgumentException("\n>> " + TypeName + ".CheckProcedures Error: " + ex.Message);
             }
         }
 
@@ -225,14 +227,20 @@ namespace Ligg.Winform.Helpers
                 foreach (var item in zoneItems)
                 {
                     LayoutHelper.CheckElementName(item.Name);
-                    if (zoneItems.FindAll(x => x.Name == item.Name && ((item.Type != (int)LayoutElementType.VirtualItem))).Count > 1)
+                    if (item.Name.IsNullOrEmpty())
                     {
-                        throw new ArgumentException("ZoneItem can't have duplicated name! zonaName=" + zoneName + ", item.Id=" + item.Id + ", item.Name=" + item.Name);
+                        throw new ArgumentException("ZoneItem name can't be empty! zoneName=" + zoneName + ", item.Id=" + item.Id + ", item.Name=" + item.Name);
                     }
-                    if (zoneItems.FindAll(x => x.Id == item.Id).Count > 1)
+
+                    if (zoneItems.FindAll(x => x.Name == item.Name).Count > 1)
                     {
-                        throw new ArgumentException("ZoneItem can't have duplicated Id! zonaName=" + zoneName + ", item.Id=" + item.Id + ", item.Name=" + item.Name);
+                        throw new ArgumentException("ZoneItem can't have duplicated name! zoneName=" + zoneName + ", item.Id=" + item.Id + ", item.Name=" + item.Name);
                     }
+
+                    //if (zoneItems.FindAll(x => x.Id == item.Id).Count > 1)
+                    //{
+                    //    throw new ArgumentException("ZoneItem can't have duplicated Id! zonaName=" + zoneName + ", item.Id=" + item.Id + ", item.Name=" + item.Name);
+                    //}
                 }
             }
             catch (Exception ex)
@@ -241,17 +249,11 @@ namespace Ligg.Winform.Helpers
             }
         }
 
-        public static string GetControlDisplayName(bool supportMutiLangs, string className, string ctrlName, List<Annex> annexes, string defDisplayName)
+        public static string GetControlDisplayName(bool supportMultiLangs, string className, string ctrlName, List<Annex> annexes, string defDisplayName)
         {
             try
             {
-                if (defDisplayName.IsNullOrEmpty())
-                {
-                    //if (!ctrlName.Contains("_")) defDisplayName = ctrlName;
-                    //else defDisplayName = ctrlName.GetLastSeparatedString('_');
-                }
-
-                if (supportMutiLangs)
+                if (supportMultiLangs)
                 {
                     var text = AnnexHelper.GetText(className, ctrlName, annexes, AnnexTextType.DisplayName, CultureHelper.CurrentLanguageCode, GetAnnexMode.OnlyByCurLang);
                     if (text.IsNullOrEmpty()) text = defDisplayName;
@@ -306,7 +308,7 @@ namespace Ligg.Winform.Helpers
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("\n>> " + TypeName + ".CheckLayoutElements Error: " + ex.Message);
+                throw new ArgumentException("\n>> " + TypeName + ".CheckElementName Error: " + ex.Message);
             }
         }
 

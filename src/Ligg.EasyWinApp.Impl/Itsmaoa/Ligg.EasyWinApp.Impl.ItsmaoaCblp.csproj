@@ -53,6 +53,7 @@
     <Compile Include="AdapterGetHelper.cs" />
     <Compile Include="Adapter.cs" />
     <Compile Include="Configuration.cs" />
+    <Compile Include="DataModel\LogonResult.cs" />
     <Compile Include="DataModel\OrganizationSetting.cs" />
     <Compile Include="DataModel\Enums\NetworkDistance.cs" />
     <Compile Include="DataModel\NetworkLocation.cs" />
@@ -63,20 +64,20 @@
     <Compile Include="Services\JobService.cs" />
     <Compile Include="Services\CommonService.cs" />
     <Compile Include="Services\UserService.cs" />
-    <Compile Include="Services\WinConfigService.cs" />
+    <Compile Include="Services\WinChgConfigGroupService.cs" />
     <Compile Include="Services\NetworkLocationService.cs" />
     <Compile Include="Services\RunAsAdminAccountService.cs" />
     <Compile Include="Services\ServerConnectionService.cs" />
     <Compile Include="RunningParams.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Components\Ligg.Base\Ligg.Base.csproj">
-      <Project>{a4e7d6fd-6616-43b5-b197-63a12108f8f3}</Project>
-      <Name>Ligg.Base</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Components\Ligg.Utility\Admin\Ligg.Utility.Admin.csproj">
+    <ProjectReference Include="..\..\Ligg.Base.Utilities\Admin\Ligg.Utility.Admin.csproj">
       <Project>{e2f0ddb1-2f25-41fe-bb98-516e9675bdb7}</Project>
       <Name>Ligg.Utility.Admin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Ligg.Base\Ligg.Base.csproj">
+      <Project>{03156678-2912-4405-b2bc-b2a091054588}</Project>
+      <Name>Ligg.Base</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Ligg.EasyWinApp.ImplInterface\Ligg.EasyWinApp.ImplInterface.csproj">
       <Project>{46727cbd-db04-4733-88d0-4c1d7d2792fb}</Project>

@@ -12,29 +12,16 @@ namespace Ligg.EasyWinApp.Implementation.Services
 {
     internal class NetworkLocationService
     {
-        internal void InitData()
-        {
-            try
-            {
-                if (NetworkLocationServiceData.NetworkLocations == null)
-                {
-                    NetworkLocationServiceData.Init();
-                }
-
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".InitData Error: " + ex.Message);
-            }
-        }
-
-        internal void InitCurrentNetworkLocation()
+        internal void Init()
         {
             try
             {
                 InitData();
-                if (RunningParams.CurrentNetworkLocationStatus == UniversalStatus.Unknown) RefreshCurrentNetworkLocation();
-                RunningParams.ChosenNetworkLocation = RunningParams.CurrentNetworkLocation;
+                if (RunningParams.CurrentNetworkLocationStatus == UniversalStatus.Unknown)
+                {
+                    RefreshCurrentNetworkLocation();
+                    RunningParams.ChosenNetworkLocation = RunningParams.CurrentNetworkLocation;
+                }
             }
             catch (Exception ex)
             {
@@ -105,6 +92,22 @@ namespace Ligg.EasyWinApp.Implementation.Services
                 throw new ArgumentException("\n>> " + GetType().FullName + ".RefreshNetworkDistance Error: " + ex.Message);
             }
         }
+
+        private void InitData()
+        {
+            try
+            {
+                if (NetworkLocationServiceData.NetworkLocations == null)
+                {
+                    NetworkLocationServiceData.Init();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("\n>> " + GetType().FullName + ".InitData Error: " + ex.Message);
+            }
+        }
     }
 
     internal static class NetworkLocationServiceData
@@ -116,7 +119,7 @@ namespace Ligg.EasyWinApp.Implementation.Services
         {
             try
             {
-                var xmlPath = Configuration.DataDir + "\\NetworkLocationSettings";
+                var xmlPath = Configuration.DataDir + "\\NetworkLocationsSetting";
                 var xmlMgr = new XmlHandler(xmlPath);
                 NetworkLocationServiceData.NetworkLocations = xmlMgr.ConvertToObject<List<NetworkLocation>>();
             }

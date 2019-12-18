@@ -9,12 +9,12 @@ using Ligg.Base.DataModel.Enums;
 using Ligg.Base.Extension;
 using Ligg.Base.Handlers;
 using Ligg.Base.Helpers;
-using Ligg.Winform.DataModel;
-using Ligg.Winform.DataModel.Enums;
-using Ligg.Winform.Helpers;
-using Ligg.Winform.Resources;
+using Ligg.WinForm.DataModel;
+using Ligg.WinForm.DataModel.Enums;
+using Ligg.WinForm.Helpers;
+using Ligg.WinForm.Resources;
 
-namespace Ligg.Winform.Forms
+namespace Ligg.WinForm.Forms
 {
     public partial class BaseForm : GroundForm
     {
@@ -55,26 +55,26 @@ namespace Ligg.Winform.Forms
         //#proc
         protected void InitBaseComponent()
         {
-            RunningMessageSection.BackColor = StyleSet.GroundColor;
-            RunningMessageSection.StyleType = Ligg.Winform.Controls.ContainerPanel.ContainerPanelStyle.Borders;
+            RunningMessageSection.BackColor = StyleSheet.GroundColor;
+            RunningMessageSection.StyleType = Ligg.WinForm.Controls.ContainerPanel.ContainerPanelStyle.Borders;
             RunningMessageSection.RoundStyle = RoundStyle.None;
             RunningMessageSection.Radius = 0;
             RunningMessageSection.BorderWidthOnLeft = 0;
             RunningMessageSection.BorderWidthOnTop = 1;
             RunningMessageSection.BorderWidthOnRight = 0;
             RunningMessageSection.BorderWidthOnBottom = 0;
-            RunningMessageSection.BorderColor = StyleSet.ControlBorderColor;
+            RunningMessageSection.BorderColor = StyleSheet.ControlBorderColor;
             RunningMessageSection.Padding = new Padding(2);
 
-            RunningStatusSection.BackColor = StyleSet.RunningStatusSectionBackColor;
-            RunningStatusSection.StyleType = Ligg.Winform.Controls.ContainerPanel.ContainerPanelStyle.Borders;
+            RunningStatusSection.BackColor = StyleSheet.RunningStatusSectionBackColor;
+            RunningStatusSection.StyleType = Ligg.WinForm.Controls.ContainerPanel.ContainerPanelStyle.Borders;
             RunningStatusSection.RoundStyle = RoundStyle.None;
             RunningStatusSection.Radius = 0;
             RunningStatusSection.BorderWidthOnLeft = 0;
             RunningStatusSection.BorderWidthOnTop = 1;
             RunningStatusSection.BorderWidthOnRight = 0;
             RunningStatusSection.BorderWidthOnBottom = 0;
-            RunningStatusSection.BorderColor = StyleSet.ControlBorderColor;
+            RunningStatusSection.BorderColor = StyleSheet.ControlBorderColor;
 
             RunningStatusSectionMsgRegionLabelMsg.Text = WinformRes.Ready;
             RunningStatusSectionMsgRegionLabelMsg2.Text = "";
@@ -83,13 +83,13 @@ namespace Ligg.Winform.Forms
 
             RunningStatusSectionBackgroundTaskRegion.Visible = false;
             RunningStatusSectionBackgroundTaskRegionProgressCircleZone.Width = 0;
-            RunningStatusSectionBackgroundTaskRegionProgressCircle.BaseColor = StyleSet.BaseColor;
-            RunningStatusSectionBackgroundTaskRegionProgressCircle.Location = new System.Drawing.Point(1, 1);
-            RunningStatusSectionBackgroundTaskRegionProgressCircle.RingThickness = 1;
-            RunningStatusSectionBackgroundTaskRegionProgressCircle.Size = new System.Drawing.Size(BackgroundTaskProgressCircleSize, BackgroundTaskProgressCircleSize);
-            RunningStatusSectionBackgroundTaskRegionProgressCircle.SpokeNumber = 10;
-            RunningStatusSectionBackgroundTaskRegionProgressCircle.SpokeThickness = 3;
-            RunningStatusSectionBackgroundTaskRegionProgressCircle.Stop();
+            //RunningStatusSectionBackgroundTaskRegionProgressCircle.BaseColor = StyleSet.BaseColor;
+            //RunningStatusSectionBackgroundTaskRegionProgressCircle.Location = new System.Drawing.Point(1, 1);
+            //RunningStatusSectionBackgroundTaskRegionProgressCircle.RingThickness = 1;
+            //RunningStatusSectionBackgroundTaskRegionProgressCircle.Size = new System.Drawing.Size(BackgroundTaskProgressCircleSize, BackgroundTaskProgressCircleSize);
+            //RunningStatusSectionBackgroundTaskRegionProgressCircle.SpokeNumber = 10;
+            //RunningStatusSectionBackgroundTaskRegionProgressCircle.SpokeThickness = 3;
+            //RunningStatusSectionBackgroundTaskRegionProgressCircle.Stop();
             RunningStatusSectionBackgroundTaskRegionImageTextButton.Text = BackgroundTaskImageTextButtonText + @" 0/0";
             BackgroundTaskDetailLabel.Text = BackgroundTaskInfoLabelText;
         }
@@ -115,10 +115,10 @@ namespace Ligg.Winform.Forms
         //1.command, 2.suceeded, 3.failed
         protected void WriteRunningdMessage(int type, string message)
         {
-            if (type == 1) WriteRunningMessage("# " + message, StyleSet.ColorCommand, true);
-            else if (type == 2) WriteRunningMessage("# " + message, StyleSet.ColorSucceeded, true);
-            else if (type == 3) WriteRunningMessage("# " + message, StyleSet.ColorError, true);
-            else WriteRunningMessage(message, StyleSet.ColorDefault, true);
+            if (type == 1) WriteRunningMessage("# " + message, StyleSheet.ColorCommand, true);
+            else if (type == 2) WriteRunningMessage("# " + message, StyleSheet.ColorSucceeded, true);
+            else if (type == 3) WriteRunningMessage("# " + message, StyleSheet.ColorError, true);
+            else WriteRunningMessage(message, StyleSheet.ColorDefault, true);
         }
 
         protected void WriteRunningMessage(string message, Color color, bool isNewLine)

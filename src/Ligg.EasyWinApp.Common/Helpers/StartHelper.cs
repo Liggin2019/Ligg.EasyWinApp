@@ -29,7 +29,7 @@ namespace Ligg.EasyWinApp.Common.Helpers
             return false;
         }
 
-        public static bool CheckPublishmentValidity()
+        public static bool CheckPublicationValidity()
         {
             return true;
         }
@@ -42,6 +42,11 @@ namespace Ligg.EasyWinApp.Common.Helpers
         public static bool CheckSoftwareVersion()
         {
             return true;
+        }
+
+        public static bool VerifyUserPassword(string userCode, string userPassword)
+        {
+            return CblpDllAdapter.Adapter.Logon(userCode, userPassword);
         }
 
 

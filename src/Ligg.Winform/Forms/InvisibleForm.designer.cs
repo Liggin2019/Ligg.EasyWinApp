@@ -1,4 +1,4 @@
-﻿namespace Ligg.Winform.Forms
+﻿namespace Ligg.WinForm.Forms
 {
     partial class InvisibleForm
     {

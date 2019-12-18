@@ -1,0 +1,35 @@
+<ArrayOfProcedureItem>
+		<ProcedureItem>
+			
+			<Name>IsInitFinished</Name><DisplayName/><TypeName>Variable</TypeName><GroupId>0</GroupId><Formula/>
+			<Value>false</Value><Condition/>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>IsUserMode</Name><TypeName>Variable</TypeName><GroupId>0</GroupId><Formula>#0#</Formula>
+			<Value/><Condition/>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>CurrentTaskNo</Name><TypeName>Variable</TypeName><GroupId>1</GroupId><Formula>=Calc;Add;#CurrentTaskNo.v#;1</Formula>
+			<Value>0</Value><Condition>#IsInitFinished.v#</Condition>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>ActionDesName</Name><TypeName>Variable</TypeName><GroupId>1</GroupId><Formula>=Combine;ProgressBarActionDes,#CurrentTaskNo.v#</Formula>
+			<Value/><Condition>#IsInitFinished.v#</Condition>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>ProgressValueTmp</Name><TypeName>Variable</TypeName><GroupId>1</GroupId><Formula>=Calc;Div;#CurrentTaskNo.v#;3</Formula>
+			<Value/><Condition>#IsInitFinished.v#</Condition>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>ProgressValueTmp1</Name><TypeName>Variable</TypeName><GroupId>1</GroupId><Formula>=Calc;Mtp;#ProgressValueTmp.v#;100</Formula>
+			<Value/><Condition>#IsInitFinished.v#</Condition>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>ProgressValue</Name><TypeName>Variable</TypeName><GroupId>1</GroupId><Formula>=Calc;Rnd;#ProgressValueTmp1.v#</Formula>
+			<Value/><Condition>#IsInitFinished.v#</Condition>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>SetInitFinished</Name><DisplayName/><TypeName>Action</TypeName><GroupId>2</GroupId><Formula>SetProcedureVariableValue;#IsInitFinished#;true</Formula>
+			<Value/><Condition/>
+		</ProcedureItem>
+</ArrayOfProcedureItem>

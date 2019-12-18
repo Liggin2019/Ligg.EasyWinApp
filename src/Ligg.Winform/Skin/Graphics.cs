@@ -2,7 +2,7 @@
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 
-namespace Ligg.Winform.Skin
+namespace Ligg.WinForm.Skin
 {
     public class InterpolationModeGraphics : IDisposable
     {

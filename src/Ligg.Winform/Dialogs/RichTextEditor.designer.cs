@@ -1,6 +1,6 @@
-﻿using Ligg.Winform.Resources;
+﻿using Ligg.WinForm.Resources;
 
-namespace Ligg.Winform.Dialogs
+namespace Ligg.WinForm.Dialogs
 {
     partial class RichTextViewer
     {
@@ -50,7 +50,7 @@ namespace Ligg.Winform.Dialogs
             this.toolStripButtonSortDescend = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.richTextBoxContent = new System.Windows.Forms.RichTextBox();
-            this.containerPanelMsg = new Ligg.Winform.Controls.ContainerPanel();
+            this.containerPanelMsg = new Ligg.WinForm.Controls.ContainerPanel();
             this.labelMsgFind = new System.Windows.Forms.Label();
             this.labelMsgLine = new System.Windows.Forms.Label();
             this.GroundPanel.SuspendLayout();
@@ -99,7 +99,7 @@ namespace Ligg.Winform.Dialogs
             this.toolStripButtonOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonOpen.Name = "toolStripButtonOpen";
             this.toolStripButtonOpen.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonOpen.Text = global::Ligg.Winform.Resources.WinformRes.OpenTextFile;
+            this.toolStripButtonOpen.Text = global::Ligg.WinForm.Resources.WinformRes.OpenTextFile;
             this.toolStripButtonOpen.Click += new System.EventHandler(this.toolStripButtonOpen_Click);
             // 
             // toolStripButtonSave
@@ -109,7 +109,7 @@ namespace Ligg.Winform.Dialogs
             this.toolStripButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonSave.Name = "toolStripButtonSave";
             this.toolStripButtonSave.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonSave.Text = global::Ligg.Winform.Resources.WinformRes.Save;
+            this.toolStripButtonSave.Text = global::Ligg.WinForm.Resources.WinformRes.Save;
             this.toolStripButtonSave.Click += new System.EventHandler(this.toolStripButtonSave_Click);
             // 
             // toolStripButtonSaveAs
@@ -119,7 +119,7 @@ namespace Ligg.Winform.Dialogs
             this.toolStripButtonSaveAs.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonSaveAs.Name = "toolStripButtonSaveAs";
             this.toolStripButtonSaveAs.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonSaveAs.Text = global::Ligg.Winform.Resources.WinformRes.SaveAs;
+            this.toolStripButtonSaveAs.Text = global::Ligg.WinForm.Resources.WinformRes.SaveAs;
             this.toolStripButtonSaveAs.Click += new System.EventHandler(this.toolStripButtonSaveAs_Click);
             // 
             // toolStripSeparator1
@@ -134,7 +134,7 @@ namespace Ligg.Winform.Dialogs
             this.toolStripButtonZoomIn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonZoomIn.Name = "toolStripButtonZoomIn";
             this.toolStripButtonZoomIn.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonZoomIn.Text = global::Ligg.Winform.Resources.WinformRes.ZoomIn;
+            this.toolStripButtonZoomIn.Text = global::Ligg.WinForm.Resources.WinformRes.ZoomIn;
             this.toolStripButtonZoomIn.Click += new System.EventHandler(this.toolStripButtonZoomIn_Click);
             // 
             // toolStripButtonZoomOut
@@ -144,7 +144,7 @@ namespace Ligg.Winform.Dialogs
             this.toolStripButtonZoomOut.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonZoomOut.Name = "toolStripButtonZoomOut";
             this.toolStripButtonZoomOut.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonZoomOut.Text = global::Ligg.Winform.Resources.WinformRes.ZoomOut;
+            this.toolStripButtonZoomOut.Text = global::Ligg.WinForm.Resources.WinformRes.ZoomOut;
             this.toolStripButtonZoomOut.Click += new System.EventHandler(this.toolStripButtonZoomOut_Click);
             // 
             // toolStripSeparator5
@@ -174,7 +174,7 @@ namespace Ligg.Winform.Dialogs
             this.toolStripButtonClear.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonClear.Name = "toolStripButtonClear";
             this.toolStripButtonClear.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonClear.Text = global::Ligg.Winform.Resources.WinformRes.Clear;
+            this.toolStripButtonClear.Text = global::Ligg.WinForm.Resources.WinformRes.Clear;
             this.toolStripButtonClear.Click += new System.EventHandler(this.toolStripButtonClear_Click);
             // 
             // toolStripButtonSearch
@@ -184,7 +184,7 @@ namespace Ligg.Winform.Dialogs
             this.toolStripButtonSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonSearch.Name = "toolStripButtonSearch";
             this.toolStripButtonSearch.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonSearch.Text = global::Ligg.Winform.Resources.WinformRes.Search;
+            this.toolStripButtonSearch.Text = global::Ligg.WinForm.Resources.WinformRes.Search;
             this.toolStripButtonSearch.Click += new System.EventHandler(this.toolStripButtonSearch_Click);
             // 
             // toolStripButtonFind
@@ -194,7 +194,7 @@ namespace Ligg.Winform.Dialogs
             this.toolStripButtonFind.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonFind.Name = "toolStripButtonFind";
             this.toolStripButtonFind.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonFind.Text = global::Ligg.Winform.Resources.WinformRes.Find;
+            this.toolStripButtonFind.Text = global::Ligg.WinForm.Resources.WinformRes.Find;
             this.toolStripButtonFind.Click += new System.EventHandler(this.toolStripButtonFind_Click);
             // 
             // toolStripSeparator2
@@ -209,7 +209,7 @@ namespace Ligg.Winform.Dialogs
             this.toolStripButtonRestore.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonRestore.Name = "toolStripButtonRestore";
             this.toolStripButtonRestore.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonRestore.Text = global::Ligg.Winform.Resources.WinformRes.RestoreOriginalContent;
+            this.toolStripButtonRestore.Text = global::Ligg.WinForm.Resources.WinformRes.RestoreOriginalContent;
             this.toolStripButtonRestore.Click += new System.EventHandler(this.toolStripButtonRestore_Click);
             // 
             // toolStripButtonSortAscend
@@ -219,7 +219,7 @@ namespace Ligg.Winform.Dialogs
             this.toolStripButtonSortAscend.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonSortAscend.Name = "toolStripButtonSortAscend";
             this.toolStripButtonSortAscend.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonSortAscend.Text = global::Ligg.Winform.Resources.WinformRes.SortByAscending;
+            this.toolStripButtonSortAscend.Text = global::Ligg.WinForm.Resources.WinformRes.SortByAscending;
             this.toolStripButtonSortAscend.Click += new System.EventHandler(this.toolStripButtonSortAscend_Click);
             // 
             // toolStripButtonSortDescend
@@ -229,7 +229,7 @@ namespace Ligg.Winform.Dialogs
             this.toolStripButtonSortDescend.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonSortDescend.Name = "toolStripButtonSortDescend";
             this.toolStripButtonSortDescend.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonSortDescend.Text = global::Ligg.Winform.Resources.WinformRes.SortByDescending;
+            this.toolStripButtonSortDescend.Text = global::Ligg.WinForm.Resources.WinformRes.SortByDescending;
             this.toolStripButtonSortDescend.Click += new System.EventHandler(this.toolStripButtonSortDescend_Click);
             // 
             // toolStripSeparator4
@@ -262,7 +262,7 @@ namespace Ligg.Winform.Dialogs
             this.containerPanelMsg.Name = "containerPanelMsg";
             this.containerPanelMsg.Radius = 4;
             this.containerPanelMsg.Size = new System.Drawing.Size(765, 24);
-            this.containerPanelMsg.StyleType = Ligg.Winform.Controls.ContainerPanel.ContainerPanelStyle.Borders;
+            this.containerPanelMsg.StyleType = Ligg.WinForm.Controls.ContainerPanel.ContainerPanelStyle.Borders;
             this.containerPanelMsg.TabIndex = 3;
             // 
             // labelMsgFind
@@ -334,7 +334,7 @@ namespace Ligg.Winform.Dialogs
         private System.Windows.Forms.ToolStripButton toolStripButtonExportToExcel;
         private System.Windows.Forms.ToolStripButton toolStripButtonSaveAs;
         public System.Windows.Forms.RichTextBox richTextBoxContent;
-        private Ligg.Winform.Controls.ContainerPanel containerPanelMsg;
+        private Ligg.WinForm.Controls.ContainerPanel containerPanelMsg;
         private System.Windows.Forms.Label labelMsgFind;
         private System.Windows.Forms.Label labelMsgLine;
     }

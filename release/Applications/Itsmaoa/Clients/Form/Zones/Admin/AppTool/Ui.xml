@@ -1,0 +1,170 @@
+<ArrayOfZoneItem>
+	<ZoneItem>
+			
+			<Name>Row10</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName>
+			
+			<StyleClass/><DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>44</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>NotePad</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row10</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName>
+			
+			<StyleClass>Button</StyleClass><DisplayName>NotePad</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>ExecCmd;%systemdirectory%\NotePad.exe;2</Action>
+			
+			
+			<OffsetOrPositionX>200</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width>
+			<Height>33</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Cacl</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row10</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>Caculator</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>ExecCmd;%systemdirectory%\Calc.exe;2</Action>
+			
+			
+			<OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width><Height>33</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>ScreenShoter</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row10</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>Screen Shoter</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action></Action>
+			
+			
+			<OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width><Height>33</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>ScreenShoter-Xrun1</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row10</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>MinimizeForm</Action>
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width><Height>-1</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>ScreenShoter-Xrun2</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row10</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>RunCmd;\Tools\screener\screener.exe;;2</Action>
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width><Height>-1</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>ScreenShoter-Xrun3</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row10</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>ShowForm</Action>
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width><Height>-1</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Row20</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>44</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>VideoPlayer</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row20</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>Video Player</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>RunCmd;\Tools\vlc\vlc.exe;;2</Action>
+			
+			
+			<OffsetOrPositionX>200</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width>
+			<Height>33</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>AudioPlayer</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row20</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>Audio Player</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>RunCmd;\Tools\Winamp\winamp.exe;;2</Action>
+			
+			
+			<OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width><Height>33</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>TextEditor</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row20</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>Text Editor</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>RunCmd;\Tools\Notepad++\Notepad++.exe;;2</Action>
+			
+			
+			<OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width><Height>33</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem>
+</ArrayOfZoneItem>

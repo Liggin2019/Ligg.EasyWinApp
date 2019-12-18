@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Ligg.Winform.Helpers;
+using Ligg.WinForm.Helpers;
 
-namespace Ligg.Winform.Controls
+namespace Ligg.WinForm.Controls
 {
     public partial class StatusLight : UserControl
     {
@@ -12,46 +12,47 @@ namespace Ligg.Winform.Controls
             InitializeComponent();
         }
 
-        private string _title;
-        public string Title
+        public event EventHandler OnLightClick;
+
+        private string _text;
+        public override string Text
         {
-            get { return _title; }
+            get => _text;
             set
             {
                 if (!string.IsNullOrEmpty(value))
                 {
-                    _title = value;
+                    _text = value;
                     label1.Text = value;
                 }
                 else
                 {
-                    _title = "";
+                    _text = "";
                     label1.Text = "";
                 }
-                    
             }
         }
 
-        private string _value;
-        public string Value
+        private Int16 _value;
+        public Int16 Value
         {
-            get { return _value; }
+            get => _value;
             set
             {
                 var prevValue = _value;
                 _value = value;
-                if(prevValue!=value)
+                if (prevValue != value)
                 {
                     this.Refresh();
                 }
             }
         }
 
-        public  string LabelStyle
+        public string LabelStyle
         {
             set
             {
-                if(!string.IsNullOrEmpty(value))
+                if (!string.IsNullOrEmpty(value))
                 {
                     ControlHelper.SetControlBackColor(label1, value);
                     ControlHelper.SetControlForeColor(label1, value);
@@ -61,27 +62,23 @@ namespace Ligg.Winform.Controls
             }
         }
 
-        private void OkIndicator_Load(object sender, EventArgs e)
+        private void StatusLight_Load(object sender, EventArgs e)
         {
-            //pictureBox1.Width = Height;
-            //label1.Location = new Point(pictureBox1.Width + 2, 0);
-            //label1.Width = Width - pictureBox1.Width - 2;
-            //label1.Height = Height;
         }
 
-        private void OkIndicator_Paint(object sender, PaintEventArgs e)
+        private void StatusLight_Paint(object sender, PaintEventArgs e)
         {
             pictureBox1.Width = Height;
             label1.Width = Width - pictureBox1.Width - 2;
             label1.Height = Height;
             label1.Location = new Point(pictureBox1.Width + 2, 0);
 
-            if (_value == "true" | _value == "True" | _value == "1")
+            if (_value ==1)
             {
                 pictureBox1.BackgroundImage = imageList1.Images[1];
                 //pictureBox1.Image = imageList1.Images[1];
             }
-            else if (_value == "false" | _value == "False" | _value == "0")
+            else if (_value ==0)
             {
                 pictureBox1.BackgroundImage = imageList1.Images[2];
                 //pictureBox1.Image = imageList1.Images[3];
@@ -91,6 +88,11 @@ namespace Ligg.Winform.Controls
                 pictureBox1.BackgroundImage = imageList1.Images[0];
                 //pictureBox1.Image = imageList1.Images[0];
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            OnLightClick?.Invoke(this,null);
         }
     }
 }

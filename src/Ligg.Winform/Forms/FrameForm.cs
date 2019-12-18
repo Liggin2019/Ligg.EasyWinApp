@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Ligg.Winform.DataModel.Enums;
-using Ligg.Winform.Resources;
+using Ligg.WinForm.DataModel.Enums;
+using Ligg.WinForm.Resources;
 
-namespace Ligg.Winform.Forms
+namespace Ligg.WinForm.Forms
 {
     public partial class FrameForm : BaseForm
     {
@@ -81,81 +81,81 @@ namespace Ligg.Winform.Forms
         //#proc
         private void InitFrameComponent()
         {
-            GroundPanel.BackColor = StyleSet.GroundColor;
+            GroundPanel.BackColor = StyleSheet.GroundColor;
 
-            MainMenuSection.BackColor = StyleSet.GroundColor;
-            MainMenuSection.StyleType = Ligg.Winform.Controls.ContainerPanel.ContainerPanelStyle.None;
+            MainMenuSection.BackColor = StyleSheet.GroundColor;
+            MainMenuSection.StyleType = Ligg.WinForm.Controls.ContainerPanel.ContainerPanelStyle.None;
             MainMenuSection.RoundStyle = RoundStyle.None;
             MainMenuSection.Radius = 0;
             MainMenuSection.BorderWidthOnLeft = 0;
             MainMenuSection.BorderWidthOnTop = 0;
             MainMenuSection.BorderWidthOnRight = 0;
             MainMenuSection.BorderWidthOnBottom = 1;
-            MainMenuSection.BorderColor = StyleSet.ControlBorderColor;
+            MainMenuSection.BorderColor = StyleSheet.ControlBorderColor;
             MainMenuSection.Padding = new Padding(2);
 
-            ToolBarSection.BackColor = StyleSet.BaseColor;
-            ToolBarSection.StyleType = Ligg.Winform.Controls.ContainerPanel.ContainerPanelStyle.None;
+            ToolBarSection.BackColor = StyleSheet.BaseColor;
+            ToolBarSection.StyleType = Ligg.WinForm.Controls.ContainerPanel.ContainerPanelStyle.None;
             ToolBarSection.RoundStyle = RoundStyle.None;
             ToolBarSection.Radius = 0;
             ToolBarSection.BorderWidthOnLeft = 0;
             ToolBarSection.BorderWidthOnTop = 0;
             ToolBarSection.BorderWidthOnRight = 0;
             ToolBarSection.BorderWidthOnBottom = 0;
-            ToolBarSection.BorderColor = StyleSet.ControlBorderColor;
+            ToolBarSection.BorderColor = StyleSheet.ControlBorderColor;
             ToolBarSection.Padding = new Padding(2);
-            ToolBarSectionPublicRegionToolStrip.BackColor = StyleSet.BaseColor;
-            ToolBarSectionLeftRegion.BackColor = StyleSet.BaseColor;
+            ToolBarSectionPublicRegionToolStrip.BackColor = StyleSheet.BaseColor;
+            ToolBarSectionLeftRegion.BackColor = StyleSheet.BaseColor;
 
-            NavigationSection.BackColor = StyleSet.NavigationSectionBackColor;
-            NavigationSection.StyleType = Ligg.Winform.Controls.ContainerPanel.ContainerPanelStyle.Borders;
+            NavigationSection.BackColor = StyleSheet.NavigationSectionBackColor;
+            NavigationSection.StyleType = Ligg.WinForm.Controls.ContainerPanel.ContainerPanelStyle.Borders;
             NavigationSection.RoundStyle = RoundStyle.None;
             NavigationSection.Radius = 0;
             NavigationSection.BorderWidthOnLeft = 0;
             NavigationSection.BorderWidthOnTop = 0;
             NavigationSection.BorderWidthOnRight = 0;
             NavigationSection.BorderWidthOnBottom = 1;
-            NavigationSection.BorderColor = StyleSet.ControlBorderColor;
+            NavigationSection.BorderColor = StyleSheet.ControlBorderColor;
             NavigationSection.Padding = new Padding(2);
 
-            NavigationSectionLeftRegion.BackColor = StyleSet.NavigationSectionBackColor;
-            NavigationSectionRightRegion.BackColor = StyleSet.NavigationSectionBackColor;
+            NavigationSectionLeftRegion.BackColor = StyleSheet.NavigationSectionBackColor;
+            NavigationSectionRightRegion.BackColor = StyleSheet.NavigationSectionBackColor;
 
-            ShortcutSection.BackColor = StyleSet.ShortcutSectionBackColor;
-            ShortcutSection.StyleType = Ligg.Winform.Controls.ContainerPanel.ContainerPanelStyle.Borders;
+            ShortcutSection.BackColor = StyleSheet.ShortcutSectionBackColor;
+            ShortcutSection.StyleType = Ligg.WinForm.Controls.ContainerPanel.ContainerPanelStyle.Borders;
             ShortcutSection.RoundStyle = RoundStyle.None;
             ShortcutSection.Radius = 0;
             ShortcutSection.BorderWidthOnLeft = 0;
             ShortcutSection.BorderWidthOnTop = 0;
             ShortcutSection.BorderWidthOnRight = 0;
             ShortcutSection.BorderWidthOnBottom = 1;
-            ShortcutSection.BorderColor = StyleSet.ControlBorderColor;
+            ShortcutSection.BorderColor = StyleSheet.ControlBorderColor;
             ShortcutSection.Padding = new Padding(2);
 
-            ShortcutSectionLeftRegion.BackColor = StyleSet.ShortcutSectionBackColor;
-            ShortcutSectionRightRegion.BackColor = StyleSet.ShortcutSectionBackColor;
+            ShortcutSectionLeftRegion.BackColor = StyleSheet.ShortcutSectionBackColor;
+            ShortcutSectionRightRegion.BackColor = StyleSheet.ShortcutSectionBackColor;
 
-            MainSection.BackColor = StyleSet.GroundColor;
-            MainSection.StyleType = Ligg.Winform.Controls.ContainerPanel.ContainerPanelStyle.Borders;
+            MainSection.BackColor = StyleSheet.GroundColor;
+            MainSection.StyleType = Ligg.WinForm.Controls.ContainerPanel.ContainerPanelStyle.Borders;
             MainSection.RoundStyle = RoundStyle.None;
             MainSection.Radius = 0;
             MainSection.BorderWidthOnLeft = 0;
             MainSection.BorderWidthOnTop = 0;
             MainSection.BorderWidthOnRight = 0;
             MainSection.BorderWidthOnBottom = 1;
-            MainSection.BorderColor = StyleSet.ControlBorderColor;
+            MainSection.BorderColor = StyleSheet.ControlBorderColor;
             MainSection.Padding = new Padding(2);
 
-            MainSectionLeftNavDivision.BackColor = StyleSet.MainSectionLeftNavDivisionBackColor;
-            MainSectionLeftNavDivisionUpRegion.BackColor = StyleSet.MainSectionLeftNavDivisionBackColor;
-            MainSectionLeftNavDivisionMidRegion.BackColor = StyleSet.MainSectionLeftNavDivisionBackColor;
+            MainSectionLeftNavDivision.BackColor = StyleSheet.MainSectionLeftNavDivisionBackColor;
+            MainSectionLeftNavDivisionUpRegion.BackColor = StyleSheet.MainSectionLeftNavDivisionBackColor;
+            MainSectionLeftNavDivisionMidRegion.BackColor = StyleSheet.MainSectionLeftNavDivisionBackColor;
 
-            MainSectionRightNavDivision.BackColor = StyleSet.MainSectionRightNavDivisionBackColor;
-            MainSectionRightNavDivisionUpRegion.BackColor = StyleSet.MainSectionRightNavDivisionBackColor;
-            MainSectionRightNavDivisionMidRegion.BackColor = StyleSet.MainSectionRightNavDivisionBackColor;
-            MainSectionSplitter.BackColor = StyleSet.ControlBorderColor;
+            MainSectionRightNavDivision.BackColor = StyleSheet.MainSectionRightNavDivisionBackColor;
+            MainSectionRightNavDivisionUpRegion.BackColor = StyleSheet.MainSectionRightNavDivisionBackColor;
+            MainSectionRightNavDivisionMidRegion.BackColor = StyleSheet.MainSectionRightNavDivisionBackColor;
+            MainSectionSplitter.BackColor = StyleSheet.ControlBorderColor;
 
-            MainSectionHorizontalResizeDivision.BackColor = StyleSet.MainSectionHorizontalResizeDivisionBackColor;
+            MainSectionHorizontalResizeDivision.BackColor = StyleSheet.MainSectionHorizontalResizeDivisionBackColor;
             HorizontalResizeButton.Size = new Size(6, 50);
         }
 

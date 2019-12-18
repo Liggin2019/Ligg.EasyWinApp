@@ -195,7 +195,7 @@ namespace Ligg.Base.Extension
         }
 
         //#join
-        public static string JoinByStringArray(String[] strArry, char separator)
+        public static string JoinStringArrayBySeparator(String[] strArry, char separator)
         {
             string str = "";
             if (strArry == null) return string.Empty;

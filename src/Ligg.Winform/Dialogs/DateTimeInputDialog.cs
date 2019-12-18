@@ -3,12 +3,12 @@ using System.Drawing;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Windows.Forms;
 using Ligg.Base.Extension;
-using Ligg.Winform.DataModel.Enums;
-using Ligg.Winform.Forms;
-using Ligg.Winform.Helpers;
-using Ligg.Winform.Resources;
+using Ligg.WinForm.DataModel.Enums;
+using Ligg.WinForm.Forms;
+using Ligg.WinForm.Helpers;
+using Ligg.WinForm.Resources;
 
-namespace Ligg.Winform.Dialogs
+namespace Ligg.WinForm.Dialogs
 {
     public partial class DateTimeInputDialog : GroundForm
     {
@@ -16,13 +16,13 @@ namespace Ligg.Winform.Dialogs
         {
             InitializeComponent();
             textButtonOk.Text = WinformRes.Ok;
-            textButtonOk.BackColor = StyleSet.ControlBackColor;
+            textButtonOk.BackColor = StyleSheet.ControlBackColor;
             textButtonOk.HasBorder = true;
             textButtonOk.SensitiveType = ControlSensitiveType.Check;
             textButtonOk.Checked = true;
             Text = WinformRes.PlsInputDateTime;
             textButtonCancel.Text = WinformRes.Cancel;
-            textButtonCancel.BackColor = StyleSet.ControlBackColor;
+            textButtonCancel.BackColor = StyleSheet.ControlBackColor;
             textButtonCancel.HasBorder = true;
             textButtonCancel.SensitiveType = ControlSensitiveType.Check;
 

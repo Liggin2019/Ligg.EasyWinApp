@@ -6,10 +6,10 @@ using Ligg.Base.DataModel;
 using Ligg.Base.DataModel.Enums;
 using Ligg.Base.Handlers;
 using Ligg.Base.Helpers;
-using Ligg.Winform.DataModel;
-using Ligg.Winform.Helpers;
+using Ligg.WinForm.DataModel;
+using Ligg.WinForm.Helpers;
 
-namespace Ligg.Winform.Controls
+namespace Ligg.WinForm.Controls
 {
     public sealed class ToolStripSplitButtonEx : ToolStripSplitButton
     {
@@ -19,7 +19,7 @@ namespace Ligg.Winform.Controls
         //#property
         private List<ContextMenuItem> _menuItems = null;
         private List<Annex> _annexes = null;
-        private bool _supportMutiLanguages;
+        private bool _supportMultiLanguages;
 
         public ControlAction CurrentAction
         {
@@ -32,7 +32,7 @@ namespace Ligg.Winform.Controls
         {
             try
             {
-                _supportMutiLanguages = supportMutiLanguages;
+                _supportMultiLanguages = supportMutiLanguages;
                 var location = FileHelper.GetFileDetailByOption(itemsCfgXmPath, FilePathComposition.Directory);
                 var fileTitle = FileHelper.GetFileDetailByOption(itemsCfgXmPath, FilePathComposition.FileTitle);
                 var contentMenuItemsAnnexesCfgXmlPath = location + "\\" + fileTitle + "Annexes.xml";
@@ -48,7 +48,7 @@ namespace Ligg.Winform.Controls
                 CheckMenuConfigData(_menuItems);
                 if (_menuItems.Count > 0)
                 {
-                    InitComponet(null, -1);
+                    InitComponent(null, -1);
                 }
             }
             catch (Exception ex)
@@ -57,17 +57,17 @@ namespace Ligg.Winform.Controls
             }
         }
 
-        public ToolStripSplitButtonEx(bool supportMutiLanguages, List<ContextMenuItem> items, List<Annex> annexes)
+        public ToolStripSplitButtonEx(bool supportMultiLanguages, List<ContextMenuItem> items, List<Annex> annexes)
         {
             try
             {
-                _supportMutiLanguages = supportMutiLanguages;
+                _supportMultiLanguages = supportMultiLanguages;
                 _menuItems = items;
                 _annexes = annexes;
                 CheckMenuConfigData(_menuItems);
                 if (_menuItems.Count > 0)
                 {
-                    InitComponet(null, -1);
+                    InitComponent(null, -1);
                 }
             }
             catch (Exception ex)
@@ -87,7 +87,7 @@ namespace Ligg.Winform.Controls
             {
                 var curAction = new ControlAction();
                 curAction.Action = menuItem.Action;
-                curAction.DisplayName = LayoutHelper.GetControlDisplayName(_supportMutiLanguages,"", menuItem.Name, _annexes, menuItem.DisplayName);
+                curAction.DisplayName = LayoutHelper.GetControlDisplayName(_supportMultiLanguages, "", menuItem.Name, _annexes, menuItem.DisplayName);
                 CurrentAction = curAction;
                 OnMenuItemClick(this, args);
             }
@@ -101,7 +101,7 @@ namespace Ligg.Winform.Controls
                 foreach (var menuItem in _menuItems)
                 {
                     var menuItemCpnt = this.DropDownItems.Find(menuItem.Name, true);
-                    menuItemCpnt[0].Text = LayoutHelper.GetControlDisplayName(_supportMutiLanguages, "", menuItem.Name, _annexes, menuItem.DisplayName);
+                    menuItemCpnt[0].Text = LayoutHelper.GetControlDisplayName(_supportMultiLanguages, "", menuItem.Name, _annexes, menuItem.DisplayName);
                 }
             }
             catch (Exception ex)
@@ -124,10 +124,10 @@ namespace Ligg.Winform.Controls
                 _annexes = annexes;
             }
 
-            InitComponet(null, -1);//如有image，会报错如ResetEnabled
+            InitComponent(null, -1);//如有image，会报错如ResetEnabled
         }
 
-        private void InitComponet(ToolStripMenuItem toolStripMenuItem, int id)
+        private void InitComponent(ToolStripMenuItem toolStripMenuItem, int id)
         {
             try
             {
@@ -135,24 +135,24 @@ namespace Ligg.Winform.Controls
                 {
                     //Visible
                     bool isCpntVisible = true;
-                    var visibleFlag = menuItem.VisibleFlag;
-                    if (string.IsNullOrEmpty(visibleFlag)) visibleFlag = "true";
-                    isCpntVisible = (visibleFlag.ToLower() == "false" | visibleFlag.ToLower() == "0") ? false : true;
+                    var invisibleFlag = menuItem.InvisibleFlag;
+                    if (string.IsNullOrEmpty(invisibleFlag)) invisibleFlag = "false";
+                    isCpntVisible = (invisibleFlag.ToLower() != "true");
 
                     //Enabled
                     bool isCpntEnabled = true;
-                    var enabledFlag = menuItem.EnabledFlag;
-                    if (string.IsNullOrEmpty(enabledFlag)) enabledFlag = "true";
-                    isCpntEnabled = (enabledFlag.ToLower() == "false" | enabledFlag.ToLower() == "0") ? false : true;
+                    var disabledFlag = menuItem.DisabledFlag;
+                    if (string.IsNullOrEmpty(disabledFlag)) disabledFlag = "false";
+                    isCpntEnabled = (disabledFlag.ToLower() != "true");
 
                     if (menuItem.ControlTypeName == null)
                         menuItem.ControlTypeName = "";
-                    if (menuItem.ControlTypeName.ToLower() != "Seperator".ToLower())
+                    if (menuItem.ControlTypeName.ToLower() != "Separator".ToLower())
                     {
                         var menuItemCpnt = new ToolStripMenuItem();
                         menuItemCpnt.Name = menuItem.Name;
 
-                        menuItemCpnt.Text = LayoutHelper.GetControlDisplayName(_supportMutiLanguages, "", menuItemCpnt.Name, _annexes, menuItem.DisplayName);
+                        menuItemCpnt.Text = LayoutHelper.GetControlDisplayName(_supportMultiLanguages, "", menuItemCpnt.Name, _annexes, menuItem.DisplayName);
                         menuItemCpnt.TextAlign = ContentAlignment.TopCenter;
                         var img1 = ControlHelper.GetImage(menuItem.ImageUrl);
                         if (img1 != null) menuItemCpnt.Image = img1;
@@ -173,14 +173,14 @@ namespace Ligg.Winform.Controls
                         var subMenuItems = _menuItems.FindAll(x => x.ParentId == item.Id);
                         if (subMenuItems.Count > 0)
                         {
-                            InitComponet(menuItemCpnt, menuItem.Id);
+                            InitComponent(menuItemCpnt, menuItem.Id);
                         }
                         else
                         {
                             menuItemCpnt.Click += new System.EventHandler(toolStripMenuItem_Click);
                         }
                     }
-                    else if (menuItem.ControlTypeName.ToLower().Contains("Seperator".ToLower()))
+                    else if (menuItem.ControlTypeName.ToLower().Contains("Separator".ToLower()))
                     {
                         var menuItemCpnt = new System.Windows.Forms.ToolStripSeparator();
                         menuItemCpnt.Name = menuItem.Name;
@@ -199,7 +199,7 @@ namespace Ligg.Winform.Controls
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("\n>> " + GetType().FullName + "." + "InitComponet Error: " + ex.Message);
+                throw new ArgumentException("\n>> " + GetType().FullName + "." + "InitComponent Error: " + ex.Message);
             }
         }
 

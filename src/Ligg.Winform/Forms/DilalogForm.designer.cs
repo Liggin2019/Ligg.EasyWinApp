@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
-using Ligg.Winform.Controls;
+using Ligg.WinForm.Controls;
 
-namespace Ligg.Winform.Forms
+namespace Ligg.WinForm.Forms
 {
     partial class DilalogForm
     {
@@ -31,7 +31,7 @@ namespace Ligg.Winform.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.MainSection = new Ligg.Winform.Controls.ContainerPanel();
+            this.MainSection = new Ligg.WinForm.Controls.ContainerPanel();
             this.RunningMessageSection.SuspendLayout();
             this.RunningStatusSection.SuspendLayout();
             this.RunningStatusSectionBackgroundTaskRegion.SuspendLayout();
@@ -97,12 +97,12 @@ namespace Ligg.Winform.Forms
             // 
             // RunningStatusSectionBackgroundTaskRegionProgressCircle
             // 
-            this.RunningStatusSectionBackgroundTaskRegionProgressCircle.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(145)))), ((int)(((byte)(242)))));
-            this.RunningStatusSectionBackgroundTaskRegionProgressCircle.Location = new System.Drawing.Point(1, 1);
-            this.RunningStatusSectionBackgroundTaskRegionProgressCircle.RingThickness = 1;
-            this.RunningStatusSectionBackgroundTaskRegionProgressCircle.Size = new System.Drawing.Size(0, 21);
-            this.RunningStatusSectionBackgroundTaskRegionProgressCircle.SpokeNumber = 10;
-            this.RunningStatusSectionBackgroundTaskRegionProgressCircle.SpokeThickness = 3;
+            //this.RunningStatusSectionBackgroundTaskRegionProgressCircle.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(145)))), ((int)(((byte)(242)))));
+            //this.RunningStatusSectionBackgroundTaskRegionProgressCircle.Location = new System.Drawing.Point(1, 1);
+            //this.RunningStatusSectionBackgroundTaskRegionProgressCircle.RingThickness = 1;
+            //this.RunningStatusSectionBackgroundTaskRegionProgressCircle.Size = new System.Drawing.Size(0, 21);
+            //this.RunningStatusSectionBackgroundTaskRegionProgressCircle.SpokeNumber = 10;
+            //this.RunningStatusSectionBackgroundTaskRegionProgressCircle.SpokeThickness = 3;
             // 
             // RunningStatusSectionMsgRegionLabelMsg3
             // 
@@ -134,7 +134,7 @@ namespace Ligg.Winform.Forms
             this.MainSection.Name = "MainSection";
             this.MainSection.Radius = 4;
             this.MainSection.Size = new System.Drawing.Size(916, 590);
-            this.MainSection.StyleType = Ligg.Winform.Controls.ContainerPanel.ContainerPanelStyle.None;
+            this.MainSection.StyleType = Ligg.WinForm.Controls.ContainerPanel.ContainerPanelStyle.None;
             this.MainSection.TabIndex = 12;
             // 
             // ZoneForm

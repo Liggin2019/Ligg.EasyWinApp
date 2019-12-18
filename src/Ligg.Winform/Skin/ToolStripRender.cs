@@ -3,9 +3,9 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using Ligg.Winform.DataModel.Enums;
+using Ligg.WinForm.DataModel.Enums;
 
-namespace Ligg.Winform.Skin
+namespace Ligg.WinForm.Skin
 {
     public class ToolStripRender : ToolStripRenderer
     {
@@ -23,7 +23,7 @@ namespace Ligg.Winform.Skin
             if (toolStrip is ToolStripDropDown)
             {
                 RenderHelper.CreateRegion(toolStrip, bounds);
-                using (SolidBrush brush = new SolidBrush(StyleSet.ToolStripDropDownBackColor))
+                using (SolidBrush brush = new SolidBrush(StyleSheet.ToolStripDropDownBackColor))
                 {
                     g.FillRectangle(brush, bounds);
                 }
@@ -46,7 +46,7 @@ namespace Ligg.Winform.Skin
                 {
                     using (GraphicsPath path = GraphicsHelper.CreatePath(bounds, 8, RoundStyle.All, true))
                     {
-                        using (Pen pen = new Pen(StyleSet.ToolStripDropDownBorderColor))
+                        using (Pen pen = new Pen(StyleSheet.ToolStripDropDownBorderColor))
                         //using (Pen pen = new Pen(Color.Red))
                         {
                             path.Widen(pen);
@@ -61,7 +61,7 @@ namespace Ligg.Winform.Skin
                     using (GraphicsPath innerPath = GraphicsHelper.CreatePath(
                         bounds, 8, RoundStyle.All, true))
                     {
-                        using (Pen pen = new Pen(StyleSet.HeadToolStripItemInnerBorderColor))
+                        using (Pen pen = new Pen(StyleSheet.HeadToolStripItemInnerBorderColor))
                         {
                             graphics.DrawPath(pen, innerPath);
                         }
@@ -108,9 +108,9 @@ namespace Ligg.Winform.Skin
                         path.AddRectangle(rect);
                         using (PathGradientBrush brush = new PathGradientBrush(path))
                         {
-                            brush.CenterColor = StyleSet.ToolStripDropDownPressedCenterColor;
+                            brush.CenterColor = StyleSheet.ToolStripDropDownPressedCenterColor;
                             brush.CenterColor = Color.Red;
-                            brush.SurroundColors = new Color[] { isHeadControl ? StyleSet.HeadToolStripItemPressedBackColor : StyleSet.ControlPressedBackColor };
+                            brush.SurroundColors = new Color[] { isHeadControl ? StyleSheet.HeadToolStripItemPressedBackColor : StyleSheet.ControlPressedBackColor };
                             Blend blend = new Blend();
                             blend.Positions = new float[] { 0f, 0.3f, 1f };
                             blend.Factors = new float[] { 0f, 0.5f, 1f };
@@ -119,12 +119,12 @@ namespace Ligg.Winform.Skin
                         }
                     }
 
-                    using (Pen pen = new Pen(StyleSet.HeadToolStripItemPressedBackColor))
+                    using (Pen pen = new Pen(StyleSheet.HeadToolStripItemPressedBackColor))
                     {
                         graphics.DrawRectangle(pen, rect);
                     }
 
-                    GraphicsHelper.DrawHollowwRectangle(graphics, rect, isHeadControl ? StyleSet.HeadToolStripItemCheckedBorderColor : StyleSet.ControlCheckedBorderColor);
+                    GraphicsHelper.DrawHollowwRectangle(graphics, rect, isHeadControl ? StyleSheet.HeadToolStripItemCheckedBorderColor : StyleSheet.ControlCheckedBorderColor);
                 }
             }
             else
@@ -139,7 +139,7 @@ namespace Ligg.Winform.Skin
             Rectangle rect = e.Item.ContentRectangle;
             Graphics graphics = e.Graphics;
 
-            Color baseColor = StyleSet.HeadToolStripBackColor;
+            Color baseColor = StyleSheet.HeadToolStripBackColor;
 
             if (toolStrip is ToolStripDropDown)
             {
@@ -153,14 +153,14 @@ namespace Ligg.Winform.Skin
                 }
                 rect.Width -= offsetMargin + 4;
 
-                baseColor = StyleSet.ToolStripDropDownSeparatorColor;
+                baseColor = StyleSheet.ToolStripDropDownSeparatorColor;
             }
 
             RenderSeparatorLine(
                graphics,
                rect,
                baseColor,
-               StyleSet.HeadToolStripItemInnerBorderColor,
+               StyleSheet.HeadToolStripItemInnerBorderColor,
                Color.Snow,
                e.Vertical);
         }
@@ -186,7 +186,7 @@ namespace Ligg.Winform.Skin
                     GraphicsHelper.DrawBackgroundImage(
                         graphcs,
                         item.BackgroundImage,
-                        isHeadControl ? StyleSet.HeadToolStripItemInnerBorderColor : StyleSet.ControlInnerBorderColor,
+                        isHeadControl ? StyleSheet.HeadToolStripItemInnerBorderColor : StyleSheet.ControlInnerBorderColor,
                         item.BackgroundImageLayout,
                         bounds,
                         clipRect);
@@ -196,17 +196,17 @@ namespace Ligg.Winform.Skin
                 {
                     if (item.Selected)
                     {
-                        Color color = isHeadControl ? StyleSet.HeadToolStripItemHoveringBackColor : StyleSet.ControlHoveringBackColor;
+                        Color color = isHeadControl ? StyleSheet.HeadToolStripItemHoveringBackColor : StyleSheet.ControlHoveringBackColor;
                         if (item.Pressed)
                         {
-                            color =isHeadControl ? StyleSet.HeadToolStripItemPressedBackColor : StyleSet.ControlPressedBackColor;
+                            color =isHeadControl ? StyleSheet.HeadToolStripItemPressedBackColor : StyleSheet.ControlPressedBackColor;
                         }
                         GraphicsHelper.DrawBackground(
                             graphcs,
                             bounds,
                             color,
-                            isHeadControl ? StyleSet.HeadToolStripItemBorderColor : StyleSet.ControlBorderColor,
-                            isHeadControl ? StyleSet.HeadToolStripItemInnerBorderColor : StyleSet.ControlInnerBorderColor,
+                            isHeadControl ? StyleSheet.HeadToolStripItemBorderColor : StyleSheet.ControlBorderColor,
+                            isHeadControl ? StyleSheet.HeadToolStripItemInnerBorderColor : StyleSheet.ControlInnerBorderColor,
                             isHeadControl ? RoundStyle.All : RoundStyle.None, 
                             isHeadControl ?8:0, 
                             isHeadControl ?0.45f:0f,
@@ -218,7 +218,7 @@ namespace Ligg.Winform.Skin
                     {
                         if (toolStrip is ToolStripOverflow)
                         {
-                            using (Brush brush = new SolidBrush(isHeadControl ? StyleSet.HeadToolStripItemHoveringBackColor : StyleSet.ControlHoveringBackColor))
+                            using (Brush brush = new SolidBrush(isHeadControl ? StyleSheet.HeadToolStripItemHoveringBackColor : StyleSheet.ControlHoveringBackColor))
                             {
                                 graphcs.FillRectangle(brush, bounds);
                             }
@@ -227,21 +227,21 @@ namespace Ligg.Winform.Skin
                 }
                 else
                 {
-                    Color color = ControlPaint.Light(isHeadControl ? StyleSet.HeadToolStripItemHoveringBackColor : StyleSet.ControlHoveringBackColor);
+                    Color color = ControlPaint.Light(isHeadControl ? StyleSheet.HeadToolStripItemHoveringBackColor : StyleSheet.ControlHoveringBackColor);
                     if (item.Selected)
                     {
-                        color = isHeadControl ? StyleSet.HeadToolStripItemHoveringBackColor : StyleSet.ControlHoveringBackColor;
+                        color = isHeadControl ? StyleSheet.HeadToolStripItemHoveringBackColor : StyleSheet.ControlHoveringBackColor;
                     }
                     if (item.Pressed)
                     {
-                        color =isHeadControl ? StyleSet.HeadToolStripItemPressedBackColor : StyleSet.ControlPressedBackColor;
+                        color =isHeadControl ? StyleSheet.HeadToolStripItemPressedBackColor : StyleSheet.ControlPressedBackColor;
                     }
                     GraphicsHelper.DrawBackground(
                             graphcs,
                             bounds,
                             color,
-                            isHeadControl ? StyleSet.HeadToolStripItemBorderColor : StyleSet.ControlBorderColor,
-                            isHeadControl ? StyleSet.HeadToolStripItemInnerBorderColor : StyleSet.ControlInnerBorderColor,
+                            isHeadControl ? StyleSheet.HeadToolStripItemBorderColor : StyleSheet.ControlBorderColor,
+                            isHeadControl ? StyleSheet.HeadToolStripItemInnerBorderColor : StyleSheet.ControlInnerBorderColor,
                             isHeadControl ? RoundStyle.All : RoundStyle.None,
                             isHeadControl ? 8 : 0,
                             isHeadControl ? 0.45f : 0f,
@@ -276,7 +276,7 @@ namespace Ligg.Winform.Skin
                     GraphicsHelper.DrawBackgroundImage(
                         graphics,
                         item.BackgroundImage,
-                        isHeadControl ? StyleSet.HeadToolStripItemInnerBorderColor : StyleSet.ControlInnerBorderColor,
+                        isHeadControl ? StyleSheet.HeadToolStripItemInnerBorderColor : StyleSheet.ControlInnerBorderColor,
                         item.BackgroundImageLayout,
                         bounds,
                         clipRect);
@@ -291,9 +291,9 @@ namespace Ligg.Winform.Skin
                     GraphicsHelper.DrawBackground(
                        graphics,
                        bounds,
-                       isHeadControl ? StyleSet.HeadToolStripItemHoveringBackColor : StyleSet.ControlHoveringBackColor,
-                       isHeadControl ? StyleSet.HeadToolStripItemBorderColor : StyleSet.ControlBorderColor,
-                       isHeadControl ? StyleSet.HeadToolStripItemInnerBorderColor : StyleSet.ControlInnerBorderColor,
+                       isHeadControl ? StyleSheet.HeadToolStripItemHoveringBackColor : StyleSheet.ControlHoveringBackColor,
+                       isHeadControl ? StyleSheet.HeadToolStripItemBorderColor : StyleSheet.ControlBorderColor,
+                       isHeadControl ? StyleSheet.HeadToolStripItemInnerBorderColor : StyleSheet.ControlInnerBorderColor,
                        isHeadControl ? RoundStyle.All : RoundStyle.None,
                        isHeadControl ? 8 : 0,
                        isHeadControl ? 0.45f : 0f,
@@ -306,9 +306,9 @@ namespace Ligg.Winform.Skin
                     GraphicsHelper.DrawBackground(
                        graphics,
                        buttonBounds,
-                       isHeadControl ? StyleSet.HeadToolStripItemPressedBackColor : StyleSet.ControlPressedBackColor,
-                       isHeadControl ? StyleSet.HeadToolStripItemBorderColor : StyleSet.ControlBorderColor,
-                       isHeadControl ? StyleSet.HeadToolStripItemInnerBorderColor : StyleSet.ControlInnerBorderColor,
+                       isHeadControl ? StyleSheet.HeadToolStripItemPressedBackColor : StyleSheet.ControlPressedBackColor,
+                       isHeadControl ? StyleSheet.HeadToolStripItemBorderColor : StyleSheet.ControlBorderColor,
+                       isHeadControl ? StyleSheet.HeadToolStripItemInnerBorderColor : StyleSheet.ControlInnerBorderColor,
                        isHeadControl ? RoundStyle.All : RoundStyle.None,
                        isHeadControl ? 8 : 0,
                        isHeadControl ? 0.45f : 0f,
@@ -317,7 +317,7 @@ namespace Ligg.Winform.Skin
                        mode);
                     graphics.ResetClip();
 
-                    using (Pen pen = new Pen(StyleSet.HeadToolStripItemBorderColor))
+                    using (Pen pen = new Pen(StyleSheet.HeadToolStripItemBorderColor))
                     {
                         graphics.DrawLine(
                             pen,
@@ -341,9 +341,9 @@ namespace Ligg.Winform.Skin
                     GraphicsHelper.DrawBackground(
                       graphics,
                       bounds,
-                      isHeadControl ? StyleSet.HeadToolStripItemPressedBackColor : StyleSet.ControlPressedBackColor,
-                      isHeadControl ? StyleSet.HeadToolStripItemBorderColor : StyleSet.ControlBorderColor,
-                      isHeadControl ? StyleSet.HeadToolStripItemInnerBorderColor : StyleSet.ControlInnerBorderColor,
+                      isHeadControl ? StyleSheet.HeadToolStripItemPressedBackColor : StyleSheet.ControlPressedBackColor,
+                      isHeadControl ? StyleSheet.HeadToolStripItemBorderColor : StyleSheet.ControlBorderColor,
+                      isHeadControl ? StyleSheet.HeadToolStripItemInnerBorderColor : StyleSheet.ControlInnerBorderColor,
                       isHeadControl ? RoundStyle.All : RoundStyle.None,
                       isHeadControl ? 8 : 0,
                       isHeadControl ? 0.45f : 0f,
@@ -365,16 +365,16 @@ namespace Ligg.Winform.Skin
                     GraphicsHelper.DrawBackground(
                       graphics,
                       bounds,
-                      isHeadControl ? StyleSet.HeadToolStripItemHoveringBackColor : StyleSet.ControlHoveringBackColor,
-                      isHeadControl ? StyleSet.HeadToolStripItemBorderColor : StyleSet.ControlBorderColor,
-                      isHeadControl ? StyleSet.HeadToolStripItemInnerBorderColor : StyleSet.ControlInnerBorderColor,
+                      isHeadControl ? StyleSheet.HeadToolStripItemHoveringBackColor : StyleSheet.ControlHoveringBackColor,
+                      isHeadControl ? StyleSheet.HeadToolStripItemBorderColor : StyleSheet.ControlBorderColor,
+                      isHeadControl ? StyleSheet.HeadToolStripItemInnerBorderColor : StyleSheet.ControlInnerBorderColor,
                       isHeadControl ? RoundStyle.All : RoundStyle.None,
                       isHeadControl ? 8 : 0,
                       isHeadControl ? 0.45f : 0f,
                       true,
                       true,
                       mode);
-                    using (Pen pen = new Pen(StyleSet.HeadToolStripItemBorderColor))
+                    using (Pen pen = new Pen(StyleSheet.HeadToolStripItemBorderColor))
                     {
                         graphics.DrawLine(
                            pen,
@@ -444,9 +444,9 @@ namespace Ligg.Winform.Skin
                     GraphicsHelper.DrawBackground(
                        graphics,
                        rect,
-                       StyleSet.ToolStripMenuItemHoveredBackColor,
-                       StyleSet.ToolStripMenuItemBorderColor,
-                       StyleSet.ToolStripMenuItemInnerBorderColor,
+                       StyleSheet.ToolStripMenuItemHoveredBackColor,
+                       StyleSheet.ToolStripMenuItemBorderColor,
+                       StyleSheet.ToolStripMenuItemInnerBorderColor,
                        RoundStyle.All,
                        4, 0.25f,
                        true,
@@ -482,9 +482,9 @@ namespace Ligg.Winform.Skin
                     GraphicsHelper.DrawBackground(
                       graphics,
                       bounds,
-                      StyleSet.HeadToolStripItemPressedBackColor,
-                      StyleSet.HeadToolStripItemBorderColor,
-                      StyleSet.HeadToolStripItemInnerBorderColor,
+                      StyleSheet.HeadToolStripItemPressedBackColor,
+                      StyleSheet.HeadToolStripItemBorderColor,
+                      StyleSheet.HeadToolStripItemInnerBorderColor,
                       RoundStyle.All, 8, 0.45f,
                       true,
                       true,
@@ -495,9 +495,9 @@ namespace Ligg.Winform.Skin
                     GraphicsHelper.DrawBackground(
                       graphics,
                       bounds,
-                      StyleSet.HeadToolStripItemHoveringBackColor,
-                      StyleSet.HeadToolStripItemBorderColor,
-                      StyleSet.HeadToolStripItemInnerBorderColor,
+                      StyleSheet.HeadToolStripItemHoveringBackColor,
+                      StyleSheet.HeadToolStripItemBorderColor,
+                      StyleSheet.HeadToolStripItemInnerBorderColor,
                       RoundStyle.All, 8, 0.45f,
                       true,
                       true,
@@ -505,7 +505,7 @@ namespace Ligg.Winform.Skin
                 }
                 else if (toolStrip is ToolStripOverflow)
                 {
-                    using (Brush brush = new SolidBrush(StyleSet.HeadToolStripItemInnerBorderColor))
+                    using (Brush brush = new SolidBrush(StyleSheet.HeadToolStripItemInnerBorderColor))
                     {
                         graphics.FillRectangle(brush, bounds);
                     }
@@ -636,8 +636,8 @@ namespace Ligg.Winform.Skin
                     bounds,
                     vert,
                     false,
-                    StyleSet.HeadToolStripItemInnerBorderColor,
-                    ControlPaint.Dark(StyleSet.HeadToolStripBackColor, 0.3F));
+                    StyleSheet.HeadToolStripItemInnerBorderColor,
+                    ControlPaint.Dark(StyleSheet.HeadToolStripBackColor, 0.3F));
             }
         }
 
@@ -646,8 +646,8 @@ namespace Ligg.Winform.Skin
             DrawSolidStatusGrip(
                 e.Graphics,
                 e.AffectedBounds,
-                StyleSet.HeadToolStripItemInnerBorderColor,
-                ControlPaint.Dark(StyleSet.HeadToolStripBackColor, 0.3f));
+                StyleSheet.HeadToolStripItemInnerBorderColor,
+                ControlPaint.Dark(StyleSheet.HeadToolStripBackColor, 0.3f));
         }
 
         internal void RenderSeparatorLine(
@@ -727,19 +727,19 @@ namespace Ligg.Winform.Skin
 
             if (item.Pressed)
             {
-                color = StyleSet.HeadToolStripItemPressedBackColor;
+                color = StyleSheet.HeadToolStripItemPressedBackColor;
             }
             else if (item.Selected)
             {
-                color = StyleSet.HeadToolStripItemHoveringBackColor;
+                color = StyleSheet.HeadToolStripItemHoveringBackColor;
             }
             else
             {
-                color = StyleSet.HeadToolStripBackColor;
+                color = StyleSheet.HeadToolStripBackColor;
             }
             if (bParentIsMenuStrip)
             {
-                using (Pen pen = new Pen(StyleSet.HeadToolStripBackColor))
+                using (Pen pen = new Pen(StyleSheet.HeadToolStripBackColor))
                 {
                     Point point = new Point(bounds.Left - 1, bounds.Height - 2);
                     Point point2 = new Point(bounds.Left, bounds.Height - 2);
@@ -758,8 +758,8 @@ namespace Ligg.Winform.Skin
                 graphics,
                 bounds,
                 color,
-                StyleSet.HeadToolStripItemBorderColor,
-                StyleSet.HeadToolStripItemInnerBorderColor,
+                StyleSheet.HeadToolStripItemBorderColor,
+                StyleSheet.HeadToolStripItemInnerBorderColor,
                 RoundStyle.None,
                 0,
                 .35f,
@@ -769,7 +769,7 @@ namespace Ligg.Winform.Skin
 
             if (bParentIsMenuStrip)
             {
-                using (Brush brush = new SolidBrush(StyleSet.HeadToolStripBackColor))
+                using (Brush brush = new SolidBrush(StyleSheet.HeadToolStripBackColor))
                 {
                     if (bHorizontal)
                     {
@@ -789,7 +789,7 @@ namespace Ligg.Winform.Skin
                         graphics.FillRectangle(brush, bounds.Width - 2, bounds.Top - 2, 1, 1);
                     }
                 }
-                using (Brush brush = new SolidBrush(StyleSet.HeadToolStripBackColor))
+                using (Brush brush = new SolidBrush(StyleSheet.HeadToolStripBackColor))
                 {
                     if (bHorizontal)
                     {

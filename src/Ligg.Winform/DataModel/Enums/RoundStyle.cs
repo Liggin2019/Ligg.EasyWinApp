@@ -1,4 +1,4 @@
-﻿namespace Ligg.Winform.DataModel.Enums
+﻿namespace Ligg.WinForm.DataModel.Enums
 {
     public enum RoundStyle
     {

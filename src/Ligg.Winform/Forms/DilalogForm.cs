@@ -1,4 +1,4 @@
-﻿namespace Ligg.Winform.Forms
+﻿namespace Ligg.WinForm.Forms
 {
     public partial class DilalogForm : BaseForm
     {
@@ -14,7 +14,7 @@
         //#proc
         private void InitZoneFormComponent()
         {
-            GroundPanel.BackColor = StyleSet.GroundColor;
+            GroundPanel.BackColor = StyleSheet.GroundColor;
             ResizeBaseComponent();
             //MainSection.Height=
             //MainSectionUpRegion.Height = MainSectionMainDivisionUpRegionHeight;

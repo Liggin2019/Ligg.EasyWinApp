@@ -1,0 +1,31 @@
+<ArrayOfProcedureItem>
+		<ProcedureItem>
+			
+			<Name>IsInitFinished</Name><TypeName>Variable</TypeName><GroupId>0</GroupId><Formula/>
+			<Value>false</Value><Condition/>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>RunBatOption</Name><TypeName>Variable</TypeName><GroupId>0</GroupId><Formula/>
+			<Value>/c</Value><Condition/>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>BatFilePath</Name><TypeName>Variable</TypeName><GroupId>0</GroupId>
+			<Formula>=ChooseFile;;.Bat Files|*.Bat</Formula><Value>0</Value><Condition>#IsInitFinished.v#</Condition>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>FilePath</Name><TypeName>Variable</TypeName><GroupId>0</GroupId>
+			<Formula>=ChooseFile;;.Bat Files|*.Bat</Formula><Value>0</Value><Condition>#IsInitFinished.v#</Condition>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>ScriptBatFilePathTmp</Name><TypeName>Variable</TypeName><GroupId>1</GroupId>
+			<Formula>=UniqueString;ByNow;-;RunScript</Formula><Value/><Condition>#IsInitFinished.v#</Condition>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>ScriptBatFilePath</Name><TypeName>Variable</TypeName><GroupId>1</GroupId>
+			<Formula>=Combine;%AppDataDir%,\,#ScriptBatFilePathTmp.v#,.bat</Formula><Value/><Condition>#IsInitFinished.v#</Condition>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>SetIsInitFinishedTrue</Name><TypeName>Action</TypeName><GroupId>2</GroupId>
+			<Formula>SetProcedureVariableValue;#IsInitFinished#;true</Formula><Value/><Condition/>
+		</ProcedureItem>
+</ArrayOfProcedureItem>

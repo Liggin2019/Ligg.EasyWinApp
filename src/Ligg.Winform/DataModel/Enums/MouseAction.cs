@@ -1,4 +1,4 @@
-﻿namespace Ligg.Winform.DataModel.Enums
+﻿namespace Ligg.WinForm.DataModel.Enums
 {
     internal enum MouseAction
     {

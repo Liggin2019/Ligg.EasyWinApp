@@ -1,0 +1,23 @@
+<ArrayOfProcedureItem>
+		<ProcedureItem>
+			
+			<Name>InitServerConnectionService</Name><DisplayName>Init Server Connection Service</DisplayName><TypeName>Action</TypeName><GroupId>0</GroupId><Formula>ServerConnectionService;Init</Formula>
+			<Value/><Condition/>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>RefreshTelnetServerStatus</Name><DisplayName>Refresh Telnet Server Status</DisplayName><TypeName>Action</TypeName><GroupId>0</GroupId><Formula>ServerConnectionService;RefreshTelnetServerStatus</Formula>
+			<Value/><Condition/>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>IsTelnetOK</Name><DisplayName></DisplayName><TypeName>Variable</TypeName><GroupId>0</GroupId><Formula>=ServerConnectionService;TelnetServerStatus</Formula>
+			<Value/><Condition/>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>Exit</Name><DisplayName></DisplayName><TypeName>Exit</TypeName><GroupId>0</GroupId><Formula/>
+			<Value/><Condition>=IfElse;#IsTelnetOK.v#,Equal,1;true;false</Condition>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>UpdatePingServerStatus</Name><DisplayName></DisplayName><TypeName>Action</TypeName><GroupId>0</GroupId><Formula>ServerConnectionService;UpdatePingServerStatus </Formula>
+			<Value/><Condition/>
+		</ProcedureItem>
+</ArrayOfProcedureItem>

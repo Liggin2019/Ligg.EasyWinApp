@@ -1,4 +1,4 @@
-﻿namespace Ligg.Winform.Controls
+﻿namespace Ligg.WinForm.Controls
 {
     partial class StatusLight
     {
@@ -46,6 +46,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(57, 95);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label1
             // 
@@ -65,16 +66,16 @@
             this.imageList1.Images.SetKeyName(1, "light_green_72.png");
             this.imageList1.Images.SetKeyName(2, "light_red_72.png");
             // 
-            // OkIndicator
+            // StatusLight
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
-            this.Name = "OkIndicator";
+            this.Name = "StatusLight";
             this.Size = new System.Drawing.Size(460, 95);
-            this.Load += new System.EventHandler(this.OkIndicator_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.OkIndicator_Paint);
+            this.Load += new System.EventHandler(this.StatusLight_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.StatusLight_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

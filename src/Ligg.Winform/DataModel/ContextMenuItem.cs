@@ -1,4 +1,4 @@
-﻿namespace Ligg.Winform.DataModel
+﻿namespace Ligg.WinForm.DataModel
 {
     public class ContextMenuItem
     {
@@ -10,8 +10,8 @@
         public string Name;
         public string DisplayName;
         public string Description;
-        public string VisibleFlag;
-        public string EnabledFlag;
+        public string InvisibleFlag;
+        public string DisabledFlag;
         public string Action;
         public string ImageUrl;
     }

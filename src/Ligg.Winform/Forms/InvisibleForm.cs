@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace Ligg.Winform.Forms
+namespace Ligg.WinForm.Forms
 {
     public partial class InvisibleForm : Form
     {

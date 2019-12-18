@@ -1,0 +1,94 @@
+<ArrayOfAnnex>
+		<Annex>
+			<Id>-1</Id>
+			<MasterId>-1</MasterId>
+			<MasterName>SetTrue</MasterName>
+			<DisplayName>正确打勾</DisplayName>
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex>
+	<Annex>
+		<Id>-1</Id>
+		<MasterId>-1</MasterId>
+		<MasterName>SetFalse</MasterName>
+		<DisplayName>错误打叉</DisplayName>
+		
+		
+		
+		<LanguageCode>szh</LanguageCode>
+	</Annex><Annex>
+		<Id>-1</Id>
+		<MasterId>-1</MasterId>
+		<MasterName>SeeDetail</MasterName>
+		<DisplayName>查看结果</DisplayName>
+		
+		
+		
+		<LanguageCode>szh</LanguageCode>
+	</Annex><Annex>
+		<Id>-1</Id>
+		<MasterId>-1</MasterId>
+		<MasterName>Refresh</MasterName>
+		<DisplayName>刷新结果</DisplayName>
+		
+		
+		
+		<LanguageCode>szh</LanguageCode>
+	</Annex><Annex>
+		<Id>-1</Id>
+		<MasterId>-1</MasterId>
+		<MasterName>Repair</MasterName>
+		<DisplayName>自动修复</DisplayName>
+		
+		
+		
+		<LanguageCode>szh</LanguageCode>
+	</Annex><Annex>
+		<Id>-1</Id>
+		<MasterId>-1</MasterId>
+		<MasterName>Fix</MasterName>
+		<DisplayName>手动修复</DisplayName>
+		
+		
+		
+		<LanguageCode>szh</LanguageCode>
+	</Annex><Annex>
+		<Id>-1</Id>
+		<MasterId>-1</MasterId>
+		<MasterName>Fix1</MasterName>
+		<DisplayName>手动修复</DisplayName>
+		
+		
+		
+		<LanguageCode>szh</LanguageCode>
+	</Annex><Annex>
+		<Id>-1</Id>
+		<MasterId>-1</MasterId>
+		<MasterName>Save</MasterName>
+		<DisplayName>保存</DisplayName>
+		
+		
+		
+		<LanguageCode>szh</LanguageCode>
+	</Annex><Annex>
+		<Id>-1</Id>
+		<MasterId>-1</MasterId>
+		<MasterName>RemarkL</MasterName>
+		<DisplayName>说明</DisplayName>
+		
+		
+		
+		<LanguageCode>szh</LanguageCode>
+	</Annex><Annex>
+		<Id>-1</Id>
+		<MasterId>-1</MasterId>
+		<MasterName>ReadDoc</MasterName>
+		<DisplayName>阅读帮助</DisplayName>
+		
+		
+		
+		<LanguageCode>szh</LanguageCode>
+	</Annex>
+</ArrayOfAnnex>

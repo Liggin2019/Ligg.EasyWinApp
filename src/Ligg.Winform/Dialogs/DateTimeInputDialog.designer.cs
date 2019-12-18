@@ -1,7 +1,7 @@
 ﻿
-using Ligg.Winform.DataModel.Enums;
+using Ligg.WinForm.DataModel.Enums;
 
-namespace Ligg.Winform.Dialogs
+namespace Ligg.WinForm.Dialogs
 {
     partial class DateTimeInputDialog
     {
@@ -31,8 +31,8 @@ namespace Ligg.Winform.Dialogs
         /// </summary>
         private void InitializeComponent()
         {
-            this.textButtonOk = new Ligg.Winform.Controls.TextButton();
-            this.textButtonCancel = new Ligg.Winform.Controls.TextButton();
+            this.textButtonOk = new Ligg.WinForm.Controls.TextButton();
+            this.textButtonCancel = new Ligg.WinForm.Controls.TextButton();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.GroundPanel.SuspendLayout();
             this.SuspendLayout();
@@ -51,8 +51,8 @@ namespace Ligg.Winform.Dialogs
             this.textButtonOk.Location = new System.Drawing.Point(27, 58);
             this.textButtonOk.Name = "textButtonOk";
             this.textButtonOk.Radius = 0;
-            this.textButtonOk.RoundStyle = Ligg.Winform.DataModel.Enums.RoundStyle.None;
-            this.textButtonOk.SensitiveType = Ligg.Winform.DataModel.Enums.ControlSensitiveType.None;
+            this.textButtonOk.RoundStyle = Ligg.WinForm.DataModel.Enums.RoundStyle.None;
+            this.textButtonOk.SensitiveType = Ligg.WinForm.DataModel.Enums.ControlSensitiveType.None;
             this.textButtonOk.Size = new System.Drawing.Size(75, 23);
             this.textButtonOk.TabIndex = 1;
             this.textButtonOk.Text = "OK";
@@ -66,8 +66,8 @@ namespace Ligg.Winform.Dialogs
             this.textButtonCancel.Location = new System.Drawing.Point(209, 58);
             this.textButtonCancel.Name = "textButtonCancel";
             this.textButtonCancel.Radius = 0;
-            this.textButtonCancel.RoundStyle = Ligg.Winform.DataModel.Enums.RoundStyle.None;
-            this.textButtonCancel.SensitiveType = Ligg.Winform.DataModel.Enums.ControlSensitiveType.None;
+            this.textButtonCancel.RoundStyle = Ligg.WinForm.DataModel.Enums.RoundStyle.None;
+            this.textButtonCancel.SensitiveType = Ligg.WinForm.DataModel.Enums.ControlSensitiveType.None;
             this.textButtonCancel.Size = new System.Drawing.Size(75, 23);
             this.textButtonCancel.TabIndex = 2;
             this.textButtonCancel.Text = "Cancel";
@@ -101,8 +101,8 @@ namespace Ligg.Winform.Dialogs
         }
 
         #endregion
-        private Ligg.Winform.Controls.TextButton textButtonOk;
-        private Ligg.Winform.Controls.TextButton textButtonCancel;
+        private Ligg.WinForm.Controls.TextButton textButtonOk;
+        private Ligg.WinForm.Controls.TextButton textButtonCancel;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
     }
 }

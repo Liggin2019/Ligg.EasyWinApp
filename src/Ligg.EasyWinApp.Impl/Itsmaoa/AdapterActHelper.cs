@@ -15,7 +15,9 @@ namespace Ligg.EasyWinApp.Implementation
             try
             {
                 //#AsAdmin
-                if (funcName.ToLower().EndsWith("AsAdmin".ToLower()))
+                if (funcName.ToLower() == "RunAsAdmin".ToLower() | funcName.ToLower() == "RunCmdAsAdmin".ToLower()
+                    | funcName.ToLower() == "ExecCmdAsAdmin".ToLower() | funcName.ToLower() == "OpenFileAsAdmin".ToLower()
+                    | funcName.ToLower() == "OpenFolderAsAdmin".ToLower() | funcName.ToLower() == ("RedirectAsAdmin").ToLower())
                 {
                     returnStr = new RunAsAdminService().RunAsAdmin(funcName, funcParamArray);
                 }
@@ -24,13 +26,9 @@ namespace Ligg.EasyWinApp.Implementation
                 //##NetworkLocationService
                 else if (funcName.ToLower() == ("NetworkLocationService".ToLower()))
                 {
-                    if (funcParamArray[0].ToLower() == "InitData".ToLower())
+                    if (funcParamArray[0].ToLower() == "Init".ToLower())
                     {
-                        new NetworkLocationService().InitData();
-                    }
-                    else if (funcParamArray[0].ToLower() == "InitCurrentNetworkLocation".ToLower())
-                    {
-                        new NetworkLocationService().InitCurrentNetworkLocation();
+                        new NetworkLocationService().Init();
                     }
                     else if (funcParamArray[0].ToLower() == "RefreshCurrentNetworkLocation".ToLower())
                     {
@@ -47,17 +45,21 @@ namespace Ligg.EasyWinApp.Implementation
                 //##ServerConnectionService
                 else if (funcName.ToLower() == ("ServerConnectionService".ToLower()))
                 {
-                    if (funcParamArray[0].ToLower() == "InitServerConnectionStatus".ToLower())
+                    if (funcParamArray[0].ToLower() == "Init".ToLower())
                     {
-                        new ServerConnectionService().InitServerConnectionStatus();
+                        new ServerConnectionService().Init();
                     }
+                    //else if (funcParamArray[0].ToLower() == "InitServerConnectionStatus".ToLower())
+                    //{
+                    //    new ServerConnectionService().InitServerConnectionStatus();
+                    //}
                     else if (funcParamArray[0].ToLower() == "RefreshServerConnectionStatus".ToLower())
                     {
                         new ServerConnectionService().RefreshServerConnectionStatus();
                     }
-                    else if (funcParamArray[0].ToLower() == "RefreshPingServerStatus".ToLower())
+                    else if (funcParamArray[0].ToLower() == "UpdatePingServerStatus".ToLower())
                     {
-                        new ServerConnectionService().RefreshPingServerStatus();
+                        new ServerConnectionService().UpdatePingServerStatus();
                     }
                     else if (funcParamArray[0].ToLower() == "RefreshTelnetServerStatus".ToLower())
                     {
@@ -69,10 +71,14 @@ namespace Ligg.EasyWinApp.Implementation
                 //##RunAsAdminAccountService
                 else if (funcName.ToLower() == ("RunAsAdminAccountService".ToLower()))
                 {
-                    if (funcParamArray[0].ToLower() == "InitRunAsAdminAccountStatus".ToLower())
+                    if (funcParamArray[0].ToLower() == "Init".ToLower())
                     {
-                        new RunAsAdminAccountService().InitRunAsAdminAccountStatus();
+                        new RunAsAdminAccountService().Init();
                     }
+                    //else if (funcParamArray[0].ToLower() == "InitRunAsAdminAccountStatus".ToLower())
+                    //{
+                    //    new RunAsAdminAccountService().InitRunAsAdminAccountStatus();
+                    //}
                     else if (funcParamArray[0].ToLower() == "RefreshRunAsAdminAccountStatus".ToLower())
                     {
                         new RunAsAdminAccountService().RefreshRunAsAdminAccountStatus();
@@ -81,27 +87,28 @@ namespace Ligg.EasyWinApp.Implementation
                     {
                         new RunAsAdminAccountService().RefreshCurrentWinIdAsRunAsAdminAccountStatus();
                     }
-                    else if (funcParamArray[0].ToLower() == "RefreshWin10CompatibilityStatus".ToLower())
+                    else if (funcParamArray[0].ToLower() == "UpdateWin10CompatibilityStatus".ToLower())
                     {
-                        new RunAsAdminAccountService().RefreshWin10CompatibilityStatus();
+                        new RunAsAdminAccountService().UpdateWin10CompatibilityStatus();
+                    }
+                    else if (funcParamArray[0].ToLower() == "UpdateSeclogonWinServiceStatus".ToLower())
+                    {
+                        new RunAsAdminAccountService().UpdateSeclogonWinServiceStatus();
                     }
                     else if (funcParamArray[0].ToLower() == "RepairWin10CompatibilityStatus".ToLower())
                     {
-                        new RunAsAdminAccountService().RepairRepairWin10CompatibilityStatus();
+                        new RunAsAdminAccountService().RepairWin10CompatibilityStatus();
                     }
-                    else if (funcParamArray[0].ToLower() == "RefreshSeclogonWinServiceStatus".ToLower())
-                    {
-                        new RunAsAdminAccountService().RefreshSeclogonWinServiceStatus();
-                    }
+
                     else if (funcParamArray[0].ToLower() == "RefreshDefaultRunAsAdminAccountStatus".ToLower())
                     {
                         new RunAsAdminAccountService().RefreshDefaultRunAsAdminAccountStatus();
                     }
                     else if (funcParamArray[0].ToLower() == "RefreshDesignatedRunAsAdminAccountStatus".ToLower())
                     {
-                        RunningParams.IsDesignatedRunAsAdminAccountDomainAcct = funcParamArray[1] == "true";
-                        RunningParams.DesignatedRunAsAdminAccountName = funcParamArray[2];
-                        RunningParams.DesignatedRunAsAdminAccountPassword = funcParamArray[3];
+                        RunAsAdminAccountServiceData.IsDesignatedRunAsAdminAccountDomainAcct = funcParamArray[1] == "true";
+                        RunAsAdminAccountServiceData.DesignatedRunAsAdminAccountName = funcParamArray[2];
+                        RunAsAdminAccountServiceData.DesignatedRunAsAdminAccountPassword = funcParamArray[3];
                         new RunAsAdminAccountService().RefreshDesignatedRunAsAdminAccountStatus();
                     }
                     else if (funcParamArray[0].ToLower() == "RepairDefaultRunAsAdminAccountStatus".ToLower())
@@ -126,7 +133,7 @@ namespace Ligg.EasyWinApp.Implementation
 
                     else if (funcParamArray[0].ToLower() == "SetCurrentJobCurrentTaskCompleted".ToLower())
                     {
-                        new JobService().SetCurrentJobCurrentTaskCompleted(Convert.ToInt32(funcParamArray[1]), funcParamArray[2],Convert.ToInt32(funcParamArray[3]));
+                        new JobService().SetCurrentJobCurrentTaskCompleted(Convert.ToInt32(funcParamArray[1]), funcParamArray[2], Convert.ToInt32(funcParamArray[3]));
                     }
 
                     else if (funcParamArray[0].ToLower() == "SetCurrentJobCurrentTaskProcessing".ToLower())
@@ -137,41 +144,44 @@ namespace Ligg.EasyWinApp.Implementation
 
                 }
 
-                //##WinConfigService
-                else if (funcName.ToLower() == ("WinConfigService".ToLower()))
+                //##WinChgConfigGroupService
+                else if (funcName.ToLower() == ("WinChgConfigGroupService".ToLower()))
                 {
-                    if (funcParamArray[0].ToLower() == "InitData".ToLower())
+                    if (funcParamArray[0].ToLower() == "Init".ToLower())
                     {
-                        new WinConfigService().InitData();
+                        new WinChgConfigGroupService().Init();
                     }
-                    else if (funcParamArray[0].ToLower() == "RefreshSelectedWinConfigGroups".ToLower())
+                    else if (funcParamArray[0].ToLower() == "RefreshSelectedItems".ToLower())
                     {
                         var idList = funcParamArray[1].ConvertIdsStringToIntegerList<Int32>(',');
-                        new WinConfigService().RefreshSelectedWinConfigGroups(idList);
+                        new WinChgConfigGroupService().RefreshSelectedItems(idList);
                     }
-                    else if (funcParamArray[0].ToLower() == "RefreshWinConfigGroup".ToLower())
+                    else if (funcParamArray[0].ToLower() == "Refresh".ToLower())
                     {
-                        new WinConfigService().RefreshWinConfigGroup(Convert.ToInt32(funcParamArray[1]));
+                        new WinChgConfigGroupService().Refresh(Convert.ToInt32(funcParamArray[1]));
+                    }
+                    else if (funcParamArray[0].ToLower() == "RepairSelectedItems".ToLower())
+                    {
+                        var idList = funcParamArray[1].ConvertIdsStringToIntegerList<Int32>(',');
+                        new WinChgConfigGroupService().RepairSelectedItems(idList);
+                    }
+                    else if (funcParamArray[0].ToLower() == "Repair".ToLower())
+                    {
+                        new WinChgConfigGroupService().Repair(Convert.ToInt32(funcParamArray[1]));
+                    }
+                    else if (funcParamArray[0].ToLower() == "Refresh".ToLower())
+                    {
+                        new WinChgConfigGroupService().Refresh(Convert.ToInt32(funcParamArray[1]));
                     }
 
-                    else if (funcParamArray[0].ToLower() == "AutoFixSelectedWinConfigGroups".ToLower())
+                    else if (funcParamArray[0].ToLower() == "SaveSelectedItems".ToLower())
                     {
                         var idList = funcParamArray[1].ConvertIdsStringToIntegerList<Int32>(',');
-                        new WinConfigService().AutoFixSelectedWinConfigGroups(idList);
+                        new WinChgConfigGroupService().SaveSelectedItems(idList);
                     }
-                    else if (funcParamArray[0].ToLower() == "AutoFixWinConfigGroup".ToLower())
+                    else if (funcParamArray[0].ToLower() == "Save".ToLower())
                     {
-                        new WinConfigService().RefreshWinConfigGroup(Convert.ToInt32(funcParamArray[1]));
-                    }
-
-                    else if (funcParamArray[0].ToLower() == "SaveSelectedWinConfigGroups".ToLower())
-                    {
-                        var idList = funcParamArray[1].ConvertIdsStringToIntegerList<Int32>(',');
-                        new WinConfigService().SaveSelectedWinConfigGroups(idList);
-                    }
-                    else if (funcParamArray[0].ToLower() == "SaveWinConfigGroup".ToLower())
-                    {
-                        new WinConfigService().SaveWinConfigGroup(Convert.ToInt32(funcParamArray[1]));
+                        new WinChgConfigGroupService().Save(Convert.ToInt32(funcParamArray[1]));
                     }
 
 
@@ -180,10 +190,7 @@ namespace Ligg.EasyWinApp.Implementation
                 }
                 else if (funcName.ToLower() == ("TestService".ToLower()))
                 {
-                    if (funcParamArray[0].ToLower() == "Test1".ToLower())
-                    {
-                        WinConfigServiceData.test = funcParamArray[1];
-                    }
+
                 }
 
                 else throw new ArgumentException(" has no funcName: '" + funcName + "'! ");

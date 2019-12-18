@@ -1,4 +1,4 @@
-﻿namespace Ligg.Winform.Forms
+﻿namespace Ligg.WinForm.Forms
 {
     partial class GroundForm
     {
@@ -33,7 +33,7 @@
             // 
             // GroundPanel
             // 
-            this.GroundPanel.BackColor = StyleSet.GroundColor;
+            this.GroundPanel.BackColor = StyleSheet.GroundColor;
             this.GroundPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.GroundPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GroundPanel.Location = new System.Drawing.Point(2, 28);

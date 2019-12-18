@@ -2,10 +2,10 @@
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
-using Ligg.Winform.DataModel.Enums;
-using Ligg.Winform.Skin;
+using Ligg.WinForm.DataModel.Enums;
+using Ligg.WinForm.Skin;
 
-namespace Ligg.Winform.Controls
+namespace Ligg.WinForm.Controls
 {
     public sealed class ContainerPanel : Panel
     {

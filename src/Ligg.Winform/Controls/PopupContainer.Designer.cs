@@ -1,4 +1,4 @@
-﻿namespace Ligg.Winform.Controls
+﻿namespace Ligg.WinForm.Controls
 {
     partial class PopupContainer
     {
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PopupContainer));
-            this.shadowPanel = new Ligg.Winform.Controls.ShadowPanel.ShadowPanel();
+            this.shadowPanel = new Ligg.WinForm.Controls.ShadowPanel.ShadowPanel();
             this.closeButton = new System.Windows.Forms.PictureBox();
             this.shadowPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();

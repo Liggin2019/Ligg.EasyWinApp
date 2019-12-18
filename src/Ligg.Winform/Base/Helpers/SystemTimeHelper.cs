@@ -1,6 +1,6 @@
 using System;
 using System.Runtime.InteropServices;
-using Ligg.Winform.Resources;
+using Ligg.WinForm.Resources;
 
 namespace Ligg.Base.Helpers
 {

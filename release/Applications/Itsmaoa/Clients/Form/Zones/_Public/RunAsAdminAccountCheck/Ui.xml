@@ -1,0 +1,846 @@
+<ArrayOfZoneItem>
+		<ZoneItem>
+			
+			<Name>Row10</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>40</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RunAsAdminAccountCheckL</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row10</RowName>
+			
+			
+			<ControlTypeName>TitleLabel</ControlTypeName><StyleClass>Level1</StyleClass><StyleText/>
+			
+			<DisplayName>RunAsAdmin Account Check</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>465</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Row20</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>30</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>CurrentRunAsAdminAccount</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row20</RowName>
+			
+			
+			<ControlTypeName>Label</ControlTypeName><StyleClass>Level1</StyleClass><StyleText/>
+			
+			<DisplayName>Current RunAsAdmin Account</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>12</OffsetOrPositionX>
+			<OffsetOrPositionY>1</OffsetOrPositionY>			<Width>180</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RunAsAdminAccountName</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row20</RowName>
+			
+			
+			<ControlTypeName>TextBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue>=RunningParam;CurrentRunAsAdminAccountName</DefaultValue><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag>true</DisabledFlag>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>210</Width>
+			<Height>-1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Row30</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>30</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>CurrentWinIdAsRunAsAdminAccountStatus</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row30</RowName>
+			
+			
+			<ControlTypeName>StatusLight</ControlTypeName><StyleClass>Level1</StyleClass><StyleText/>
+			
+			<DisplayName>Current Win Id As RunAsAdmin Account</DisplayName><DataSource/>			
+			<DefaultValue>=RunAsAdminAccountService;CurrentWinIdAsRunAsAdminAccountStatus</DefaultValue><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>10</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>270</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RefreshCurrentWinIdAsRunAsAdminAccountStatus</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row30</RowName>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName>Refresh Current Windows Id As RunAsAdmin Account</DisplayName><DataSource>\Images\refresh.png</DataSource>			
+			<DefaultValue>-1</DefaultValue><ValidationRules/><Action>Xrun;$RefreshCurrentWinIdAsRunAsAdminAccountStatus-Xrun1$,$RefreshCurrentWinIdAsRunAsAdminAccountStatus-Xrun2$,$RefreshCurrentZoneGrp2Variables$,$RefreshCurrentZoneControlsInvisibles$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>10</OffsetOrPositionY>			<Width>16</Width>
+			<Height>16</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RefreshCurrentWinIdAsRunAsAdminAccountStatus-Xrun1</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row30</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue>-1</DefaultValue><ValidationRules/><Action>RunAsAdminAccountService;RefreshCurrentWinIdAsRunAsAdminAccountStatus</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>-1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RefreshCurrentWinIdAsRunAsAdminAccountStatus-Xrun2</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row30</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue>-1</DefaultValue><ValidationRules/><Action>RefreshControlsValues;$CurrentWinIdAsRunAsAdminAccountStatus$,$RunAsAdminAccountName$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>-1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RefreshCurrentZoneGrp2Variables</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row30</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue>-1</DefaultValue><ValidationRules/><Action>RefreshZonesProceduresByGroup;$$;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>-1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RefreshCurrentZoneControlsInvisibles</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row30</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue>-1</DefaultValue><ValidationRules/><Action>RefreshZonesControlsInvisibles;$$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>-1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>FixCurrentWinIdAsRunAsAdminAccountStatus</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row30</RowName>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName>Fix CurrentWinIdAsRunAsAdminAccountStatus</DisplayName><DataSource>\Images\fix.png</DataSource>			
+			<DefaultValue>-1</DefaultValue><ValidationRules/><Action>ExecCmdAsAdmin;lusrmgr.msc;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag>#IsRunAsAdminAccountStatusFalse.v#</InvisibleFlag><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>10</OffsetOrPositionY>			<Width>16</Width>
+			<Height>16</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Row40</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>30</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Win10CompatibilityStatus</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row40</RowName>
+			
+			
+			<ControlTypeName>StatusLight</ControlTypeName><StyleClass>Level1</StyleClass><StyleText/>
+			
+			<DisplayName>Win10 Compatibility</DisplayName><DataSource/>			
+			<DefaultValue>=RunAsAdminAccountService;Win10CompatibilityStatus</DefaultValue><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>10</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>150</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RefreshWin10CompatibilityStatus</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row40</RowName>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName>Refresh Win10 Compatibility</DisplayName><DataSource>\Images\refresh.png</DataSource>			
+			<DefaultValue>-1</DefaultValue><ValidationRules/><Action>XRun;$RefreshWin10CompatibilityStatus-Xrun1$,$RefreshWin10CompatibilityStatus-Xrun2$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>10</OffsetOrPositionY>			<Width>16</Width>
+			<Height>16</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RefreshWin10CompatibilityStatus-Xrun1</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row40</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue>-1</DefaultValue><ValidationRules/><Action>RunAsAdminAccountService;UpdateWin10CompatibilityStatus</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>-1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RefreshWin10CompatibilityStatus-Xrun2</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row40</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue>-1</DefaultValue><ValidationRules/><Action>RefreshControlsValues;$Win10CompatibilityStatus$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>-1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RepairWin10CompatibilityStatus</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row40</RowName>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName>Repair Win10 Compatibility</DisplayName><DataSource>\Images\repair.png</DataSource>			
+			<DefaultValue>-1</DefaultValue><ValidationRules/><Action>Xrun;$RepairWin10CompatibilityStatus-Xrun1$,$RepairWin10CompatibilityStatus-Xrun2$</Action>
+			
+			<InvalidFlag/><InvisibleFlag>#IsRunAsAdminAccountStatusFalse.v#</InvisibleFlag><DisabledFlag/>
+			<OffsetOrPositionX>1</OffsetOrPositionX>
+			<OffsetOrPositionY>10</OffsetOrPositionY>			<Width>16</Width>
+			<Height>16</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RepairWin10CompatibilityStatus-Xrun1</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row40</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue>-1</DefaultValue><ValidationRules/><Action>RunAsAdminAccountService;RepairWin10CompatibilityStatus</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>-1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RepairWin10CompatibilityStatus-Xrun2</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row40</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue>-1</DefaultValue><ValidationRules/><Action>Xrun;$RefreshWin10CompatibilityStatus$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>-1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>FixWin10CompatibilityStatus</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row40</RowName>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName>Fix Win10 Compatibility</DisplayName><DataSource>\Images\fix.png</DataSource>			
+			<DefaultValue>-1</DefaultValue><ValidationRules/><Action>Xrun;$FixWin10CompatibilityStatus-Xrun1$,$FixWin10CompatibilityStatus-Xrun2$</Action>
+			
+			<InvalidFlag/><InvisibleFlag>#IsRunAsAdminAccountStatusFalse.v#</InvisibleFlag><DisabledFlag/>
+			<OffsetOrPositionX>1</OffsetOrPositionX>
+			<OffsetOrPositionY>10</OffsetOrPositionY>			<Width>16</Width>
+			<Height>16</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>FixWin10CompatibilityStatus-Xrun1</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row40</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue>-1</DefaultValue><ValidationRules/><Action>RunCmdAsAdmin;\Tools\ProcessWin10CompatibilityIssue.bat;;3</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>1</OffsetOrPositionX>
+			<OffsetOrPositionY>10</OffsetOrPositionY>			<Width>16</Width>
+			<Height>16</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>FixWin10CompatibilityStatus-Xrun2</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row40</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue>-1</DefaultValue><ValidationRules/><Action>ExecCmdAsAdmin;%systemroot%\Syswow64\Regedit.exe;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>1</OffsetOrPositionX>
+			<OffsetOrPositionY>10</OffsetOrPositionY>			<Width>16</Width>
+			<Height>16</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Row50</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>30</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>SeclogonWinServiceStatus</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row50</RowName>
+			
+			
+			<ControlTypeName>StatusLight</ControlTypeName><StyleClass>Level1</StyleClass><StyleText/>
+			
+			<DisplayName>Secondary Logon Service</DisplayName><DataSource/>			
+			<DefaultValue>=RunAsAdminAccountService;SeclogonWinServiceStatus</DefaultValue><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>180</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RefreshSeclogonWinServiceStatus</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row50</RowName>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName>Refresh Secondary Logon Windows Service  Status</DisplayName><DataSource>\Images\refresh.png</DataSource>			
+			<DefaultValue>-1</DefaultValue><ValidationRules/><Action>XRun;$RefreshSeclogonWinServiceStatus-Xrun1$,$RefreshSeclogonWinServiceStatus-Xrun2$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>1</OffsetOrPositionX>
+			<OffsetOrPositionY>10</OffsetOrPositionY>			<Width>16</Width>
+			<Height>16</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RefreshSeclogonWinServiceStatus-Xrun1</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row50</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue>-1</DefaultValue><ValidationRules/><Action>RunAsAdminAccountService;UpdateSeclogonWinServiceStatus</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>-1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RefreshSeclogonWinServiceStatus-Xrun2</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>50</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue>-1</DefaultValue><ValidationRules/><Action>RefreshControlsValues;$SeclogonWinServiceStatus$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>-1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RepairSeclogonWinServiceStatus</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row50</RowName>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName>Repair Seclogon Win Service Status</DisplayName><DataSource>\Images\repair.png</DataSource>			
+			<DefaultValue>-1</DefaultValue><ValidationRules/><Action>Xrun;$RepairSeclogonWinServiceStatus-Xrun1$,$RepairSeclogonWinServiceStatus-Xrun2$</Action>
+			
+			<InvalidFlag/><InvisibleFlag>#IsRunAsAdminAccountStatusFalse.v#</InvisibleFlag><DisabledFlag/>
+			<OffsetOrPositionX>1</OffsetOrPositionX>
+			<OffsetOrPositionY>10</OffsetOrPositionY>			<Width>16</Width>
+			<Height>16</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RepairSeclogonWinServiceStatus-Xrun1</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row50</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue>-1</DefaultValue><ValidationRules/><Action>RunCmdAsAdmin;\Tools\LgCmdA.exe; /c ProcessSeclogonWinServiceIssue.bat;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>-1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RepairSeclogonWinServiceStatus-Xrun2</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row50</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue>-1</DefaultValue><ValidationRules/><Action>XRun;$RefreshSeclogonWinServiceStatus$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>-1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>FixSeclogonWinService</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row50</RowName>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName>Fix Secondary Logon Windows Service</DisplayName><DataSource>\Images\fix.png</DataSource>			
+			<DefaultValue>-1</DefaultValue><ValidationRules/><Action>ExecCmdAsAdmin;services.msc;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag>#IsRunAsAdminAccountStatusFalse.v#</InvisibleFlag><DisabledFlag/>
+			<OffsetOrPositionX>1</OffsetOrPositionX>
+			<OffsetOrPositionY>10</OffsetOrPositionY>			<Width>16</Width>
+			<Height>16</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Row60</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>30</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>DefaultRunAsAdminAccountStatus</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row60</RowName>
+			
+			
+			<ControlTypeName>ScoreLight</ControlTypeName><StyleClass>Level1</StyleClass><StyleText/>
+			
+			<DisplayName>Default Admin As RunAsAdmin Account</DisplayName><DataSource/>			
+			<DefaultValue>=RunAsAdminAccountService;DefaultRunAsAdminAccountStatus</DefaultValue><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>30</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>270</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RefreshDefaultRunAsAdminAccountStatus</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row60</RowName>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName>Refresh Default RunAsAdminAccount Status</DisplayName><DataSource>\Images\refresh.png</DataSource>			
+			<DefaultValue>-1</DefaultValue><ValidationRules/><Action>XRun;$RefreshDefaultRunAsAdminAccountStatus-Xrun1$,$RefreshDefaultRunAsAdminAccountStatus-Xrun2$,$RefreshCurrentZoneGrp2Variables$,$RefreshCurrentZoneControlsInvisibles$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>1</OffsetOrPositionX>
+			<OffsetOrPositionY>10</OffsetOrPositionY>			<Width>16</Width>
+			<Height>16</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RefreshDefaultRunAsAdminAccountStatus-Xrun1</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row60</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>RunAsAdminAccountService;RefreshDefaultRunAsAdminAccountStatus</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>100</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RefreshDefaultRunAsAdminAccountStatus-Xrun2</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row60</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>RefreshControlsValues;$DefaultRunAsAdminAccountStatus$,$RunAsAdminAccountName$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>100</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RepairDefaultRunAsAdminAccountStatus</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row60</RowName>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName>Repair Default RunAsAdminAccount Status</DisplayName><DataSource>\Images\repair.png</DataSource>			
+			<DefaultValue>-1</DefaultValue><ValidationRules/><Action>Xrun;$RepairDefaultRunAsAdminAccountStatus-Xrun1$,$RepairDefaultRunAsAdminAccountStatus-Xrun2$,$RefreshCurrentZoneGrp2Variables$,$RefreshCurrentZoneControlsInvisibles$</Action>
+			
+			<InvalidFlag/><InvisibleFlag>#IsRunAsAdminAccountStatusFalse.v#</InvisibleFlag><DisabledFlag/>
+			<OffsetOrPositionX>1</OffsetOrPositionX>
+			<OffsetOrPositionY>10</OffsetOrPositionY>			<Width>16</Width>
+			<Height>16</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RepairDefaultRunAsAdminAccountStatus-Xrun1</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row60</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>RunAsAdminAccountService;RepairDefaultRunAsAdminAccountStatus</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>100</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RepairDefaultRunAsAdminAccountStatus-Xrun2</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row60</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>RunCmdAsAdmin;\Tools\LgCmdA.exe; /c ProcessDefaultRunAsAdminAccountIssue;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>100</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>FixDefaultRunAsAdminAccount</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row60</RowName>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName>Fix Default Admin Account As RunAsAdmin Account</DisplayName><DataSource>\Images\fix.png</DataSource>			
+			<DefaultValue>-1</DefaultValue><ValidationRules/><Action>ExecCmdAsAdmin;lusrmgr.msc;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag>#IsRunAsAdminAccountStatusFalse.v#</InvisibleFlag><DisabledFlag/>
+			<OffsetOrPositionX>1</OffsetOrPositionX>
+			<OffsetOrPositionY>10</OffsetOrPositionY>			<Width>16</Width>
+			<Height>16</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Row69</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>2</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>splitter-699</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row69</RowName>
+			
+			
+			<ControlTypeName>SplitRectangle</ControlTypeName><StyleClass>Level2</StyleClass><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+						
+			
+		</ZoneItem><ZoneItem>
+			
+			<Name>Row70</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>2</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>30</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>DesignatedRunAsAdminAccountStatus</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row70</RowName>
+			
+			
+			<ControlTypeName>ScoreLight</ControlTypeName><StyleClass>Level1</StyleClass><StyleText/>
+			
+			<DisplayName>Designated Admin As RunAsAdmin Account</DisplayName><DataSource/>			
+			<DefaultValue>=RunAsAdminAccountService;DesignatedRunAsAdminAccountStatus</DefaultValue><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>30</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>280</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>VeryfyDesignatedRunAsAdminAccount</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row70</RowName>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName>Verify Designated Account</DisplayName><DataSource>\Images\refresh.png</DataSource>			
+			<DefaultValue>-1</DefaultValue><ValidationRules/><Action>XRun;$VeryfyDesignatedRunAsAdminAccount-Xrun1$,$VeryfyDesignatedRunAsAdminAccount-Xrun2$,$RefreshCurrentZoneGrp2Variables$,$RefreshCurrentZoneControlsInvisibles$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>16</Width>
+			<Height>16</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>VeryfyDesignatedRunAsAdminAccount-Xrun1</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row70</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName>Set Variable Value</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>RunAsAdminAccountService;RefreshDesignatedRunAsAdminAccountStatus;$IsDesignatedRunAsAdminAccountDomainAcct.v$;$DesignatedRunAsAdminAccountName.v$;$DesignatedRunAsAdminAccountPassword.v$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>100</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>VeryfyDesignatedRunAsAdminAccount-Xrun2</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row70</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName>Refresh Controls</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>RefreshControlsValues;$DesignatedRunAsAdminAccountStatus$,$RunAsAdminAccountName$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>100</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Row80</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>30</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>IsDesignatedRunAsAdminAccountDomainAcct</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row80</RowName>
+			
+			
+			<ControlTypeName>CheckBox</ControlTypeName><StyleClass>Level1</StyleClass><StyleText/>
+			
+			<DisplayName>Domain Acct</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>60</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>100</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>DesignatedRunAsAdminAccountL</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row80</RowName>
+			
+			
+			<ControlTypeName>Label</ControlTypeName><StyleClass>FieldName</StyleClass><StyleText/>
+			
+			<DisplayName>ID:</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>3</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>35</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>DesignatedRunAsAdminAccountName</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row80</RowName>
+			
+			
+			<ControlTypeName>TextBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>3</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>100</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>DesignatedRunAsAdminAccountPasswordL</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row80</RowName>
+			
+			
+			<ControlTypeName>Label</ControlTypeName><StyleClass>FieldName</StyleClass><StyleText/>
+			
+			<DisplayName>Password:</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>3</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>65</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>DesignatedRunAsAdminAccountPassword</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row80</RowName>
+			
+			
+			<ControlTypeName>TextBox</ControlTypeName><StyleClass/><StyleText>Type:password</StyleText>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<OffsetOrPositionX>3</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>80</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem>
+		
+		
+		
+		
+				
+		
+		
+		
+</ArrayOfZoneItem>
+

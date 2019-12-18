@@ -1,0 +1,136 @@
+<ArrayOfLayoutElement>
+	<LayoutElement>
+
+			<Id>200</Id><Name>RemoteToolArea</Name><Container>MainSectionMainDivisionMidRegion</Container><TypeName>ContentArea</TypeName>
+			<Location/><StyleClass/><StyleText>Padding:2</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Fill</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>210</Id><Name>RemoteToolLabelZone</Name><Container>RemoteToolArea</Container><TypeName>Zone</TypeName>
+			<Location>\_common\TitleLabel</Location><InputVariables>Remote Tools^Level1^</InputVariables><StyleClass/><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>40</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>220</Id><Name>MstscZone</Name><Container>RemoteToolArea</Container><TypeName>Zone</TypeName>
+			<Location>\Admin\RemoteTool\Mstsc</Location><InputVariables/><StyleClass/><StyleText>Align:RowLining</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>160</OffsetOrPositionX><OffsetOrPositionY>100</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>22001</Id><Name>OnNetworkLocationChanged</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark>Public_NetworkLocation_NetworkLocation</Remark>
+			
+			<Action>RefreshProcedureVariables;#RemoteTool_MstscZone_MonitoredServers#</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>22002</Id><Name>OnNetworkLocationChanged1</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark>Public_NetworkLocation_NetworkLocation</Remark>
+			
+			<Action>RefreshControlsDataSources;$RemoteTool_MstscZone_MstscIp$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>250</Id><Name>TeamviewerZone</Name><Container>RemoteToolArea</Container><TypeName>Zone</TypeName>
+			<Location>\_common\TextButton</Location><InputVariables>Team Viewer^Run;\Tools\TeamViewer.exe</InputVariables><StyleClass/><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>200</OffsetOrPositionX><OffsetOrPositionY>45</OffsetOrPositionY><Width>100</Width><Height>30</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>260</Id><Name>AnyDeskZone</Name><Container>RemoteToolArea</Container><TypeName>Zone</TypeName>
+			<Location>\_common\TextButton</Location><InputVariables>AnyDesk^Run;\Tools\AnyDesk.exe</InputVariables><StyleClass/><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>360</OffsetOrPositionX><OffsetOrPositionY>45</OffsetOrPositionY><Width>100</Width><Height>30</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>270</Id><Name>AmmyyAdminZone</Name><Container>RemoteToolArea</Container><TypeName>Zone</TypeName>
+			<Location>\_common\TextButton</Location><InputVariables>Ammyy Admin^Run;\Tools\AmmyAdmin.exe</InputVariables><StyleClass/><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>520</OffsetOrPositionX><OffsetOrPositionY>45</OffsetOrPositionY><Width>100</Width><Height>30</Height>
+		</LayoutElement>
+</ArrayOfLayoutElement>

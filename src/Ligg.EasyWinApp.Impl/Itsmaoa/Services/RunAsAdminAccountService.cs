@@ -1,12 +1,10 @@
 ﻿using System;
-using System.IO;
 using System.Security.Principal;
 using Ligg.Base.DataModel.Enums;
 using Ligg.Base.Extension;
 using Ligg.Base.Helpers;
 using Ligg.EasyWinApp.Implementation.DataModel.Enums;
 using Ligg.EasyWinApp.Implementation.Helpers;
-using Ligg.EasyWinApp.ImplInterface;
 using Ligg.Utility.Admin.Helpers;
 using Ligg.Utility.Admin.Helpers.Account;
 
@@ -15,15 +13,15 @@ namespace Ligg.EasyWinApp.Implementation.Services
     internal class RunAsAdminAccountService
     {
         //#Init
-        internal void InitRunAsAdminAccountStatus()
+        internal void Init()
         {
             try
             {
-                if (RunningParams.RunAsAdminAccountStatus == UniversalStatus.Unknown) RefreshRunAsAdminAccountStatus();
+                new NetworkLocationService().Init();
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".InitRunAsAdminAccountStatus Error: " + ex.Message);
+                throw new ArgumentException("\n>> " + GetType().FullName + ".Init Error: " + ex.Message);
             }
         }
 
@@ -33,32 +31,29 @@ namespace Ligg.EasyWinApp.Implementation.Services
             try
             {
                 RefreshCurrentWinIdAsRunAsAdminAccountStatus();
-                if (RunningParams.CurrentWinIdAsRunAsAdminAccountStatus == UniversalStatus.Ok)
+                if (RunAsAdminAccountServiceData.CurrentWinIdAsRunAsAdminAccountStatus == UniversalStatus.Ok)
                 {
                     return;
                 }
-                else
+
+                UpdateWin10CompatibilityStatus();
+                if (RunAsAdminAccountServiceData.Win10CompatibilityStatus == UniversalStatus.NotOk)
                 {
-                    RefreshWin10CompatibilityStatus();
-                    if (RunningParams.Win10CompatibilityStatus == UniversalStatus.NotOk)
-                    {
-                        return;
-                    }
-                    RefreshSeclogonWinServiceStatus();
-                    if (RunningParams.SeclogonWinServiceStatus == UniversalStatus.NotOk)
-                    {
-                        return;
-                    }
-                    else
-                    {
-                        RefreshDefaultRunAsAdminAccountStatus();
-                    }
+                    return;
                 }
 
+                UpdateSeclogonWinServiceStatus();
+                if (RunAsAdminAccountServiceData.SeclogonWinServiceStatus == UniversalStatus.NotOk)
+                {
+                    return;
+                }
+
+                RefreshDefaultRunAsAdminAccountStatus();
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".RefreshRunAsAdminAccountStatus Error: " + ex.Message);
+                throw new ArgumentException("\n>> " + GetType().FullName + ".RefreshRunAsAdminAccountStatus Error: " +
+                                            ex.Message);
             }
         }
 
@@ -81,48 +76,51 @@ namespace Ligg.EasyWinApp.Implementation.Services
                     domainOfCurWinId = curWinIdInfoArray[0];
                     accountNameOfCurWinId = curWinIdInfoArray[1];
                 }
-                if (NetworkAndSystemHelper.IsWinIdAdmin(domainOfCurWinId, accountNameOfCurWinId, "Administrators", "Domain Admins"))
+
+                if (NetworkAndSystemHelper.IsWinIdAdmin(domainOfCurWinId, accountNameOfCurWinId, "Administrators",
+                    "Domain Admins"))
                 {
-                    RunningParams.CurrentWinIdAsRunAsAdminAccountStatus = UniversalStatus.Ok;
+                    RunAsAdminAccountServiceData.CurrentWinIdAsRunAsAdminAccountStatus = UniversalStatus.Ok;
                     RunningParams.CurrentRunAsAdminAccountDomain = domainOfCurWinId;
                     RunningParams.CurrentRunAsAdminAccountName = "Current Windows Id: " + accountNameOfCurWinId;
                     RunningParams.CurrentRunAsAdminAccountPassword = "";
                 }
                 else
                 {
-                    RunningParams.CurrentWinIdAsRunAsAdminAccountStatus = UniversalStatus.NotOk;
+                    RunAsAdminAccountServiceData.CurrentWinIdAsRunAsAdminAccountStatus = UniversalStatus.NotOk;
                 }
+
                 UpdateRunAsAdminAccountStatus();
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".RefreshCurrentWinIdAsRunAsAdminAccountStatus Error: " + ex.Message);
+                throw new ArgumentException("\n>> " + GetType().FullName +
+                                            ".RefreshCurrentWinIdAsRunAsAdminAccountStatus Error: " + ex.Message);
             }
         }
 
-        internal void RefreshWin10CompatibilityStatus()
+        internal void UpdateWin10CompatibilityStatus()
         {
             try
             {
                 if (!NetworkAndSystemHelper.IsWin10CompatibilityOk())
                 {
-                    RunningParams.Win10CompatibilityStatus = UniversalStatus.NotOk;
+                    RunAsAdminAccountServiceData.Win10CompatibilityStatus = UniversalStatus.NotOk;
                 }
                 else
                 {
-                    RunningParams.Win10CompatibilityStatus = UniversalStatus.Ok;
+                    RunAsAdminAccountServiceData.Win10CompatibilityStatus = UniversalStatus.Ok;
                 }
-
-                UpdateRunAsAdminAccountStatus();
 
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".RefreshWin10CompatibilityStatus Error: " + ex.Message);
+                throw new ArgumentException("\n>> " + GetType().FullName + ".RefreshWin10CompatibilityStatus Error: " +
+                                            ex.Message);
             }
         }
 
-        public void RepairRepairWin10CompatibilityStatus()
+        public void RepairWin10CompatibilityStatus()
         {
             try
             {
@@ -133,54 +131,75 @@ namespace Ligg.EasyWinApp.Implementation.Services
                     if (RunningParams.AssemblyBits == 32)
                     {
                         var configUpdatorText = "";
-                        var registeredOwner32 = RegistryHelper.GetValue("lm\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\RegisteredOwner", 32);
+                        var registeredOwner32 =
+                            RegistryHelper.GetValue(
+                                "lm\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\RegisteredOwner", 32);
                         if (registeredOwner32.IsNullOrEmpty())
                         {
-                            var registeredOwner64 = RegistryHelper.GetValue("lm\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\RegisteredOwner", 64);
-                            configUpdatorText = "Registry;lm;lm\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\RegisteredOwner;" + registeredOwner64 + "\r\n";
+                            var registeredOwner64 =
+                                RegistryHelper.GetValue(
+                                    "lm\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\RegisteredOwner", 64);
+                            configUpdatorText =
+                                "Registry;lm;lm\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\RegisteredOwner;" +
+                                registeredOwner64 + "\r\n";
                         }
-                        var registeredOrganization32 = RegistryHelper.GetValue("lm\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\RegisteredOrganization", 32);
+
+                        var registeredOrganization32 = RegistryHelper.GetValue(
+                            "lm\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\RegisteredOrganization", 32);
                         if (registeredOrganization32.IsNullOrEmpty())
                         {
-                            var registeredOrganization64 = RegistryHelper.GetValue("lm\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\RegisteredOrganization", 64);
+                            var registeredOrganization64 = RegistryHelper.GetValue(
+                                "lm\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\RegisteredOrganization", 64);
                             var configUpdatorText1 =
-                                "Registry;lm;lm\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\RegisteredOrganization;" + registeredOrganization64;
-                            configUpdatorText = configUpdatorText.IsNullOrEmpty() ? configUpdatorText1 : configUpdatorText + ";" + configUpdatorText1;
+                                "Registry;lm;lm\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\RegisteredOrganization;" +
+                                registeredOrganization64;
+                            configUpdatorText = configUpdatorText.IsNullOrEmpty()
+                                ? configUpdatorText1
+                                : configUpdatorText + ";" + configUpdatorText1;
                         }
+
                         if (!configUpdatorText.IsNullOrEmpty())
                         {
-                            configUpdatorText = EncryptionHelper.SmEncrypt(configUpdatorText);
-                            new WinConfigService().UpdateWinConfig(configUpdatorText);
-
                         }
-                        RefreshWin10CompatibilityStatus();
+
+                        UpdateWin10CompatibilityStatus();
                     }
                 }
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".RepairRepairWin10CompatibilityStatus Error: " + ex.Message);
+                throw new ArgumentException("\n>> " + GetType().FullName +
+                                            ".RepairWin10CompatibilityStatus Error: " + ex.Message);
             }
         }
 
-        internal void RefreshSeclogonWinServiceStatus()
+        internal void UpdateSeclogonWinServiceStatus()
         {
             try
             {
                 if (!NetworkAndSystemHelper.IsSeclogonWinServiceRunning())
                 {
-                    RunningParams.SeclogonWinServiceStatus = UniversalStatus.NotOk;
+                    RunAsAdminAccountServiceData.SeclogonWinServiceStatus = UniversalStatus.NotOk;
                 }
                 else
                 {
-                    RunningParams.SeclogonWinServiceStatus = UniversalStatus.Ok;
+                    RunAsAdminAccountServiceData.SeclogonWinServiceStatus = UniversalStatus.Ok;
                 }
-                UpdateRunAsAdminAccountStatus();
-
             }
             catch (Exception ex)
             {
                 throw new ArgumentException("\n>> " + GetType().FullName + ".RefreshSeclogonWinServiceStatus Error: " + ex.Message);
+            }
+        }
+
+        public void RepairSeclogonWinServiceStatus()
+        {
+            try
+            {
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("\n>> " + GetType().FullName + ".RepairSeclogonWinServiceStatus Error: " + ex.Message);
             }
         }
 
@@ -190,8 +209,7 @@ namespace Ligg.EasyWinApp.Implementation.Services
             {
                 var account = "";
                 var password = "";
-                RunningParams.DefaultRunAsAdminAccountStatus = UniversalStatus.NotOk;
-
+                RunAsAdminAccountServiceData.DefaultRunAsAdminAccountStatus = 0;
                 //local account check
                 if (!string.IsNullOrEmpty(Configuration.OrganizationSetting.RunAsAdminLocalAccount))
                 {
@@ -202,17 +220,25 @@ namespace Ligg.EasyWinApp.Implementation.Services
                     {
                         if (LocalAccountHelper.IsValidAccountAndPassword("", account, password))
                         {
-                            RunningParams.DefaultRunAsAdminAccountStatus = UniversalStatus.Ok;
-                            if (RunningParams.CurrentWinIdAsRunAsAdminAccountStatus == UniversalStatus.NotOk)
+                            RunAsAdminAccountServiceData.DefaultRunAsAdminAccountStatus = 0.5f; //0.5 OK
+                                                                                                //UpdateRunAsAdminAccountStatus();
+                            if (RunAsAdminAccountServiceData.Win10CompatibilityStatus == UniversalStatus.Ok
+                              && RunAsAdminAccountServiceData.SeclogonWinServiceStatus == UniversalStatus.Ok)
                             {
                                 RunningParams.CurrentRunAsAdminAccountDomain = string.Empty;
                                 RunningParams.CurrentRunAsAdminAccountName = account;
                                 RunningParams.CurrentRunAsAdminAccountPassword = password;
+                                RunAsAdminAccountServiceData.DefaultRunAsAdminAccountStatus = 1.0f;
                             }
                         }
                     }
-                    return;
                 }//local account check ends
+
+                if (RunAsAdminAccountServiceData.DefaultRunAsAdminAccountStatus > 0.5f)
+                {
+                    UpdateRunAsAdminAccountStatus();
+                    return;
+                }
 
                 //domain account check
                 if (!string.IsNullOrEmpty(Configuration.OrganizationSetting.RunAsAdminDomainAccount))
@@ -230,25 +256,21 @@ namespace Ligg.EasyWinApp.Implementation.Services
                             {
                                 if (LocalAccountHelper.IsValidAccountAndPassword(domain, account, password))
                                 {
-                                    RunningParams.DefaultRunAsAdminAccountStatus = UniversalStatus.Ok;
-                                    if (RunningParams.CurrentWinIdAsRunAsAdminAccountStatus == UniversalStatus.NotOk)
-                                    {
-                                        //RunningParams.CurrentRunAsAdminAccountDomain = domain;
-                                        //RunningParams.CurrentRunAsAdminAccountName = account;
-                                        //RunningParams.CurrentRunAsAdminAccountPassword = password;
-                                    }
-                                    if (RunningParams.Win10CompatibilityStatus == UniversalStatus.Ok &&
-                                        RunningParams.SeclogonWinServiceStatus == UniversalStatus.Ok)
+                                    RunAsAdminAccountServiceData.DefaultRunAsAdminAccountStatus = 0.5f;
+                                    if (RunAsAdminAccountServiceData.Win10CompatibilityStatus == UniversalStatus.Ok
+                                      && RunAsAdminAccountServiceData.SeclogonWinServiceStatus == UniversalStatus.Ok)
                                     {
                                         RunningParams.CurrentRunAsAdminAccountDomain = domain;
                                         RunningParams.CurrentRunAsAdminAccountName = account;
                                         RunningParams.CurrentRunAsAdminAccountPassword = password;
+                                        RunAsAdminAccountServiceData.DefaultRunAsAdminAccountStatus = 1.0f;
+                                        UpdateRunAsAdminAccountStatus();
                                     }
                                 }
                             }
                         }
                     }
-                }//domain account check ends
+                }//domain account check ends 
 
                 UpdateRunAsAdminAccountStatus();
             }
@@ -262,14 +284,7 @@ namespace Ligg.EasyWinApp.Implementation.Services
         {
             try
             {
-                var configUpdatorText = "LocalAccount;GroupIncludesAccounts;Administrators;" + Configuration.OrganizationSetting.RunAsAdminLocalAccount + "\r\n";
-                configUpdatorText = configUpdatorText + "LocalAccount;AccountPassword;" + Configuration.OrganizationSetting.RunAsAdminLocalAccount + ";" + Configuration.OrganizationSetting.RunAsAdminLocalAccountPassword;
-                configUpdatorText = EncryptionHelper.SmEncrypt(configUpdatorText);
-                if (!configUpdatorText.IsNullOrEmpty())
-                {
-                    configUpdatorText = EncryptionHelper.SmEncrypt(configUpdatorText);
-                    new WinConfigService().UpdateWinConfig(configUpdatorText);
-                }
+
             }
             catch (Exception ex)
             {
@@ -281,25 +296,28 @@ namespace Ligg.EasyWinApp.Implementation.Services
         {
             try
             {
-                RunningParams.DesignatedRunAsAdminAccountStatus = UniversalStatus.NotOk;
+                RunAsAdminAccountServiceData.DesignatedRunAsAdminAccountStatus = 0;
                 var domain = "";
-                var account = RunningParams.DesignatedRunAsAdminAccountName;
-                var password = RunningParams.DesignatedRunAsAdminAccountPassword;
+                var account = RunAsAdminAccountServiceData.DesignatedRunAsAdminAccountName;
+                var password = RunAsAdminAccountServiceData.DesignatedRunAsAdminAccountPassword;
                 if (string.IsNullOrEmpty(account) | string.IsNullOrEmpty(password))
                 {
+                    UpdateRunAsAdminAccountStatus();
                     return;
                 }
 
-                if (RunningParams.IsDesignatedRunAsAdminAccountDomainAcct)
+                if (RunAsAdminAccountServiceData.IsDesignatedRunAsAdminAccountDomainAcct)
                 {
                     new NetworkLocationService().RefreshNetworkDistance(); //? necessary
                     if (RunningParams.NetworkDistance == NetworkDistance.Wan | RunningParams.NetworkDistance == NetworkDistance.Unknown)
                     {
+                        UpdateRunAsAdminAccountStatus();
                         return;
                     }
 
                     if (MachineInfoHelper.GetMachineInfo("domainname") != Configuration.OrganizationSetting.FullDomainName.ToLower())
                     {
+                        UpdateRunAsAdminAccountStatus();
                         return;
                     }
                     domain = Configuration.OrganizationSetting.ShortDomainName;
@@ -307,53 +325,29 @@ namespace Ligg.EasyWinApp.Implementation.Services
 
                 if (!NetworkAndSystemHelper.IsWinIdAdmin(domain, account, "administrators", "Domain Admins"))
                 {
+                    UpdateRunAsAdminAccountStatus();
                     return;
                 }
 
                 if (LocalAccountHelper.IsValidAccountAndPassword(domain, account, password))
                 {
-                    RunningParams.DesignatedRunAsAdminAccountStatus = UniversalStatus.Ok;
-                    if (RunningParams.CurrentWinIdAsRunAsAdminAccountStatus == UniversalStatus.NotOk)
-                    {
-                        //RunningParams.CurrentRunAsAdminAccountDomain = domain;
-                        //RunningParams.CurrentRunAsAdminAccountName = account;
-                        //RunningParams.CurrentRunAsAdminAccountPassword = password;
-                    }
-
-                    if (RunningParams.Win10CompatibilityStatus == UniversalStatus.Ok &&
-                        RunningParams.SeclogonWinServiceStatus == UniversalStatus.Ok)
+                    RunAsAdminAccountServiceData.DesignatedRunAsAdminAccountStatus = 0.5f;
+                    if (RunAsAdminAccountServiceData.Win10CompatibilityStatus == UniversalStatus.Ok &&
+                        RunAsAdminAccountServiceData.SeclogonWinServiceStatus == UniversalStatus.Ok)
                     {
                         RunningParams.CurrentRunAsAdminAccountDomain = domain;
                         RunningParams.CurrentRunAsAdminAccountName = account;
                         RunningParams.CurrentRunAsAdminAccountPassword = password;
+                        RunAsAdminAccountServiceData.DesignatedRunAsAdminAccountStatus = 1f;
                     }
-
                 }
                 UpdateRunAsAdminAccountStatus();
+
             }
             catch (Exception ex)
             {
                 throw new ArgumentException("\n>> " + GetType().FullName + ".RefreshDesignatedRunAsAdminAccountStatus Error: " + ex.Message);
             }
-        }
-
-        //#judge
-        internal bool JudgeRunAsAdminAccountStatusByNonCurrentWinId()
-        {
-            if (RunningParams.Win10CompatibilityStatus == UniversalStatus.NotOk)
-            {
-                return false;
-            }
-            if (RunningParams.SeclogonWinServiceStatus == UniversalStatus.NotOk)
-            {
-                return false;
-            }
-            if (RunningParams.DefaultRunAsAdminAccountStatus == UniversalStatus.Ok | RunningParams.DesignatedRunAsAdminAccountStatus == UniversalStatus.Ok)
-            {
-                return true;
-            }
-
-            return false;
         }
 
 
@@ -363,11 +357,13 @@ namespace Ligg.EasyWinApp.Implementation.Services
             try
             {
                 RunningParams.RunAsAdminAccountStatus = UniversalStatus.NotOk;
-                if (RunningParams.CurrentWinIdAsRunAsAdminAccountStatus == UniversalStatus.Ok)
+                if (RunAsAdminAccountServiceData.CurrentWinIdAsRunAsAdminAccountStatus == UniversalStatus.Ok)
                 {
                     RunningParams.RunAsAdminAccountStatus = UniversalStatus.Ok;
+                    return;
                 }
-                else if (JudgeRunAsAdminAccountStatusByNonCurrentWinId())
+
+                if (RunAsAdminAccountServiceData.DefaultRunAsAdminAccountStatus > 0.5 | RunAsAdminAccountServiceData.DesignatedRunAsAdminAccountStatus > 0.5)
                 {
                     RunningParams.RunAsAdminAccountStatus = UniversalStatus.Ok;
                 }
@@ -380,5 +376,17 @@ namespace Ligg.EasyWinApp.Implementation.Services
 
     }
 
+    internal static class RunAsAdminAccountServiceData
+    {
+        internal static UniversalStatus CurrentWinIdAsRunAsAdminAccountStatus = UniversalStatus.Unknown;
+        internal static UniversalStatus Win10CompatibilityStatus = UniversalStatus.Unknown;
+        internal static UniversalStatus SeclogonWinServiceStatus = UniversalStatus.Unknown;
+        internal static float DefaultRunAsAdminAccountStatus = -1;
+        internal static float DesignatedRunAsAdminAccountStatus = -1;
+        internal static bool IsDesignatedRunAsAdminAccountDomainAcct = false;
+        internal static string DesignatedRunAsAdminAccountDomain = "";
+        internal static string DesignatedRunAsAdminAccountName = "";
+        internal static string DesignatedRunAsAdminAccountPassword = "";
+    }
 
 }

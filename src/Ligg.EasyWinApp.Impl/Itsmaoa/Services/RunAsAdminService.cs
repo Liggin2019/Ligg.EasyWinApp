@@ -1,20 +1,14 @@
 ﻿using System;
 using System.IO;
-using System.Security.Principal;
 using Ligg.Base.DataModel.Enums;
 using Ligg.Base.Extension;
 using Ligg.Base.Helpers;
-using Ligg.EasyWinApp.Implementation.DataModel.Enums;
-using Ligg.EasyWinApp.Implementation.Helpers;
-using Ligg.EasyWinApp.ImplInterface;
-using Ligg.Utility.Admin.Helpers;
-using Ligg.Utility.Admin.Helpers.Account;
 
 namespace Ligg.EasyWinApp.Implementation.Services
 {
     internal class RunAsAdminService
     {
-       
+
         internal string RunAsAdmin(string funcName, string[] funcParamArray)
         {
             var returnStr = "";
@@ -27,12 +21,12 @@ namespace Ligg.EasyWinApp.Implementation.Services
                 var runAsAdimAccount = RunningParams.CurrentRunAsAdminAccountName;
                 var runAsAdimAccountPassword = RunningParams.CurrentRunAsAdminAccountPassword;
                 var runAsAdimAccountDomain = RunningParams.CurrentRunAsAdminAccountPassword;
-                bool isCurWinIdIsAdmin = RunningParams.CurrentWinIdAsRunAsAdminAccountStatus == UniversalStatus.Ok ? true : false;
+
                 if (funcName.ToLower() == "RunAsAdmin".ToLower())
                 {
                     if (funcParamArray.Length > 1)
                         actArgsStr = funcParamArray[1];
-                    if (isCurWinIdIsAdmin)
+                    if (RunningParams.CurrentRunAsAdminAccountName.StartsWith("Current Windows Id:"))
                         ProcessHelper.Run(funcParamArray[0], actArgsStr);
                     else ProcessHelper.Run(funcParamArray[0], actArgsStr, runAsAdimAccountDomain, runAsAdimAccount, runAsAdimAccountPassword);
                 }
@@ -82,7 +76,6 @@ namespace Ligg.EasyWinApp.Implementation.Services
                     else ProcessHelper.OpenFolder(funcParamArray[0], runAsAdimAccountDomain, runAsAdimAccount, runAsAdimAccountPassword);
                 }
 
-
                 else if (funcName.ToLower() == ("RedirectAsAdmin").ToLower())
                 {
                     if (RunningParams.CurrentRunAsAdminAccountName.StartsWith("Current Windows Id:"))
@@ -98,7 +91,6 @@ namespace Ligg.EasyWinApp.Implementation.Services
             }
         }
 
+
     }
-
-
 }

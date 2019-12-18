@@ -39,7 +39,7 @@
             set;
         }
 
-        public string MonitoredServers
+        public string MonitoredServerAddresses
         {
             get;
             set;

@@ -1,24 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Diagnostics.Eventing.Reader;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 using Ligg.Base.DataModel;
 using Ligg.Base.DataModel.Enums;
 using Ligg.Base.Extension;
 using Ligg.Base.Helpers;
 using Ligg.Base.Handlers;
-using Ligg.Winform.Dialogs;
+using Ligg.WinForm.Dialogs;
 
-namespace Ligg.Winform.Helpers
+namespace Ligg.WinForm.Helpers
 {
     public static class FunctionHelper
     {
@@ -82,8 +77,8 @@ namespace Ligg.Winform.Helpers
                 {
                     if (funcParamArray[0] == "ByNow")
                     {
-                        var seperator = funcParamArray[1];
-                        return funcParamArray[2].ToUniqueStringByNow(seperator);
+                        var separator = funcParamArray[1];
+                        return funcParamArray[2].ToUniqueStringByNow(separator);
                     }
                     else throw new ArgumentException("funcName: " + funcName + " has no param '" + funcParamArray[0] + "'! ");
                 }
@@ -119,11 +114,10 @@ namespace Ligg.Winform.Helpers
                     return funcParamArray[1].Length == 0 ? funcParamArray[0]
                         : funcParamArray[0].Replace(funcParamArray[1], funcParamArray[2]);
                 }
-
                 else if (funcName.ToLower() == "Split".ToLower())
                 {
-                    var seperator = funcParamArray[1][0];
-                    var tmpStrArray = funcParamArray[0].Split(seperator);
+                    var separator = funcParamArray[1][0];
+                    var tmpStrArray = funcParamArray[0].Split(separator);
                     var index = Convert.ToInt16(funcParamArray[2]);
                     if (index > tmpStrArray.Length || index == tmpStrArray.Length)
                     {
@@ -139,10 +133,17 @@ namespace Ligg.Winform.Helpers
                     var separator = funcParamArray[0].GetSubParamSeparator();
                     var tmpStrArray = funcParamArray[0].Split(separator);
                     var rtStr = "";
-                    var i = 0;
-                    foreach (var tmpStr in tmpStrArray)
+                    if (funcParamArray.Length > 1)
                     {
-                        rtStr = rtStr + tmpStr;
+                        var joinSeparator = Convert.ToChar(funcParamArray[1]);
+                        rtStr = StringExtension.JoinStringArrayBySeparator(tmpStrArray, joinSeparator);
+                    }
+                    else
+                    {
+                        foreach (var tmpStr in tmpStrArray)
+                        {
+                            rtStr = rtStr + tmpStr;
+                        }
                     }
                     return rtStr;
                 }
@@ -153,7 +154,7 @@ namespace Ligg.Winform.Helpers
                     Int16 len = Convert.ToInt16(funcParamArray[2]);
                     return tmStr.Substring(sttIndex, len);
                 }
-                else if (funcName.ToLower() == "AddOrDelToSubParams".ToLower())
+                else if (funcName.ToLower() == "AddOrRemoveSubParam".ToLower())
                 {
                     var separator = ',';
                     if (funcParamArray[0].ContainSubParamSeparator())
@@ -432,7 +433,21 @@ namespace Ligg.Winform.Helpers
                             return returnVal;
                         }
                     }
+                    else if (compareFlag.ToLower() == "IsEmpty".ToLower())
+                    {
+                        if (compareVar.IsNullOrEmpty())
+                        {
+                            return returnVal;
+                        }
+                    }
                     else if (compareFlag.ToLower() == "IsNotNull".ToLower())
+                    {
+                        if (!compareVar.IsNullOrEmpty())
+                        {
+                            return returnVal;
+                        }
+                    }
+                    else if (compareFlag.ToLower() == "IsNotEmpty".ToLower())
                     {
                         if (!compareVar.IsNullOrEmpty())
                         {
@@ -502,13 +517,13 @@ namespace Ligg.Winform.Helpers
                         return returnStr;
                     }
 
-                    else if (funcParamArray[0].ToLower() == "JudgeStringIsNull".ToLower())
+                    else if (funcParamArray[0].ToLower() == "JudgeStringIsEmpty".ToLower())
                     {
                         var returnStr = "false";
                         if (string.IsNullOrEmpty(funcParamArray[1])) returnStr = "true";
                         return returnStr;
                     }
-                    else if (funcParamArray[0].ToLower() == "JudgeStringIsNotNull".ToLower())
+                    else if (funcParamArray[0].ToLower() == "JudgeStringIsNotEmpty".ToLower())
                     {
                         var returnStr = "false";
                         if (!string.IsNullOrEmpty(funcParamArray[1])) returnStr = "true";
@@ -566,10 +581,12 @@ namespace Ligg.Winform.Helpers
                     }
                     else if (funcParamArray[0].ToLower() == "Symmetric".ToLower())
                     {
-                        return EncryptionHelper.SmEncrypt(funcParamArray[1]);
+                        //return EncryptionHelper.SmEncrypt(funcParamArray[1]);
+                        return string.Empty;
                     }
                     else if (funcParamArray[0].ToLower() == "TimeDynamic".ToLower())
                     {
+                        //so+
                         //var mins = Convert.ToInt16(funcParamArray[2]);
                         //var dtStr = funcParamArray.Length > 3 ? funcParamArray[3] : "";
                         //var dt = new DateTime();
@@ -590,11 +607,13 @@ namespace Ligg.Winform.Helpers
                 {
                     if (funcParamArray[0].ToLower() == "Rsa".ToLower())
                     {
+                        //so+
                         //return EncryptionHelper.RsaDecrypt(funcParamArray[1]);
                         return string.Empty;
                     }
                     if (funcParamArray[0].ToLower() == "Symmetric".ToLower())
                     {
+                        //so+
                         //return EncryptionHelper.SmDecrypt(funcParamArray[1]);
                         return string.Empty;
                     }
@@ -617,7 +636,7 @@ namespace Ligg.Winform.Helpers
                 //##GetJson
                 else if (funcName.ToLower() == "GetJson".ToLower())
                 {
-                    if(funcParamArray[0].ToLower() == "FromSimpleXmlFile".ToLower())
+                    if (funcParamArray[0].ToLower() == "FromSimpleXmlFile".ToLower())
                     {
                         var xmlMgr = new XmlHandler(funcParamArray[1].ToLower());
                         var dt = xmlMgr.ConvertToDataTable();
@@ -627,14 +646,14 @@ namespace Ligg.Winform.Helpers
                         return str;
 
                     }
-                    else if(funcParamArray[0].ToLower() == "FromListXmlFile".ToLower())
+                    else if (funcParamArray[0].ToLower() == "FromListXmlFile".ToLower())
                     {
                         var xmlMgr = new XmlHandler(funcParamArray[1].ToLower());
                         var dt = xmlMgr.ConvertToDataTable();
                         var str = DataTableHelper.ConvertToJson(dt);
                         return str;
                     }
-                    else if(funcParamArray[0].ToLower() == "FromListXmlFileByNodes".ToLower())
+                    else if (funcParamArray[0].ToLower() == "FromListXmlFileByNodes".ToLower())
                     {
                         return "";
                     }
@@ -672,6 +691,7 @@ namespace Ligg.Winform.Helpers
             var returnStr = "";
             try
             {
+                //##dir
                 if (funcName.ToLower() == "CreateDirectory".ToLower())
                 {
                     if (!Directory.Exists(funcParamArray[0]))
@@ -698,6 +718,7 @@ namespace Ligg.Winform.Helpers
                         System.Diagnostics.Process.Start(funcParamArray[0]);
                     }
                 }
+                //##file
                 else if (funcName.ToLower() == "SelectAndRenameFile".ToLower())
                 {
                     var dlgOpenFile = new OpenFileDialog();
@@ -728,7 +749,22 @@ namespace Ligg.Winform.Helpers
                         //throw new ArgumentException("Operation Cancelled! ");
                     }
                 }
+                else if (funcName.ToLower() == "WriteText".ToLower())
+                {
+                    var path = funcParamArray[0];
+                    var content = funcParamArray[1];
+                    var dir = FileHelper.GetFileDetailByOption(path, FilePathComposition.Directory);
+                    if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
+                    File.WriteAllText(path, content);
+                }
+                else if (funcName.ToLower() == "DeleteFile".ToLower())
+                {
+                    var path = funcParamArray[0];
+                    if (File.Exists(path))
+                        File.Delete(path);
+                }
 
+                //##process
                 else if (funcName.ToLower() == "Run".ToLower())
                 {
                     var actArgsStr = "";
@@ -796,7 +832,7 @@ namespace Ligg.Winform.Helpers
                 }
                 else if (funcName.ToLower() == "EncryptTextFile".ToLower())
                 {
-                   
+                    //so+
                 }
 
                 //##export

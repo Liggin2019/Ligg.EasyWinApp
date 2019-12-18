@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
-using Ligg.Winform.Skin;
+using Ligg.WinForm.Skin;
 
-namespace Ligg.Winform.Forms
+namespace Ligg.WinForm.Forms
 {
     public partial class GroundForm : SkinForm
     {

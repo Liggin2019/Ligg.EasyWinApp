@@ -1,8 +1,8 @@
-﻿using Ligg.Winform.Forms;
+﻿using Ligg.WinForm.Forms;
 
-namespace Ligg.Winform.Dialogs
+namespace Ligg.WinForm.Dialogs
 {
-    using Ligg.Winform.DataModel.Enums;
+    using Ligg.WinForm.DataModel.Enums;
     partial class RunningErrorViewer:GroundForm
     {
         /// <summary>
@@ -32,7 +32,7 @@ namespace Ligg.Winform.Dialogs
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RunningErrorViewer));
-            this.imageTextButtonSendErrorInfo = new Ligg.Winform.Controls.ImageTextButton();
+            this.imageTextButtonSendErrorInfo = new Ligg.WinForm.Controls.ImageTextButton();
             this.pictureBoxError = new System.Windows.Forms.PictureBox();
             this.labelError = new System.Windows.Forms.Label();
             this.panelTop = new System.Windows.Forms.Panel();
@@ -64,9 +64,9 @@ namespace Ligg.Winform.Dialogs
             this.imageTextButtonSendErrorInfo.Location = new System.Drawing.Point(241, 0);
             this.imageTextButtonSendErrorInfo.Name = "imageTextButtonSendErrorInfo";
             this.imageTextButtonSendErrorInfo.Radius = 4;
-            this.imageTextButtonSendErrorInfo.RoundStyle = Ligg.Winform.DataModel.Enums.RoundStyle.None;
+            this.imageTextButtonSendErrorInfo.RoundStyle = Ligg.WinForm.DataModel.Enums.RoundStyle.None;
             this.imageTextButtonSendErrorInfo.Size = new System.Drawing.Size(226, 27);
-            this.imageTextButtonSendErrorInfo.SensitiveType = Ligg.Winform.DataModel.Enums.ControlSensitiveType.None;
+            this.imageTextButtonSendErrorInfo.SensitiveType = Ligg.WinForm.DataModel.Enums.ControlSensitiveType.None;
             this.imageTextButtonSendErrorInfo.TabIndex = 3;
             this.imageTextButtonSendErrorInfo.Text = "Send error info. to developer";
             this.imageTextButtonSendErrorInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

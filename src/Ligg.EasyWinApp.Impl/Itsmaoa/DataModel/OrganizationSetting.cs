@@ -1,6 +1,5 @@
 ﻿namespace Ligg.EasyWinApp.Implementation.DataModel
 {
-    //public struct OrganizationSetting
     public class OrganizationSetting
     {
         public string FullDomainName

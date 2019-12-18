@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Ligg.Winform.DataModel.Enums;
-using Ligg.Winform.Resources;
+using Ligg.WinForm.DataModel.Enums;
+using Ligg.WinForm.Resources;
 
-namespace Ligg.Winform.Skin
+namespace Ligg.WinForm.Skin
 {
     internal class MmcControlBoxManager : IDisposable
     {

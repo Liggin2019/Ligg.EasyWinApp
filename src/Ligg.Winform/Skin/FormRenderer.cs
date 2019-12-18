@@ -3,7 +3,7 @@ using System.Drawing;
 using System.ComponentModel;
 using System.Security.Permissions;
 
-namespace Ligg.Winform.Skin
+namespace Ligg.WinForm.Skin
 {
     public abstract class FormRenderer
     {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using Ligg.Base.Extension;
 
 namespace Ligg.EasyWinApp.Implementation
 {
@@ -10,25 +11,20 @@ namespace Ligg.EasyWinApp.Implementation
 
         internal static string ResolveConstants(string text)
         {
-            var returnStr = "";
             try
             {
+                if (text.IsNullOrEmpty()) return string.Empty;
                 if (!text.Contains("%")) return text;
-                var toBeRplStr = "";
-                toBeRplStr = "%TestConstant%".ToLower();
+
+                var toBeRplStr = "%MdlDir%".ToLower();
                 if (text.ToLower().Contains(toBeRplStr))
                 {
-                    var rplStr = DateTime.Now.ToString("It is a test constant");
+                    var rplStr = RunningParams.CurrentNetworkLocation.MediaLibLocation;
                     text = Regex.Replace(text, toBeRplStr, rplStr, RegexOptions.IgnoreCase);
                 }
-                if (!text.Contains("%"))
-                {
-                    return text;
-                }
-                else
-                {
-                    throw new ArgumentException("Text '" + text + "' can't be resolved!");
-                }
+
+                if (text.Contains("%")) throw new ArgumentException("'" + text + "' can't be resolved ");
+                return text;
             }
             catch (Exception ex)
             {

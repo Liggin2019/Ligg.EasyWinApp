@@ -1,0 +1,199 @@
+<ArrayOfZoneItem>
+		<ZoneItem>
+			<Name>ActionDes</Name><TypeName>DisplayOnlyItem</TypeName>
+			<ControlTypeName>TitleLabel</ControlTypeName>
+			
+			
+			
+			<StyleClass/><StyleText>FontStyle:Bold;FontSize:9.00;TextAlign:MiddleLeft</StyleText>
+			
+			<DisplayName>=Empty</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<Action1/><InvalidFlag/><InvisibleFlag/>
+			<DockTypeName/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>5</OffsetOrPositionY><Width>380</Width><Height>30</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Name>ActionDes1</Name><TypeName>DisplayOnlyItem</TypeName>
+			<ControlTypeName>Label</ControlTypeName>
+			
+			
+			
+			<StyleClass/><StyleText>FontStyle:Bold;FontSize:9.00;TextAlign:MiddleLeft</StyleText>
+			
+			<DisplayName>=GetAbbrevAnnexText;#ActionDesName.v#</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<Action1/><InvalidFlag/><InvisibleFlag>true</InvisibleFlag>
+			<DockTypeName/><OffsetOrPositionX>0</OffsetOrPositionX><OffsetOrPositionY>0</OffsetOrPositionY><Width>1</Width><Height>1</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Name>Progress</Name><TypeName>DisplayOnlyItem</TypeName>
+			<ControlTypeName>ProgressBar</ControlTypeName>
+			
+			
+			
+			<StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue>#ProgressValue.v#</DefaultValue><ValidationRules/><Action/>
+			
+			<Action1/><InvalidFlag/><InvisibleFlag/>
+			<DockTypeName/><OffsetOrPositionX>0</OffsetOrPositionX><OffsetOrPositionY>40</OffsetOrPositionY><Width>400</Width><Height>35</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Name>RunNow</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<ControlTypeName>TextButton</ControlTypeName>
+			
+			
+			
+			<StyleClass>Button</StyleClass><StyleText>BackColor:235,235,235</StyleText>
+			
+			<DisplayName>Run</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>Crun~=IfElse;#CurrentTaskNo.v#,VLess,3;true;false~$Run$</Action>
+			
+			<Action1/><InvalidFlag/><InvisibleFlag/>
+			<DockTypeName/><OffsetOrPositionX>200</OffsetOrPositionX><OffsetOrPositionY>130</OffsetOrPositionY><Width>80</Width><Height>40</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Name>Run</Name><TypeName>TransactionOnlyItem</TypeName>
+			<ControlTypeName/>
+			
+			
+			
+			<StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>Xrun;$DisplayActionDes$,$Action$,$RefreshVariables$,$SetProgressValue$,$RefreshActionDes1Text$,$RunNow$</Action>
+			
+			<Action1/><InvalidFlag/><InvisibleFlag/>
+			<DockTypeName/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Name>DisplayActionDes</Name><TypeName>TransactionOnlyItem</TypeName>
+			<ControlTypeName/>
+			
+			
+			
+			<StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>SetControlText;$ActionDes$;$ActionDes1.t$</Action>
+			
+			<Action1/><InvalidFlag/><InvisibleFlag/>
+			<DockTypeName/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Name>Action</Name><TypeName>TransactionOnlyItem</TypeName>
+			<ControlTypeName/>
+			
+			
+			
+			<StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>Sleep;1000</Action>
+			
+			<Action1/><InvalidFlag/><InvisibleFlag/>
+			<DockTypeName/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Name>RefreshVariables</Name><TypeName>TransactionOnlyItem</TypeName>
+			<ControlTypeName/>
+			
+			
+			
+			<StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>RefreshZonesProceduresByGroup;$$;1</Action>
+			
+			<Action1/><InvalidFlag/><InvisibleFlag/>
+			<DockTypeName/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Name>SetProgressValue</Name><TypeName>TransactionOnlyItem</TypeName>
+			<ControlTypeName/>
+			
+			
+			
+			<StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>RefreshControlsValues;$Progress$</Action>
+			
+			<Action1/><InvalidFlag/><InvisibleFlag/>
+			<DockTypeName/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Name>RefreshActionDes1Text</Name><TypeName>TransactionOnlyItem</TypeName>
+			<ControlTypeName/>
+			
+			
+			
+			<StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>RefreshControlsTexts;$ActionDes1$</Action>
+			
+			<Action1/><InvalidFlag/><InvisibleFlag/>
+			<DockTypeName/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Name>ExitApp</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<ControlTypeName>TextButton</ControlTypeName>
+			
+			
+			
+			<StyleClass>Button</StyleClass><StyleText>BackColor:235,235,235</StyleText>
+			
+			<DisplayName>Exit</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>ExitApp</Action>
+			
+			<Action1/><InvalidFlag/><InvisibleFlag/>
+			<DockTypeName/><OffsetOrPositionX>310</OffsetOrPositionX><OffsetOrPositionY>130</OffsetOrPositionY><Width>80</Width><Height>40</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Name>RunAtStart</Name><TypeName>ZoneAfterRenderHandler</TypeName>
+			<ControlTypeName/>
+			
+			
+			
+			<StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>Crun;#IsUserMode.v#;$RunNow$</Action>
+			
+			<DisabledFlag/>
+			<DockTypeName/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>40</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			<Name>ExitAfterRun</Name><TypeName>ZoneAfterRenderHandler</TypeName>
+			<ControlTypeName/>
+			
+			
+			
+			<StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>Crun;#IsUserMode.v#;$ExitApp$</Action>
+			
+			<DisabledFlag/>
+			<DockTypeName/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>40</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem>
+		
+</ArrayOfZoneItem>

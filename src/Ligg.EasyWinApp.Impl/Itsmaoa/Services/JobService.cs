@@ -12,19 +12,16 @@ namespace Ligg.EasyWinApp.Implementation.Services
 {
     internal class JobService
     {
-        internal void InitData()
+        //#Init
+        internal void Init()
         {
             try
             {
-                if (JobServiceData.Jobs is null)
-                {
-                    JobServiceData.Init();
-                }
-
+                InitData();
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("\n>> " + GetType().FullName + ".InitData Error: " + ex.Message);
+                throw new ArgumentException("\n>> " + GetType().FullName + ".Init Error: " + ex.Message);
             }
         }
 
@@ -32,17 +29,19 @@ namespace Ligg.EasyWinApp.Implementation.Services
         {
             try
             {
-                if (JobServiceData.Jobs is null)
-                {
-                    JobServiceData.Init();
-                }
-                var curJob = new CurrentJob { Id = jobId, ShortGuid = sGuid };
+                Init();
+
+                var job = JobServiceData.Jobs.Find(x => x.Id == jobId);
+                var curJob = new CurrentJob { Id = jobId, ShortGuid = sGuid, TaskListIds = job.TaskListIds };
 
                 JobServiceData.CurrentJobs.Add(curJob);
-                foreach (var task in JobServiceData.Tasks.Where(x=>x.JobId== jobId))
+                var taskIdList = job.TaskListIds.ConvertIdsStringToIntegerList<Int32>(',');
+                var i = 0;
+                foreach (var task in JobServiceData.Tasks.Where(x => taskIdList.Contains(x.Id)))
                 {
-                    var curTask = new CurrentTask { Id = task.Id, JobId = jobId, ShortGuid = sGuid, No = task.No, Status = (int)TaskStatus.Waiting };
+                    var curTask = new CurrentTask { Id = task.Id, JobId = jobId, ShortGuid = sGuid, No = i, Status = (int)TaskStatus.Waiting };
                     JobServiceData.CurrentTasks.Add(curTask);
+                    i++;
                 }
 
             }
@@ -52,17 +51,31 @@ namespace Ligg.EasyWinApp.Implementation.Services
             }
         }
 
-        internal string GetJobExecType(int jobId)
+        internal int GetJobExecType(int jobId)
         {
             try
             {
                 var job = JobServiceData.Jobs.Find(x => x.Id == jobId);
-                return job.ExecType.ToString();
+                return job.ExecType;
 
             }
             catch (Exception ex)
             {
                 throw new ArgumentException("\n>> " + GetType().FullName + ".GetJobExecType Error: " + ex.Message);
+            }
+        }
+
+
+        internal int GetJobExecMode(int jobId)
+        {
+            try
+            {
+                var job = JobServiceData.Jobs.Find(x => x.Id == jobId);
+                return job.ExecMode;
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("\n>> " + GetType().FullName + ".GetJobExecMode Error: " + ex.Message);
             }
         }
 
@@ -86,7 +99,7 @@ namespace Ligg.EasyWinApp.Implementation.Services
             {
                 var job = JobServiceData.Jobs.Find(x => x.Id == jobId);
                 var txt = "";
-                if (GlobalConfiguration.SupportMutiCultures)
+                if (GlobalConfiguration.SupportMultiCultures)
                 {
                     txt = AnnexHelper.GetText("", job.Id, JobServiceData.JobAnnexes, AnnexTextType.DisplayName, GlobalConfiguration.CurrentLanguageCode, GetAnnexMode.OnlyByCurLang);
                 }
@@ -101,11 +114,11 @@ namespace Ligg.EasyWinApp.Implementation.Services
         }
 
 
-        internal int GetJobTaskCount(int jobId)
+        internal int GetJobTaskCount(int jobId, string sGuid)
         {
             try
             {
-                return JobServiceData.Tasks.Where(x => x.JobId == jobId).ToList().Count;
+                return JobServiceData.CurrentTasks.Where(x => x.JobId == jobId & x.ShortGuid == sGuid).ToList().Count;
             }
             catch (Exception ex)
             {
@@ -113,11 +126,12 @@ namespace Ligg.EasyWinApp.Implementation.Services
             }
         }
 
-        internal string GetJobCurrentTaskAction(int jobId, int taskNo)
+        internal string GetJobCurrentTaskAction(int jobId, string sGuid, int taskNo)
         {
             try
             {
-                var task = JobServiceData.Tasks.Find(x => x.JobId == jobId & x.No == taskNo);
+                var currentTask = JobServiceData.CurrentTasks.Find(x => x.JobId == jobId & x.ShortGuid == sGuid & x.No == taskNo);
+                var task = JobServiceData.Tasks.Find(x => x.Id == currentTask.Id);
                 return task.Action;
 
             }
@@ -210,8 +224,21 @@ namespace Ligg.EasyWinApp.Implementation.Services
             }
         }
 
+        private void InitData()
+        {
+            try
+            {
+                if (JobServiceData.Jobs is null)
+                {
+                    JobServiceData.Init();
+                }
 
-
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException("\n>> " + GetType().FullName + ".InitData Error: " + ex.Message);
+            }
+        }
 
     }
 
@@ -239,16 +266,6 @@ namespace Ligg.EasyWinApp.Implementation.Services
                 var xmlPath2 = Configuration.DataDir + "\\JobService\\Tasks";
                 var xmlMgr2 = new XmlHandler(xmlPath2);
                 Tasks = xmlMgr2.ConvertToObject<List<Task>>().OrderBy(x => x.ActOrder).ToList();
-                foreach (var job in Jobs)
-                {
-                    var i = 0;
-                    foreach (var task in Tasks.Where(x => x.JobId == job.Id))
-                    {
-                        task.No = i;
-                        i++;
-                    }
-                }
-
             }
             catch (Exception ex)
             {
@@ -263,25 +280,25 @@ namespace Ligg.EasyWinApp.Implementation.Services
         public string Name;
         public string DisplayName;
         public int ExecType;
+        public int ExecMode;
         public string ExecParams;
+        public string TaskListIds;
     }
 
     public class Task
     {
         public int Id;
-        public int JobId;
-        public int No;
         public string Name;
         public string DisplayName;
         public string Action;
         public string ActOrder;
-        public string ListOrder;
     }
 
     public class CurrentJob
     {
         public int Id;
         public string ShortGuid;
+        public string TaskListIds;
     }
 
     public class CurrentTask

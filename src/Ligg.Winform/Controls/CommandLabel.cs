@@ -2,9 +2,9 @@
 using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using Ligg.Winform.DataModel.Enums;
+using Ligg.WinForm.DataModel.Enums;
 
-namespace Ligg.Winform.Controls
+namespace Ligg.WinForm.Controls
 {
     public class CommandLabel : Label
     {
@@ -63,7 +63,7 @@ namespace Ligg.Winform.Controls
             set { _hoveringColor = value; }
         }
 
-        private Color _focusedColor = StyleSet.BaseColor;
+        private Color _focusedColor = StyleSheet.BaseColor;
         public Color FocusedColor
         {
             get { return _focusedColor; }
@@ -176,7 +176,7 @@ namespace Ligg.Winform.Controls
             }
             else
             {
-                textColor = StyleSet.ControlDisabledBaseColor;
+                textColor = StyleSheet.ControlDisabledBaseColor;
             }
 
             Rectangle textRect = new Rectangle(

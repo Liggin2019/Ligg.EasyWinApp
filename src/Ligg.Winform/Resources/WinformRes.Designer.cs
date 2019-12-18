@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ligg.Winform.Resources {
+namespace Ligg.WinForm.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Ligg.Winform.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Ligg.Winform.Resources.WinformRes", typeof(WinformRes).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Ligg.WinForm.Resources.WinformRes", typeof(WinformRes).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

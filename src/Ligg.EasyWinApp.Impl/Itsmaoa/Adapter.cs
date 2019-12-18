@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Data;
+using Ligg.EasyWinApp.Implementation.Services;
 using Ligg.EasyWinApp.ImplInterface;
 
 namespace Ligg.EasyWinApp.Implementation
@@ -22,8 +22,8 @@ namespace Ligg.EasyWinApp.Implementation
 
         public string ResolveConstants(string text)
         {
-            throw new NotImplementedException();
-            return string.Empty;
+            //throw new NotImplementedException();
+            return AdapterResolveHelper.ResolveConstants(text);
         }
 
         public string GetText(string funName, string[] paramArray)
@@ -34,6 +34,11 @@ namespace Ligg.EasyWinApp.Implementation
         public string Act(string actionName, string[] actionParamArray)
         {
             return AdapterActHelper.Act(actionName, actionParamArray);
+        }
+
+        public bool Logon(string userCode, string userPassword)
+        {
+            return new UserService().Logon(userCode, userPassword).IsOk;
         }
 
 

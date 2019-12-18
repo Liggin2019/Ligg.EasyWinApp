@@ -2,15 +2,15 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Ligg.Winform.Controls
+namespace Ligg.WinForm.Controls
 {
     public partial class PopupContainer : UserControl
     {
         public PopupContainer()
         {
             InitializeComponent();
-            shadowPanel.BorderColor = StyleSet.PopupContainerBorderColor;
-            BackColor = StyleSet.PopupContainerBackColor;
+            shadowPanel.BorderColor = StyleSheet.PopupContainerBorderColor;
+            BackColor = StyleSheet.PopupContainerBackColor;
             closeButton.Width = 18;
             closeButton.Height = 18;
             closeButton.Location = new Point(this.Width - 18 - 7, 3);
@@ -28,13 +28,13 @@ namespace Ligg.Winform.Controls
 
         private void PopupContainer_Load(object sender, EventArgs e)
         {
-            BackColor = StyleSet.PopupContainerBackColor; ;
+            BackColor = StyleSheet.PopupContainerBackColor; ;
             closeButton.Location = new Point(this.Width - 18 - 7, 3);
         }
 
         private void PopupContainer_Paint(object sender, PaintEventArgs e)
         {
-            BackColor = StyleSet.PopupContainerBackColor; ;
+            BackColor = StyleSheet.PopupContainerBackColor; ;
             closeButton.Location = new Point(this.Width - 18 - 7, 3);
         }
 
