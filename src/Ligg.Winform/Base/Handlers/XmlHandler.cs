@@ -68,12 +68,12 @@ namespace Ligg.Base.Handlers
                 }
                 else
                 {
-                    using (var sr = new StreamReader(filePath))
-                    {
-                        string str = sr.ReadToEnd();
-                        string deStr = EncryptionHelper.SmDecrypt(str);
-                        _document.LoadXml(deStr);
-                    }
+                    //using (var sr = new StreamReader(filePath))
+                    //{
+                    //    string str = sr.ReadToEnd();
+                    //    string deStr = EncryptionHelper.SmDecrypt(str);
+                    //    _document.LoadXml(deStr);
+                    //}
                 }
             }
             catch (ArgumentException ex)
