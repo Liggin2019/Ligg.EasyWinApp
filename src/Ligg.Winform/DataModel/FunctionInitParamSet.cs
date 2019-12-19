@@ -11,9 +11,9 @@ namespace Ligg.WinForm.DataModel
         public string ApplicationCode { get; set; }
         public string ApplicationVersion { get; set; }
         public string FunctionCode { get; set; }
-        public string ZoneLocationForNonMultiViewForm { get; set; }
+        public string ZoneLocationForSingleViewForm { get; set; }
         public string StartParams { get; set; }
-        public string InputZoneVariablesForNonMutiViewForm { get; set; }
+        public string InputZoneVariablesForSingleViewForm { get; set; }
         public int StartViewMenuId { get; set; }
         public string StartActions { get; set; }
         public string StartPassword { get; set; }

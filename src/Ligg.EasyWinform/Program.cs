@@ -47,7 +47,7 @@ namespace Ligg.EasyWinForm
                 //##sg+1
                 //##passedArg0 = EncryptionHelper.SmDecrypt(args[0],EncryptionHelper.GlobalKey1,EncryptionHelper.GlobalKey2);
                 var passedArg0Arry = passedArg0.Split('@');
-                if (passedArg0Arry.Length < 4) goto End;
+                if (passedArg0Arry.Length < 5) goto End;
 
                 //##passedArg0 format
                 //###formTypeStr=0, multiple view, 指用单窗体模拟多窗体的情况
@@ -114,13 +114,13 @@ namespace Ligg.EasyWinForm
                 var verifyStartPassword = true;
                 if (!startPassword.IsNullOrEmpty())
                 {
-                    if (bootStrap.VerifyStartPassword(false,appStartParamSet.PasswordVerificationRule, startPassword))
+                    if (bootStrap.VerifyStartPassword(false, appStartParamSet.PasswordVerificationRule, startPassword))
                         verifyStartPassword = false;
                 }
                 if (appStartParamSet.VerifyPasswordAtStart)
                 {
                     if (verifyStartPassword)
-                        if (!bootStrap.VerifyStartPassword(true,appStartParamSet.PasswordVerificationRule, startPassword))
+                        if (!bootStrap.VerifyStartPassword(true, appStartParamSet.PasswordVerificationRule, startPassword))
                         {
                             goto End;
                         }
@@ -133,6 +133,7 @@ namespace Ligg.EasyWinForm
                 funcInitParamSet.ArchitectureCode = GlobalConfiguration.ArchitectureCode;
                 funcInitParamSet.ArchitectureVersion = GlobalConfiguration.ArchitectureVersion;
                 funcInitParamSet.ApplicationCode = startAppStr;
+                funcInitParamSet.ApplicationVersion = appStartParamSet.ApplicationVersion;
                 if (formType == FunctionFormType.MultipleView)
                 {
                     funcInitParamSet.FunctionCode = startFuncOrZoneLocStr;
@@ -141,14 +142,14 @@ namespace Ligg.EasyWinForm
                 {
                     var temArry1 = startFuncOrZoneLocStr.SplitByLastSeparator('\\');
                     funcInitParamSet.FunctionCode = temArry1.Length == 0 ? temArry1[0] : temArry1[1];
-                    funcInitParamSet.ZoneLocationForNonMultiViewForm = bootStrap.StartZoneLocation;
+                    funcInitParamSet.ZoneLocationForSingleViewForm = bootStrap.StartZoneLocation;
                 }
 
                 if (!startViewMenuIdOrinputZoneVarsStr.IsNullOrEmpty())
                 {
                     if (formType == FunctionFormType.MultipleView)
                         funcInitParamSet.StartViewMenuId = Convert.ToInt32(startViewMenuIdOrinputZoneVarsStr);
-                    else funcInitParamSet.InputZoneVariablesForNonMutiViewForm = startViewMenuIdOrinputZoneVarsStr;
+                    else funcInitParamSet.InputZoneVariablesForSingleViewForm = startViewMenuIdOrinputZoneVarsStr;
                 }
 
                 funcInitParamSet.StartParams = startParams;
@@ -156,7 +157,6 @@ namespace Ligg.EasyWinForm
                 funcInitParamSet.StartPassword = bootStrap.StartPassword;
                 funcInitParamSet.FormTitle = formTitle;
                 funcInitParamSet.HelpdeskEmail = appStartParamSet.HelpdeskEmail;
-                funcInitParamSet.ApplicationVersion = appStartParamSet.ApplicationVersion;
                 funcInitParamSet.SupportMultiCultures = appStartParamSet.SupportMultiCultures;
 
                 //##init CblpDllAdapter
@@ -168,28 +168,28 @@ namespace Ligg.EasyWinForm
                     CblpDllAdapter.Init(debug, cblpDllPath, appStartParamSet.AdapterFullClassName);
 
                 //##ShowSoftwareCover
-                bool showSoftwareCover = isRedirectedStr.ToLower() != "true";
                 if (appStartParamSet.ShowSoftwareCoverAtStart)
                 {
+                    bool showSoftwareCover = isRedirectedStr.ToLower() != "true";
                     if (showSoftwareCover)
                         bootStrap.ShowSoftwareCover(funcInitParamSet);
                 }
 
                 var logon = true;
-                //##VerifyUserToken
+                //##Logon
+                //###VerifyUserToken
                 if (!usrIdStr.IsNullOrEmpty() & !usrCode.IsNullOrEmpty() & !usrToken.IsNullOrEmpty())
                 {
                     var userId = Convert.ToInt64(usrIdStr);
                     if (bootStrap.VerifyUserToken(userId, usrCode, usrToken))
                         logon = false;
                 }
-                //##VerifyUserPassword
+                //###VerifyUserPassword
                 else if (!usrCode.IsNullOrEmpty() & !usrPassword.IsNullOrEmpty())
                 {
                     if (bootStrap.VerifyUserPassword(usrCode, usrToken))
                         logon = false;
                 }
-                //##Logon
                 if (appStartParamSet.LogonAtStart)
                 {
                     if (logon) if (!bootStrap.Logon(funcInitParamSet)) goto End;

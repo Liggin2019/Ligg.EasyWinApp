@@ -494,7 +494,7 @@ namespace Ligg.WinForm.Forms
                 }
                 else
                 {
-                    var zoneStyleCfgXmlPath = _functionInitParamSet.ZoneLocationForNonMultiViewForm + "\\feature";
+                    var zoneStyleCfgXmlPath = _functionInitParamSet.ZoneLocationForSingleViewForm + "\\feature";
                     var xmlMgr = new XmlHandler(zoneStyleCfgXmlPath);
                     var zoneFeature = xmlMgr.ConvertToObject<ZoneFeature>();
                     if (zoneFeature == null)
@@ -533,7 +533,7 @@ namespace Ligg.WinForm.Forms
                     };
                     _layoutElements.Add(areaLayoutElement);
 
-                    var zoneName = (_functionInitParamSet.ZoneLocationForNonMultiViewForm).GetLastSeparatedString('\\');
+                    var zoneName = (_functionInitParamSet.ZoneLocationForSingleViewForm).GetLastSeparatedString('\\');
                     var zoneLayoutElement = new LayoutElement()
                     {
                         Id = 1010,
@@ -541,8 +541,8 @@ namespace Ligg.WinForm.Forms
                         Type = 260,
                         Container = "Public",
                         View = "Public",
-                        Location = _functionInitParamSet.ZoneLocationForNonMultiViewForm,
-                        InputVariables = _functionInitParamSet.InputZoneVariablesForNonMutiViewForm,
+                        Location = _functionInitParamSet.ZoneLocationForSingleViewForm,
+                        InputVariables = _functionInitParamSet.InputZoneVariablesForSingleViewForm,
                         DockType = 5,
                         DockOrder = "1010",
                         Width = -1,
@@ -737,7 +737,7 @@ namespace Ligg.WinForm.Forms
 
                 var funcOrZoneDir = _functionsDir + "\\" + _functionInitParamSet.FunctionCode;
                 if (formType == FunctionFormType.SingleView)
-                    funcOrZoneDir = _functionInitParamSet.ZoneLocationForNonMultiViewForm;
+                    funcOrZoneDir = _functionInitParamSet.ZoneLocationForSingleViewForm;
                 _hasTray = _functionFormStyle.HasTray;
                 var isFormModal = this.Modal;
                 if (isFormModal) _hasTray = false;
@@ -5219,37 +5219,23 @@ namespace Ligg.WinForm.Forms
                         }
                     }
 
-                    var invisibleStr = copyCurrentForm ? "" : passedArg0Arry[0];
-                    var formTypeStr = copyCurrentForm ? "" : passedArg0Arry[1];
-                    var startAppStr = copyCurrentForm ? "" : passedArg0Arry[2];
-                    var startFuncOrZoneLocStr = copyCurrentForm ? "" : passedArg0Arry[3];
-                    var startViewMenuIdOrInputZoneVarsStr = copyCurrentForm ? "" : passedArg0Arry[4];
-                    var startParams = (passedArg0Arry.Length > 5) ? passedArg0Arry[5] : "";
-                    var startActionStr = passedArg0Arry.Length > 6 ? passedArg0Arry[6] : "";
-                    var startPassword = passedArg0Arry.Length > 7 ? passedArg0Arry[7] : "";
-                    var formTitle = passedArg0Arry.Length > 8 ? passedArg0Arry[8] : "";
-
-                    if (startAppStr.IsNullOrEmpty()) startAppStr = _functionInitParamSet.ApplicationCode;
-                    if (startFuncOrZoneLocStr.IsNullOrEmpty()) startFuncOrZoneLocStr = _functionInitParamSet.FunctionCode;
-                    if (startViewMenuIdOrInputZoneVarsStr.IsNullOrEmpty())
-                    {
-                        if (_functionInitParamSet.FormType == FunctionFormType.MultipleView)
-                            startViewMenuIdOrInputZoneVarsStr = CurrentViewMenuId.ToString();
-                        else startViewMenuIdOrInputZoneVarsStr = _functionInitParamSet.InputZoneVariablesForNonMutiViewForm;
-                    }
-
-                    if (startPassword.IsNullOrEmpty())
-                    {
-                        if (startAppStr == _functionInitParamSet.ApplicationCode & startFuncOrZoneLocStr == _functionInitParamSet.FunctionCode)
-                            startPassword = _functionInitParamSet.StartPassword;
-                    }
+                    var invisibleStr = copyCurrentForm ? "false" : passedArg0Arry[0];
+                    var formTypeStr = copyCurrentForm ? (_functionInitParamSet.FormType == FunctionFormType.MultipleView ? "0" : "1") : passedArg0Arry[1];
+                    var startAppStr = copyCurrentForm ? _functionInitParamSet.ApplicationCode : passedArg0Arry[2];
+                    var startFuncOrZoneLocStr = copyCurrentForm ? _functionInitParamSet.FunctionCode : passedArg0Arry[3];
+                    var startViewMenuIdOrInputZoneVarsStr = copyCurrentForm ?
+                        (_functionInitParamSet.FormType == FunctionFormType.MultipleView ? CurrentViewMenuId.ToString() : _functionInitParamSet.InputZoneVariablesForSingleViewForm) : passedArg0Arry[3];
+                    var startParams = copyCurrentForm ? _functionInitParamSet.StartParams : (passedArg0Arry.Length > 5 ? passedArg0Arry[5] : "");
+                    var startActionsStr = copyCurrentForm ? _functionInitParamSet.StartActions : (passedArg0Arry.Length > 6 ? passedArg0Arry[6] : "");
+                    var startPassword = copyCurrentForm ? _functionInitParamSet.StartPassword : (passedArg0Arry.Length > 7 ? passedArg0Arry[7] : "");
+                    var formTitle = copyCurrentForm ? _functionInitParamSet.FormTitle : (passedArg0Arry.Length > 8 ? passedArg0Arry[8] : "");
 
                     var usrIdStr = GetCurrentUserId().ToString();
                     var usrCode = GetCurrentUserCode();
                     var usrToken = GetCurrentUserToken();
 
                     var arg0 = invisibleStr + "@" + formTypeStr + "@" + startAppStr + "@" + startFuncOrZoneLocStr + "@" + startViewMenuIdOrInputZoneVarsStr + "@" + startParams
-                               + "@" + startActionStr + "@" + startPassword + "@" + formTitle + "@" + usrIdStr + "@" + usrCode + "@" + usrToken + "@@true";
+                               + "@" + startActionsStr + "@" + startPassword + "@" + formTitle + "@" + usrIdStr + "@" + usrCode + "@" + usrToken + "@@true";
 
                     //so+1
                     //arg0= EncryptionHelper.SmEncrypt(arg0,GlobalConfiguration.GlobalKey1,GlobalConfiguration.GlobalKey2);
@@ -5267,13 +5253,13 @@ namespace Ligg.WinForm.Forms
                     {
                         process.StartInfo.Arguments = arguments;
                     }
+                    process.Start();
 
                     if (closeCurrentForm) ExitApplication();
                     else
                     {
                         if (Control.ModifierKeys == Keys.Control) ExitApplication();
                     }
-                    process.Start();
                 }
                 else if (actionName.ToLower() == "PopupZoneDialog".ToLower())
                 {
@@ -5297,17 +5283,17 @@ namespace Ligg.WinForm.Forms
                     functionInitParamSet.ArchitectureCode = _functionInitParamSet.ArchitectureCode;
                     functionInitParamSet.ArchitectureVersion = _functionInitParamSet.ArchitectureVersion;
                     functionInitParamSet.ApplicationCode = _functionInitParamSet.ApplicationCode;
+                    functionInitParamSet.ApplicationVersion = _functionInitParamSet.ApplicationVersion;
                     var temArry = startZoneLocation.SplitByLastSeparator('\\');
                     functionInitParamSet.FunctionCode = temArry.Length == 0 ? temArry[0] : temArry[1];
-                    functionInitParamSet.ZoneLocationForNonMultiViewForm = FileHelper.GetFilePath(startZoneLocation, _zonesDir);
-                    functionInitParamSet.InputZoneVariablesForNonMutiViewForm = startInputZoneVarsStr;
+                    functionInitParamSet.ZoneLocationForSingleViewForm = FileHelper.GetFilePath(startZoneLocation, _zonesDir);
+                    functionInitParamSet.InputZoneVariablesForSingleViewForm = startInputZoneVarsStr;
 
                     functionInitParamSet.StartParams = startParams;
                     functionInitParamSet.StartActions = startActionsStr;
                     functionInitParamSet.StartPassword = startPassword;
                     functionInitParamSet.FormTitle = formTitle;
                     functionInitParamSet.HelpdeskEmail = _functionInitParamSet.HelpdeskEmail;
-                    functionInitParamSet.ApplicationVersion = _functionInitParamSet.ApplicationVersion;
 
                     functionInitParamSet.ImplementationDir = _functionInitParamSet.ImplementationDir;
                     functionInitParamSet.SupportMultiCultures = _functionInitParamSet.SupportMultiCultures;

@@ -270,8 +270,8 @@ namespace Ligg.EasyWinForm
             singleViewFormInitParamSet.ApplicationVersion = mainFunctionInitParamSet.ApplicationVersion;
             var temArry = ApplicationStartParamSet.SoftwareCoverZoneLocation.SplitByLastSeparator('\\');
             singleViewFormInitParamSet.FunctionCode = temArry.Length == 0 ? temArry[0] : temArry[1];
-            singleViewFormInitParamSet.ZoneLocationForNonMultiViewForm = FileHelper.GetFilePath(ApplicationStartParamSet.SoftwareCoverZoneLocation, _zonesDir);
-            singleViewFormInitParamSet.InputZoneVariablesForNonMutiViewForm = mainFunctionInitParamSet.FunctionCode;
+            singleViewFormInitParamSet.ZoneLocationForSingleViewForm = FileHelper.GetFilePath(ApplicationStartParamSet.SoftwareCoverZoneLocation, _zonesDir);
+            singleViewFormInitParamSet.InputZoneVariablesForSingleViewForm = mainFunctionInitParamSet.FunctionCode;
 
             singleViewFormInitParamSet.StartParams = string.Empty;
             singleViewFormInitParamSet.StartPassword = string.Empty;
@@ -304,8 +304,8 @@ namespace Ligg.EasyWinForm
             singleViewFormInitParamSet.ApplicationVersion = mainFunctionInitParamSet.ApplicationVersion;
             var temArry = ApplicationStartParamSet.LogonZoneLocation.SplitByLastSeparator('\\');
             singleViewFormInitParamSet.FunctionCode = temArry.Length == 0 ? temArry[0] : temArry[1];
-            singleViewFormInitParamSet.ZoneLocationForNonMultiViewForm = FileHelper.GetFilePath(ApplicationStartParamSet.LogonZoneLocation, _zonesDir);
-            singleViewFormInitParamSet.InputZoneVariablesForNonMutiViewForm = string.Empty;
+            singleViewFormInitParamSet.ZoneLocationForSingleViewForm = FileHelper.GetFilePath(ApplicationStartParamSet.LogonZoneLocation, _zonesDir);
+            singleViewFormInitParamSet.InputZoneVariablesForSingleViewForm = string.Empty;
 
             singleViewFormInitParamSet.StartParams = string.Empty;
             singleViewFormInitParamSet.StartActions = string.Empty;
