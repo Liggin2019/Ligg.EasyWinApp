@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Ligg.EasyWinApp.ImplInterface</RootNamespace>
-    <AssemblyName>ImplInterface</AssemblyName>
+    <AssemblyName>Ligg.EasyWinApp.ImplInterface</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

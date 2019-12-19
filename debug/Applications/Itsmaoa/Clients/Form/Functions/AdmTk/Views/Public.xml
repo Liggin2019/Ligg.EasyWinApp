@@ -425,7 +425,7 @@
 			
 			
 			
-			<Id>400</Id><Name>RecmdToolsLabelArea</Name><TypeName>ContentArea</TypeName><Container>MainSectionRightDivisionUpRegion</Container>
+			<Id>400</Id><Name>RecmdToolsLArea</Name><TypeName>ContentArea</TypeName><Container>MainSectionRightDivisionUpRegion</Container>
 			<Location/><DataSource/><InputVariables/><StyleClass/><StyleText>Padding:5,0</StyleText><IsPopup>false</IsPopup>
 			
 			<DisplayName/><Remark/>

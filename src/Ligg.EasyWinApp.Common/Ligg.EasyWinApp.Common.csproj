@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Ligg.EasyWinApp.ImplInterface\Ligg.EasyWinApp.ImplInterface.csproj" />
-    <ProjectReference Include="..\Ligg.EasyWinApp.Impl\Itsmaoa\Ligg.EasyWinApp.Impl.ItsmaoaCblp.csproj" />
+    <ProjectReference Include="..\Ligg.EasyWinApp.Impl\Itsmaoa\Ligg.EasyWinApp.Impl.Itsmaoa.csproj" />
   </ItemGroup>
 
 </Project>

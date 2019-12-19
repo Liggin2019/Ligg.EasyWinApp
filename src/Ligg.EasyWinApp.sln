@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ligg.EasyWinForm", "Ligg.Ea
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ligg.EasyWinApp.Common", "Ligg.EasyWinApp.Common\Ligg.EasyWinApp.Common.csproj", "{7456054F-DA0C-433A-A145-BA39F3225573}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ligg.EasyWinApp.Impl.ItsmaoaCblp", "Ligg.EasyWinApp.Impl\Itsmaoa\Ligg.EasyWinApp.Impl.ItsmaoaCblp.csproj", "{099393B8-5D3E-4AC4-801D-CD14484D0C42}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ligg.EasyWinApp.Impl.Itsmaoa", "Ligg.EasyWinApp.Impl\Itsmaoa\Ligg.EasyWinApp.Impl.Itsmaoa.csproj", "{099393B8-5D3E-4AC4-801D-CD14484D0C42}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ligg.Base", "Ligg.Base\Ligg.Base.csproj", "{03156678-2912-4405-B2BC-B2A091054588}"
 EndProject

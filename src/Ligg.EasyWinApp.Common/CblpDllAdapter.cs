@@ -1,9 +1,8 @@
 ﻿using System;
 using System.IO;
-using Ligg.Base.Extension;
-using Ligg.Base.Helpers;
 using Ligg.EasyWinApp.Implementation;
 using Ligg.EasyWinApp.ImplInterface;
+using AssemblyHelper = Ligg.EasyWinApp.Common.Helpers.AssemblyHelper;
 
 namespace Ligg.EasyWinApp.Common
 {
@@ -22,11 +21,11 @@ namespace Ligg.EasyWinApp.Common
             else
             {
                 //rd + 5
-                //if (File.Exists(implementationDllPath))
-                //{
-                //    Adapter = CreateAdapter(implementationDllPath, adapterFullClassName);
-                //    Adapter?.Initialize();
-                //}
+                if (File.Exists(implementationDllPath))
+                {
+                    Adapter = CreateAdapter(implementationDllPath, adapterFullClassName);
+                    Adapter?.Initialize();
+                }
             }
 
         }
@@ -36,7 +35,7 @@ namespace Ligg.EasyWinApp.Common
             try
             {
 
-                if (dllPath.IsNullOrEmpty()) return null;
+                if (string.IsNullOrEmpty(dllPath)) return null;
                 if (!File.Exists(dllPath))
                 {
                     throw new ArgumentException("File: " + dllPath + " does not exists!");
