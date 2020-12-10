@@ -1,0 +1,43 @@
+<ArrayOfProcedureItem>
+		<ProcedureItem>
+			
+			<Name>Init</Name><DisplayName>Init</DisplayName><TypeName>Action</TypeName><GroupId>0</GroupId><Formula>WinChgConfigGroupService;Init</Formula>
+			<Value/><Condition/>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>JudgeManually</Name><DisplayName/><TypeName>Variable</TypeName><GroupId>0</GroupId><Formula>=WinChgConfigGroupService;GetProperty;#0#;JudgeManually</Formula>
+			<Value/><Condition/>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>HasRefresh</Name><DisplayName/><TypeName>Variable</TypeName><GroupId>0</GroupId>
+			<Formula>=WinChgConfigGroupService;GetProperty;#0#;HasRefresh</Formula><Value/><Condition/>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>HasSeeDetail</Name><DisplayName/><TypeName>Variable</TypeName><GroupId>0</GroupId>
+			<Formula>=WinChgConfigGroupService;GetProperty;#0#;HasSeeDetail</Formula><Value/><Condition/>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>HasRepair</Name><DisplayName/><TypeName>Variable</TypeName><GroupId>0</GroupId>
+			<Formula>=WinChgConfigGroupService;GetProperty;#0#;HasRepair</Formula><Value/><Condition/>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>HasFix</Name><DisplayName/><TypeName>Variable</TypeName><GroupId>0</GroupId>
+			<Formula>=WinChgConfigGroupService;GetProperty;#0#;HasFix</Formula><Value/><Condition/>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>HasFix1</Name><DisplayName/><TypeName>Variable</TypeName><GroupId>0</GroupId>
+			<Formula>=WinChgConfigGroupService;GetProperty;#0#;HasFix1</Formula><Value/><Condition/>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>HasFix2</Name><DisplayName/><TypeName>Variable</TypeName><GroupId>0</GroupId>
+			<Formula>=WinChgConfigGroupService;GetProperty;#0#;HasFix2</Formula><Value/><Condition/>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>HasSave</Name><DisplayName/><TypeName>Variable</TypeName><GroupId>0</GroupId>
+			<Formula>=WinChgConfigGroupService;GetProperty;#0#;HasSave</Formula><Value/><Condition/>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>HasReadDoc</Name><DisplayName/><TypeName>Variable</TypeName><GroupId>0</GroupId>
+			<Formula>=WinChgConfigGroupService;GetProperty;#0#;HasReadDoc</Formula><Value/><Condition/>
+		</ProcedureItem>
+</ArrayOfProcedureItem>

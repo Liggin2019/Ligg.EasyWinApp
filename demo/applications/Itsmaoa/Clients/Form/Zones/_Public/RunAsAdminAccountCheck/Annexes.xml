@@ -1,0 +1,115 @@
+<ArrayOfAnnex>
+		<Annex>
+			<Id>-1</Id>
+			
+			
+			<MasterName>RunAsAdminAccountCheckL</MasterName>
+			<DisplayName>管理员运行帐号检查</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>-1</Id>
+			
+			
+			<MasterName>CurrentRunAsAdminAccount</MasterName>
+			<DisplayName>当前管理员运行帐号</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>-1</Id>
+			
+			
+			<MasterName>Win10CompatibilityStatus</MasterName>
+			<DisplayName>Win10兼容性</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex>
+		<Annex>
+			<Id>-1</Id>
+			
+			
+			<MasterName>SeclogonWinServiceStatus</MasterName>
+			<DisplayName>SecLogon Windows服务</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>-1</Id>
+			
+			
+			<MasterName>CurrentWinIdAsRunAsAdminAccountStatus</MasterName>
+			<DisplayName>当前Windows账号作为管理员运行账号</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>-1</Id>
+			
+			
+			<MasterName>DefaultRunAsAdminAccountStatus</MasterName>
+			<DisplayName>缺省账号作为管理员运行账号</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>-1</Id>
+			
+			
+			<MasterName>DesignatedRunAsAdminAccountStatus</MasterName>
+			<DisplayName>指定账号作为管理员运行账号</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>-1</Id>
+			
+			
+			<MasterName>IsDesignatedRunAsAdminAccountDomainAcct</MasterName>
+			<DisplayName>域账号</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>-1</Id>
+			
+			
+			<MasterName>DesignatedRunAsAdminAccountL</MasterName>
+			<DisplayName>账号</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>-1</Id>
+			
+			
+			<MasterName>DesignatedRunAsAdminAccountPasswordL</MasterName>
+			<DisplayName>密码</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex>
+		
+</ArrayOfAnnex>

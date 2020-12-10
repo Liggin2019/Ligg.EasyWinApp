@@ -22,17 +22,17 @@ namespace Ligg.EasyWinForm
             var debugIniDir = Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
             var debugIniPath = debugIniDir + "\\Debug.ini";
             var debug = false;
-            var argsStr = "";
+            var debugIniArgsStr = "";
             if (File.Exists(debugIniPath))
             {
                 var debugStr = StartHelper.ReadIniString(debugIniPath, "setting", "debug", "");
                 if (debugStr.ToLower() == "true") debug = true;
-                argsStr = StartHelper.ReadIniString(debugIniPath, "setting", "args", "");
+                debugIniArgsStr = StartHelper.ReadIniString(debugIniPath, "setting", "args", "");
             }
 
             if (args.Length == 0)
             {
-                args = argsStr.Split(' ');
+                args = debugIniArgsStr.Split(' ');
             }
 
             if (args.Length == 0) goto End;

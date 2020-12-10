@@ -1,1 +1,0 @@
-imgs in this folder will apply to tool split button menu-redirect, so should be in 16x16 size

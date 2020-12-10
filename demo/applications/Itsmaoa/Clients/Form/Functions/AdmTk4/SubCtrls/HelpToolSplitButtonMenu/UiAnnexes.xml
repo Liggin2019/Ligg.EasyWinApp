@@ -1,0 +1,103 @@
+<ArrayOfAnnex>
+		<Annex>
+			<Id>10</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>About</MasterName>
+			<DisplayName>关于 </DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>10</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>About</MasterName>
+			<DisplayName>About</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+		</Annex><Annex>
+			<Id>10</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>About</MasterName>
+			<DisplayName>Über</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex><Annex>
+			<Id>20</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>ContactUs</MasterName>
+			<DisplayName>联系我们</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>20</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>ContactUs</MasterName>
+			<DisplayName>ContactUs</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+		</Annex><Annex>
+			<Id>20</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>ContactUs</MasterName>
+			<DisplayName>Kontaktieren Sie uns</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex><Annex>
+			<Id>30</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>HelpCenter</MasterName>
+			<DisplayName>帮助中心</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>30</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>HelpCenter</MasterName>
+			<DisplayName>Help Center</DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>eng</LanguageCode>
+		</Annex><Annex>
+			<Id>30</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>HelpCenter</MasterName>
+			<DisplayName>Hilfe Center </DisplayName>
+			<Description/><Title/>
+			
+			<Remark/>
+			
+			<LanguageCode>de</LanguageCode>
+		</Annex>
+		
+</ArrayOfAnnex>

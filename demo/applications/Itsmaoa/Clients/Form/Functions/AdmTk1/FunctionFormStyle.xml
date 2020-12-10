@@ -1,0 +1,20 @@
+<FunctionFormStyle>
+	
+	<Width>0</Width>
+	<Height>0</Height>
+	<TopLocationY>0</TopLocationY>
+	<MaximizeBox>false</MaximizeBox>
+	<MinimizeBox>false</MinimizeBox>
+	<HasNoControlBox>false</HasNoControlBox>
+	<StartWindowState>maximized</StartWindowState>
+	<OrdinaryWindowStatus>maximized</OrdinaryWindowStatus>
+	<TreatCloseBoxAsMinimizeBox>false</TreatCloseBoxAsMinimizeBox>
+	<WindowRadius>0</WindowRadius>
+	<DrawIcon>true</DrawIcon>
+	<IconUrl>\MtnTk.ico</IconUrl>
+	<ViewMenuMode>1</ViewMenuMode>
+	<HasTray>true</HasTray>
+	<TrayIconUrl>\MtnTk.ico</TrayIconUrl>
+	<TrayDataSource>\TrayMenuItems.xml</TrayDataSource>
+	<ResizeRegionParams>TopNavSection:0;ToolBarSection:64,600,370;MiddleNavSection:0;DownNavSection:0;MainSectionLeftNavDivision:0,0,0;MainSectionRightNavDivision:145,175,145;MainSectionMainDivision:130,0;MainSectionRightDivision:230,34,0;RunningMessageSection:0;RunningStatusSection:26,0;HorResizableDivisionStatus:none</ResizeRegionParams>
+</FunctionFormStyle>

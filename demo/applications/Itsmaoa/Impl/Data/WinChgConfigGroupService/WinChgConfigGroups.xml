@@ -1,0 +1,124 @@
+<ArrayOfWinChgConfigGroup>
+	<WinChgConfigGroup>
+		
+		<Id>0</Id><Name>Hardware</Name>
+		<JudgeManually>false</JudgeManually><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasRepair>false</HasRepair><HasFix>true</HasFix><FixAction>RunAsAdmin;%ImplDir%\Tools\WinConfig\Everest\Everest.exe;2</FixAction><HasFix1>true</HasFix1><Fix1Action>Run;%ImplDir%\Tools\WinConfig\Cpuz\cpuz.exe;2</Fix1Action><HasFix2>true</HasFix2><Fix2Action>Run;%ImplDir%\Tools\WinConfig\gpuz\gpuz.exe;2</Fix2Action><HasSave>true</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinChgConfigGroup>
+	<WinChgConfigGroup>
+
+		
+		<Id>1</Id><Name>Software</Name>
+    <JudgeManually>true</JudgeManually><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasRepair>true</HasRepair><HasFix>true</HasFix><FixAction>ExecCmd;appwiz.cpl;2</FixAction><HasFix1>false</HasFix1><Fix1Action/><HasFix2>false</HasFix2><Fix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\software-help.doc</ReadDocAction>
+		
+	</WinChgConfigGroup><WinChgConfigGroup>
+
+		
+		<Id>2</Id><Name>GroupPolicy</Name>
+    <JudgeManually>false</JudgeManually><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasRepair>true</HasRepair><HasFix>true</HasFix><FixAction>ExecCmdAsAdmin;gpedit.msc;2</FixAction><HasFix1>false</HasFix1><Fix1Action/><HasFix2>false</HasFix2><Fix2Action/><HasSave>true</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\group-policy-Help.doc</ReadDocAction>
+		
+	</WinChgConfigGroup><WinChgConfigGroup>
+
+		
+		<Id>3</Id><Name>Registry</Name>
+    <JudgeManually>false</JudgeManually><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasRepair>true</HasRepair><HasFix>true</HasFix><FixAction>ExecCmd;regedit.exe;2</FixAction><HasFix1>true</HasFix1><Fix1Action>ExecCmdAsAdmin;regedit.exe;2</Fix1Action><HasFix2>true</HasFix2><Fix2Action>ExecCmdAsAdmin;%systemroot%\Syswow64\Regedit.exe;2</Fix2Action><HasSave>true</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinChgConfigGroup><WinChgConfigGroup>
+
+		
+		<Id>4</Id><Name>WindowsService</Name>
+    <JudgeManually>false</JudgeManually><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasRepair>true</HasRepair><HasFix>true</HasFix><FixAction/><HasFix1>true</HasFix1><Fix1Action/><HasFix2>false</HasFix2><Fix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinChgConfigGroup><WinChgConfigGroup>
+
+		
+		<Id>5</Id><Name>LocalAdminAccount</Name>
+    <JudgeManually>false</JudgeManually><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasRepair>true</HasRepair><HasFix>true</HasFix><FixAction/><HasFix1>true</HasFix1><Fix1Action/><HasFix2>false</HasFix2><Fix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinChgConfigGroup><WinChgConfigGroup>
+
+		
+		<Id>6</Id><Name>MachineName</Name>
+    <JudgeManually>false</JudgeManually><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasRepair>true</HasRepair><HasFix>true</HasFix><FixAction/><HasFix1>true</HasFix1><Fix1Action/><HasFix2>false</HasFix2><Fix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinChgConfigGroup><WinChgConfigGroup>
+
+		
+		<Id>7</Id><Name>HostFile</Name>
+    <JudgeManually>false</JudgeManually><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasRepair>true</HasRepair><HasFix>true</HasFix><FixAction/><HasFix1>true</HasFix1><Fix1Action/><HasFix2>false</HasFix2><Fix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinChgConfigGroup><WinChgConfigGroup>
+
+		
+		<Id>8</Id><Name>ComputerStartDuration</Name>
+    <JudgeManually>false</JudgeManually><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasRepair>true</HasRepair><HasFix>true</HasFix><FixAction/><HasFix1>true</HasFix1><Fix1Action/><HasFix2>false</HasFix2><Fix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinChgConfigGroup><WinChgConfigGroup>
+
+		
+		<Id>9</Id><Name>ComputerRunningDuration</Name>
+    <JudgeManually>false</JudgeManually><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasRepair>true</HasRepair><HasFix>true</HasFix><FixAction/><HasFix1>true</HasFix1><Fix1Action/><HasFix2>false</HasFix2><Fix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinChgConfigGroup><WinChgConfigGroup>
+
+		
+		<Id>10</Id><Name>SystemDriveFreeSpace</Name>
+    <JudgeManually>false</JudgeManually><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasRepair>true</HasRepair><HasFix>true</HasFix><FixAction/><HasFix1>true</HasFix1><Fix1Action/><HasFix2>false</HasFix2><Fix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinChgConfigGroup><WinChgConfigGroup>
+
+		
+		<Id>11</Id><Name>AVSSetting</Name>
+    <JudgeManually>false</JudgeManually><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasRepair>true</HasRepair><HasFix>true</HasFix><FixAction/><HasFix1>true</HasFix1><Fix1Action/><HasFix2>false</HasFix2><Fix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinChgConfigGroup><WinChgConfigGroup>
+
+		
+		<Id>12</Id><Name>SapSettingFile</Name>
+    <JudgeManually>false</JudgeManually><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasRepair>true</HasRepair><HasFix>true</HasFix><FixAction/><HasFix1>true</HasFix1><Fix1Action/><HasFix2>false</HasFix2><Fix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinChgConfigGroup><WinChgConfigGroup>
+
+		
+		<Id>13</Id><Name>OutlookSetting</Name>
+    <JudgeManually>false</JudgeManually><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasRepair>true</HasRepair><HasFix>true</HasFix><FixAction/><HasFix1>true</HasFix1><Fix1Action/><HasFix2>false</HasFix2><Fix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinChgConfigGroup><WinChgConfigGroup>
+
+		
+		<Id>14</Id><Name>InternetSetting</Name>
+    <JudgeManually>false</JudgeManually><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasRepair>true</HasRepair><HasFix>true</HasFix><FixAction/><HasFix1>true</HasFix1><Fix1Action/><HasFix2>false</HasFix2><Fix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinChgConfigGroup><WinChgConfigGroup>
+
+		
+		<Id>15</Id><Name>SystemDriveGhost</Name>
+    <JudgeManually>false</JudgeManually><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasRepair>true</HasRepair><HasFix>true</HasFix><FixAction/><HasFix1>true</HasFix1><Fix1Action/><HasFix2>false</HasFix2><Fix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinChgConfigGroup><WinChgConfigGroup>
+
+		
+		<Id>16</Id><Name>Process</Name>
+    <JudgeManually>false</JudgeManually><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasRepair>true</HasRepair><HasFix>true</HasFix><FixAction/><HasFix1>true</HasFix1><Fix1Action/><HasFix2>false</HasFix2><Fix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinChgConfigGroup><WinChgConfigGroup>
+
+		
+		<Id>100</Id><Name>LegalAutoDeskInstallation</Name>
+    <JudgeManually>false</JudgeManually><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasRepair>true</HasRepair><HasFix>true</HasFix><FixAction/><HasFix1>true</HasFix1><Fix1Action/><HasFix2>false</HasFix2><Fix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinChgConfigGroup><WinChgConfigGroup>
+
+		
+		<Id>101</Id><Name>TemporaryHostFile</Name>
+    <JudgeManually>false</JudgeManually><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasRepair>true</HasRepair><HasFix>true</HasFix><FixAction/><HasFix1>true</HasFix1><Fix1Action/><HasFix2>false</HasFix2><Fix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinChgConfigGroup><WinChgConfigGroup>
+
+		
+		<Id>102</Id><Name>TemporaryWsusConfig</Name>
+    <JudgeManually>false</JudgeManually><HasSeeDetail>true</HasSeeDetail><HasRefresh>true</HasRefresh><HasRepair>true</HasRepair><HasFix>true</HasFix><FixAction/><HasFix1>true</HasFix1><Fix1Action/><HasFix2>false</HasFix2><Fix2Action/><HasSave>false</HasSave><HasReadDoc>true</HasReadDoc><ReadDocAction>OpenFile;%ImplDir%\Docs\config\hardware-help.doc</ReadDocAction>
+		
+	</WinChgConfigGroup>
+	
+</ArrayOfWinChgConfigGroup>

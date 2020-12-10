@@ -1,0 +1,28 @@
+<ArrayOfZoneItem>
+
+		<ZoneItem>
+			<Name>SplitRectangle</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowId>-1</RowId><ControlTypeName>SplitRectangle</ControlTypeName>
+			
+			
+			
+			<StyleClass>#0#</StyleClass><StyleText>#1#</StyleText>
+			
+			<DisplayName/><DataSource/>			
+			<ValidationRules/>
+			
+			
+			<DockTypeName>Fill</DockTypeName><DockOrder>1</DockOrder><OffsetOrPositionX>0</OffsetOrPositionX><OffsetOrPositionY>0</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+						
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem>
+		
+		
+		
+		
+				
+		
+		
+		
+	</ArrayOfZoneItem>
+

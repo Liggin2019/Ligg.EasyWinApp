@@ -1,0 +1,815 @@
+<ArrayOfLayoutElement>
+		<LayoutElement>
+			<Id>200</Id><Name>FormHeaderArea</Name><TypeName>ContentArea</TypeName><Container>ToolBarSectionLeftRegion</Container>
+			<Location/><DataSource/><InputVariables/><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			
+			
+			<InvalidFlag/><DockOrder/><DockTypeName>Fill</DockTypeName>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>210</Id><Name>FormHeader</Name><TypeName>Zone</TypeName><Container>FormHeaderArea</Container>
+			<Location>\_Public\FormHeader</Location><DataSource/><InputVariables/><StyleClass/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/><DockOrder/><DockTypeName>Fill</DockTypeName>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>300</Id><Name>ComAndSysInfoArea</Name><TypeName>ContentArea</TypeName><Container>MainSectionMainDivisionUpRegion</Container>
+			<Location/><DataSource/><InputVariables/><StyleClass>Ellipse</StyleClass><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockOrder/><DockTypeName>Fill</DockTypeName><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>310</Id><Name>ComputerAndSystemInfoL</Name><TypeName>Zone</TypeName><Container>ComAndSysInfoArea</Container>
+			<Location>\_Common\TitleLabel</Location><DataSource/><InputVariables>Computer and System Info.^Level1^</InputVariables><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockOrder/><DockTypeName>Top</DockTypeName><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>1000</Width><Height>30</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>320</Id><Name>ComputerInfo</Name><TypeName>Zone</TypeName><Container>ComAndSysInfoArea</Container>
+			<Location>\_Public\ComputerInfo</Location><DataSource/><InputVariables/><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockOrder/><DockTypeName/><OffsetOrPositionX>5</OffsetOrPositionX><OffsetOrPositionY>32</OffsetOrPositionY><Width>1000</Width><Height>44</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>330</Id><Name>NetworkLocation</Name><TypeName>Zone</TypeName><Container>ComAndSysInfoArea</Container>
+			<Location>\_Public\NetworkLocation</Location><DataSource/><InputVariables/><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockOrder/><DockTypeName/><OffsetOrPositionX>5</OffsetOrPositionX><OffsetOrPositionY>81</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>340</Id><Name>ServerConnection</Name><TypeName>Zone</TypeName><Container>ComAndSysInfoArea</Container>
+			<Location>\_Public\ServerConnection</Location><DataSource/><InputVariables/><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockOrder/><DockTypeName/><OffsetOrPositionX>325</OffsetOrPositionX><OffsetOrPositionY>81</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>34010</Id><Name>OnRefreshNetworkLocation</Name><TypeName>FollowingTransactionItem</TypeName><Container/>
+			<Location/><DataSource/><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark>Public_NetworkLocation_RefreshNetworkLocation</Remark>
+			
+			<Action>Xrun;$Public_ServerConnection_RefreshServerConnectionStatus$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockOrder/><DockTypeName/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>34020</Id><Name>OnRefeshTelnetServerStatus</Name><TypeName>FollowingTransactionItem</TypeName><Container/>
+			<Location/><DataSource/><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName>Refresh Controls</DisplayName><Remark>Public_ServerConnectionCheck_RefeshTelnetServerStatus</Remark>
+			
+			<Action>RefreshControlsValues;$Public_ServerConnection_ServerConnectionStatus$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>350</Id><Name>ServerConnectionCheck</Name><TypeName>Zone</TypeName><Container>ComAndSysInfoArea</Container>
+			<Location>\_Public\ServerConnectionCheck</Location><DataSource/><StyleClass/><StyleText/><IsPopup>true</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<OffsetOrPositionX>10</OffsetOrPositionX><OffsetOrPositionY>10</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>35010</Id><Name>OnRefreshServerConnectionStatus</Name><TypeName>FollowingTransactionItem</TypeName><Container/>
+			<Location/><DataSource/><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark>Public_ServerConnection_RefreshServerConnectionStatus</Remark>
+			
+			<Action>RefreshZonesControlsValues;$Public_ServerConnectionCheck$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockOrder/><DockTypeName/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>35020</Id><Name>OnFixServerConnectionStatus</Name><TypeName>FollowingTransactionItem</TypeName><Container/>
+			<Location/><DataSource/><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark>Public_ServerConnection_FixServerConnectionStatus</Remark>
+			
+			<Action>PopupZone;$Public_ServerConnectionCheck$;$Public_ServerConnection_FixServerConnectionStatus$,2,45,30</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockOrder/><DockTypeName/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>360</Id><Name>RunAsAdminAccount</Name><TypeName>Zone</TypeName><Container>ComAndSysInfoArea</Container>
+			<Location>\_Public\RunAsAdminAccount</Location><DataSource/><InputVariables/><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockOrder/><DockTypeName/><OffsetOrPositionX>600</OffsetOrPositionX><OffsetOrPositionY>81</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>36010</Id><Name>OnRefreshCurrentWinIdAsRunAsAdminAccountStatus</Name><TypeName>FollowingTransactionItem</TypeName><Container/>
+			<Location/><DataSource/><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark>Public_ServiceAccountCheckZone_RefreshCurrentWinIdAsRunAsAdminAccountStatus</Remark>
+			
+			<Action>Xrun;$Public_RefreshRunAsAdminAccountStatusCtrl$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>36020</Id><Name>OnRefreshDefaultRunAsAdminAccountStatus</Name><TypeName>FollowingTransactionItem</TypeName><Container/>
+			<Location/><DataSource/><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark>Public_RunAsAdminAccountCheck_RefreshDefaultRunAsAdminAccountStatus</Remark>
+			
+			<Action>Xrun;$Public_RefreshRunAsAdminAccountStatusCtrl$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>36030</Id><Name>OnRepairDefaultRunAsAdminAccountStatus</Name><TypeName>FollowingTransactionItem</TypeName><Container/>
+			<Location/><DataSource/><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark>Public_RunAsAdminAccountCheck_RepairDefaultRunAsAdminAccountStatus</Remark>
+			
+			<Action>Xrun;$Public_RefreshRunAsAdminAccountStatusCtrl$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>36040</Id><Name>OnVeryfyDesignatedAdmin</Name><TypeName>FollowingTransactionItem</TypeName><Container/>
+			<Location/><DataSource/><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark>Public_RunAsAdminAccountCheck_VeryfyDesignatedRunAsAdminAccount</Remark>
+			
+			<Action>Xrun;$Public_RefreshRunAsAdminAccountStatusCtrl$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>36050</Id><Name>RefreshRunAsAdminAccountStatusCtrl</Name><TypeName>TransactionOnlyItem</TypeName><Container/>
+			<Location/><DataSource/><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action>RefreshControlsValues;$Public_RunAsAdminAccount_RunAsAdminAccountStatus$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>370</Id><Name>RunAsAdminAccountCheck</Name><TypeName>Zone</TypeName><Container>ComAndSysInfoArea</Container>
+			<Location>\_Public\RunAsAdminAccountCheck</Location><DataSource/><InputVariables/><StyleClass/><StyleText/><IsPopup>true</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<OffsetOrPositionX>10</OffsetOrPositionX><OffsetOrPositionY>10</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>37010</Id><Name>OnRefreshRunAsAdminAccountStatus</Name><TypeName>FollowingTransactionItem</TypeName><Container/>
+			<Location/><DataSource/><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark>Public_RunAsAdminAccount_RefreshRunAsAdminAccountStatus</Remark>
+			
+			<Action>Xrun;$Public_OnRefreshRunAsAdminAccountStatus-Xrun1$,$Public_OnRefreshRunAsAdminAccountStatus-Xrun2$,$Public_OnRefreshRunAsAdminAccountStatus-Xrun3$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>37020</Id><Name>OnRefreshRunAsAdminAccountStatus-Xrun1</Name><TypeName>TransactionOnlyItem</TypeName><Container/>
+			<Location/><DataSource/><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action>RefreshZonesControlsValues;$Public_RunAsAdminAccountCheck$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>37030</Id><Name>OnRefreshRunAsAdminAccountStatus-Xrun2</Name><TypeName>TransactionOnlyItem</TypeName><Container/>
+			<Location/><DataSource/><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action>RefreshZonesProceduresByGroup;$Public_RunAsAdminAccountCheck$;2</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>37040</Id><Name>OnRefreshRunAsAdminAccountStatus-Xrun3</Name><TypeName>TransactionOnlyItem</TypeName><Container/>
+			<Location/><DataSource/><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action>RefreshZonesControlsInvisibles;$Public_RunAsAdminAccountCheck$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>37050</Id><Name>OnFixRunAsAdminAccountStatus</Name><TypeName>FollowingTransactionItem</TypeName><Container/>
+			<Location/><DataSource/><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark>Public_RunAsAdminAccount_FixRunAsAdminAccountStatus</Remark>
+			
+			<Action>PopupZone;$Public_RunAsAdminAccountCheck$;$Public_RunAsAdminAccount_FixRunAsAdminAccountStatus$,2,228,30</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>37060</Id><Name>OnFixRunAsAdminAccountStatus-Xrun2</Name><TypeName>TransactionOnlyItem</TypeName><Container/>
+			<Location/><DataSource/><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName>Refresh Controls</DisplayName><Remark/><Action/>
+			
+			
+			
+			<InvalidFlag/>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>400</Id><Name>RecmdToolsLArea</Name><TypeName>ContentArea</TypeName><Container>MainSectionRightDivisionUpRegion</Container>
+			<Location/><DataSource/><InputVariables/><StyleClass/><StyleText>Padding:5,0</StyleText><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockOrder/><DockTypeName>Fill</DockTypeName><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>40</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>40010</Id><Name>RecmdToolsL</Name><TypeName>Zone</TypeName><Container>RecmdToolsLArea</Container>
+			<Location>\_Common\TitleLabel</Location><DataSource/><InputVariables>Recmd. Tools^Level1^TextAlign:MiddleLeft</InputVariables><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockOrder/><DockTypeName>Top</DockTypeName><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>25</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>500</Id><Name>RecmdToolsArea</Name><TypeName>ContentArea</TypeName><Container>MainSectionRightDivisionMidRegion</Container>
+			<InputVariables/><StyleClass/><StyleText>Padding:3,5;BackColor:248,248,248</StyleText><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockOrder/><DockTypeName>Fill</DockTypeName><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>40</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>50010</Id><Name>EasyNetGate</Name><TypeName>Zone</TypeName><Container>RecmdToolsArea</Container>
+			<Location>\_Common\ImageTextButtonH</Location><DataSource/><InputVariables>Easy NetGate^%FormDir%\Images\RecmTool\EasyNetGate.png^PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</InputVariables><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/><DockOrder/><DockTypeName>Top</DockTypeName>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>30</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>50011</Id><Name>SplitterLine-EasyNetGate</Name><TypeName>Zone</TypeName><Container>RecmdToolsArea</Container>
+			<Location>\_Common\SplitRect</Location><DataSource/><InputVariables>Level2^</InputVariables><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/><DockOrder/><DockTypeName>Top</DockTypeName>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>50020</Id><Name>HyperNetGate</Name><TypeName>Zone</TypeName><Container>RecmdToolsArea</Container>
+			<Location>\_Common\ImageTextButtonH</Location><DataSource/><InputVariables>Hyper NetGate^%FormDir%\Images\RecmTool\HyperNetGate.png^PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</InputVariables><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockOrder/><DockTypeName>Top</DockTypeName><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>30</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>50021</Id><Name>SplitterLine-HyperNetGate</Name><TypeName>Zone</TypeName><Container>RecmdToolsArea</Container>
+			<Location>\_Common\SplitRect</Location><DataSource/><InputVariables>Level2^</InputVariables><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/><DockOrder/><DockTypeName>Top</DockTypeName>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>50030</Id><Name>HyperRemote</Name><TypeName>Zone</TypeName><Container>RecmdToolsArea</Container>
+			<Location>\_Common\ImageTextButtonH</Location><DataSource/><InputVariables>Hyper Remote^%FormDir%\Images\RecmTool\HyperRemote.png^PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</InputVariables><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/><DockOrder/><DockTypeName>Top</DockTypeName>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>30</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>50031</Id><Name>SplitterLine-HyperRemote</Name><TypeName>Zone</TypeName><Container>RecmdToolsArea</Container>
+			<Location>\_Common\SplitRect</Location><DataSource/><InputVariables>Level2^</InputVariables><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/><DockOrder/><DockTypeName>Top</DockTypeName>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>50040</Id><Name>DiskCleaner</Name><TypeName>Zone</TypeName><Container>RecmdToolsArea</Container>
+			<Location>\_Common\ImageTextButtonH</Location><DataSource/><InputVariables>Disk Cleaner^%FormDir%\Images\RecmTool\FileCleaner.png^PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</InputVariables><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/><DockOrder/><DockTypeName>Top</DockTypeName>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>30</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>50041</Id><Name>SplitterLine-FileCleaner</Name><TypeName>Zone</TypeName><Container>RecmdToolsArea</Container>
+			<Location>\_Common\SplitRect</Location><DataSource/><InputVariables>Level2^</InputVariables><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/><DockOrder/><DockTypeName>Top</DockTypeName>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>50050</Id><Name>ComputerToolkit</Name><TypeName>Zone</TypeName><Container>RecmdToolsArea</Container>
+			<Location>\_Common\ImageTextButtonH</Location><DataSource/><InputVariables>Computer Toolkit^%FormDir%\Images\RecmTool\CmptToolkit.png^PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;This function is under developing...</InputVariables><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/><DockOrder/><DockTypeName>Top</DockTypeName>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>30</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>50051</Id><Name>SplitterLine-EntNetDisk</Name><TypeName>Zone</TypeName><Container>RecmdToolsArea</Container>
+			<Location>\_Common\SplitRect</Location><DataSource/><InputVariables>Level2^</InputVariables><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/><DockOrder/><DockTypeName>Top</DockTypeName>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>50060</Id><Name>EntNetDisk</Name><TypeName>Zone</TypeName><Container>RecmdToolsArea</Container>
+			<Location>\_Common\ImageTextButtonH</Location><DataSource/><InputVariables>Enterprise NetDisk^%FormDir%\Images\RecmTool\EntNetDisk.png^PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;This function is under developing...</InputVariables><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/><DockOrder/><DockTypeName>Top</DockTypeName>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>30</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>50061</Id><Name>SplitterLine-FileConvertor</Name><TypeName>Zone</TypeName><Container>RecmdToolsArea</Container>
+			<Location>\_Common\SplitRect</Location><DataSource/><InputVariables>Level2^</InputVariables><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/><DockOrder/><DockTypeName>Top</DockTypeName>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>50070</Id><Name>AutoInstaller</Name><TypeName>Zone</TypeName><Container>RecmdToolsArea</Container>
+			<Location>\_Common\ImageTextButtonH</Location><DataSource/><InputVariables>Auto Installer^%FormDir%\Images\RecmTool\AutoInstaller.png^NewForm~@1@itsmaoa@\_Public\JobExecutor@0;false@@@</InputVariables><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/><DockOrder/><DockTypeName>Top</DockTypeName>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>30</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>50071</Id><Name>SplitterLine-AutoInstaller</Name><TypeName>Zone</TypeName><Container>RecmdToolsArea</Container>
+			<Location>\_Common\SplitRect</Location><DataSource/><InputVariables>Level2^</InputVariables><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/><DockOrder/><DockTypeName>Top</DockTypeName>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>50080</Id><Name>WinUpdator</Name><TypeName>Zone</TypeName><Container>RecmdToolsArea</Container>
+			<Location>\_Common\ImageTextButtonH</Location><DataSource/><InputVariables>Windows Updator^%FormDir%\Images\RecmTool\WinUpdator.png^PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</InputVariables><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/><DockOrder/><DockTypeName>Top</DockTypeName>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>30</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>50081</Id><Name>SplitterLine-WinUpdator</Name><TypeName>Zone</TypeName><Container>RecmdToolsArea</Container>
+			<Location>\_Common\SplitRect</Location><DataSource/><InputVariables>Level2^</InputVariables><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/><DockOrder/><DockTypeName>Top</DockTypeName>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>50090</Id><Name>DailyBackup</Name><TypeName>Zone</TypeName><Container>RecmdToolsArea</Container>
+			<Location>\_Common\ImageTextButtonH</Location><DataSource/><InputVariables>Daily Backup^%FormDir%\Images\RecmTool\WinUpdator.png^PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</InputVariables><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/><DockOrder/><DockTypeName>Top</DockTypeName>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>30</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>50091</Id><Name>SplitterLine-DailyBackup</Name><TypeName>Zone</TypeName><Container>RecmdToolsArea</Container>
+			<Location>\_Common\SplitRect</Location><DataSource/><InputVariables>Level2^</InputVariables><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/><DockOrder/><DockTypeName>Top</DockTypeName>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>50092</Id><Name>SysAdmToolkit</Name><TypeName>Zone</TypeName><Container>RecmdToolsArea</Container>
+			<Location>\_Common\ImageTextButtonH</Location><DataSource/><InputVariables>System Admin Toolkit^%FormDir%\Images\RecmTool\SysAdminToolkit.png^PopupMsg~=GetPhraseAnnexText;System Message~=GetPhraseAnnexText;You have no authorization</InputVariables><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockOrder/><DockTypeName>Bottom</DockTypeName><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>30</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>50093</Id><Name>SplitterLine-SysAdmToolkit</Name><TypeName>Zone</TypeName><Container>RecmdToolsArea</Container>
+			<Location>\_Common\SplitRect</Location><DataSource/><InputVariables>Level2^</InputVariables><StyleClass/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/><DockOrder/><DockTypeName>Bottom</DockTypeName>
+			
+			
+			
+			<OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height>
+		</LayoutElement>
+</ArrayOfLayoutElement>

@@ -1,0 +1,15 @@
+<ArrayOfProcedureItem>
+		<ProcedureItem>
+			
+			<Name>ValidationResult</Name><TypeName>Variable</TypeName><GroupId>0</GroupId><Formula/>
+			<Value/><Condition/>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>LogonResult</Name><TypeName>Variable</TypeName><GroupId>0</GroupId><Formula/>
+			<Value/><Condition/>
+		</ProcedureItem><ProcedureItem>
+			
+			<Name>IsModal</Name><TypeName>Variable</TypeName><GroupId>0</GroupId><Formula>=GetBool;IsFormModal</Formula>
+			<Value/><Condition/>
+		</ProcedureItem>
+</ArrayOfProcedureItem>

@@ -1,0 +1,25 @@
+<ArrayOfCulture>
+		<Culture>
+			<Name>en-US</Name>
+			<LanguageCode>eng</LanguageCode>
+			<LanguageName>English</LanguageName>
+			<ImageUrl>\Images\us.png</ImageUrl>
+			<TimeZone>1</TimeZone>
+			<IsDefault>true</IsDefault>
+		</Culture>
+		<Culture>
+			<Name>zh-CN</Name>
+			<LanguageCode>szh</LanguageCode>
+			<LanguageName>简体中文</LanguageName>
+			<ImageUrl>\Images\cn.png</ImageUrl>
+			<TimeZone>1</TimeZone>
+			<IsDefault>false</IsDefault>
+		</Culture><Culture>
+			<Name>de-DE</Name>
+			<LanguageCode>de</LanguageCode>
+			<LanguageName>Deutsch</LanguageName>
+			<ImageUrl>\Images\de.png</ImageUrl>
+			<TimeZone>1</TimeZone>
+			<IsDefault>false</IsDefault>
+		</Culture>
+</ArrayOfCulture>

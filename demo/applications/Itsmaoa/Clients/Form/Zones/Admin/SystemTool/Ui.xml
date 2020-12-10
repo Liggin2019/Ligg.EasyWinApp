@@ -1,0 +1,762 @@
+<ArrayOfZoneItem>
+	<ZoneItem>
+			
+			<Name>Row10</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName>
+			
+			<StyleClass/><DisplayName/><DataSource/>
+			
+			<DefaultValue/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>44</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>ControlPanel</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row10</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName>
+			
+			<StyleClass>Button</StyleClass><DisplayName>Control Panel</DisplayName><DataSource/>			
+			<DefaultValue/><Action>ExecCmd;%systemdirectory%\rundll32.exe shell32.dll,Control_RunDLL;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>40</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width>
+			<Height>33</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>ComputerMannager</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row10</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>compmgmt.msc</DisplayName><DataSource/>			
+			<DefaultValue/><Action>ExecCmdAsAdmin;compmgmt.msc;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width><Height>33</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>AddRemoveProgram</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row10</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>appwiz.cpl</DisplayName><DataSource/>			
+			<DefaultValue/><Action>ExecCmd;appwiz.cpl;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width><Height>33</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>NetworkManger</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row10</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>ncpa.cpl</DisplayName><DataSource/>			
+			<DefaultValue/><Action>ExecCmd;ncpa.cpl;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width><Height>33</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>DeviceMannager</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row10</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>devmgmt.msc</DisplayName><DataSource/>			
+			<DefaultValue/><Action>ExecCmdAsAdmin;devmgmt.msc;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width><Height>33</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>AccountManager</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row10</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>lusrmgr.msc</DisplayName><DataSource/>			
+			<DefaultValue/><Action>ExecCmdAsAdmin;lusrmgr.msc;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width><Height>33</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Row20</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>44</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>DiskManager</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row20</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>diskmgmt.msc</DisplayName><DataSource/>			
+			<DefaultValue/><Action>ExecCmdAsAdmin;diskmgmt.msc;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>40</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width><Height>33</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>PerformanceManager</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row20</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>perfmon.msc</DisplayName><DataSource/>			
+			<DefaultValue/><Action>ExecCmdAsAdmin;perfmon.msc;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width>
+			<Height>33</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>EventViewer</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row20</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>eventvwr.msc</DisplayName><DataSource/>			
+			<DefaultValue/><Action>ExecCmdAsAdmin;eventvwr.msc;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width><Height>33</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>LocalSecurityPolicy</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row20</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>secpol.msc</DisplayName><DataSource/>			
+			<DefaultValue/><Action>ExecCmdAsAdmin;secpol.msc;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width><Height>33</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>GroupPolicy</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row20</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>gpedit.msc</DisplayName><DataSource/>			
+			<DefaultValue/><Action>ExecCmdAsAdmin;gpedit.msc;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width><Height>33</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Uac</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row20</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>UAC</DisplayName><DataSource/>			
+			<DefaultValue/><Action>ExecCmdAsAdmin;UserAccountControlSettings.exe;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width>
+			<Height>33</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Cmd</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row20</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass>
+			
+			<DisplayName>CMD</DisplayName><DataSource/>			
+			<DefaultValue/><Action>ExecCmd;start cmd;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width>
+			<Height>33</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Row30</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>44</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>ServiceManager</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row30</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>services.msc</DisplayName><DataSource/>			
+			<DefaultValue/><Action>ExecCmdAsAdmin;services.msc;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>40</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width>
+			<Height>33</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>SystemDm</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row30</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>sysdm.cpl</DisplayName><DataSource/>			
+			<DefaultValue/><Action>ExecCmdAsAdmin;sysdm.cpl;2 </Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width><Height>33</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>MsConfig</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row30</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>msconfig.exe</DisplayName><DataSource/>			
+			<DefaultValue/><Action>ExecCmdAsAdmin;msconfig.exe;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width><Height>33</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>DxDiag</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row30</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>dxdiag.exe</DisplayName><DataSource/>			
+			<DefaultValue/><Action>ExecCmd;%systemdirectory%\dxdiag.exe;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width><Height>33</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>SystemInfo</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row30</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>systeminfo.exe</DisplayName><DataSource/>			
+			<DefaultValue/><Action>ExecCmd;%systemdirectory%\systeminfo.exe;0</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width><Height>33</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>NewSid</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row30</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>NewSid</DisplayName><DataSource/>			
+			<DefaultValue/><Action>Crun;#IsWinGreaterThanXp.v#;$NewSid-Crun1$;$NewSid-Crun2$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width><Height>33</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>NewSid-Crun1</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row30</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><Action>ExecCmdAsAdmin;%systemdirectory%\sysprep\sysprep.exe;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width><Height>33</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>NewSid-Crun2</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row30</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><Action>RunCmdAsAdmin;\Tools\newsid.exe;;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width><Height>33</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Row39</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>3</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>8</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>splitter39</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row39</RowName>
+			
+			
+			<ControlTypeName>SplitRectangle</ControlTypeName><StyleClass>Level2</StyleClass><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>800</Width>
+			<Height>1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Row40</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>5</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>33</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RegistryPosL</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row40</RowName>
+			
+			
+			<ControlTypeName>Label</ControlTypeName>
+			
+			<StyleClass>FieldName</StyleClass><StyleText/><DisplayName>Registry Positioning</DisplayName><DataSource/>			
+			<DefaultValue/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>40</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>120</Width>
+			<Height>-1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RegistryPos</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row40</RowName>
+			
+			
+			<ControlTypeName>ComboBox</ControlTypeName>
+			
+			<DisplayName/><DataSource>HKEY_CURRENT_USER,HKEY_LOCAL_MACHINE,HKEY_CLASSES_ROOT,HKEY_USERS,HKEY_CURRENT_CONFIG</DataSource>			
+			<DefaultValue/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>140</Width><Height>30</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RegistryPosInputParam</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row40</RowName>
+			
+			
+			<ControlTypeName>TextBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>364</Width><Height>30</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RegistryPosRun</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row40</RowName>
+			
+			
+			<ControlTypeName/>
+			
+			<DisplayName>Run</DisplayName><DataSource/>			
+			<DefaultValue/><Action>RunCmd;\Tools\RegistryPos.bat;$RegistryPos.t$$RegistryPosInputParam.v$;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>19</Width><Height>19</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Row45</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>44</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Regedit</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row45</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>regedit.exe</DisplayName><DataSource/>			
+			<DefaultValue/><Action>Xrun;$RegistryPosRun$,$RegeditRun$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>40</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width><Height>33</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RegeditRun</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName></RowName>
+			
+			
+			<ControlTypeName/>
+			
+			<DisplayName>Run</DisplayName><DataSource/>			
+			<DefaultValue/><Action>ExecCmd;regedit.exe;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>19</Width><Height>19</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RegeditAsAdmin</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row45</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>regedit(as admin)</DisplayName><DataSource/>			
+			<DefaultValue/><Action>Xrun;$RegistryPosRun$,$RegeditAsAdminRun$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>110</Width><Height>33</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RegeditAsAdminRun</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName></RowName>
+			
+			
+			<ControlTypeName/>
+			
+			<DisplayName>Run</DisplayName><DataSource/>			
+			<DefaultValue/><Action>ExecCmdAsAdmin;regedit.exe;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>19</Width><Height>19</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Regedit32</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row45</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>regedit.exe(32bits)</DisplayName><DataSource/>			
+			<DefaultValue/><Action>Xrun;$RegistryPosRun$,$Regedit32Run$</Action>
+			
+			<InvalidFlag/><InvisibleFlag>#IsWindowsBits32.v#</InvisibleFlag><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>180</Width><Height>33</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Regedit32Run</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName></RowName>
+			
+			
+			<ControlTypeName/>
+			
+			<DisplayName>Run</DisplayName><DataSource/>			
+			<DefaultValue/><Action>ExecCmd;%systemroot%\Syswow64\Regedit.exe;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>19</Width><Height>19</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RegeditAsAdmin32</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row45</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>regedit.exe(as admin, 32bits)</DisplayName><DataSource/>			
+			<DefaultValue/><Action>Xrun;$RegistryPosRun$,$RegeditAsAdmin32Run$</Action>
+			
+			<InvalidFlag/><InvisibleFlag>#IsWindowsBits32.v#</InvisibleFlag><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>180</Width><Height>33</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RegeditAsAdmin32Run</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName></RowName>
+			
+			
+			<ControlTypeName/>
+			
+			<DisplayName>Run</DisplayName><DataSource/>			
+			<DefaultValue/><Action>ExecCmdAsAdmin;%systemroot%\Syswow64\Regedit.exe;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>19</Width><Height>19</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Row49</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>3</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>8</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>splitter49</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row49</RowName>
+			
+			
+			<ControlTypeName>SplitRectangle</ControlTypeName><StyleClass>Level2</StyleClass><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>20</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>800</Width>
+			<Height>1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Row50</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>5</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>44</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>WhoAmIL</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row50</RowName>
+			
+			
+			<ControlTypeName>Label</ControlTypeName>
+			
+			<StyleClass>FieldName</StyleClass><DisplayName>whoami</DisplayName><DataSource/>			
+			<DefaultValue/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>40</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>60</Width>
+			<Height>-1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>WhoAmIParam</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row50</RowName>
+			
+			
+			<ControlTypeName>ComboBox</ControlTypeName>
+			
+			<DisplayName/><DataSource>/UPN,/FQDN,/USER,/GROUPS,/PRIV,/LOGONID,/ALL,/FO,/NH,/?</DataSource>			
+			<DefaultValue/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>70</Width><Height>30</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>WhoAmIRun</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row50</RowName>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName>
+			
+			<DisplayName>Run</DisplayName><DataSource>\images\run.png</DataSource>			
+			<DefaultValue/><Action>ExecCmd;%systemdirectory%\whoami.exe $WhoAmIParam.t$</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>19</Width><Height>19</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>ScL</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row50</RowName>
+			
+			
+			<ControlTypeName>Label</ControlTypeName>
+			
+			<StyleClass>FieldName</StyleClass><DisplayName>sc.exe</DisplayName><DataSource/>			
+			<DefaultValue/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>40</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>60</Width>
+			<Height>-1</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>ScParam</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row50</RowName>
+			
+			
+			<ControlTypeName>ComboBox</ControlTypeName>
+			
+			<StyleText/><DisplayName/><DataSource>query,queryex,start,pause,interrogate,continue,stop,config,description,failure,failureflag,sidtype,privs,managedaccount,qc,qdescription,qfailure,qfailureflag,qsidtype,qprivs,qtriggerinfo,qpreferrednode,qmanagedaccount,qprotection,quserservice,delete,create,control,sdshow,sdset,showsid,triggerinfo,preferrednode,GetDisplayName,GetKeyName,EnumDepend,?</DataSource>			
+			<DefaultValue/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>120</Width><Height>30</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>ScInputParam</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row50</RowName>
+			
+			
+			<ControlTypeName>TextBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>130</Width><Height>30</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>ScRun</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row50</RowName>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName>
+			
+			<DisplayName>Run</DisplayName><DataSource>\images\run.png</DataSource>			
+			<DefaultValue/><Action>ExecCmdAsAdmin;%systemdirectory%\sc.exe $ScParam.t$  $ScInputParam.v$ </Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>19</Width><Height>19</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem>
+	
+</ArrayOfZoneItem>

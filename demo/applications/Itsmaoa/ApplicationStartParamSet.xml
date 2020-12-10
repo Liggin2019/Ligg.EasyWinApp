@@ -1,0 +1,24 @@
+<ApplicationStartParamSet>
+	<ApplicationVersion>3.0.2</ApplicationVersion>
+	<HelpdeskEmail>LiggHelpdesk@outlook.com</HelpdeskEmail>
+	<ImplementationDllPath>\applications\ItSmaoa\Impl\Ligg.Cblp.Itsmaoa.dll</ImplementationDllPath>
+	<AdapterFullClassName>Ligg.EasyWinApp.Implementation.Adapter</AdapterFullClassName>
+	<SupportMultiCultures>true</SupportMultiCultures>
+	
+	<VerifyPasswordAtStart>false</VerifyPasswordAtStart>
+	<PasswordVerificationRule/>
+	
+	<ShowSoftwareCoverAtStart>false</ShowSoftwareCoverAtStart>
+	
+	<SoftwareCoverZoneLocation>\_Public\SoftwareCover</SoftwareCoverZoneLocation>
+	
+	<LogonAtStart>false</LogonAtStart>
+	<LogonZoneLocation>\_Public\Logon</LogonZoneLocation>
+	
+	<CheckHostingLocation>false</CheckHostingLocation>
+	<HostingServers/>
+	<CheckSoftwareVersion>false</CheckSoftwareVersion>
+	<CheckLicenseAvailability>false</CheckLicenseAvailability>
+	<CheckPublicationValidity>false</CheckPublicationValidity>
+	
+</ApplicationStartParamSet>

@@ -1,0 +1,54 @@
+<ArrayOfLayoutElement>
+	<LayoutElement>
+			
+			
+			
+			
+			<Id>200</Id><Name>MainArea</Name><Container>MainSectionMainDivisionMidRegion</Container><TypeName>ContentArea</TypeName>
+			<Location/><InputVariables/><StyleClass/><StyleText>Padding:2</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			<ResizeRegionParams/><Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Fill</DockTypeName><DockOrder>10</DockOrder><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>210</Id><Name>MainLabel</Name><Container>MainArea</Container><TypeName>Zone</TypeName>
+			<Location>\_Common\TitleLabel</Location><InputVariables>Daily Server Inspection^Level1^</InputVariables><StyleClass/><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder>1010</DockOrder><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>40</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>220</Id><Name>MainZone</Name><Container>MainArea</Container><TypeName>Zone</TypeName>
+			<Location>\Inspect\Daily\Server</Location><InputVariables/><StyleClass/><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder>1020</DockOrder><OffsetOrPositionX>100</OffsetOrPositionX><OffsetOrPositionY>60</OffsetOrPositionY><Width>600</Width><Height>280</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement>
+</ArrayOfLayoutElement>

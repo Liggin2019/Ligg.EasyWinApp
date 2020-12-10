@@ -1,0 +1,106 @@
+<ArrayOfLayoutElement>
+	<LayoutElement>
+			
+			
+			
+			
+			<Id>200</Id><Name>NetworkToolArea</Name><Container>MainSectionMainDivisionMidRegion</Container><TypeName>ContentArea</TypeName>
+			<Location/><StyleText>Padding:2</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Fill</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>201</Id><Name>NetworkToolLabel</Name><Container>NetworkToolArea</Container><TypeName>Zone</TypeName>
+			<Location>\_common\TitleLabel</Location><InputVariables>Network Tools^Level1^</InputVariables><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>40</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>210</Id><Name>NetworkToolZone</Name><Container>NetworkToolArea</Container><TypeName>Zone</TypeName>
+			<Location>\Admin\NetworkTool</Location><StyleText>Align:RowLining</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Fill</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>45</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>21001</Id><Name>OnNetworkLocationChanged</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark>Public_NetworkLocation_NetworkLocation</Remark>
+			
+			<Action>RefreshProcedureVariables;#NetworkTool_NetworkToolZone_MonitoredNetworkAddresses#,#NetworkTool_NetworkToolZone_MonitoredServerAddresses#</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>21002</Id><Name>OnNetworkLocationChanged1</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark>Public_NetworkLocation_NetworkLocation</Remark>
+			
+			<Action>RefreshControlsDataSources;$NetworkTool_NetworkToolZone_PingIp$,$NetworkTool_NetworkToolZone_TracertIp$,$NetworkTool_NetworkToolZone_TelnetIp$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>21003</Id><Name>OnNetworkLocationChanged2</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/><IsPopup>false</IsPopup>
+			
+			<DisplayName/><Remark>Public_NetworkLocation_NetworkLocation</Remark>
+			
+			<Action>RefreshControlsValues;$NetworkTool_NetworkToolZone_XPingIps$,$NetworkTool_NetworkToolZone_XTracertIps$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement>
+	
+</ArrayOfLayoutElement>

@@ -1,30 +1,66 @@
-﻿# Ligg.EasyWinApp
-本解决方案是一个Windows应用编程框架和UI库，通过该框架，不需任何代码，通过XML配置文件，搭建任意复杂的Windows应用界面，以类似Execel公式的方式实现基本的过程控制(赋值、条件判断、循环、跳转)和功能(字符/文件处理、Windows脚本执行、逻辑运算、数学运算、数据输入输出及输入验证、数据格式转换、加密解密、表单字段验证等)；动态加载“即插即用“的.Net组件或COM组件实现特定的业务处理功能；支持多线程、多语言。
-  
-This solution  is a Windows application programming framework and UI library. By this framework, never need any code, only by XML file to build any complex Windows winform GUI, implement basic basic process control (value assignment, conditional judgment, loop, jump) and functions (string/file basic function, Windows script processing, logic judgment, mathematical operation, data input/output and input verification, data conversion, encryption/decryption, form field validation, etc.) in an Execel formular like manner; by dynamically loading 'Plug and Play' .Net component or COM component to achieve specific business logic processing function. It supports multi-threading and multi-language.
-  
+# 关于Ligg.EasyWinApp
+English | [简体中文](./README.zh-CN.md)
+- History[History](https://www.cnblogs.com/liggin2019/p/11780431.html)
+- Over all introduction[Over all introduction](https://www.cnblogs.com/liggin2019/p/11824064.html)
+- Dev. and Application guide, based on version 3.5.2, currently under construction..[guide,](https://liggin2019.gitee.io/projguide)
+- Current version: 3.0.2, will be upgraded to version 3.5.2. Version 3.5.2 has greatly enhanced the reusability of the interface and can realize all levels（View/Area/Zone/Control）
+- 3.5.2 will be a long-term stable release.
 
 
-Ligg.EasyWinForm是一个Winform应用编程框架和UI库。通过该框架，不需任何代码，通过配置文件，搭建任意复杂的Windows应用界面，以类似Execel公式的方式实现基本的过程控制和功能；动态加载不同的“即插即用“的核心业务处理动态链接库（CBLP Dll）实现特定的业务处理功能。
-  
-Ligg.EasyWinForm is a Winform application programming framework and winform UI library. By this framework, never need any code, only by configuration file to build any complex Windows GUI, implement basic basic process control and functions in an Execel formular like manner; by dynamically loading different 'Plug and Play' Core Business Logic Processing Dynamic Link Library(CBLP DLL) to achieve specific business logic processing function. 
-  
-Ligg.EasyWinConsole是一个Windows控制台应用编程框架，与Ligg.EasyWinform相似，配合参数传入及键盘输入；通过配置文件,以类似Execel公式的方式实现基本的过程控制和功能，动态加载不同的“即插即用“的核心业务处理动态链接库实现特定的业务处理功能。
-  
-Ligg.EasyWinConsole  is a Windows Console application programming framework. Similar to Ligg.EasyWinform, With passing parameters and keyboard input, by configuration file to implement basic basic process control and functions in an Execel formular like manner; by dynamically loading different 'Plug and Play' CBLP DLL to achieve specific business logic processing function.
-  
-Ligg.EasyWinService是一个Windows服务的应用编程框架，通过一个配置文件， 定义启动/关闭、即时/定时/循环运行的作业，动态加载不同的“即插即用“的核心业务处理动态链接库实现特定的业务处理功能。实现“一个Windows服务、一个配置文件”，实现不同的业务场景下的不同的功能。可以用作运维自动化的主控台实现嵌入式设备或电脑的无人值守的、远程监控和运维。
-  
-Ligg.EasyWinservice is a Windows Service application programming framework. By a configuration file to define the jobs of start/close/real-time-run/timing-run/recurring-run, dynamically loading different CBLP DLL to achieve specific business logic processing function, to realize by ONE-Windows-Service,ONE-Config-File to implement MANY functions under different business scenarios. It can be used as Console Platform for operation automation to realize unattended and remote monitoring and maintenance for computers or embedded devices.
-  
-Ligg.EasyWinSignalR是一个基于Windows的SignalR客户端应用编程框架，一个单用户对多台机器的即时通讯工具，内建基本功能如聊天、传送接收文件、截屏等。通过用户对机器的指令，动态加载不同的“即插即用“的核心业务处理动态链接库实现特定的业务处理功能。可以用作运维自动化的代理实现嵌入式设备或电脑的实时、远程监控和运维。
-  
-Ligg.EasyWinSignalR  is a SignalR client programming framework based on windows, a Person-To-Machines instant messager built-in functions such as chatting, sending/receiving files, snapping screen, etc.  By Person-To-Machine instuction，dynamically loading different CBLP DLL, to achieve specific business logic processing function. It can be used as an agent for operation automation to realize real-time and remote monitoring and maintenance for computers or embedded devices.
-  
+## Introduction
+### This solution  is a Windows application programming framework and UI library. By this framework, never need any code, only by XML file
+- to build any complex Windows winform GUI,  console program input/output user interface;
+- to implement basic process control (value assignment, conditional judgment, loop, jump, etc) in an Execel formular like manner; 
+- to implement  basic functionalities (string/file basic functionality, logic judgment, mathematical operation, data input/output and input verification, data conversion, encryption/decryption, form field validation, etc.) in an Execel formular like manner; 
+- to process Windows script and Python script (new feature in  version 3.52)
+- to achieve specific business logic processing function.  by dynamically loading 'Plug and Play' .Net component or COM component (CBPL DLL) to 
+- to supports multi-threading and multi-language.：
+
+### Ligg.EasyWinform
+Ligg.EasyWinform Is a Winform programming framework and UI library. It can excellent imitate the UI of  SAP GUI, 360 security guard software and Symantec endpoint client.
+
+###  Ligg.EasyWinConsole
+Ligg.EasyWinConsole is a Windows console programming framework, can be called by easywinform or used alone. It can be used for automation device debugging, software testing, configuration deployment of IT operation and maintenance , server of instant messaging / message queu, etc.
+- It is not uploaded in this version, but will be uploaded in version 3.5.2.
+
+## Development environment
+- Microsoft Visual Studio 2017, version: 15.8.9
+- Microsoft .NET Framework version: 4.6.01586
+
+## Development/Test
+#### Please go to the demo folder and run each case against the source code. As shown in the figure below
+![case](https://liggin2019.gitee.io/Static/images/EasyWinApp/cases.png)
+
+## Usage：
+1. For automation equipment development, debugging, operation and maintenance, that is so called 'host computer development', which is also the starting point of this framework. 
+-- For Embedded / hardware engineers, you do not need to write human-computer interaction code, only need to configure XML, through the built-in SerialConnector /SocketConnector /WebSocketConnector /OpcConnector /OpcUaConnector /MqttConnector interfaces to call the corresponding hardware control program (cbpl DLL), you can create a beautiful equipment operation and maintenance management system. 
+
+2. For testing or prototype design in the process of software development.
+-- No need to write test case code , only use the built-in HttpClientHandler for server-side test, and use the built-in JobScheduler&ThreadDispatcher carries out stress / robustness test; 
+-- Generate prototype interface by configuration , to carry out deep communication and interaction among project manager, product manager, architect, user and programmer in requirements analysis stage, outline design stage, detailed design stage and development stage.
+
+3. For configuration, deployment, monitoring of IT operation and maintenance automation, of course, is only for windows. For the  windows + UNIX, we have a solution based on zabbix/granfana.
+
+4. For  tool software especially software with high security requirements
+It can overcome the security weakness of browser-based front-end  (browser client is non blind), and realize various verification and encryption --by lisense dog, by permitting specific hosts/OS to run, by limitting running in specific LAN , by authorizing Windows user to run , request-response data encryption, etc.
+
+5. As web client
+-- never need any code, you can  customiz interface and form to  communication with server by Restful protocol through the encapsulation of httpclient
+-- It is especially suitable for the front end such as MES or WMS, which needs to be connected to the device. After all, WinForm is easier to connect to the device than the browser based front end.
 
 
-//**备注
+## License
+[MIT](https://github.com/Liggin2019/Ligg.EasyWinApp/blob/master/LICENSE) license.
+Copyright (c) 2019-present Liggin2019
 
-备注:目前只有Ligg.EasyWinForm的源码和演示，将完善后将逐步上传其他项目。请下载\domo.zip查看功能演示；请至 https://www.cnblogs.com/liggin2019 查看详细介绍和源码分析。
-
-Remark: Currently, only source file and demo of Ligg.EasyWinForm were uploaded, will gradually upload other projects after perfection. Pls download \demo.zip to see funtion demo, see detailed introduction and coding analysis by visiting https://www.cnblogs.com/liggin2019.
+## Running snapshot
+#### login
+![login](https://liggin2019.gitee.io/Static/images/EasyWinApp/login-en.png)
+#### software cover
+![software cover](https://liggin2019.gitee.io/Static/images/EasyWinApp/software-cover-en.png)
+#### about
+![about](https://liggin2019.gitee.io/Static/images/EasyWinApp/about-en.png)
+#### main UI
+![main UI](https://liggin2019.gitee.io/Static/images/EasyWinApp/main-ui-en.png)  
+#### main UI 
+![main UI1](https://liggin2019.gitee.io/Static/images/EasyWinApp/main-ui1-en.png)  

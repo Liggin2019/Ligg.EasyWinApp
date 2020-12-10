@@ -1,0 +1,40 @@
+<ArrayOfAnnex>
+		<Annex>
+			<Id>-1</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>ServerConnectionStatus</MasterName>
+			<DisplayName>服务器连接状态</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex>
+	<Annex>
+		<Id>-1</Id>
+		
+		<MasterId>-1</MasterId>
+		<MasterName>RefreshServerConnectionStatus</MasterName>
+		<DisplayName>刷新服务器连接状态</DisplayName>
+		
+		
+		
+		
+		
+		<LanguageCode>szh</LanguageCode>
+	</Annex><Annex>
+		<Id>-1</Id>
+		
+		<MasterId>-1</MasterId>
+		<MasterName>FixServerConnectionStatus</MasterName>
+		<DisplayName>修复服务器连接问题</DisplayName>
+		
+		
+		
+		
+		
+		<LanguageCode>szh</LanguageCode>
+	</Annex>
+		
+</ArrayOfAnnex>

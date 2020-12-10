@@ -1,0 +1,327 @@
+<ArrayOfZoneItem>
+	<ZoneItem>
+			
+			<Name>Row10</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>48</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Region</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row10</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>Region</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>ExecCmd;intl.cpl;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>200</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>120</Width>
+			<Height>48</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Langugae</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row10</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>Langugae</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>ExecCmd;%systemdirectory%\rundll32.exe shell32.dll,Control_RunDLL %systemroot%\system32\input.dll;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>40</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>120</Width><Height>48</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>KBInput1</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row10</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>KB Input</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>ExecCmd;ctfmon.exe;2</Action>
+			
+			<InvalidFlag>true</InvalidFlag><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>40</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>120</Width><Height>48</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Time</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row10</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>Time</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>ExecCmdAsAdmin;timedate.cpl ;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>40</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>120</Width><Height>48</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Row19</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>10</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Row20</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>48</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>ScreenSaver</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row20</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>Screen Saver</DisplayName><DataSource/>			
+			<DefaultValue/><Action>ExecCmd;%systemdirectory%\rundll32.exe shell32.dll,Control_RunDLL desk.cpl,ScreenSaver,@ScreenSaver;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>200</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>120</Width><Height>48</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>ScreenSaver-old</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row20</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>Screen Saver</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>ExecCmd;%systemdirectory%\rundll32.exe shell32.dll,Control_RunDLL desk.cpl,,2;2</Action>
+			
+			<InvalidFlag>true</InvalidFlag><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>40</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>120</Width><Height>48</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Dispaly</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row20</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>Dispaly</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>ExecCmd;desk.cpl;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>40</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>120</Width><Height>48</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Audio</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row20</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>Audio</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>ExecCmd;mmsys.cpl;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>40</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>120</Width><Height>48</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Row29</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>10</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Row30</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>48</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Folder</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row30</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>Folder</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>ExecCmd;%systemdirectory%\rundll32.exe shell32.dll,Options_RunDLL 7;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>200</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>120</Width><Height>48</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Internet</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row30</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>Internet</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>ExecCmd;inetcpl.cpl;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>40</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>120</Width><Height>48</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Network</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row30</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>Network</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>ExecCmd;ncpa.cpl;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>40</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>120</Width><Height>48</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Row39</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>10</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Row40</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>48</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Remote</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row40</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>Remote</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>ExecCmd;%systemdirectory%\rundll32.exe shell32.dll,Control_RunDLL sysdm.cpl,,5;2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>200</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>120</Width><Height>48</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Wireless</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row40</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>Wireless</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>ExecCmd;%systemdirectory%\explorer.exe shell:::{1fa9085f-25a2-489b-85d4-86326eedcd87};2</Action>
+			
+			<InvalidFlag/><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>40</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>120</Width><Height>48</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>DeleteSiteWifi</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row40</RowName>
+			
+			
+			<ControlTypeName>TextButton</ControlTypeName><StyleClass>Button</StyleClass><StyleText/>
+			
+			<DisplayName>Del Site Wifis</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>ExecCmd;netsh wlan delete profile name="$10010060t$*";2</Action>
+			
+			<InvalidFlag>true</InvalidFlag><InvisibleFlag/><DisabledFlag/>
+			<DockOrder/><OffsetOrPositionX>40</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>120</Width><Height>48</Height>
+			<ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem>
+		
+		
+	</ArrayOfZoneItem>

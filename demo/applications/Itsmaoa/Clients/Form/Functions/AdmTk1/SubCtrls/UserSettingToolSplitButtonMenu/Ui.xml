@@ -1,0 +1,10 @@
+<ArrayOfContextMenuItem>
+		<ContextMenuItem>
+			<Id>10</Id><Type>-1</Type><ParentId>-1</ParentId><Name>UserSetting</Name>
+						
+			<DisplayName>User Setting</DisplayName><Description/>
+			<InvisibleFlag>true</InvisibleFlag>
+			<Action/>
+			<ImageUrl>\images\setting.png</ImageUrl>
+		</ContextMenuItem>
+</ArrayOfContextMenuItem>

@@ -1,0 +1,38 @@
+
+<ArrayOfAnnex>
+		<Annex>
+			<Id>-1</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>ComputerNameL</MasterName>
+			<DisplayName>计算机名</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>-1</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>OsL</MasterName>
+			<DisplayName>操作系统</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex><Annex>
+			<Id>-1</Id>
+			
+			<MasterId>-1</MasterId>
+			<MasterName>SendMsg</MasterName>
+			<DisplayName>发送邮件</DisplayName>
+			
+			
+			
+			
+			<LanguageCode>szh</LanguageCode>
+		</Annex>
+		
+</ArrayOfAnnex>

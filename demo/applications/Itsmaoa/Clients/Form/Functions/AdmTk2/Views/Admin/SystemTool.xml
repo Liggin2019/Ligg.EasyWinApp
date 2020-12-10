@@ -1,0 +1,55 @@
+<ArrayOfLayoutElement>
+	<LayoutElement>
+			
+			
+			
+			
+			<Id>200</Id><Name>SystemToolArea</Name><Container>MainSectionMainDivisionMidRegion</Container><TypeName>ContentArea</TypeName>
+			<Location/><DataSource/><StyleClass/><StyleText>Padding:2</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Fill</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>210</Id><Name>SystemToolLabel</Name><Container>SystemToolArea</Container><TypeName>Zone</TypeName>
+			<Location>\_common\TitleLabel</Location><InputVariables>System Tools^Level1^</InputVariables><StyleClass/><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>40</Height>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>220</Id><Name>SystemTool</Name><Container>SystemToolArea</Container><TypeName>Zone</TypeName>
+			<Location>\Admin\SystemTool</Location><StyleClass/><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>45</OffsetOrPositionY><Width>-1</Width><Height>300</Height>
+		</LayoutElement>
+	
+</ArrayOfLayoutElement>

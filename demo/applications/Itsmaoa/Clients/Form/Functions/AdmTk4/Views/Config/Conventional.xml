@@ -1,0 +1,1788 @@
+<ArrayOfLayoutElement>
+	<LayoutElement>
+			
+			
+			
+			
+			<Id>0</Id><Name>ConventionalConfigArea</Name><Container>MainSectionMainDivisionMidRegion</Container><TypeName>ContentArea</TypeName>
+			<Location/><InputVariables/><StyleText>Padding:2</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			<ResizeRegionParams/><Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Fill</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>100</Id><Name>ConventionalConfigLabel</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\_Common\TitleLabel</Location><InputVariables>Conventional Configuration^Level1^</InputVariables><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>33</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>200</Id><Name>ConfigGrpZone0</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\Config\Common\Common</Location><InputVariables>0</InputVariables><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>33</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>20001</Id><Name>OnSelectAllChanged0</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Select</Remark>
+			
+			<Action>SetControlValue;ConventionalConfig_ConfigGrpZone0_Select;$ConventionalConfig_BatchAction_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>20002</Id><Name>OnRefreshSelectedClicked0</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Refresh</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone0_Select.v$;$ConventionalConfig_ConfigGrpZone0_Refresh$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>20003</Id><Name>OnRepairSelectedClicked0</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Repair</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone0_Select.v$;$ConventionalConfig_ConfigGrpZone0_Repair$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>20009</Id><Name>SplitRect0</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\_common\SplitRect</Location><InputVariables/><StyleText>BackColor:200,200,200</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>210</Id><Name>ConfigGrpZone1</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\Config\Common\Common</Location><InputVariables>1</InputVariables><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>33</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>21001</Id><Name>OnSelectAllChanged1</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Select</Remark>
+			
+			<Action>SetControlValue;ConventionalConfig_ConfigGrpZone1_Select;$ConventionalConfig_BatchAction_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>21002</Id><Name>OnRefreshSelectedClicked1</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Refresh</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone1_Select.v$;$ConventionalConfig_ConfigGrpZone1_Refresh$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>20103</Id><Name>OnRepairSelectedClicked1</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Repair</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone2_Select.v$;$ConventionalConfig_ConfigGrpZone1_Repair$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>21009</Id><Name>SplitRect1</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\_common\SplitRect</Location><InputVariables/><StyleText>BackColor:200,200,200</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>220</Id><Name>ConfigGrpZone2</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\Config\Common\Common</Location><InputVariables>2</InputVariables><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>33</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>22001</Id><Name>OnSelectAllChanged2</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Select</Remark>
+			
+			<Action>SetControlValue;ConventionalConfig_ConfigGrpZone2_Select;$ConventionalConfig_BatchAction_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>22002</Id><Name>OnRefreshSelectedClicked2</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Refresh</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone2_Select.v$;$ConventionalConfig_ConfigGrpZone2_Refresh$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>22003</Id><Name>OnRepairSelectedClicked2</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Repair</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone2_Select.v$;$ConventionalConfig_ConfigGrpZone2_Repair$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>22009</Id><Name>SplitRect2</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\_common\SplitRect</Location><InputVariables/><StyleText>BackColor:200,200,200</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>230</Id><Name>ConfigGrpZone3</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\Config\Common\Common</Location><InputVariables>3</InputVariables><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>33</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>23001</Id><Name>OnSelectAllChanged3</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Select</Remark>
+			
+			<Action>SetControlValue;ConventionalConfig_ConfigGrpZone3_Select;$ConventionalConfig_BatchAction_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>23002</Id><Name>OnRefreshSelectedClicked3</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Refresh</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone3_Select.v$;$ConventionalConfig_ConfigGrpZone3_Refresh$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>23003</Id><Name>OnRepairSelectedClicked3</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Repair</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone3_Select.v$;$ConventionalConfig_ConfigGrpZone3_Repair$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>23009</Id><Name>SplitRect3</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\_common\SplitRect</Location><InputVariables/><StyleText>BackColor:200,200,200</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>240</Id><Name>ConfigGrpZone4</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\Config\Common\Common</Location><InputVariables>4</InputVariables><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>33</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>24001</Id><Name>OnSelectAllChanged4</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Select</Remark>
+			
+			<Action>SetControlValue;ConventionalConfig_ConfigGrpZone4_Select;$ConventionalConfig_BatchAction_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>24002</Id><Name>OnRefreshSelectedClicked4</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Refresh</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone4_Select.v$;$ConventionalConfig_ConfigGrpZone4_Refresh$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>24003</Id><Name>OnRepairSelectedClicked4</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Repair</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone4_Select.v$;$ConventionalConfig_ConfigGrpZone4_Repair$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>24009</Id><Name>SplitRect4</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\_common\SplitRect</Location><InputVariables/><StyleText>BackColor:200,200,200</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>245</Id><Name>ConfigGrpZone16</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\Config\Common\Common</Location><InputVariables>16</InputVariables><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>33</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>24501</Id><Name>OnSelectAllChanged16</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Select</Remark>
+			
+			<Action>SetControlValue;ConventionalConfig_ConfigGrpZone16_Select;$ConventionalConfig_BatchAction_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>24502</Id><Name>OnRefreshSelectedClicked16</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Refresh</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone16_Select.v$;$ConventionalConfig_ConfigGrpZone16_Refresh$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>24503</Id><Name>OnRepairSelectedClicke16</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Repair</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone16_Select.v$;$ConventionalConfig_ConfigGrpZone16_Repair$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>24509</Id><Name>SplitRect16</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\_common\SplitRect</Location><InputVariables/><StyleText>BackColor:200,200,200</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>250</Id><Name>ConfigGrpZone5</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\Config\Common\Common</Location><InputVariables>5</InputVariables><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>33</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>25002</Id><Name>OnSelectAllChanged5</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Select</Remark>
+			
+			<Action>SetControlValue;ConventionalConfig_ConfigGrpZone5_Select;$ConventionalConfig_BatchAction_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>25003</Id><Name>OnRefreshSelectedClicked5</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Refresh</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone5_Select.v$;$ConventionalConfig_ConfigGrpZone5_Refresh$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>25004</Id><Name>OnRepairSelectedClicked5</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Repair</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone5_Select.v$;$ConventionalConfig_ConfigGrpZone5_Repair$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>25009</Id><Name>SplitRect5</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\_common\SplitRect</Location><InputVariables/><StyleText>BackColor:200,200,200</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>260</Id><Name>ConfigGrpZone6</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\Config\Common\Common</Location><InputVariables>6</InputVariables><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>33</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>26001</Id><Name>OnSelectAllChanged6</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Select</Remark>
+			
+			<Action>SetControlValue;ConventionalConfig_ConfigGrpZone6_Select;$ConventionalConfig_BatchAction_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>26002</Id><Name>OnRefreshSelectedClicked6</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Refresh</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone6_Select.v$;$ConventionalConfig_ConfigGrpZone6_Refresh$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>26003</Id><Name>OnRepairSelectedClicked6</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Repair</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone6_Select.v$;$ConventionalConfig_ConfigGrpZone6_Repair$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>26009</Id><Name>SplitRect6</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\_common\SplitRect</Location><InputVariables/><StyleText>BackColor:200,200,200</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>270</Id><Name>ConfigGrpZone7</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\Config\Common\Common</Location><InputVariables>7</InputVariables><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>33</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>27001</Id><Name>OnSelectAllChanged7</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Select</Remark>
+			
+			<Action>SetControlValue;ConventionalConfig_ConfigGrpZone7_Select;$ConventionalConfig_BatchAction_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>27002</Id><Name>OnRefreshSelectedClicked7</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Refresh</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone7_Select.v$;$ConventionalConfig_ConfigGrpZone7_Refresh$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>27003</Id><Name>OnRepairSelectedClicked7</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Repair</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone7_Select.v$;$ConventionalConfig_ConfigGrpZone7_Repair$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>27009</Id><Name>SplitRect7</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\_common\SplitRect</Location><InputVariables/><StyleText>BackColor:200,200,200</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>280</Id><Name>ConfigGrpZone8</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\Config\Common\Common</Location><InputVariables>8</InputVariables><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>33</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>28001</Id><Name>OnSelectAllChanged8</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Select</Remark>
+			
+			<Action>SetControlValue;ConventionalConfig_ConfigGrpZone8_Select;$ConventionalConfig_BatchAction_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>28002</Id><Name>OnRefreshSelectedClicked8</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Refresh</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone8_Select.v$;$ConventionalConfig_ConfigGrpZone8_Refresh$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>28003</Id><Name>OnRepairSelectedClicked8</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Repair</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone8_Select.v$;$ConventionalConfig_ConfigGrpZone8_Repair$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>28009</Id><Name>SplitRect8</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\_common\SplitRect</Location><InputVariables/><StyleText>BackColor:200,200,200</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>290</Id><Name>ConfigGrpZone9</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\Config\Common\Common</Location><InputVariables>9</InputVariables><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>33</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>29001</Id><Name>OnSelectAllChanged9</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Select</Remark>
+			
+			<Action>SetControlValue;ConventionalConfig_ConfigGrpZone9_Select;$ConventionalConfig_BatchAction_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>29002</Id><Name>OnRefreshSelectedClicked9</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Refresh</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone9_Select.v$;$ConventionalConfig_ConfigGrpZone9_Refresh$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>29003</Id><Name>OnRepairSelectedClicked9</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Repair</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone9_Select.v$;$ConventionalConfig_ConfigGrpZone9_Repair$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>29009</Id><Name>SplitRect9</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\_common\SplitRect</Location><InputVariables/><StyleText>BackColor:200,200,200</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>300</Id><Name>ConfigGrpZone10</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\Config\Common\Common</Location><InputVariables>10</InputVariables><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>33</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>30001</Id><Name>OnSelectAllChanged10</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Select</Remark>
+			
+			<Action>SetControlValue;ConventionalConfig_ConfigGrpZone10_Select;$ConventionalConfig_BatchAction_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>30002</Id><Name>OnRefreshSelectedClicked10</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Refresh</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone10_Select.v$;$ConventionalConfig_ConfigGrpZone10_Refresh$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>30003</Id><Name>OnRepairSelectedClicked10</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Repair</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone10_Select.v$;$ConventionalConfig_ConfigGrpZone10_Repair$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>30009</Id><Name>SplitRect10</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\_common\SplitRect</Location><InputVariables/><StyleText>BackColor:200,200,200</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>310</Id><Name>ConfigGrpZone11</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\Config\Common\Common</Location><InputVariables>11</InputVariables><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>33</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>31001</Id><Name>OnSelectAllChanged11</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Select</Remark>
+			
+			<Action>SetControlValue;ConventionalConfig_ConfigGrpZone11_Select;$ConventionalConfig_BatchAction_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>31002</Id><Name>OnRefreshSelectedClicked11</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Refresh</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone11_Select.v$;$ConventionalConfig_ConfigGrpZone11_Refresh$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>31003</Id><Name>OnRepairSelectedClicked11</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Repair</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone11_Select.v$;$ConventionalConfig_ConfigGrpZone11_Repair$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>31009</Id><Name>SplitRect11</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\_common\SplitRect</Location><InputVariables/><StyleText>BackColor:200,200,200</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>320</Id><Name>ConfigGrpZone12</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\Config\Common\Common</Location><InputVariables>12</InputVariables><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>33</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>32001</Id><Name>OnSelectAllChanged12</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Select</Remark>
+			
+			<Action>SetControlValue;ConventionalConfig_ConfigGrpZone12_Select;$ConventionalConfig_BatchAction_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>32002</Id><Name>OnRefreshSelectedClicked12</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Refresh</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone12_Select.v$;$ConventionalConfig_ConfigGrpZone12_Refresh$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>32003</Id><Name>OnRepairSelectedClicked12</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Repair</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone12_Select.v$;$ConventionalConfig_ConfigGrpZone12_Repair$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>32009</Id><Name>SplitRect12</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\_common\SplitRect</Location><InputVariables/><StyleText>BackColor:200,200,200</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>330</Id><Name>ConfigGrpZone13</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\Config\Common\Common</Location><InputVariables>13</InputVariables><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>33</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>33001</Id><Name>OnSelectAllChanged13</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Select</Remark>
+			
+			<Action>SetControlValue;ConventionalConfig_ConfigGrpZone13_Select;$ConventionalConfig_BatchAction_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>33002</Id><Name>OnRefreshSelectedClicked13</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Refresh</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone13_Select.v$;$ConventionalConfig_ConfigGrpZone13_Refresh$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>33003</Id><Name>OnRepairSelectedClicked13</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Repair</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone13_Select.v$;$ConventionalConfig_ConfigGrpZone13_Repair$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>33009</Id><Name>SplitRect13</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\_common\SplitRect</Location><InputVariables/><StyleText>BackColor:200,200,200</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>340</Id><Name>ConfigGrpZone14</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\Config\Common\Common</Location><InputVariables>14</InputVariables><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>33</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>34001</Id><Name>OnSelectAllChanged14</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Select</Remark>
+			
+			<Action>SetControlValue;ConventionalConfig_ConfigGrpZone14_Select;$ConventionalConfig_BatchAction_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>34002</Id><Name>OnRefreshSelectedClicked14</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Refresh</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone14_Select.v$;$ConventionalConfig_ConfigGrpZone14_Refresh$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>34003</Id><Name>OnRepairSelectedClicked14</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Repair</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone14_Select.v$;$ConventionalConfig_ConfigGrpZone14_Repair$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>34009</Id><Name>SplitRect14</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\_common\SplitRect</Location><InputVariables/><StyleText>BackColor:200,200,200</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>350</Id><Name>ConfigGrpZone15</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\Config\Common\Common</Location><InputVariables>15</InputVariables><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>33</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>35001</Id><Name>OnSelectAllChanged15</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Select</Remark>
+			
+			<Action>SetControlValue;ConventionalConfig_ConfigGrpZone15_Select;$ConventionalConfig_BatchAction_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>35002</Id><Name>OnRefreshSelectedClicked15</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Refresh</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone15_Select.v$;$ConventionalConfig_ConfigGrpZone15_Refresh$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>35003</Id><Name>OnRepairSelectedClicked15</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_BatchAction_Repair</Remark>
+			
+			<Action>Crun;$ConventionalConfig_ConfigGrpZone15_Select.v$;$ConventionalConfig_ConfigGrpZone15_Repair$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>35009</Id><Name>SplitRect15</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\_common\SplitRect</Location><InputVariables/><StyleText>BackColor:200,200,200</StyleText>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>900</Id><Name>BatchAction</Name><Container>ConventionalConfigArea</Container><TypeName>Zone</TypeName>
+			<Location>\Config\Common\BatchAction</Location><InputVariables>1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16</InputVariables><StyleText/>
+			
+			<DisplayName/><Remark/>
+			
+			<Action/>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName>Top</DockTypeName><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>33</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>90001</Id><Name>OnSelectChanged0</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_ConfigGrpZone0_Select</Remark>
+			
+			<Action>SetProcedureVariableValue~ConventionalConfig_BatchAction_SelectedIds~=AddOrRemoveSubParam;#ConventionalConfig_BatchAction_SelectedIds.v#;0;$ConventionalConfig_ConfigGrpZone0_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>90002</Id><Name>OnSelectChanged1</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_ConfigGrpZone1_Select</Remark>
+			
+			<Action>SetProcedureVariableValue~ConventionalConfig_BatchAction_SelectedIds~=AddOrRemoveSubParam;#ConventionalConfig_BatchAction_SelectedIds.v#;1;$ConventionalConfig_ConfigGrpZone1_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>90003</Id><Name>OnSelectChanged2</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_ConfigGrpZone2_Select</Remark>
+			
+			<Action>SetProcedureVariableValue~ConventionalConfig_BatchAction_SelectedIds~=AddOrRemoveSubParam;#ConventionalConfig_BatchAction_SelectedIds.v#;2;$ConventionalConfig_ConfigGrpZone2_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>90004</Id><Name>OnSelectChanged3</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_ConfigGrpZone3_Select</Remark>
+			
+			<Action>SetProcedureVariableValue~ConventionalConfig_BatchAction_SelectedIds~=AddOrRemoveSubParam;#ConventionalConfig_BatchAction_SelectedIds.v#;3;$ConventionalConfig_ConfigGrpZone3_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>90005</Id><Name>OnSelectChanged4</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_ConfigGrpZone4_Select</Remark>
+			
+			<Action>SetProcedureVariableValue~ConventionalConfig_BatchAction_SelectedIds~=AddOrRemoveSubParam;#ConventionalConfig_BatchAction_SelectedIds.v#;4;$ConventionalConfig_ConfigGrpZone4_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>90006</Id><Name>OnSelectChanged5</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_ConfigGrpZone5_Select</Remark>
+			
+			<Action>SetProcedureVariableValue~ConventionalConfig_BatchAction_SelectedIds~=AddOrRemoveSubParam;#ConventionalConfig_BatchAction_SelectedIds.v#;5;$ConventionalConfig_ConfigGrpZone5_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>90007</Id><Name>OnSelectChanged6</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_ConfigGrpZone6_Select</Remark>
+			
+			<Action>SetProcedureVariableValue~ConventionalConfig_BatchAction_SelectedIds~=AddOrRemoveSubParam;#ConventionalConfig_BatchAction_SelectedIds.v#;6;$ConventionalConfig_ConfigGrpZone6_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>90008</Id><Name>OnSelectChanged7</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_ConfigGrpZone7_Select</Remark>
+			
+			<Action>SetProcedureVariableValue~ConventionalConfig_BatchAction_SelectedIds~=AddOrRemoveSubParam;#ConventionalConfig_BatchAction_SelectedIds.v#;7;$ConventionalConfig_ConfigGrpZone7_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>90009</Id><Name>OnSelectChanged8</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_ConfigGrpZone8_Select</Remark>
+			
+			<Action>SetProcedureVariableValue~ConventionalConfig_BatchAction_SelectedIds~=AddOrRemoveSubParam;#ConventionalConfig_BatchAction_SelectedIds.v#;8;$ConventionalConfig_ConfigGrpZone8_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>90010</Id><Name>OnSelectChanged9</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_ConfigGrpZone9_Select</Remark>
+			
+			<Action>SetProcedureVariableValue~ConventionalConfig_BatchAction_SelectedIds~=AddOrRemoveSubParam;#ConventionalConfig_BatchAction_SelectedIds.v#;9;$ConventionalConfig_ConfigGrpZone9_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>90011</Id><Name>OnSelectChanged10</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_ConfigGrpZone10_Select</Remark>
+			
+			<Action>SetProcedureVariableValue~ConventionalConfig_BatchAction_SelectedIds~=AddOrRemoveSubParam;#ConventionalConfig_BatchAction_SelectedIds.v#;10;$ConventionalConfig_ConfigGrpZone10_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>90012</Id><Name>OnSelectChanged11</Name><Container/><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_ConfigGrpZone11_Select</Remark>
+			
+			<Action>SetProcedureVariableValue~ConventionalConfig_BatchAction_SelectedIds~=AddOrRemoveSubParam;#ConventionalConfig_BatchAction_SelectedIds.v#;11;$ConventionalConfig_ConfigGrpZone11_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>90013</Id><Name>OnSelectChanged12</Name><Container>ConventionalConfigArea</Container><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_ConfigGrpZone12_Select</Remark>
+			
+			<Action>SetProcedureVariableValue~ConventionalConfig_BatchAction_SelectedIds~=AddOrRemoveSubParam;#ConventionalConfig_BatchAction_SelectedIds.v#;12;$ConventionalConfig_ConfigGrpZone12_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>90014</Id><Name>OnSelectChanged13</Name><Container>ConventionalConfigArea</Container><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_ConfigGrpZone13_Select</Remark>
+			
+			<Action>SetProcedureVariableValue~ConventionalConfig_BatchAction_SelectedIds~=AddOrRemoveSubParam;#ConventionalConfig_BatchAction_SelectedIds.v#;13;$ConventionalConfig_ConfigGrpZone13_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>90015</Id><Name>OnSelectChanged14</Name><Container>ConventionalConfigArea</Container><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_ConfigGrpZone14_Select</Remark>
+			
+			<Action>SetProcedureVariableValue~ConventionalConfig_BatchAction_SelectedIds~=AddOrRemoveSubParam;#ConventionalConfig_BatchAction_SelectedIds.v#;14;$ConventionalConfig_ConfigGrpZone14_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>90016</Id><Name>OnSelectChanged15</Name><Container>ConventionalConfigArea</Container><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_ConfigGrpZone15_Select</Remark>
+			
+			<Action>SetProcedureVariableValue~ConventionalConfig_BatchAction_SelectedIds~=AddOrRemoveSubParam;#ConventionalConfig_BatchAction_SelectedIds.v#;15;$ConventionalConfig_ConfigGrpZone15_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement><LayoutElement>
+			
+			
+			
+			
+			<Id>90017</Id><Name>OnSelectChanged16</Name><Container>ConventionalConfigArea</Container><TypeName>FollowingTransactionItem</TypeName>
+			<Location/><DataSource/><StyleText/>
+			
+			<DisplayName/><Remark>ConventionalConfig_ConfigGrpZone16_Select</Remark>
+			
+			<Action>SetProcedureVariableValue~ConventionalConfig_BatchAction_SelectedIds~=AddOrRemoveSubParam;#ConventionalConfig_BatchAction_SelectedIds.v#;16;$ConventionalConfig_ConfigGrpZone16_Select.v$</Action>
+			
+			<InvalidFlag/>
+			
+			
+			
+			<DockTypeName/><DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX><OffsetOrPositionY>-1</OffsetOrPositionY><Width>-1</Width><Height>-1</Height><ImageUrl/><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</LayoutElement>
+</ArrayOfLayoutElement>

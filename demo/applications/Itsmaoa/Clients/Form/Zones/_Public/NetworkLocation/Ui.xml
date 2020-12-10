@@ -1,0 +1,121 @@
+
+<ArrayOfZoneItem>
+
+		<ZoneItem>
+			
+			<Name>Init</Name><TypeName>ZoneBeforeRenderHandler</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action>NetworkLocationService;Init</Action>
+			
+			<ValidFlag/><VisibleFlag/><EnabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>4</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>40</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>Row10</Name><TypeName>VirtualItem</TypeName>
+			<RowName>-1</RowName>
+			
+			
+			<ControlTypeName>Row</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource/>
+			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<ValidFlag/><VisibleFlag/><EnabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>4</OffsetOrPositionY>			<Width>-1</Width>
+			<Height>40</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>NetworkLocationL</Name><TypeName>DisplayOnlyItem</TypeName>
+			<RowName>Row10</RowName>
+			
+			
+			<ControlTypeName>Label</ControlTypeName><StyleClass>FieldName</StyleClass><StyleText/>
+			
+			<DisplayName>Network Location</DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action/>
+			
+			<ValidFlag/><VisibleFlag/><EnabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>1</OffsetOrPositionY>			<Width>110</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>NetworkLocation</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row10</RowName>
+			
+			
+			<ControlTypeName>ComboBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName/><DataSource>=NetworkLocationService;NetworkLocations</DataSource>			
+			<DefaultValue>=RunningParam;CurrentNetworkLocation;ShortName</DefaultValue><ValidationRules/><Action>NetworkLocationService;UpdateChosenNetworkLocation;$NetworkLocation.v$</Action>
+			
+			<ValidFlag/><VisibleFlag/><EnabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>-1</OffsetOrPositionY>			<Width>160</Width>
+			<Height>24</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RefreshNetworkLocation</Name><TypeName>DisplayAndTransactionItem</TypeName>
+			<RowName>Row10</RowName>
+			
+			
+			<ControlTypeName>PictureBox</ControlTypeName><StyleClass/><StyleText/>
+			
+			<DisplayName>Refresh Network Location</DisplayName><DataSource>\Images\Refresh.png</DataSource>			
+			<DefaultValue/><ValidationRules/><Action>Xrun;$RefreshNetworkLocation-Xrun1$,$RefreshNetworkLocation-Xrun2$</Action>
+			
+			<ValidFlag/><VisibleFlag/><EnabledFlag/>
+			<DockOrder/><OffsetOrPositionX>-1</OffsetOrPositionX>
+			<OffsetOrPositionY>1</OffsetOrPositionY>			<Width>16</Width>
+			<Height>16</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RefreshNetworkLocation-Xrun1</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row10</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName>Update Status </DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>NetworkLocationService;RefreshCurrentNetworkLocation</Action>
+			
+			<ValidFlag/><VisibleFlag/><EnabledFlag/>
+			<DockOrder/><OffsetOrPositionX>12</OffsetOrPositionX>
+			<OffsetOrPositionY>1</OffsetOrPositionY>			<Width>16</Width>
+			<Height>16</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem><ZoneItem>
+			
+			<Name>RefreshNetworkLocation-Xrun2</Name><TypeName>TransactionOnlyItem</TypeName>
+			<RowName>Row10</RowName>
+			
+			
+			<ControlTypeName/><StyleClass/><StyleText/>
+			
+			<DisplayName>Update Status </DisplayName><DataSource/>			
+			<DefaultValue/><ValidationRules/><Action>SetControlValue~$NetworkLocation$~=RunningParam;CurrentNetworkLocation;ShortName</Action>
+			
+			<ValidFlag/><VisibleFlag/><EnabledFlag/>
+			<DockOrder/><OffsetOrPositionX>12</OffsetOrPositionX>
+			<OffsetOrPositionY>1</OffsetOrPositionY>			<Width>16</Width>
+			<Height>16</Height><ImageWidth>-1</ImageWidth><ImageHeight>-1</ImageHeight>
+		</ZoneItem>
+		
+		
+		
+		
+				
+		
+		
+		
+	</ArrayOfZoneItem>
+
