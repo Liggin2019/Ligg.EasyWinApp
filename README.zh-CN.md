@@ -31,15 +31,22 @@ Ligg.EasyWinConsole是一个Windows控制台应用编程框架，可以由EasyWi
 ![用例](https://liggin2019.gitee.io/Static/images/EasyWinApp/cases.png)
 
 ## 用途：
-1. 自动化设备开发、调试、运维，上位机开发，这也是本框架的始发点。嵌入式/硬件工程师不需编写人机交互代码，只需配置Xml，通过内置的SerialConnector/SocketConnector/WebSocketConnector/OpcConnector/OpcUaConnector/MqttConnector接口调用对应的硬件控制程序(CBPL DLL)，可以创建界面精美的设备运维管理系统。
+### - 自动化设备开发、调试、运维，上位机开发，这也是本框架的始发点
+- 嵌入式/硬件工程师不需编写人机交互代码，只需配置Xml，通过内置的SerialConnector/SocketConnector/WebSocketConnector/OpcConnector/OpcUaConnector/MqttConnector接口调用对应的硬件控制程序(CBPL DLL)，可以创建界面精美的设备运维管理系统。
 
-2. 软件开发过程中的测试和原型设计。不需编写测试用例代码，利用内置的HttpClientHandler进行服务器端测试；利用内置的JobScheduler / ThreadDispatcher进行压力/鲁棒测试；配置产生原型界面，在需求分析阶段、概要设计阶段、详细设计阶段、代码实现阶段让在项目经理、产品经理、架构师、用户、程序员之间深度沟通和交互变得高效。
+### - 软件开发过程中的测试和原型设计
+- 不需编写测试用例代码，利用内置的HttpClientHandler进行服务器端测试；利用内置的JobScheduler / ThreadDispatcher进行压力/鲁棒测试；
+- 配置产生原型表单或报表，在需求分析阶段、概要设计阶段、详细设计阶段、代码实现阶段让在项目经理、产品经理、架构师、用户、程序员之间深度沟通和交互变得高效。
 
-3.  IT运维自动化的配置部署监控，当然只是对windows, 对于全系统Windows+unix， 正在开发一套基于zabbix/granfana 的方案。
+### - IT运维自动化的配置部署监控
+- 当然只是对windows, 对于全系统Windows+unix， 正在开发一套基于zabbix/granfana 的方案。
 
-4. 工具类软件，特别是安全性要求高的软件，利用对操作系统资源调用方便，克服服浏览器前端安全性方面的弱点（浏览器客户端是非盲视的），实现各种验证、加密（软件狗、限定特定主机、限定局域网运行、限定特定Windows用户运行、request-reponse的数据加密等）。
+### - 工具类软件，特别是安全性要求高的软件
+- 利用对操作系统资源调用方便，克服服浏览器前端安全性方面的弱点（浏览器客户端是非盲视的），实现各种验证、加密（软件狗、限定特定主机、限定局域网运行、限定特定Windows用户运行、request-reponse的数据加密等）。
 
-5. web客户端，通过封装的HttpClient，不需任何代码，实现定制界面和表单与Restful接口通讯。尤其适用MES或WMS这类需要连接设备的系统的前端，毕竟Winform与基于浏览器的前端相比更加容易连接设备。
+### - web客户端
+- 通过封装的HttpClient，不需任何代码，实现定制界面和表单与Restful接口通讯。
+- 尤其适用MES或WMS这类需要连接设备的系统的前端，毕竟Winform与基于浏览器的前端相比更加容易连接设备。
 
 ## License
 [MIT](https://github.com/Liggin2019/Ligg.EasyWinApp/blob/master/LICENSE) license.
