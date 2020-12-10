@@ -15,14 +15,14 @@ English | [简体中文](./README.zh-CN.md)
 - to implement  basic functionalities (string/file basic functionality, logic judgment, mathematical operation, data input/output and input verification, data conversion, encryption/decryption, form field validation, etc.) in an Excel formular like manner; 
 - to process Windows script and Python script (new feature in  version 3.52);
 - to achieve specific business logic processing functionality by dynamically loading 'Plug and Play' .Net component or COM component (CBPL DLL);
-- supports multi-threading and multi-language.：
+- supports multi-threading and multi-language.
 
 ### Ligg.EasyWinform
 Ligg.EasyWinform is a Winform programming framework and UI library. It can excellently imitate the UI of  SAP GUI, 360 security guard software and Symantec endpoint client, and so on.
 
 ###  Ligg.EasyWinConsole
 Ligg.EasyWinConsole is a Windows console programming framework, can be called by EasyWinform or used alone. It can be used for automation device debugging, software testing, configuration&deployment of IT operation and maintenance , server of instant messaging / message queue, etc.
-- It is not uploaded in this version, but will be uploaded in version 3.5.2.
+- It has not been uploaded in this version, but will be uploaded in version 3.5.2.
 
 ## Development environment
 - Microsoft Visual Studio 2017, version: 15.8.9
@@ -33,19 +33,19 @@ Ligg.EasyWinConsole is a Windows console programming framework, can be called by
 ![case](https://liggin2019.gitee.io/Static/images/EasyWinApp/cases.png)
 
 ## Usage：
-1. For automation equipment development, debugging, operation and maintenance, that is so called 'host computer development', which is also the starting point of this framework. 
-- For Embedded / hardware engineers, you do not need to write human-computer interaction code, only need to configure XML, through the built-in SerialConnector /SocketConnector /WebSocketConnector /OpcConnector /OpcUaConnector /MqttConnector interfaces to call the corresponding hardware control program (Cbpl DLL), you can create a beautiful equipment operation and maintenance management system by your own. 
+### For automation equipment development, debugging, operation and maintenance, that is so called 'host computer development', which is also the starting point of this framework. 
+- For Embedded / hardware engineers, you do not need to write human-computer interaction code, only need to configure XML, through the built-in SerialConnector /SocketConnector /WebSocketConnector /OpcConnector /OpcUaConnector /MqttConnector interfaces to call the corresponding hardware control program (CBPL DLL), you can create a beautiful equipment operation and maintenance management system by your own. 
 
-2. For testing or prototype design in the process of software development.
+### For testing or prototype design in the process of software development.
 - No need to write test case code , only use the built-in HttpClientHandler for server-side test, and use the built-in JobScheduler&ThreadDispatcher carries out stress / robustness test; 
 - Generate prototype interface by configuration , to carry out deep communication and interaction among project manager, product manager, architect, user and programmer in requirements analysis stage, outline design stage, detailed design stage and development stage.
 
-3. For configuration, deployment, monitoring of IT operation and maintenance automation, of course, is only for windows. For the  windows + UNIX, we have a solution based on zabbix/granfana.
+### For configuration, deployment, monitoring of IT operation and maintenance automation, of course, is only for windows. For the  windows + UNIX, we have a solution based on zabbix/granfana.
 
-4. For  tool software especially software with high security requirements
+### For  tool software especially software with high security requirements
 It can overcome the security weakness of browser-based front-end  (browser client is non blind), and realize various verification and encryption --by lisense dog, by permitting specific hosts/OS to run, by limitting running in specific LAN , by authorizing Windows user to run , request-response data encryption, etc.
 
-5. As web client
+### As web client
 - never need any code, you can  customiz interface and form to  communication with server by Restful protocol through the encapsulation of httpclient
 - It is especially suitable for the front end such as MES or WMS, which needs to be connected to the device. After all, WinForm is easier to connect to the device than the browser based front end.
 
