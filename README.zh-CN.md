@@ -3,8 +3,9 @@
 - [开发过程](https://www.cnblogs.com/liggin2019/p/11780431.html)
 - [整体介绍](https://www.cnblogs.com/liggin2019/p/11824064.html)
 - [开发应用手册](https://liggin2019.gitee.io/projguide)（基于3.5.2版本，目前正在建设中...）
-- 当前版本: 3.2.1，即将升级至3.5.2版本，3.5.2版本在界面的重用性方面有重大改善，可以实现各个层次（View/Area/Zone/Controlle）的重用。
-- 3.5.2将是一个长期稳定版本。
+- 当前版本: 3.2.1，即将升级至3.5.2版本，
+- 3.5.2版本在界面的重用性方面有重大改善，可以实现各个层次（View/Area/Zone/Controlle）的重用,
+- 3.5.2版本将是一个长期稳定版本。
 ## 介绍
 ### 本解决方案是一个Windows应用编程框架和UI库，包括2部分Ligg.EasyWinform和Ligg.EasyWinConsole，通过该框架，不需任何代码，仅通过XML配置文件，可以：
 - 搭建任意复杂的Windows图形应用界面，控制台界面的输入输出界面；
