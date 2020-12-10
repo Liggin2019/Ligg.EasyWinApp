@@ -3,7 +3,7 @@ English | [简体中文](./README.zh-CN.md)
 - [History](https://www.cnblogs.com/liggin2019/p/11780431.html)
 - [Over all introduction](https://www.cnblogs.com/liggin2019/p/11824064.html)
 - [Development and application guide](https://liggin2019.gitee.io/projguide), based on version 3.5.2, currently is under construction...
-- Current version: 3.0.2, will be upgraded to version 3.5.2. 
+- Current version: 3.0.3, will be upgraded to version 3.5.2. 
 - Version 3.5.2 has greatly enhanced the reusability of the interface and can realize  reusability at all levels（View/Area/Zone/Control）
 - 3.5.2 will be a long-term stable release.
 
