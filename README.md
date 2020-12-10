@@ -6,7 +6,7 @@ English | [简体中文](./README.zh-CN.md)
 - Current version: 3.0.3, will be upgraded to version 3.5.2. 
 - Version 3.5.2 has greatly enhanced the reusability of the interface and can realize  reusability at all levels（View/Area/Zone/Control）
 - 3.5.2 will be a long-term stable release.
-
+- [Gitee Mirror](https://www.gitee.com/liggin2019/Ligg.EasyWinApp)
 
 ## Introduction
 ### This solution  is a Windows application programming framework and UI library, includding 2 projects: Ligg.EasyWinform and Ligg.EasyWinConsole. By this framework, never need any code, only by XML file
