@@ -9,7 +9,7 @@ English | [简体中文](./README.zh-CN.md)
 
 
 ## Introduction
-### This solution  is a Windows application programming framework and UI library. By this framework, never need any code, only by XML file
+### This solution  is a Windows application programming framework and UI library, includding 2 projects: Ligg.EasyWinform and Ligg.EasyWinConsole. By this framework, never need any code, only by XML file
 - to build any complex Windows winform GUI,  console program input/output user interface;
 - to implement basic process control (value assignment, conditional judgment, loop, jump, etc) in an Excel formular like manner; 
 - to implement  basic functionalities (string/file basic functionality, logic judgment, mathematical operation, data input/output and input verification, data conversion, encryption/decryption, form field validation, etc.) in an Excel formular like manner; 
@@ -33,21 +33,21 @@ Ligg.EasyWinConsole is a Windows console programming framework, can be called by
 ![case](https://liggin2019.gitee.io/Static/images/EasyWinApp/cases.png)
 
 ## Usage：
-### For automation equipment development, debugging, operation and maintenance, that is so called 'host computer development', which is also the starting point of this framework. 
+### --For automation equipment development, debugging, operation and maintenance, that is so called 'host computer development', which is also the starting point of this framework. 
 - For Embedded / hardware engineers, you do not need to write human-computer interaction code, only need to configure XML, through the built-in SerialConnector /SocketConnector /WebSocketConnector /OpcConnector /OpcUaConnector /MqttConnector interfaces to call the corresponding hardware control program (CBPL DLL), you can create a beautiful equipment operation and maintenance management system by your own. 
 
-### For testing or prototype design in the process of software development.
-- No need to write test case code , only use the built-in HttpClientHandler for server-side test, and use the built-in JobScheduler&ThreadDispatcher carries out stress / robustness test; 
-- Generate prototype interface by configuration , to carry out deep communication and interaction among project manager, product manager, architect, user and programmer in requirements analysis stage, outline design stage, detailed design stage and development stage.
+### --For testing or prototype design in the process of software development.
+- No need to write test case code , only use the built-in HttpClientHandler for server-side test, and use the built-in JobScheduler&ThreadDispatcher to carry out stress / robustness test; 
+- Generate prototype form or report by configuration , to carry out deep communication and interaction among project manager, product manager, architect, programmer and user in requirements analysis stage, outline design stage, detailed design stage and development stage.
 
-### For configuration, deployment, monitoring of IT operation and maintenance automation, of course, is only for windows. For the  windows + UNIX, we have a solution based on zabbix/granfana.
+### --For configuration, deployment, monitoring of IT operation and maintenance automation, of course, is only for windows. For the  windows + UNIX, we have a solution based on zabbix/granfana.
 
-### For  tool software especially software with high security requirements
+### --For  tool software especially software with high security requirements
 It can overcome the security weakness of browser-based front-end  (browser client is non blind), and realize various verification and encryption --by lisense dog, by permitting specific hosts/OS to run, by limitting running in specific LAN , by authorizing Windows user to run , request-response data encryption, etc.
 
-### As web client
-- never need any code, you can  customiz interface and form to  communication with server by Restful protocol through the encapsulation of httpclient
-- It is especially suitable for the front end such as MES or WMS, which needs to be connected to the device. After all, WinForm is easier to connect to the device than the browser based front end.
+### --As web client
+- never need any code, you can  customize interface and form to  communication with server by Restful protocol through the encapsulation of HttpClient
+- It is especially suitable for the front-end such as MES or WMS, which needs to be connected to the device. After all, WinForm is easier to connect to the device than the browser based front-end.
 
 
 ## License
